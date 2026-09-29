@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>People Hub | Diretório de Colaboradores</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="app-layout">
+    <!-- Barra Superior -->
+    <header class="topbar">
+      <div class="brand">
+        <span class="logo-badge">RH</span>
+        <div>
+          <h1>People Hub & Analytics</h1>
+          <p class="subtitle">Consulta Integrada de Quadro de Pessoal</p>
+        </div>
+      </div>
+      <div class="status-indicator">
+        <span class="dot"></span>
+        <span id="labelTotal">Carregando dados...</span>
+      </div>
+    </header>
+
+    <!-- Cards de Métricas Rápidas -->
+    <section class="kpi-grid">
+      <div class="kpi-card">
+        <span class="kpi-label">Headcount Total</span>
+        <span class="kpi-value" id="kpiTotal">-</span>
+      </div>
+      <div class="kpi-card">
+        <span class="kpi-label">Colaboradores Ativos</span>
+        <span class="kpi-value text-success" id="kpiAtivos">-</span>
+      </div>
+      <div class="kpi-card">
+        <span class="kpi-label">Desligados</span>
+        <span class="kpi-value text-danger" id="kpiDesligados">-</span>
+      </div>
+      <div class="kpi-card">
+        <span class="kpi-label">Salário Médio</span>
+        <span class="kpi-value" id="kpiSalarioMedio">-</span>
+      </div>
+    </section>
+
+    <!-- Barra de Filtros e Busca -->
+    <section class="controls-panel">
+      <div class="search-box">
+        <input 
+          type="text" 
+          id="inputBusca" 
+          placeholder="Pesquisar por nome, cargo ou ID..." 
+          autocomplete="off"
+        />
+      </div>
+
+      <div class="filters-row">
+        <select id="selectDepto">
+          <option value="">Todos os Departamentos</option>
+        </select>
+
+        <select id="selectStatus">
+          <option value="">Todos os Status</option>
+          <option value="Ativo">Ativo</option>
+          <option value="Desligado">Desligado</option>
+        </select>
+
+        <select id="selectGenero">
+          <option value="">Todos os Gêneros</option>
+          <option value="Feminino">Feminino</option>
+          <option value="Masculino">Masculino</option>
+        </select>
+
+        <button id="btnLimpar" class="btn-secondary">Limpar Filtros</button>
+      </div>
+    </section>
+
+    <!-- Tabela de Resultados -->
+    <main class="table-container">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Departamento</th>
+            <th>Cargo</th>
+            <th>Gênero</th>
+            <th>Raça / Cor</th>
+            <th>Salário</th>
+            <th>Admissão</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody id="tbodyColaboradores">
+          <tr>
+            <td colspan="9" class="loading-state">Carregando colaboradores...</td>
+          </tr>
+        </tbody>
+      </table>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="footer">
+      <p>Projeto Integrado: Power BI • Power Apps • Web Portal | Base simulada de RH</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

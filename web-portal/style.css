@@ -1,0 +1,248 @@
+:root {
+--bg-primary: #0f172a;
+--bg-surface: #1e293b;
+--bg-surface-alt: #334155;
+--border-color: #334155;
+--text-main: #f8fafc;
+--text-muted: #94a3b8;
+--accent: #38bdf8;
+--accent-hover: #0284c7;
+--success: #10b981;
+--success-bg: rgba(16, 185, 129, 0.15);
+--danger: #f43f5e;
+--danger-bg: rgba(244, 63, 94, 0.15);
+--radius: 8px;
+--font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+{
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+}
+
+body {
+font-family: var(--font-family);
+background-color: var(--bg-primary);
+color: var(--text-main);
+min-height: 100vh;
+padding: 24px;
+}
+
+.app-layout {
+max-width: 1200px;
+margin: 0 auto;
+display: flex;
+flex-direction: column;
+gap: 20px;
+}
+
+/* Topbar */
+.topbar {
+display: flex;
+justify-content: space-between;
+align-items: center;
+background: var(--bg-surface);
+padding: 16px 24px;
+border-radius: var(--radius);
+border: 1px solid var(--border-color);
+}
+
+.brand {
+display: flex;
+align-items: center;
+gap: 14px;
+}
+
+.logo-badge {
+background: linear-gradient(135deg, #0284c7, #38bdf8);
+color: #fff;
+font-weight: 700;
+padding: 10px 14px;
+border-radius: 6px;
+font-size: 1.1rem;
+}
+
+.topbar h1 {
+font-size: 1.25rem;
+font-weight: 600;
+}
+
+.subtitle {
+font-size: 0.85rem;
+color: var(--text-muted);
+}
+
+.status-indicator {
+display: flex;
+align-items: center;
+gap: 8px;
+font-size: 0.85rem;
+color: var(--text-muted);
+}
+
+.dot {
+width: 8px;
+height: 8px;
+background-color: var(--success);
+border-radius: 50%;
+box-shadow: 0 0 6px var(--success);
+}
+
+/* KPIs */
+.kpi-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+gap: 14px;
+}
+
+.kpi-card {
+background: var(--bg-surface);
+border: 1px solid var(--border-color);
+padding: 16px 20px;
+border-radius: var(--radius);
+display: flex;
+flex-direction: column;
+gap: 6px;
+}
+
+.kpi-label {
+font-size: 0.8rem;
+color: var(--text-muted);
+text-transform: uppercase;
+letter-spacing: 0.05em;
+font-weight: 600;
+}
+
+.kpi-value {
+font-size: 1.6rem;
+font-weight: 700;
+}
+
+.text-success { color: var(--success); }
+.text-danger { color: var(--danger); }
+
+/* Controls */
+.controls-panel {
+background: var(--bg-surface);
+border: 1px solid var(--border-color);
+padding: 16px 20px;
+border-radius: var(--radius);
+display: flex;
+flex-direction: column;
+gap: 12px;
+}
+
+.search-box input {
+width: 100%;
+padding: 12px 16px;
+background: var(--bg-primary);
+border: 1px solid var(--border-color);
+border-radius: var(--radius);
+color: var(--text-main);
+font-size: 0.95rem;
+outline: none;
+transition: border-color 0.2s;
+}
+
+.search-box input:focus {
+border-color: var(--accent);
+}
+
+.filters-row {
+display: flex;
+flex-wrap: wrap;
+gap: 10px;
+}
+
+select, .btn-secondary {
+padding: 8px 12px;
+background: var(--bg-primary);
+border: 1px solid var(--border-color);
+color: var(--text-main);
+border-radius: var(--radius);
+font-size: 0.875rem;
+outline: none;
+cursor: pointer;
+}
+
+select:focus {
+border-color: var(--accent);
+}
+
+.btn-secondary {
+margin-left: auto;
+background: var(--bg-surface-alt);
+border-color: transparent;
+transition: background 0.2s;
+}
+
+.btn-secondary:hover {
+background: #475569;
+}
+
+/* Table */
+.table-container {
+background: var(--bg-surface);
+border: 1px solid var(--border-color);
+border-radius: var(--radius);
+overflow-x: auto;
+}
+
+.data-table {
+width: 100%;
+border-collapse: collapse;
+text-align: left;
+font-size: 0.875rem;
+}
+
+.data-table th {
+background: #182234;
+padding: 12px 16px;
+font-weight: 600;
+color: var(--text-muted);
+border-bottom: 1px solid var(--border-color);
+white-space: nowrap;
+}
+
+.data-table td {
+padding: 12px 16px;
+border-bottom: 1px solid var(--border-color);
+white-space: nowrap;
+}
+
+.data-table tbody tr:hover {
+background: rgba(255, 255, 255, 0.02);
+}
+
+.badge {
+display: inline-block;
+padding: 3px 8px;
+border-radius: 999px;
+font-size: 0.75rem;
+font-weight: 600;
+}
+
+.badge-active {
+background: var(--success-bg);
+color: var(--success);
+}
+
+.badge-inactive {
+background: var(--danger-bg);
+color: var(--danger);
+}
+
+.loading-state, .empty-state {
+text-align: center;
+color: var(--text-muted);
+padding: 30px !important;
+}
+
+/* Footer */
+.footer {
+text-align: center;
+color: var(--text-muted);
+font-size: 0.8rem;
+padding: 10px 0;
+}
