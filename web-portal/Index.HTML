@@ -1,87 +1,294 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>People Hub | Diretório de Colaboradores</title>
-  <link rel="stylesheet" href="style.css" />
-  <!-- Google Fonts: Inter -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>People Hub & HR Analytics</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b1120;
+      --card-bg: #1e293b;
+      --border: #334155;
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --primary: #38bdf8;
+      --primary-hover: #0284c7;
+      --success: #34d399;
+      --danger: #f87171;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      padding: 28px;
+    }
+    .container {
+      max-width: 1300px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .header {
+      background-color: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .logo {
+      width: 44px;
+      height: 44px;
+      background: linear-gradient(135deg, #0284c7, #38bdf8);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      border-radius: 10px;
+      font-size: 1.1rem;
+    }
+    .brand-title h1 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+    .brand-title p {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      margin-top: 2px;
+    }
+    .status-badge {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.85rem;
+      color: var(--success);
+      background: rgba(52, 211, 153, 0.1);
+      padding: 6px 14px;
+      border-radius: 9999px;
+      border: 1px solid rgba(52, 211, 153, 0.25);
+    }
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+    .metric-card {
+      background-color: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
+    }
+    .metric-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+    }
+    .metric-val {
+      font-size: 1.7rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+    .metric-val.total { color: #ffffff; }
+    .metric-val.ativo { color: var(--success); }
+    .metric-val.desligado { color: var(--danger); }
+    .metric-val.salario { color: var(--primary); }
+    .filter-panel {
+      background-color: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .search-box input {
+      width: 100%;
+      background: #0f172a;
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 12px 16px;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .search-box input:focus {
+      border-color: var(--primary);
+    }
+    .selects-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+    }
+    .selects-row select {
+      flex: 1;
+      min-width: 180px;
+      background: #0f172a;
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 10px 14px;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      outline: none;
+      cursor: pointer;
+    }
+    .selects-row select:focus {
+      border-color: var(--primary);
+    }
+    .btn-reset {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 500;
+      transition: all 0.2s;
+    }
+    .btn-reset:hover {
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text);
+      border-color: #64748b;
+    }
+    .table-container {
+      background-color: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow-x: auto;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.9rem;
+    }
+    th {
+      background-color: #162032;
+      color: var(--text-muted);
+      font-weight: 600;
+      padding: 14px 18px;
+      border-bottom: 1px solid var(--border);
+      white-space: nowrap;
+    }
+    td {
+      padding: 14px 18px;
+      border-bottom: 1px solid #223249;
+      color: #cbd5e1;
+      white-space: nowrap;
+    }
+    tbody tr:hover {
+      background-color: rgba(255, 255, 255, 0.02);
+    }
+    tbody tr:last-child td {
+      border-bottom: none;
+    }
+    .badge {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+    .badge-ativo {
+      background: rgba(52, 211, 153, 0.15);
+      color: var(--success);
+      border: 1px solid rgba(52, 211, 153, 0.3);
+    }
+    .badge-desligado {
+      background: rgba(248, 113, 113, 0.15);
+      color: var(--danger);
+      border: 1px solid rgba(248, 113, 113, 0.3);
+    }
+    footer {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.8rem;
+      padding: 12px 0;
+    }
+  </style>
 </head>
 <body>
-  <div class="app-layout">
-    <!-- Barra Superior -->
-    <header class="topbar">
+  <div class="container">
+    <div class="header">
       <div class="brand">
-        <span class="logo-badge">RH</span>
-        <div>
-          <h1>People Hub & Analytics</h1>
-          <p class="subtitle">Consulta Integrada de Quadro de Pessoal</p>
+        <div class="logo">RH</div>
+        <div class="brand-title">
+          <h1>People Hub & HR Analytics</h1>
+          <p>Consulta Integrada do Quadro de Pessoal</p>
         </div>
       </div>
-      <div class="status-indicator">
-        <span class="dot"></span>
-        <span id="labelTotal">Carregando dados...</span>
-      </div>
-    </header>
+      <div id="dbStatus" class="status-badge">● Conectado (100 colaboradores)</div>
+    </div>
 
-    <!-- Cards de Métricas Rápidas -->
-    <section class="kpi-grid">
-      <div class="kpi-card">
-        <span class="kpi-label">Headcount Total</span>
-        <span class="kpi-value" id="kpiTotal">-</span>
+    <div class="metrics-grid">
+      <div class="metric-card">
+        <span class="metric-label">Headcount Total</span>
+        <span class="metric-val total" id="totalColab">0</span>
       </div>
-      <div class="kpi-card">
-        <span class="kpi-label">Colaboradores Ativos</span>
-        <span class="kpi-value text-success" id="kpiAtivos">-</span>
+      <div class="metric-card">
+        <span class="metric-label">Colaboradores Ativos</span>
+        <span class="metric-val ativo" id="totalAtivos">0</span>
       </div>
-      <div class="kpi-card">
-        <span class="kpi-label">Desligados</span>
-        <span class="kpi-value text-danger" id="kpiDesligados">-</span>
+      <div class="metric-card">
+        <span class="metric-label">Desligados</span>
+        <span class="metric-val desligado" id="totalDesligados">0</span>
       </div>
-      <div class="kpi-card">
-        <span class="kpi-label">Salário Médio</span>
-        <span class="kpi-value" id="kpiSalarioMedio">-</span>
+      <div class="metric-card">
+        <span class="metric-label">Salário Médio</span>
+        <span class="metric-val salario" id="mediaSalario">R$ 0,00</span>
       </div>
-    </section>
+    </div>
 
-    <!-- Barra de Filtros e Busca -->
-    <section class="controls-panel">
+    <div class="filter-panel">
       <div class="search-box">
-        <input 
-          type="text" 
-          id="inputBusca" 
-          placeholder="Pesquisar por nome, cargo ou ID..." 
-          autocomplete="off"
-        />
+        <input type="text" id="buscaGeral" placeholder="Pesquisar por nome, cargo ou ID...">
       </div>
-
-      <div class="filters-row">
-        <select id="selectDepto">
+      <div class="selects-row">
+        <select id="filtroDepto">
           <option value="">Todos os Departamentos</option>
         </select>
-
-        <select id="selectStatus">
+        <select id="filtroStatus">
           <option value="">Todos os Status</option>
           <option value="Ativo">Ativo</option>
           <option value="Desligado">Desligado</option>
         </select>
-
-        <select id="selectGenero">
+        <select id="filtroGenero">
           <option value="">Todos os Gêneros</option>
           <option value="Feminino">Feminino</option>
           <option value="Masculino">Masculino</option>
         </select>
-
-        <button id="btnLimpar" class="btn-secondary">Limpar Filtros</button>
+        <button id="btnLimpar" class="btn-reset">Limpar Filtros</button>
       </div>
-    </section>
+    </div>
 
-    <!-- Tabela de Resultados -->
-    <main class="table-container">
-      <table class="data-table">
+    <div class="table-container">
+      <table>
         <thead>
           <tr>
             <th>ID</th>
@@ -95,20 +302,131 @@
             <th>Status</th>
           </tr>
         </thead>
-        <tbody id="tbodyColaboradores">
-          <tr>
-            <td colspan="9" class="loading-state">Carregando colaboradores...</td>
-          </tr>
-        </tbody>
+        <tbody id="tabelaCorpo"></tbody>
       </table>
-    </main>
+    </div>
 
-    <!-- Rodapé -->
-    <footer class="footer">
-      <p>Projeto Integrado: Power BI • Power Apps • Web Portal | Base simulada de RH</p>
+    <footer>
+      Projeto Integrado: Power BI • Power Apps • Web Portal | Base simulada de RH
     </footer>
   </div>
 
-  <script src="script.js"></script>
+  <script>
+    const colaboradores = [{"id": 1, "nome": "Lucas Andrade", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Recursos Humanos", "cargo": "Especialista em D&I", "salario": 6800.0, "data_admissao": "2021-07-29", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 2, "nome": "Danilo Carvalho", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Tecnologia", "cargo": "Desenvolvedor(a) Sênior", "salario": 10850.0, "data_admissao": "2023-11-01", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 3, "nome": "Igor Rocha", "genero": "Masculino", "raca_cor": "Parda", "departamento": "Comercial", "cargo": "Analista de Vendas B2B", "salario": 4050.0, "data_admissao": "2024-04-21", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 4, "nome": "Bernardo Nunes", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Comercial", "cargo": "Analista de Vendas B2B", "salario": 4200.0, "data_admissao": "2021-11-15", "status": "Desligado", "data_desligamento": "2026-04-26", "motivo_desligamento": "Pedido de Demissão"}, {"id": 5, "nome": "Andre Souza", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Financeiro", "cargo": "Especialista Fiscal", "salario": 8350.0, "data_admissao": "2025-07-11", "status": "Desligado", "data_desligamento": "2026-05-02", "motivo_desligamento": "Pedido de Demissão"}, {"id": 6, "nome": "Camila Fernandes", "genero": "Feminino", "raca_cor": "Branca", "departamento": "Marketing", "cargo": "Especialista de Conteúdo", "salario": 6950.0, "data_admissao": "2023-01-11", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 7, "nome": "Mateus Dias", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Financeiro", "cargo": "Assistente Financeiro", "salario": 3400.0, "data_admissao": "2025-10-18", "status": "Desligado", "data_desligamento": "2026-02-06", "motivo_desligamento": "Pedido de Demissão"}, {"id": 8, "nome": "Luana Marques", "genero": "Feminino", "raca_cor": "Branca", "departamento": "Financeiro", "cargo": "Especialista Fiscal", "salario": 7800.0, "data_admissao": "2024-10-04", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 9, "nome": "Vitor Rocha", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Recursos Humanos", "cargo": "Especialista em D&I", "salario": 6850.0, "data_admissao": "2023-02-17", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 10, "nome": "Murilo Costa", "genero": "Masculino", "raca_cor": "Parda", "departamento": "Tecnologia", "cargo": "Desenvolvedor(a) Pleno", "salario": 6950.0, "data_admissao": "2021-03-07", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 11, "nome": "Amanda Oliveira", "genero": "Feminino", "raca_cor": "Branca", "departamento": "Marketing", "cargo": "Analista de Growth/Marketing", "salario": 6250.0, "data_admissao": "2022-10-07", "status": "Desligado", "data_desligamento": "2025-09-23", "motivo_desligamento": "Pedido de Demissão"}, {"id": 12, "nome": "Mariana Lima", "genero": "Feminino", "raca_cor": "Branca", "departamento": "Operações", "cargo": "Gerente de Projetos", "salario": 11650.0, "data_admissao": "2025-03-10", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 13, "nome": "Jessica Pereira", "genero": "Feminino", "raca_cor": "Indígena", "departamento": "Tecnologia", "cargo": "Designer UI/UX", "salario": 6250.0, "data_admissao": "2021-07-06", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 14, "nome": "Felipe Rocha", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Comercial", "cargo": "Analista de Vendas B2B", "salario": 4500.0, "data_admissao": "2023-02-28", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 15, "nome": "Gabriela Lima", "genero": "Feminino", "raca_cor": "Amarela", "departamento": "Tecnologia", "cargo": "Desenvolvedor(a) Júnior", "salario": 4900.0, "data_admissao": "2021-08-23", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 16, "nome": "Daniela Rocha", "genero": "Feminino", "raca_cor": "Branca", "departamento": "Financeiro", "cargo": "Assistente Financeiro", "salario": 3000.0, "data_admissao": "2023-07-19", "status": "Desligado", "data_desligamento": "2025-03-09", "motivo_desligamento": "Término de Contrato"}, {"id": 17, "nome": "Diego Freitas", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Financeiro", "cargo": "Assistente Financeiro", "salario": 3300.0, "data_admissao": "2023-11-06", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 18, "nome": "Eduardo Moreira", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Operações", "cargo": "Coordenador(a) de Suporte", "salario": 8600.0, "data_admissao": "2024-05-11", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 19, "nome": "Rodrigo Freitas", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Financeiro", "cargo": "Assistente Financeiro", "salario": 2850.0, "data_admissao": "2022-05-09", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 20, "nome": "Gabriel Andrade", "genero": "Masculino", "raca_cor": "Parda", "departamento": "Tecnologia", "cargo": "Desenvolvedor(a) Sênior", "salario": 13900.0, "data_admissao": "2023-12-27", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 21, "nome": "Murilo Lopes", "genero": "Masculino", "raca_cor": "Preta", "departamento": "Recursos Humanos", "cargo": "Assistente de RH", "salario": 2750.0, "data_admissao": "2025-11-22", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 22, "nome": "Alexandre Moreira", "genero": "Masculino", "raca_cor": "Parda", "departamento": "Recursos Humanos", "cargo": "Analista de RH Pleno", "salario": 5450.0, "data_admissao": "2023-03-29", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 23, "nome": "Renata Mendes", "genero": "Feminino", "raca_cor": "Parda", "departamento": "Tecnologia", "cargo": "Cientista de Dados", "salario": 9100.0, "data_admissao": "2021-05-12", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 24, "nome": "Danilo Pereira", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Tecnologia", "cargo": "Desenvolvedor(a) Pleno", "salario": 6950.0, "data_admissao": "2026-01-29", "status": "Desligado", "data_desligamento": "2026-06-22", "motivo_desligamento": "Pedido de Demissão"}, {"id": 25, "nome": "Rafael Dias", "genero": "Masculino", "raca_cor": "Parda", "departamento": "Operações", "cargo": "Gerente de Projetos", "salario": 10050.0, "data_admissao": "2026-03-31", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 26, "nome": "Patricia Nunes", "genero": "Feminino", "raca_cor": "Parda", "departamento": "Comercial", "cargo": "Analista de Vendas B2B", "salario": 4050.0, "data_admissao": "2021-07-18", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 27, "nome": "Carolina Carvalho", "genero": "Feminino", "raca_cor": "Parda", "departamento": "Tecnologia", "cargo": "Desenvolvedor(a) Pleno", "salario": 7850.0, "data_admissao": "2024-08-16", "status": "Desligado", "data_desligamento": "2025-12-01", "motivo_desligamento": "Demissão sem Justa Causa"}, {"id": 28, "nome": "Guilherme Alves", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Comercial", "cargo": "Gerente Comercial", "salario": 11550.0, "data_admissao": "2022-01-11", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 29, "nome": "Gabriel Almeida", "genero": "Masculino", "raca_cor": "Parda", "departamento": "Operações", "cargo": "Gerente de Projetos", "salario": 9900.0, "data_admissao": "2024-08-28", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 30, "nome": "Gabriel Freitas", "genero": "Masculino", "raca_cor": "Parda", "departamento": "Recursos Humanos", "cargo": "Especialista em D&I", "salario": 6850.0, "data_admissao": "2023-09-22", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 31, "nome": "Beatriz Ferreira", "genero": "Feminino", "raca_cor": "Branca", "departamento": "Comercial", "cargo": "Executivo(a) de Contas", "salario": 5300.0, "data_admissao": "2025-05-25", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 32, "nome": "Carolina Nascimento", "genero": "Feminino", "raca_cor": "Preta", "departamento": "Operações", "cargo": "Gerente de Projetos", "salario": 12150.0, "data_admissao": "2023-09-24", "status": "Desligado", "data_desligamento": "2024-09-21", "motivo_desligamento": "Pedido de Demissão"}, {"id": 33, "nome": "Danilo Andrade", "genero": "Masculino", "raca_cor": "Parda", "departamento": "Financeiro", "cargo": "Analista Financeiro Pleno", "salario": 4900.0, "data_admissao": "2024-04-11", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 34, "nome": "Mateus Soares", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Recursos Humanos", "cargo": "Assistente de RH", "salario": 2650.0, "data_admissao": "2021-05-20", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 35, "nome": "Andre Souza", "genero": "Masculino", "raca_cor": "Preta", "departamento": "Marketing", "cargo": "Analista de Growth/Marketing", "salario": 5050.0, "data_admissao": "2024-05-02", "status": "Desligado", "data_desligamento": "2024-09-22", "motivo_desligamento": "Pedido de Demissão"}, {"id": 36, "nome": "Amanda Alves", "genero": "Feminino", "raca_cor": "Parda", "departamento": "Financeiro", "cargo": "Analista Financeiro Pleno", "salario": 5150.0, "data_admissao": "2023-03-22", "status": "Desligado", "data_desligamento": "2025-01-24", "motivo_desligamento": "Pedido de Demissão"}, {"id": 37, "nome": "Lucas Almeida", "genero": "Masculino", "raca_cor": "Parda", "departamento": "Marketing", "cargo": "Analista de Growth/Marketing", "salario": 6500.0, "data_admissao": "2021-05-31", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 38, "nome": "Mariana Freitas", "genero": "Feminino", "raca_cor": "Branca", "departamento": "Tecnologia", "cargo": "Desenvolvedor(a) Sênior", "salario": 13500.0, "data_admissao": "2023-01-27", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 39, "nome": "Natalia Nascimento", "genero": "Feminino", "raca_cor": "Branca", "departamento": "Operações", "cargo": "Coordenador(a) de Suporte", "salario": 6500.0, "data_admissao": "2025-08-01", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 40, "nome": "Felipe Lima", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Tecnologia", "cargo": "Cientista de Dados", "salario": 11350.0, "data_admissao": "2021-11-15", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 41, "nome": "Igor Costa", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Recursos Humanos", "cargo": "Coordenador(a) de Gente e Gestão", "salario": 10500.0, "data_admissao": "2022-05-30", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 42, "nome": "Gabriel Rocha", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Recursos Humanos", "cargo": "Coordenador(a) de Gente e Gestão", "salario": 9150.0, "data_admissao": "2022-11-15", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 43, "nome": "Larissa Andrade", "genero": "Feminino", "raca_cor": "Parda", "departamento": "Comercial", "cargo": "Analista de Vendas B2B", "salario": 4450.0, "data_admissao": "2021-08-18", "status": "Desligado", "data_desligamento": "2025-09-01", "motivo_desligamento": "Demissão com Justa Causa"}, {"id": 44, "nome": "Eduardo Vieira", "genero": "Masculino", "raca_cor": "Parda", "departamento": "Comercial", "cargo": "Analista de Vendas B2B", "salario": 3950.0, "data_admissao": "2022-09-24", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 45, "nome": "Eduardo Alves", "genero": "Masculino", "raca_cor": "Parda", "departamento": "Tecnologia", "cargo": "Cientista de Dados", "salario": 9600.0, "data_admissao": "2024-02-21", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 46, "nome": "Priscila Andrade", "genero": "Feminino", "raca_cor": "Branca", "departamento": "Recursos Humanos", "cargo": "Especialista em D&I", "salario": 8250.0, "data_admissao": "2025-06-27", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 47, "nome": "Ana Ferreira", "genero": "Feminino", "raca_cor": "Parda", "departamento": "Financeiro", "cargo": "Analista Financeiro Pleno", "salario": 5900.0, "data_admissao": "2023-04-24", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 48, "nome": "Rafael Ferreira", "genero": "Masculino", "raca_cor": "Parda", "departamento": "Tecnologia", "cargo": "Cientista de Dados", "salario": 9700.0, "data_admissao": "2021-03-21", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 49, "nome": "Bruno Marques", "genero": "Masculino", "raca_cor": "Preta", "departamento": "Financeiro", "cargo": "Especialista Fiscal", "salario": 7650.0, "data_admissao": "2025-06-17", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 50, "nome": "Lucas Dias", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Financeiro", "cargo": "Analista Financeiro Pleno", "salario": 5200.0, "data_admissao": "2021-05-23", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 51, "nome": "Jessica Rocha", "genero": "Feminino", "raca_cor": "Parda", "departamento": "Operações", "cargo": "Gerente de Projetos", "salario": 10800.0, "data_admissao": "2021-02-26", "status": "Desligado", "data_desligamento": "2022-10-13", "motivo_desligamento": "Pedido de Demissão"}, {"id": 52, "nome": "Beatriz Souza", "genero": "Feminino", "raca_cor": "Parda", "departamento": "Financeiro", "cargo": "Especialista Fiscal", "salario": 8600.0, "data_admissao": "2022-10-05", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 53, "nome": "Andre Mendes", "genero": "Masculino", "raca_cor": "Parda", "departamento": "Recursos Humanos", "cargo": "Coordenador(a) de Gente e Gestão", "salario": 9150.0, "data_admissao": "2023-06-13", "status": "Desligado", "data_desligamento": "2026-08-18", "motivo_desligamento": "Demissão sem Justa Causa"}, {"id": 54, "nome": "Eduardo Carvalho", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Financeiro", "cargo": "Analista Financeiro Pleno", "salario": 5650.0, "data_admissao": "2024-09-20", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 55, "nome": "Gabriela Gomes", "genero": "Feminino", "raca_cor": "Parda", "departamento": "Financeiro", "cargo": "Analista Financeiro Pleno", "salario": 5350.0, "data_admissao": "2022-08-29", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 56, "nome": "Marcelo Dias", "genero": "Masculino", "raca_cor": "Preta", "departamento": "Recursos Humanos", "cargo": "Assistente de RH", "salario": 2950.0, "data_admissao": "2022-09-09", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 57, "nome": "Leonardo Gomes", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Marketing", "cargo": "Analista de Growth/Marketing", "salario": 5750.0, "data_admissao": "2022-10-22", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 58, "nome": "Bianca Alves", "genero": "Feminino", "raca_cor": "Parda", "departamento": "Recursos Humanos", "cargo": "Assistente de RH", "salario": 3000.0, "data_admissao": "2022-08-05", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 59, "nome": "Camila Marques", "genero": "Feminino", "raca_cor": "Preta", "departamento": "Recursos Humanos", "cargo": "Especialista em D&I", "salario": 7850.0, "data_admissao": "2022-04-06", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 60, "nome": "Lucas Santos", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Operações", "cargo": "Analista de Operações", "salario": 4900.0, "data_admissao": "2025-04-23", "status": "Desligado", "data_desligamento": "2026-01-20", "motivo_desligamento": "Demissão sem Justa Causa"}, {"id": 61, "nome": "Igor Nascimento", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Comercial", "cargo": "Executivo(a) de Contas", "salario": 5250.0, "data_admissao": "2024-09-05", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 62, "nome": "Bernardo Carvalho", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Operações", "cargo": "Coordenador(a) de Suporte", "salario": 7550.0, "data_admissao": "2024-02-16", "status": "Desligado", "data_desligamento": "2024-08-18", "motivo_desligamento": "Pedido de Demissão"}, {"id": 63, "nome": "Bianca Soares", "genero": "Feminino", "raca_cor": "Amarela", "departamento": "Marketing", "cargo": "Especialista de Conteúdo", "salario": 5850.0, "data_admissao": "2025-03-27", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 64, "nome": "Natalia Almeida", "genero": "Feminino", "raca_cor": "Preta", "departamento": "Operações", "cargo": "Analista de Operações", "salario": 4700.0, "data_admissao": "2025-03-20", "status": "Desligado", "data_desligamento": "2026-04-10", "motivo_desligamento": "Pedido de Demissão"}, {"id": 65, "nome": "Luana Pereira", "genero": "Feminino", "raca_cor": "Branca", "departamento": "Tecnologia", "cargo": "Desenvolvedor(a) Sênior", "salario": 12850.0, "data_admissao": "2022-04-26", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 66, "nome": "Natalia Oliveira", "genero": "Feminino", "raca_cor": "Branca", "departamento": "Recursos Humanos", "cargo": "Especialista em D&I", "salario": 7250.0, "data_admissao": "2021-11-09", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 67, "nome": "Marcelo Carvalho", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Comercial", "cargo": "Gerente Comercial", "salario": 12650.0, "data_admissao": "2022-02-28", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 68, "nome": "Daniela Vieira", "genero": "Feminino", "raca_cor": "Preta", "departamento": "Tecnologia", "cargo": "Desenvolvedor(a) Júnior", "salario": 5050.0, "data_admissao": "2025-04-17", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 69, "nome": "Ana Ribeiro", "genero": "Feminino", "raca_cor": "Branca", "departamento": "Comercial", "cargo": "Executivo(a) de Contas", "salario": 7050.0, "data_admissao": "2026-05-07", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 70, "nome": "Caio Pereira", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Operações", "cargo": "Analista de Operações", "salario": 4050.0, "data_admissao": "2022-11-20", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 71, "nome": "Tatiane Ferreira", "genero": "Feminino", "raca_cor": "Parda", "departamento": "Tecnologia", "cargo": "Designer UI/UX", "salario": 7450.0, "data_admissao": "2023-12-30", "status": "Desligado", "data_desligamento": "2025-04-06", "motivo_desligamento": "Demissão sem Justa Causa"}, {"id": 72, "nome": "Gabriel Rocha", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Comercial", "cargo": "Gerente Comercial", "salario": 11750.0, "data_admissao": "2022-06-17", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 73, "nome": "Vinicius Costa", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Comercial", "cargo": "Executivo(a) de Contas", "salario": 5350.0, "data_admissao": "2026-05-03", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 74, "nome": "Camila Lopes", "genero": "Feminino", "raca_cor": "Branca", "departamento": "Operações", "cargo": "Gerente de Projetos", "salario": 9700.0, "data_admissao": "2026-05-04", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 75, "nome": "Bernardo Rocha", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Tecnologia", "cargo": "Desenvolvedor(a) Júnior", "salario": 5150.0, "data_admissao": "2022-02-13", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 76, "nome": "Guilherme Rodrigues", "genero": "Masculino", "raca_cor": "Parda", "departamento": "Tecnologia", "cargo": "Cientista de Dados", "salario": 10550.0, "data_admissao": "2022-03-23", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 77, "nome": "Daniela Ribeiro", "genero": "Feminino", "raca_cor": "Branca", "departamento": "Marketing", "cargo": "Especialista de Conteúdo", "salario": 7150.0, "data_admissao": "2025-01-11", "status": "Desligado", "data_desligamento": "2025-08-26", "motivo_desligamento": "Término de Contrato"}, {"id": 78, "nome": "Danilo Silva", "genero": "Masculino", "raca_cor": "Preta", "departamento": "Marketing", "cargo": "Analista de Growth/Marketing", "salario": 5900.0, "data_admissao": "2026-05-17", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 79, "nome": "Gabriel Vieira", "genero": "Masculino", "raca_cor": "Parda", "departamento": "Recursos Humanos", "cargo": "Especialista em D&I", "salario": 6700.0, "data_admissao": "2025-05-02", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 80, "nome": "Danilo Nunes", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Operações", "cargo": "Gerente de Projetos", "salario": 11200.0, "data_admissao": "2023-01-29", "status": "Desligado", "data_desligamento": "2025-02-25", "motivo_desligamento": "Pedido de Demissão"}, {"id": 81, "nome": "Vanessa Souza", "genero": "Feminino", "raca_cor": "Parda", "departamento": "Financeiro", "cargo": "Especialista Fiscal", "salario": 8400.0, "data_admissao": "2025-08-25", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 82, "nome": "Marcelo Ferreira", "genero": "Masculino", "raca_cor": "Parda", "departamento": "Recursos Humanos", "cargo": "Coordenador(a) de Gente e Gestão", "salario": 10850.0, "data_admissao": "2026-02-27", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 83, "nome": "Renata Carvalho", "genero": "Feminino", "raca_cor": "Parda", "departamento": "Marketing", "cargo": "Analista de Growth/Marketing", "salario": 5100.0, "data_admissao": "2025-10-11", "status": "Desligado", "data_desligamento": "2026-01-23", "motivo_desligamento": "Pedido de Demissão"}, {"id": 84, "nome": "Patricia Moreira", "genero": "Feminino", "raca_cor": "Parda", "departamento": "Marketing", "cargo": "Especialista de Conteúdo", "salario": 6550.0, "data_admissao": "2022-11-20", "status": "Desligado", "data_desligamento": "2024-11-14", "motivo_desligamento": "Pedido de Demissão"}, {"id": 85, "nome": "Eduardo Nunes", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Recursos Humanos", "cargo": "Coordenador(a) de Gente e Gestão", "salario": 11650.0, "data_admissao": "2024-12-07", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 86, "nome": "Diego Alves", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Comercial", "cargo": "Analista de Vendas B2B", "salario": 4400.0, "data_admissao": "2025-04-02", "status": "Desligado", "data_desligamento": "2026-01-30", "motivo_desligamento": "Demissão sem Justa Causa"}, {"id": 87, "nome": "Renata Nunes", "genero": "Feminino", "raca_cor": "Branca", "departamento": "Financeiro", "cargo": "Assistente Financeiro", "salario": 2850.0, "data_admissao": "2024-11-17", "status": "Desligado", "data_desligamento": "2026-01-28", "motivo_desligamento": "Pedido de Demissão"}, {"id": 88, "nome": "Carolina Andrade", "genero": "Feminino", "raca_cor": "Parda", "departamento": "Financeiro", "cargo": "Especialista Fiscal", "salario": 8550.0, "data_admissao": "2022-07-09", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 89, "nome": "Rodrigo Andrade", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Tecnologia", "cargo": "Cientista de Dados", "salario": 11350.0, "data_admissao": "2026-05-02", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 90, "nome": "Bruno Alves", "genero": "Masculino", "raca_cor": "Parda", "departamento": "Recursos Humanos", "cargo": "Coordenador(a) de Gente e Gestão", "salario": 11150.0, "data_admissao": "2025-04-06", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 91, "nome": "Juliana Marques", "genero": "Feminino", "raca_cor": "Branca", "departamento": "Recursos Humanos", "cargo": "Especialista em D&I", "salario": 7200.0, "data_admissao": "2022-09-12", "status": "Desligado", "data_desligamento": "2025-11-08", "motivo_desligamento": "Pedido de Demissão"}, {"id": 92, "nome": "Mateus Fernandes", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Tecnologia", "cargo": "Designer UI/UX", "salario": 6600.0, "data_admissao": "2025-03-22", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 93, "nome": "Danilo Gomes", "genero": "Masculino", "raca_cor": "Parda", "departamento": "Comercial", "cargo": "Gerente Comercial", "salario": 12350.0, "data_admissao": "2026-06-01", "status": "Desligado", "data_desligamento": "2026-08-30", "motivo_desligamento": "Pedido de Demissão"}, {"id": 94, "nome": "Andre Lopes", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Tecnologia", "cargo": "Desenvolvedor(a) Pleno", "salario": 6800.0, "data_admissao": "2025-07-20", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 95, "nome": "Camila Pereira", "genero": "Feminino", "raca_cor": "Branca", "departamento": "Comercial", "cargo": "Analista de Vendas B2B", "salario": 4550.0, "data_admissao": "2025-06-08", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 96, "nome": "Renata Freitas", "genero": "Feminino", "raca_cor": "Parda", "departamento": "Marketing", "cargo": "Analista de Growth/Marketing", "salario": 6500.0, "data_admissao": "2022-09-18", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 97, "nome": "Vitor Andrade", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Recursos Humanos", "cargo": "Analista de RH Pleno", "salario": 5300.0, "data_admissao": "2022-06-26", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 98, "nome": "Guilherme Ferreira", "genero": "Masculino", "raca_cor": "Parda", "departamento": "Recursos Humanos", "cargo": "Assistente de RH", "salario": 2600.0, "data_admissao": "2023-07-12", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 99, "nome": "Leticia Santos", "genero": "Feminino", "raca_cor": "Branca", "departamento": "Financeiro", "cargo": "Assistente Financeiro", "salario": 3200.0, "data_admissao": "2023-07-19", "status": "Desligado", "data_desligamento": "2025-01-07", "motivo_desligamento": "Demissão com Justa Causa"}, {"id": 100, "nome": "Marcelo Souza", "genero": "Masculino", "raca_cor": "Parda", "departamento": "Tecnologia", "cargo": "Designer UI/UX", "salario": 7250.0, "data_admissao": "2025-08-20", "status": "Desligado", "data_desligamento": "2025-11-18", "motivo_desligamento": "Pedido de Demissão"}];
+
+    function popularFiltros(dados) {
+      const deptoSelect = document.getElementById("filtroDepto");
+      if (!deptoSelect) return;
+      const deptos = [...new Set(dados.map(c => c.departamento).filter(Boolean))].sort();
+
+      deptoSelect.innerHTML = '<option value="">Todos os Departamentos</option>';
+      deptos.forEach(dept => {
+        const opt = document.createElement("option");
+        opt.value = dept;
+        opt.textContent = dept;
+        deptoSelect.appendChild(opt);
+      });
+    }
+
+    function aplicarFiltros() {
+      const busca = (document.getElementById("buscaGeral")?.value || "").toLowerCase().trim();
+      const depto = document.getElementById("filtroDepto")?.value || "";
+      const status = document.getElementById("filtroStatus")?.value || "";
+      const genero = document.getElementById("filtroGenero")?.value || "";
+
+      const filtrados = colaboradores.filter(c => {
+        const matchBusca = !busca || 
+          (c.nome && c.nome.toLowerCase().includes(busca)) ||
+          (c.cargo && c.cargo.toLowerCase().includes(busca)) ||
+          String(c.id).includes(busca);
+        
+        const matchDepto = !depto || c.departamento === depto;
+        const matchStatus = !status || c.status === status;
+        const matchGenero = !genero || c.genero === genero;
+
+        return matchBusca && matchDepto && matchStatus && matchGenero;
+      });
+
+      atualizarMetricas(filtrados);
+      renderizarTabela(filtrados);
+    }
+
+    function atualizarMetricas(dados) {
+      const total = dados.length;
+      const ativos = dados.filter(c => c.status === "Ativo").length;
+      const desligados = dados.filter(c => c.status === "Desligado").length;
+      const somaSalarios = dados.reduce((acc, c) => acc + (Number(c.salario) || 0), 0);
+      const mediaSalarial = total > 0 ? somaSalarios / total : 0;
+
+      const totalElem = document.getElementById("totalColab");
+      const ativosElem = document.getElementById("totalAtivos");
+      const desligadosElem = document.getElementById("totalDesligados");
+      const mediaElem = document.getElementById("mediaSalario");
+
+      if (totalElem) totalElem.textContent = total;
+      if (ativosElem) ativosElem.textContent = ativos;
+      if (desligadosElem) desligadosElem.textContent = desligados;
+      if (mediaElem) mediaElem.textContent = mediaSalarial.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
+    }
+
+    function renderizarTabela(dados) {
+      const tbody = document.getElementById("tabelaCorpo");
+      if (!tbody) return;
+
+      if (dados.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="9" style="text-align: center; color: var(--text-muted); padding: 30px;">Nenhum colaborador encontrado com os filtros atuais.</td></tr>';
+        return;
+      }
+
+      tbody.innerHTML = dados.map(c => `
+        <tr>
+          <td>#${c.id}</td>
+          <td style="font-weight: 600; color: var(--text);">${c.nome}</td>
+          <td>${c.departamento}</td>
+          <td>${c.cargo}</td>
+          <td>${c.genero}</td>
+          <td>${c.raca_cor}</td>
+          <td>${(Number(c.salario) || 0).toLocaleString("pt-BR", { style: "currency", currency: "BRL" })}</td>
+          <td>${formatarData(c.data_admissao)}</td>
+          <td>
+            <span class="badge ${c.status === "Ativo" ? "badge-ativo" : "badge-desligado"}">
+              ${c.status}
+            </span>
+          </td>
+        </tr>
+      `).join("");
+    }
+
+    function formatarData(dataStr) {
+      if (!dataStr) return "-";
+      const partes = dataStr.split("-");
+      if (partes.length !== 3) return dataStr;
+      const [ano, mes, dia] = partes;
+      return `${dia}/${mes}/${ano}`;
+    }
+
+    function limparFiltros() {
+      const busca = document.getElementById("buscaGeral");
+      const depto = document.getElementById("filtroDepto");
+      const status = document.getElementById("filtroStatus");
+      const genero = document.getElementById("filtroGenero");
+
+      if (busca) busca.value = "";
+      if (depto) depto.value = "";
+      if (status) status.value = "";
+      if (genero) genero.value = "";
+      aplicarFiltros();
+    }
+
+    document.getElementById("buscaGeral").addEventListener("input", aplicarFiltros);
+    document.getElementById("filtroDepto").addEventListener("change", aplicarFiltros);
+    document.getElementById("filtroStatus").addEventListener("change", aplicarFiltros);
+    document.getElementById("filtroGenero").addEventListener("change", aplicarFiltros);
+    document.getElementById("btnLimpar").addEventListener("click", limparFiltros);
+
+    // Inicialização direta imediata
+    popularFiltros(colaboradores);
+    aplicarFiltros();
+  </script>
 </body>
 </html>
