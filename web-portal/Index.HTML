@@ -18,6 +18,7 @@
       --primary-hover: #0284c7;
       --success: #34d399;
       --danger: #f87171;
+      --warning: #fbbf24;
     }
     * {
       margin: 0;
@@ -87,7 +88,7 @@
     }
     .metrics-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 16px;
     }
     .metric-card {
@@ -115,6 +116,7 @@
     .metric-val.total { color: #ffffff; }
     .metric-val.ativo { color: var(--success); }
     .metric-val.desligado { color: var(--danger); }
+    .metric-val.turnover { color: var(--warning); }
     .metric-val.salario { color: var(--primary); }
     .filter-panel {
       background-color: var(--card-bg);
@@ -260,6 +262,10 @@
         <span class="metric-val desligado" id="totalDesligados">0</span>
       </div>
       <div class="metric-card">
+        <span class="metric-label">Índice de desligamento</span>
+        <span class="metric-val turnover" id="taxaTurnover">0,0%</span>
+      </div>
+      <div class="metric-card">
         <span class="metric-label">Salário Médio</span>
         <span class="metric-val salario" id="mediaSalario">R$ 0,00</span>
       </div>
@@ -355,17 +361,20 @@
       const total = dados.length;
       const ativos = dados.filter(c => c.status === "Ativo").length;
       const desligados = dados.filter(c => c.status === "Desligado").length;
+      const turnover = total > 0 ? (desligados / total) * 100 : 0;
       const somaSalarios = dados.reduce((acc, c) => acc + (Number(c.salario) || 0), 0);
       const mediaSalarial = total > 0 ? somaSalarios / total : 0;
 
       const totalElem = document.getElementById("totalColab");
       const ativosElem = document.getElementById("totalAtivos");
       const desligadosElem = document.getElementById("totalDesligados");
+      const turnoverElem = document.getElementById("taxaTurnover");
       const mediaElem = document.getElementById("mediaSalario");
 
       if (totalElem) totalElem.textContent = total;
       if (ativosElem) ativosElem.textContent = ativos;
       if (desligadosElem) desligadosElem.textContent = desligados;
+      if (turnoverElem) turnoverElem.textContent = turnover.toFixed(1).replace(".", ",") + "%";
       if (mediaElem) mediaElem.textContent = mediaSalarial.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
     }
 
