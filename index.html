@@ -1,3 +1,446 @@
+
+Gemini
+
+Conversa
+
+Spark
+Beta
+Nova conversa
+Pesquisar conversas
+Imagens
+Vídeos
+Biblioteca
+Labs
+Novo notebook
+Felipe Viegas: Compensation, Budgeting, and HR Administration
+Github
+Conversa sobre saúde
+Implante Capilar: Dor e Desconforto
+English chat
+Reagendamento de Reunião
+Recusa de Criação de Vídeo
+Parcelamento de Férias pela CLT
+Monitoramento Corporal: Sono, FC e Hormônios
+Revisão de Mensagem de RH
+Países Líderes em Cirurgia Plástica
+Crianças em Saint-Germain-des-Prés
+Avalie essa pele
+Sugestões de RH para Treinamento
+Morpheus versus Ultraformer: Qual escolher?
+Remoção de elementos da imagem
+Plano de Aposentadoria e Transição Corporativa
+Corrigindo TextInput em Branco no Power Apps
+Corrigir Variável no Power Apps
+DAX para Média com Filtro
+Melhoria de Mensagem Corporativa
+Revisão de Mensagem sobre Ponto Eletrônico
+Envio de Material Atualizado
+Melhoria de Mensagem Profissional
+Identificação da Serra dos Órgãos
+Revisão de Mensagem para Médico
+Análise do Teste Ergométrico
+Conversa com o Gemini
+gostei, ficou bom... queria colocar um card de turnover. Me ajuda?
+
+O cálculo de Taxa de Turnover (rotatividade) foi integrado na barra de cartões.
+
+Com base nos dados atuais da base (73 colaboradores ativos e 27 desligados), a métrica calcula automaticamente  
+Total
+Desligados
+​
+ ×100, resultando numa taxa inicial de 27,0%, recalculada em tempo real consoante os filtros aplicados (por exemplo, ao filtrar apenas o departamento Comercial ou Tecnologia).   
+PNG
+
+O ficheiro atualizado com o cartão de Turnover pode ser descarregado aqui:
+
+Ícone do app HTML
+index
+ HTML 
+Procedimento para atualizar:
+Descarregue o novo ficheiro index.html disponibilizado acima.
+
+Aceda à pasta web-portal do projeto no Windows.   
+PNG
+
+Substitua o ficheiro index.html existente por este novo.   
+PNG
+
+Dê um duplo clique para abrir no navegador (ou prima F5 se a aba já estiver aberta).   
+PNG
+
+Surgirá agora um quinto cartão em tom dourado/âmbar com o valor Taxa de Turnover: 27,0%.
+
+Abra o GitHub Desktop:
+
+O GitHub identificará a atualização no web-portal/index.html.
+
+Registe a mensagem no Summary: feat: adiciona card de turnover dinamico ao portal web.
+
+Clique em Commit to main e depois em Push origin.
+
+está espetacular... eu reparei que estou vendo pelo meu desktop, me ensina a ver o da web? Quero compartilhar com um colega para me ajudar
+
+Para colocar esse portal funcionando na internet e gerar um link público para o seu colega abrir no celular ou computador dele, vamos usar o GitHub Pages. É gratuito e leva menos de 2 minutos.
+
+O GitHub Pages procura por padrão o arquivo index.html na raiz do repositório ou numa pasta chamada docs. Como o nosso está dentro de web-portal, a forma mais rápida e limpa de publicar é criar um pequeno arquivo de redirecionamento na raiz.
+
+Passo 1: Criar o redirecionamento na raiz
+Vá na pasta principal do projeto no Windows (rh-portal-analytics), onde já ficam o README.md e as outras pastas (data, web-portal, etc.).   
+PNG
++ 1
+
+Crie um novo arquivo de texto chamado exatamente: index.html
+
+Abra esse arquivo no Bloco de Notas, cole o código abaixo e salve (Ctrl + S):
+
+HTML
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="refresh" content="0; url=web-portal/index.html">
+  <title>Redirecionando...</title>
+</head>
+<body>
+  <p>Redirecionando para o <a href="web-portal/index.html">People Hub & HR Analytics</a>...</p>
+</body>
+</html>
+Passo 2: Fazer Commit e Push pelo GitHub Desktop
+Abra o GitHub Desktop.
+
+No canto inferior esquerdo, digite no resumo:
+feat: adiciona index raiz para publicar no github pages
+
+Clique no botão azul Commit to main.   
+PNG
++ 1
+
+Clique em Push origin no topo para enviar para o GitHub.   
+PNG
++ 1
+
+Passo 3: Ativar o GitHub Pages no site
+Abra a página do seu repositório no navegador (ou clique em View on GitHub no meio do GitHub Desktop).   
+PNG
+
+No topo da página do repositório, clique na aba Settings (com o ícone de engrenagem, à direita de Insights).   
+PNG
++ 1
+
+No menu lateral esquerdo, clique em Pages (fica na seção Code and automation).
+
+Na seção Build and deployment:
+
+Onde diz Source, garanta que está selecionado Deploy from a branch.
+
+Em Branch, selecione main e mantenha a pasta como /(root).
+
+Clique no botão Save.
+
+Passo 4: Pegar o link público
+Espere cerca de 1 a 2 minutos (o GitHub compila a página na nuvem).
+
+Atualize a página do Settings > Pages com F5.
+
+No topo dessa mesma tela, vai surgir uma caixa destacada com a mensagem:
+
+Your site is live at: [https://felipeviegas82.github.io/rh-portal-analytics/](https://felipeviegas82.github.io/rh-portal-analytics/)
+
+Esse é o link oficial do seu projeto! Qualquer pessoa no mundo com acesso à internet consegue abrir esse link, visualizar as métricas de RH em tempo real e interagir com os filtros.
+
+Faça essas etapas e me diga se o link já apareceu ativo para você!
+
+eu vou ficar com 2 arquivos chamados index.html?
+
+Sim, exatamente! E não tem problema nenhum, porque eles ficam em pastas diferentes:   
+PNG
++ 1
+
+O index.html da pasta principal (raiz rh-portal-analytics/): funciona apenas como uma "porta de entrada". O GitHub Pages sempre procura um arquivo chamado index.html logo na raiz. Esse arquivo tem apenas 6 linhas e serve unicamente para dizer ao navegador: "redirecione direto para a pasta web-portal".   
+PNG
+
+O index.html dentro da pasta web-portal/: é a sua aplicação real, onde estão o visual, os cartões, o turnover e a tabela com os 100 colaboradores.   
+PNG
++ 2
+
+Quer simplificar e ficar com um só?
+Se você preferir ter apenas 1 arquivo para deixar tudo mais enxuto e sem duplicidade de nomes:
+
+Pegue o index.html completo (o que tem a tela bonita e os 100 dados) e coloque-o diretamente na pasta raiz (rh-portal-analytics/), ao lado do README.md.   
+PNG
++ 2
+
+A pasta web-portal pode até ser apagada ou mantida vazia.
+
+Dessa forma:
+
+Você tem só um index.html no projeto inteiro.
+
+O GitHub Pages abre o seu sistema direto na raiz sem precisar de redirecionamento nenhum!
+
+Qual dos dois formatos você acha mais prático e organizado para manter?
+
+aonde?
+
+Olhe para a coluna lateral esquerda (onde diz General, Access, Code, planning, and automation):   
+PNG
+
+Role essa coluna lateral esquerda para baixo com a roda do rato.   
+PNG
+
+Logo abaixo de Codespaces e Pages, encontrará a opção Pages (com o ícone de um documento ou browser).   
+PNG
+
+Clique em Pages.
+
+O que configurar quando abrir o Pages:
+Dentro da secção Build and deployment:
+
+Em Branch: clique no menu onde diz None e mude para main.
+
+No campo ao lado onde diz /(root), mantenha /(root).
+
+Clique no botão Save.
+
+Assim que guardar, aguarde cerca de 1 a 2 minutos e atualize a página (F5) para ver o endereço web gerado.
+
+só que ele leva para o read.me
+
+Isso acontece porque, por predefinição, quando o GitHub Pages não encontra um ficheiro chamado index.html logo na raiz do repositório, ele apresenta automaticamente o conteúdo do README.md como se fosse a página inicial.
+
+Como a sua aplicação está guardada dentro da pasta web-portal, há duas formas muito simples de resolver:
+
+Solução Direta (Recomendada: Mover o ficheiro para a raiz)
+Esta é a opção mais limpa e infalível, evitando redirecionamentos:
+
+No Explorador de Ficheiros do Windows, entre na pasta do projeto: rh-portal-analytics > web-portal.   
+PNG
+
+Copie ou corte o ficheiro index.html.   
+PNG
+
+Volte atrás para a pasta principal (rh-portal-analytics), onde se encontra o README.md.   
+PNG
+
+Cole o ficheiro index.html aí mesmo na raiz (ao lado do README.md).   
+PNG
+
+Abra o GitHub Desktop:
+
+O programa detetará que o index.html foi movido para a raiz.
+
+No campo de resumo (Summary), escreva: fix: move index.html para a raiz para o github pages.
+
+Clique em Commit to main e de seguida em Push origin.   
+PNG
++ 1
+
+Testar no navegador
+Aguarde cerca de 1 a 2 minutos para que o GitHub atualize a publicação.
+
+Abra novamente a hiperligação do site ou aceda diretamente com o sufixo da pasta caso ainda não tenha sincronizado:
+[https://felipeviegas82.github.io/rh-portal-analytics/web-portal/](https://felipeviegas82.github.io/rh-portal-analytics/web-portal/)
+
+Assim que o ficheiro estiver na raiz e enviado via Push, o endereço principal ([https://felipeviegas82.github.io/rh-portal-analytics/](https://felipeviegas82.github.io/rh-portal-analytics/)) abrirá diretamente o painel com os cartões e a tabela de colaboradores em vez do README.md.
+
+o que eu estou fazendo de errado?
+
+O problema reside na extensão oculta do ficheiro: repare que na coluna Tipo o ficheiro index.html está classificado como "Documento de Te..." (ou seja, Documento de Texto .txt) com o ícone de uma folha de bloco de notas, em vez do ícone de um navegador de internet.   
+PNG
+
+No Windows, quando as extensões estão ocultas, o nome real do ficheiro passa a ser index.html.txt, pelo que o GitHub Pages não o reconhece como uma página web.   
+PNG
+
+Como corrigir no Windows:
+Na barra superior do Explorador de Ficheiros, clique no menu Visualizar.   
+PNG
+
+Passe o cursor por cima de Mostrar (na parte inferior do menu que se abre).
+
+Clique em Extensões de nomes de ficheiros (para marcar com um visto).
+
+O nome do ficheiro passará a exibir .txt no final (index.html.txt).
+
+Clique com o botão direito no ficheiro > Mudar o nome (ou prima F2).
+
+Apague o .txt do final, deixando estritamente: index.html.
+
+O Windows apresentará um aviso a perguntar se deseja mesmo alterar a extensão do ficheiro — confirme clicando em Sim.
+
+Enviar a correção:
+Assim que confirmar, o ícone do ficheiro mudará para o símbolo do seu navegador (como o Edge ou o Chrome). De seguida:   
+PNG
+
+Abra o GitHub Desktop.
+
+O ficheiro renomeado surgirá pronto para registo.
+
+Insira no campo de resumo: fix: corrige extensao do index.html.
+
+Clique em Commit to main e depois em Push origin.   
+PNG
++ 1
+
+Aguarde 1 minuto e recarregue a hiperligação no navegador; o painel será carregado de imediato.
+
+continua mostrando o danado do readme
+
+Repare num detalhe essencial na imagem: o ficheiro index.html está agora com a extensão correta do Microsoft Edge, mas o seu tamanho é de apenas 1 KB.   
+PNG
+
+O ficheiro completo do portal (com o design, os filtros, o turnover e os 100 colaboradores) tem cerca de 41 KB. Este ficheiro de 1 KB é apenas o rascunho de texto antigo ou o ficheiro de redirecionamento simples.   
+HTML
++ 1
+
+Para resolver isso de forma definitiva:
+
+Passo 1: Substituir pelo ficheiro completo na raiz
+Aceda à pasta web-portal (onde testou e funcionou com sucesso).   
+PNG
++ 1
+
+Copie o ficheiro index.html que está lá dentro.
+
+Volte à pasta principal (rh-portal-analytics) e cole por cima deste index.html de 1 KB (substituindo-o).   
+PNG
+
+Verifique se a coluna Tamanho passou a indicar cerca de 41 KB em vez de 1 KB.   
+PNG
+
+Passo 2: Registar e Enviar no GitHub Desktop
+Abra a aplicação GitHub Desktop.
+
+No resumo inferior esquerdo (Summary), escreva:
+feat: publica portal completo de rh na raiz
+
+Clique em Commit to main.   
+PNG
+
+Clique em Push origin no topo para enviar as alterações para o GitHub.   
+PNG
++ 1
+
+Passo 3: Limpar a cache do navegador
+Após o Push origin, aguarde cerca de 60 a 90 segundos para que o GitHub Pages processe a nova versão.
+
+Em seguida, abra o endereço do site:
+[https://felipeviegas82.github.io/rh-portal-analytics/](https://felipeviegas82.github.io/rh-portal-analytics/)
+
+Prima as teclas Ctrl + F5 (para forçar o navegador a descartar a memória temporária antiga). O painel azul com os 5 cartões e a tabela surgirá no ecrã.
+
+limpei cache e foi...
+
+Excelente notícia! Agora o seu projeto já está oficialmente publicado e acessível na web para qualquer pessoa consultar através da hiperligação pública do GitHub Pages.
+
+Com a base de dados consolidada e o front-end web operacional, completámos com sucesso a primeira grande etapa do repositório.
+
+Próximos Passos: Power BI ou Power Apps?
+Para continuar a construir o ecossistema integrado de Recursos Humanos:
+
+Power BI Desktop (power-bi/):
+
+Conectar diretamente ao ficheiro data/colaboradores.csv.
+
+Criar o modelo dimensional e as medidas DAX essenciais (Headcount Ativo, Desligamentos acumulados, Taxa de Turnover anualizada, Distribuição salarial por departamento e métricas de D&I).
+
+Estruturar o painel visual e guardar o ficheiro .pbix na pasta correspondente.
+
+Power Apps (power-apps/):
+
+Modelar a aplicação corporativa de registo e edição de colaboradores (formulários de admissão, alteração de cargo e processo de demissão).
+
+Exportar o pacote da aplicação para a pasta do repositório.
+
+Indique por qual das duas ferramentas prefere avançar agora.
+
+tá, mas qual é o domínio que eu tenho que compartilhar com ele
+
+O link exato que deve enviar ao seu colega é:
+
+[https://felipeviegas82.github.io/rh-portal-analytics/](https://felipeviegas82.github.io/rh-portal-analytics/)
+
+Como confirmar a hiperligação no próprio GitHub:
+No navegador, aceda à página do seu repositório no GitHub.   
+PNG
+
+Clique na aba Settings (no topo à direita).   
+PNG
++ 1
+
+Na barra lateral esquerda, clique em Pages.   
+PNG
+
+No topo dessa secção, surgirá a confirmação a verde:
+
+Your site is live at https://felipeviegas82.github.io/rh-portal-analytics/
+
+Basta copiar esse endereço e enviá-lo por mensagem (WhatsApp, Teams, e-mail, etc.). Qualquer pessoa consegue abrir e interagir com o portal a partir desse domínio.
+
+esse link?
+
+Sim, é exatamente esse link: [https://felipeviegas82.github.io/rh-portal-analytics/](https://felipeviegas82.github.io/rh-portal-analytics/).   
+PNG
+
+Você também pode simplesmente clicar no botão azul Visit site que está ali ao lado para abrir e conferir como ficou.   
+PNG
+
+Esse é o link oficial para compartilhar com qualquer pessoa; ela poderá acessar o portal de qualquer computador ou celular com internet.   
+PNG
+
+estiliza pra mim nesse formato? Eu quero acoplar nesse menu lateral, no futuro, outras tags sobre as pessoas
+
+O layout foi totalmente reestruturado para o modelo profissional de plataforma empresarial com menu lateral (Sidebar).
+
+O que foi implementado nesta nova estrutura:
+Menu Lateral Fixo (Sidebar):
+
+Secção Gestão de Pessoas: módulo ativo de Colaboradores, preparado com os marcadores de expansão futura (Desempenho, Férias & Ausências, Formação & Skills com etiquetas "Em breve").
+
+Secção Ecossistema & Integração: atalhos dedicados para os próximos passos (Power BI Analytics, Power Apps Form e Base de Dados CSV).
+
+Rodapé da barra lateral com indicador de estado do sistema em tempo real.
+
+Área de Conteúdo com Barra Superior (Topbar):
+
+Título unificado e botão de acesso direto ao repositório público no GitHub.
+
+Os 5 cartões de indicadores (Headcount, Ativos, Desligados, Taxa de Turnover a 27,0% e Salário Médio) alinhados de forma responsiva.
+
+Painel de pesquisa rápida e filtros com a tabela dinâmica de 100 registos.
+
+O ficheiro atualizado com o menu lateral e preparado para as novas tags está pronto para descarregar:
+
+Ícone do app HTML
+index
+ HTML 
+Procedimento para publicar:
+Descarregue o ficheiro acima (index.html).
+
+Aceda à pasta principal do repositório no Windows (rh-portal-analytics) e substitua o index.html existente por este novo.   
+PNG
++ 1
+
+Abra a aplicação GitHub Desktop:
+
+O GitHub identificará a atualização no index.html.
+
+No resumo (Summary), insira: feat: adiciona sidebar corporativa e estrutura modular de navegacao.
+
+Clique em Commit to main e de seguida em Push origin.   
+PNG
++ 1
+
+Aguarde cerca de 60 segundos e recarregue a página pública no navegador com Ctrl + F5:
+[https://felipeviegas82.github.io/rh-portal-analytics/](https://felipeviegas82.github.io/rh-portal-analytics/)
+
+
+
+
+
+
+O Gemini é uma IA e pode cometer erros.
+
+Analisando
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -9,9 +452,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #0b1120;
-      --card-bg: #1e293b;
+      --bg-body: #090d16;
+      --bg-sidebar: #0f172a;
+      --bg-card: #1e293b;
+      --bg-input: #0b1324;
       --border: #334155;
+      --border-subtle: #1e293b;
       --text: #f8fafc;
       --text-muted: #94a3b8;
       --primary: #38bdf8;
@@ -19,6 +465,7 @@
       --success: #34d399;
       --danger: #f87171;
       --warning: #fbbf24;
+      --sidebar-width: 260px;
     }
     * {
       margin: 0;
@@ -27,72 +474,204 @@
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     }
     body {
-      background-color: var(--bg);
+      background-color: var(--bg-body);
       color: var(--text);
-      padding: 28px;
+      display: flex;
+      min-height: 100vh;
+      overflow-x: hidden;
     }
-    .container {
-      max-width: 1300px;
-      margin: 0 auto;
+
+    /* Barra Lateral / Sidebar */
+    .sidebar {
+      width: var(--sidebar-width);
+      background-color: var(--bg-sidebar);
+      border-right: 1px solid var(--border);
       display: flex;
       flex-direction: column;
-      gap: 20px;
+      flex-shrink: 0;
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      overflow-y: auto;
+      z-index: 100;
     }
-    .header {
-      background-color: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 24px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
-    }
-    .brand {
+    .sidebar-header {
+      padding: 24px 20px;
       display: flex;
       align-items: center;
-      gap: 16px;
+      gap: 12px;
+      border-bottom: 1px solid var(--border);
     }
-    .logo {
-      width: 44px;
-      height: 44px;
+    .sidebar-logo {
+      width: 40px;
+      height: 40px;
       background: linear-gradient(135deg, #0284c7, #38bdf8);
       color: #fff;
+      font-weight: 700;
+      border-radius: 10px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-weight: 700;
-      border-radius: 10px;
       font-size: 1.1rem;
+      box-shadow: 0 4px 10px rgba(56, 189, 248, 0.25);
     }
-    .brand-title h1 {
-      font-size: 1.3rem;
+    .sidebar-brand h2 {
+      font-size: 1rem;
       font-weight: 700;
       letter-spacing: -0.02em;
+      color: #fff;
     }
-    .brand-title p {
+    .sidebar-brand p {
+      font-size: 0.72rem;
       color: var(--text-muted);
-      font-size: 0.85rem;
-      margin-top: 2px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
     }
-    .status-badge {
+    .sidebar-menu {
+      padding: 20px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      flex-grow: 1;
+    }
+    .menu-category {
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #64748b;
+      margin: 16px 10px 6px 10px;
+    }
+    .menu-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 14px;
+      border-radius: 8px;
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border: 1px solid transparent;
+    }
+    .menu-item:hover {
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text);
+    }
+    .menu-item.active {
+      background: rgba(56, 189, 248, 0.12);
+      color: var(--primary);
+      border-color: rgba(56, 189, 248, 0.3);
+      font-weight: 600;
+    }
+    .menu-item .icon {
+      font-size: 1rem;
+      width: 20px;
+      text-align: center;
+    }
+    .badge-soon {
+      margin-left: auto;
+      font-size: 0.65rem;
+      background: #334155;
+      color: #cbd5e1;
+      padding: 2px 7px;
+      border-radius: 9999px;
+      font-weight: 600;
+    }
+    .sidebar-footer {
+      padding: 18px 20px;
+      border-top: 1px solid var(--border);
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .status-indicator {
       display: flex;
       align-items: center;
       gap: 8px;
-      font-size: 0.85rem;
       color: var(--success);
-      background: rgba(52, 211, 153, 0.1);
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      background: var(--success);
+      border-radius: 50%;
+      box-shadow: 0 0 8px var(--success);
+    }
+
+    /* Conteúdo Principal */
+    .main-wrapper {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      overflow-y: auto;
+    }
+    .topbar {
+      padding: 20px 32px;
+      background: rgba(15, 23, 42, 0.6);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+    .topbar-info h1 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+    .topbar-info p {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+    .topbar-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .tag-repo {
+      background: rgba(56, 189, 248, 0.1);
+      color: var(--primary);
+      border: 1px solid rgba(56, 189, 248, 0.25);
       padding: 6px 14px;
       border-radius: 9999px;
-      border: 1px solid rgba(52, 211, 153, 0.25);
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s;
     }
+    .tag-repo:hover {
+      background: rgba(56, 189, 248, 0.2);
+    }
+
+    .content-area {
+      padding: 28px 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      max-width: 1400px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    /* Grade de Métricas / Cards */
     .metrics-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
       gap: 16px;
     }
     .metric-card {
-      background-color: var(--card-bg);
+      background-color: var(--bg-card);
       border: 1px solid var(--border);
       border-radius: 12px;
       padding: 20px;
@@ -100,9 +679,14 @@
       flex-direction: column;
       gap: 8px;
       box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
+      transition: transform 0.2s;
+    }
+    .metric-card:hover {
+      transform: translateY(-2px);
+      border-color: #475569;
     }
     .metric-label {
-      font-size: 0.75rem;
+      font-size: 0.72rem;
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 0.05em;
@@ -118,18 +702,21 @@
     .metric-val.desligado { color: var(--danger); }
     .metric-val.turnover { color: var(--warning); }
     .metric-val.salario { color: var(--primary); }
+
+    /* Painel de Filtros */
     .filter-panel {
-      background-color: var(--card-bg);
+      background-color: var(--bg-card);
       border: 1px solid var(--border);
       border-radius: 12px;
       padding: 20px;
       display: flex;
       flex-direction: column;
       gap: 16px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
     }
     .search-box input {
       width: 100%;
-      background: #0f172a;
+      background: var(--bg-input);
       border: 1px solid var(--border);
       color: var(--text);
       padding: 12px 16px;
@@ -149,13 +736,13 @@
     }
     .selects-row select {
       flex: 1;
-      min-width: 180px;
-      background: #0f172a;
+      min-width: 170px;
+      background: var(--bg-input);
       border: 1px solid var(--border);
       color: var(--text);
       padding: 10px 14px;
       border-radius: 8px;
-      font-size: 0.9rem;
+      font-size: 0.88rem;
       outline: none;
       cursor: pointer;
     }
@@ -166,10 +753,11 @@
       background: transparent;
       border: 1px solid var(--border);
       color: var(--text-muted);
-      padding: 10px 20px;
+      padding: 10px 18px;
       border-radius: 8px;
       cursor: pointer;
       font-weight: 500;
+      font-size: 0.88rem;
       transition: all 0.2s;
     }
     .btn-reset:hover {
@@ -177,8 +765,10 @@
       color: var(--text);
       border-color: #64748b;
     }
+
+    /* Tabela */
     .table-container {
-      background-color: var(--card-bg);
+      background-color: var(--bg-card);
       border: 1px solid var(--border);
       border-radius: 12px;
       overflow-x: auto;
@@ -188,7 +778,7 @@
       width: 100%;
       border-collapse: collapse;
       text-align: left;
-      font-size: 0.9rem;
+      font-size: 0.88rem;
     }
     th {
       background-color: #162032;
@@ -214,7 +804,7 @@
       display: inline-block;
       padding: 4px 10px;
       border-radius: 9999px;
-      font-size: 0.75rem;
+      font-size: 0.72rem;
       font-weight: 600;
     }
     .badge-ativo {
@@ -230,92 +820,166 @@
     footer {
       text-align: center;
       color: var(--text-muted);
-      font-size: 0.8rem;
-      padding: 12px 0;
+      font-size: 0.78rem;
+      padding: 16px 0 24px 0;
+    }
+
+    @media (max-width: 900px) {
+      body { flex-direction: column; }
+      .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="header">
-      <div class="brand">
-        <div class="logo">RH</div>
-        <div class="brand-title">
-          <h1>People Hub & HR Analytics</h1>
-          <p>Consulta Integrada do Quadro de Pessoal</p>
+  <!-- Menu Lateral / Sidebar -->
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-logo">RH</div>
+      <div class="sidebar-brand">
+        <h2>People Hub</h2>
+        <p>Enterprise Suite</p>
+      </div>
+    </div>
+
+    <nav class="sidebar-menu">
+      <div class="menu-category">Gestão de Pessoas</div>
+      <a class="menu-item active" href="#">
+        <span class="icon">👥</span>
+        <span>Colaboradores</span>
+      </a>
+      <a class="menu-item" href="#">
+        <span class="icon">🎯</span>
+        <span>Desempenho</span>
+        <span class="badge-soon">Em breve</span>
+      </a>
+      <a class="menu-item" href="#">
+        <span class="icon">🌴</span>
+        <span>Férias & Ausências</span>
+        <span class="badge-soon">Em breve</span>
+      </a>
+      <a class="menu-item" href="#">
+        <span class="icon">🎓</span>
+        <span>Formação & Skills</span>
+        <span class="badge-soon">Em breve</span>
+      </a>
+
+      <div class="menu-category">Ecossistema & Integração</div>
+      <a class="menu-item" href="#">
+        <span class="icon">📊</span>
+        <span>Power BI Analytics</span>
+        <span class="badge-soon">Módulo 2</span>
+      </a>
+      <a class="menu-item" href="#">
+        <span class="icon">📱</span>
+        <span>Power Apps Form</span>
+        <span class="badge-soon">Módulo 3</span>
+      </a>
+      <a class="menu-item" href="#">
+        <span class="icon">📑</span>
+        <span>Base de Dados (CSV)</span>
+      </a>
+    </nav>
+
+    <div class="sidebar-footer">
+      <div class="status-indicator">
+        <span class="status-dot"></span>
+        <span id="dbStatus">Conectado (100 itens)</span>
+      </div>
+      <span>v1.2.0 • GitHub Pages</span>
+    </div>
+  </aside>
+
+  <!-- Painel Principal de Conteúdo -->
+  <main class="main-wrapper">
+    <header class="topbar">
+      <div class="topbar-info">
+        <h1>Quadro Geral de Pessoal</h1>
+        <p>Visualização unificada de headcount, diversidade, salários e turnover</p>
+      </div>
+      <div class="topbar-actions">
+        <a class="tag-repo" href="https://github.com/FelipeViegas82/rh-portal-analytics" target="_blank">
+          ★ Ver Repositório GitHub
+        </a>
+      </div>
+    </header>
+
+    <div class="content-area">
+      <!-- Indicadores / Cards -->
+      <section class="metrics-grid">
+        <div class="metric-card">
+          <span class="metric-label">Headcount Total</span>
+          <span class="metric-val total" id="totalColab">0</span>
         </div>
-      </div>
-      <div id="dbStatus" class="status-badge">● Conectado (100 colaboradores)</div>
-    </div>
+        <div class="metric-card">
+          <span class="metric-label">Colaboradores Ativos</span>
+          <span class="metric-val ativo" id="totalAtivos">0</span>
+        </div>
+        <div class="metric-card">
+          <span class="metric-label">Desligados</span>
+          <span class="metric-val desligado" id="totalDesligados">0</span>
+        </div>
+        <div class="metric-card">
+          <span class="metric-label">Taxa de Turnover</span>
+          <span class="metric-val turnover" id="taxaTurnover">0,0%</span>
+        </div>
+        <div class="metric-card">
+          <span class="metric-label">Salário Médio</span>
+          <span class="metric-val salario" id="mediaSalario">R$ 0,00</span>
+        </div>
+      </section>
 
-    <div class="metrics-grid">
-      <div class="metric-card">
-        <span class="metric-label">Headcount Total</span>
-        <span class="metric-val total" id="totalColab">0</span>
-      </div>
-      <div class="metric-card">
-        <span class="metric-label">Colaboradores Ativos</span>
-        <span class="metric-val ativo" id="totalAtivos">0</span>
-      </div>
-      <div class="metric-card">
-        <span class="metric-label">Desligados</span>
-        <span class="metric-val desligado" id="totalDesligados">0</span>
-      </div>
-      <div class="metric-card">
-        <span class="metric-label">Índice de desligamento</span>
-        <span class="metric-val turnover" id="taxaTurnover">0,0%</span>
-      </div>
-      <div class="metric-card">
-        <span class="metric-label">Salário Médio</span>
-        <span class="metric-val salario" id="mediaSalario">R$ 0,00</span>
-      </div>
-    </div>
+      <!-- Painel de Filtros e Busca -->
+      <section class="filter-panel">
+        <div class="search-box">
+          <input type="text" id="buscaGeral" placeholder="Pesquisar por nome, cargo ou ID...">
+        </div>
+        <div class="selects-row">
+          <select id="filtroDepto">
+            <option value="">Todos os Departamentos</option>
+          </select>
+          <select id="filtroStatus">
+            <option value="">Todos os Status</option>
+            <option value="Ativo">Ativo</option>
+            <option value="Desligado">Desligado</option>
+          </select>
+          <select id="filtroGenero">
+            <option value="">Todos os Gêneros</option>
+            <option value="Feminino">Feminino</option>
+            <option value="Masculino">Masculino</option>
+          </select>
+          <button id="btnLimpar" class="btn-reset">Limpar Filtros</button>
+        </div>
+      </section>
 
-    <div class="filter-panel">
-      <div class="search-box">
-        <input type="text" id="buscaGeral" placeholder="Pesquisar por nome, cargo ou ID...">
-      </div>
-      <div class="selects-row">
-        <select id="filtroDepto">
-          <option value="">Todos os Departamentos</option>
-        </select>
-        <select id="filtroStatus">
-          <option value="">Todos os Status</option>
-          <option value="Ativo">Ativo</option>
-          <option value="Desligado">Desligado</option>
-        </select>
-        <select id="filtroGenero">
-          <option value="">Todos os Gêneros</option>
-          <option value="Feminino">Feminino</option>
-          <option value="Masculino">Masculino</option>
-        </select>
-        <button id="btnLimpar" class="btn-reset">Limpar Filtros</button>
-      </div>
-    </div>
+      <!-- Tabela de Registos -->
+      <section class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nome</th>
+              <th>Departamento</th>
+              <th>Cargo</th>
+              <th>Gênero</th>
+              <th>Raça / Cor</th>
+              <th>Salário</th>
+              <th>Admissão</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="tabelaCorpo"></tbody>
+        </table>
+      </section>
 
-    <div class="table-container">
-      <table>
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Nome</th>
-            <th>Departamento</th>
-            <th>Cargo</th>
-            <th>Gênero</th>
-            <th>Raça / Cor</th>
-            <th>Salário</th>
-            <th>Admissão</th>
-            <th>Status</th>
-          </tr>
-        </thead>
-        <tbody id="tabelaCorpo"></tbody>
-      </table>
+      <footer>
+        People Hub & HR Analytics • Projeto Integrado: Power BI • Power Apps • Web Portal
+      </footer>
     </div>
-
-    <footer>
-      Projeto Integrado: Power BI • Power Apps • Web Portal | Base simulada de RH
-    </footer>
-  </div>
+  </main>
 
   <script>
     const colaboradores = [{"id": 1, "nome": "Lucas Andrade", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Recursos Humanos", "cargo": "Especialista em D&I", "salario": 6800.0, "data_admissao": "2021-07-29", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 2, "nome": "Danilo Carvalho", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Tecnologia", "cargo": "Desenvolvedor(a) Sênior", "salario": 10850.0, "data_admissao": "2023-11-01", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 3, "nome": "Igor Rocha", "genero": "Masculino", "raca_cor": "Parda", "departamento": "Comercial", "cargo": "Analista de Vendas B2B", "salario": 4050.0, "data_admissao": "2024-04-21", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 4, "nome": "Bernardo Nunes", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Comercial", "cargo": "Analista de Vendas B2B", "salario": 4200.0, "data_admissao": "2021-11-15", "status": "Desligado", "data_desligamento": "2026-04-26", "motivo_desligamento": "Pedido de Demissão"}, {"id": 5, "nome": "Andre Souza", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Financeiro", "cargo": "Especialista Fiscal", "salario": 8350.0, "data_admissao": "2025-07-11", "status": "Desligado", "data_desligamento": "2026-05-02", "motivo_desligamento": "Pedido de Demissão"}, {"id": 6, "nome": "Camila Fernandes", "genero": "Feminino", "raca_cor": "Branca", "departamento": "Marketing", "cargo": "Especialista de Conteúdo", "salario": 6950.0, "data_admissao": "2023-01-11", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 7, "nome": "Mateus Dias", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Financeiro", "cargo": "Assistente Financeiro", "salario": 3400.0, "data_admissao": "2025-10-18", "status": "Desligado", "data_desligamento": "2026-02-06", "motivo_desligamento": "Pedido de Demissão"}, {"id": 8, "nome": "Luana Marques", "genero": "Feminino", "raca_cor": "Branca", "departamento": "Financeiro", "cargo": "Especialista Fiscal", "salario": 7800.0, "data_admissao": "2024-10-04", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 9, "nome": "Vitor Rocha", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Recursos Humanos", "cargo": "Especialista em D&I", "salario": 6850.0, "data_admissao": "2023-02-17", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 10, "nome": "Murilo Costa", "genero": "Masculino", "raca_cor": "Parda", "departamento": "Tecnologia", "cargo": "Desenvolvedor(a) Pleno", "salario": 6950.0, "data_admissao": "2021-03-07", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 11, "nome": "Amanda Oliveira", "genero": "Feminino", "raca_cor": "Branca", "departamento": "Marketing", "cargo": "Analista de Growth/Marketing", "salario": 6250.0, "data_admissao": "2022-10-07", "status": "Desligado", "data_desligamento": "2025-09-23", "motivo_desligamento": "Pedido de Demissão"}, {"id": 12, "nome": "Mariana Lima", "genero": "Feminino", "raca_cor": "Branca", "departamento": "Operações", "cargo": "Gerente de Projetos", "salario": 11650.0, "data_admissao": "2025-03-10", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 13, "nome": "Jessica Pereira", "genero": "Feminino", "raca_cor": "Indígena", "departamento": "Tecnologia", "cargo": "Designer UI/UX", "salario": 6250.0, "data_admissao": "2021-07-06", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 14, "nome": "Felipe Rocha", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Comercial", "cargo": "Analista de Vendas B2B", "salario": 4500.0, "data_admissao": "2023-02-28", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 15, "nome": "Gabriela Lima", "genero": "Feminino", "raca_cor": "Amarela", "departamento": "Tecnologia", "cargo": "Desenvolvedor(a) Júnior", "salario": 4900.0, "data_admissao": "2021-08-23", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 16, "nome": "Daniela Rocha", "genero": "Feminino", "raca_cor": "Branca", "departamento": "Financeiro", "cargo": "Assistente Financeiro", "salario": 3000.0, "data_admissao": "2023-07-19", "status": "Desligado", "data_desligamento": "2025-03-09", "motivo_desligamento": "Término de Contrato"}, {"id": 17, "nome": "Diego Freitas", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Financeiro", "cargo": "Assistente Financeiro", "salario": 3300.0, "data_admissao": "2023-11-06", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 18, "nome": "Eduardo Moreira", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Operações", "cargo": "Coordenador(a) de Suporte", "salario": 8600.0, "data_admissao": "2024-05-11", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 19, "nome": "Rodrigo Freitas", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Financeiro", "cargo": "Assistente Financeiro", "salario": 2850.0, "data_admissao": "2022-05-09", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 20, "nome": "Gabriel Andrade", "genero": "Masculino", "raca_cor": "Parda", "departamento": "Tecnologia", "cargo": "Desenvolvedor(a) Sênior", "salario": 13900.0, "data_admissao": "2023-12-27", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 21, "nome": "Murilo Lopes", "genero": "Masculino", "raca_cor": "Preta", "departamento": "Recursos Humanos", "cargo": "Assistente de RH", "salario": 2750.0, "data_admissao": "2025-11-22", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 22, "nome": "Alexandre Moreira", "genero": "Masculino", "raca_cor": "Parda", "departamento": "Recursos Humanos", "cargo": "Analista de RH Pleno", "salario": 5450.0, "data_admissao": "2023-03-29", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 23, "nome": "Renata Mendes", "genero": "Feminino", "raca_cor": "Parda", "departamento": "Tecnologia", "cargo": "Cientista de Dados", "salario": 9100.0, "data_admissao": "2021-05-12", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 24, "nome": "Danilo Pereira", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Tecnologia", "cargo": "Desenvolvedor(a) Pleno", "salario": 6950.0, "data_admissao": "2026-01-29", "status": "Desligado", "data_desligamento": "2026-06-22", "motivo_desligamento": "Pedido de Demissão"}, {"id": 25, "nome": "Rafael Dias", "genero": "Masculino", "raca_cor": "Parda", "departamento": "Operações", "cargo": "Gerente de Projetos", "salario": 10050.0, "data_admissao": "2026-03-31", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 26, "nome": "Patricia Nunes", "genero": "Feminino", "raca_cor": "Parda", "departamento": "Comercial", "cargo": "Analista de Vendas B2B", "salario": 4050.0, "data_admissao": "2021-07-18", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 27, "nome": "Carolina Carvalho", "genero": "Feminino", "raca_cor": "Parda", "departamento": "Tecnologia", "cargo": "Desenvolvedor(a) Pleno", "salario": 7850.0, "data_admissao": "2024-08-16", "status": "Desligado", "data_desligamento": "2025-12-01", "motivo_desligamento": "Demissão sem Justa Causa"}, {"id": 28, "nome": "Guilherme Alves", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Comercial", "cargo": "Gerente Comercial", "salario": 11550.0, "data_admissao": "2022-01-11", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 29, "nome": "Gabriel Almeida", "genero": "Masculino", "raca_cor": "Parda", "departamento": "Operações", "cargo": "Gerente de Projetos", "salario": 9900.0, "data_admissao": "2024-08-28", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 30, "nome": "Gabriel Freitas", "genero": "Masculino", "raca_cor": "Parda", "departamento": "Recursos Humanos", "cargo": "Especialista em D&I", "salario": 6850.0, "data_admissao": "2023-09-22", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 31, "nome": "Beatriz Ferreira", "genero": "Feminino", "raca_cor": "Branca", "departamento": "Comercial", "cargo": "Executivo(a) de Contas", "salario": 5300.0, "data_admissao": "2025-05-25", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 32, "nome": "Carolina Nascimento", "genero": "Feminino", "raca_cor": "Preta", "departamento": "Operações", "cargo": "Gerente de Projetos", "salario": 12150.0, "data_admissao": "2023-09-24", "status": "Desligado", "data_desligamento": "2024-09-21", "motivo_desligamento": "Pedido de Demissão"}, {"id": 33, "nome": "Danilo Andrade", "genero": "Masculino", "raca_cor": "Parda", "departamento": "Financeiro", "cargo": "Analista Financeiro Pleno", "salario": 4900.0, "data_admissao": "2024-04-11", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 34, "nome": "Mateus Soares", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Recursos Humanos", "cargo": "Assistente de RH", "salario": 2650.0, "data_admissao": "2021-05-20", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 35, "nome": "Andre Souza", "genero": "Masculino", "raca_cor": "Preta", "departamento": "Marketing", "cargo": "Analista de Growth/Marketing", "salario": 5050.0, "data_admissao": "2024-05-02", "status": "Desligado", "data_desligamento": "2024-09-22", "motivo_desligamento": "Pedido de Demissão"}, {"id": 36, "nome": "Amanda Alves", "genero": "Feminino", "raca_cor": "Parda", "departamento": "Financeiro", "cargo": "Analista Financeiro Pleno", "salario": 5150.0, "data_admissao": "2023-03-22", "status": "Desligado", "data_desligamento": "2025-01-24", "motivo_desligamento": "Pedido de Demissão"}, {"id": 37, "nome": "Lucas Almeida", "genero": "Masculino", "raca_cor": "Parda", "departamento": "Marketing", "cargo": "Analista de Growth/Marketing", "salario": 6500.0, "data_admissao": "2021-05-31", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 38, "nome": "Mariana Freitas", "genero": "Feminino", "raca_cor": "Branca", "departamento": "Tecnologia", "cargo": "Desenvolvedor(a) Sênior", "salario": 13500.0, "data_admissao": "2023-01-27", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 39, "nome": "Natalia Nascimento", "genero": "Feminino", "raca_cor": "Branca", "departamento": "Operações", "cargo": "Coordenador(a) de Suporte", "salario": 6500.0, "data_admissao": "2025-08-01", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 40, "nome": "Felipe Lima", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Tecnologia", "cargo": "Cientista de Dados", "salario": 11350.0, "data_admissao": "2021-11-15", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 41, "nome": "Igor Costa", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Recursos Humanos", "cargo": "Coordenador(a) de Gente e Gestão", "salario": 10500.0, "data_admissao": "2022-05-30", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 42, "nome": "Gabriel Rocha", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Recursos Humanos", "cargo": "Coordenador(a) de Gente e Gestão", "salario": 9150.0, "data_admissao": "2022-11-15", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 43, "nome": "Larissa Andrade", "genero": "Feminino", "raca_cor": "Parda", "departamento": "Comercial", "cargo": "Analista de Vendas B2B", "salario": 4450.0, "data_admissao": "2021-08-18", "status": "Desligado", "data_desligamento": "2025-09-01", "motivo_desligamento": "Demissão com Justa Causa"}, {"id": 44, "nome": "Eduardo Vieira", "genero": "Masculino", "raca_cor": "Parda", "departamento": "Comercial", "cargo": "Analista de Vendas B2B", "salario": 3950.0, "data_admissao": "2022-09-24", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 45, "nome": "Eduardo Alves", "genero": "Masculino", "raca_cor": "Parda", "departamento": "Tecnologia", "cargo": "Cientista de Dados", "salario": 9600.0, "data_admissao": "2024-02-21", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 46, "nome": "Priscila Andrade", "genero": "Feminino", "raca_cor": "Branca", "departamento": "Recursos Humanos", "cargo": "Especialista em D&I", "salario": 8250.0, "data_admissao": "2025-06-27", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 47, "nome": "Ana Ferreira", "genero": "Feminino", "raca_cor": "Parda", "departamento": "Financeiro", "cargo": "Analista Financeiro Pleno", "salario": 5900.0, "data_admissao": "2023-04-24", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 48, "nome": "Rafael Ferreira", "genero": "Masculino", "raca_cor": "Parda", "departamento": "Tecnologia", "cargo": "Cientista de Dados", "salario": 9700.0, "data_admissao": "2021-03-21", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 49, "nome": "Bruno Marques", "genero": "Masculino", "raca_cor": "Preta", "departamento": "Financeiro", "cargo": "Especialista Fiscal", "salario": 7650.0, "data_admissao": "2025-06-17", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 50, "nome": "Lucas Dias", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Financeiro", "cargo": "Analista Financeiro Pleno", "salario": 5200.0, "data_admissao": "2021-05-23", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 51, "nome": "Jessica Rocha", "genero": "Feminino", "raca_cor": "Parda", "departamento": "Operações", "cargo": "Gerente de Projetos", "salario": 10800.0, "data_admissao": "2021-02-26", "status": "Desligado", "data_desligamento": "2022-10-13", "motivo_desligamento": "Pedido de Demissão"}, {"id": 52, "nome": "Beatriz Souza", "genero": "Feminino", "raca_cor": "Parda", "departamento": "Financeiro", "cargo": "Especialista Fiscal", "salario": 8600.0, "data_admissao": "2022-10-05", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 53, "nome": "Andre Mendes", "genero": "Masculino", "raca_cor": "Parda", "departamento": "Recursos Humanos", "cargo": "Coordenador(a) de Gente e Gestão", "salario": 9150.0, "data_admissao": "2023-06-13", "status": "Desligado", "data_desligamento": "2026-08-18", "motivo_desligamento": "Demissão sem Justa Causa"}, {"id": 54, "nome": "Eduardo Carvalho", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Financeiro", "cargo": "Analista Financeiro Pleno", "salario": 5650.0, "data_admissao": "2024-09-20", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 55, "nome": "Gabriela Gomes", "genero": "Feminino", "raca_cor": "Parda", "departamento": "Financeiro", "cargo": "Analista Financeiro Pleno", "salario": 5350.0, "data_admissao": "2022-08-29", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 56, "nome": "Marcelo Dias", "genero": "Masculino", "raca_cor": "Preta", "departamento": "Recursos Humanos", "cargo": "Assistente de RH", "salario": 2950.0, "data_admissao": "2022-09-09", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 57, "nome": "Leonardo Gomes", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Marketing", "cargo": "Analista de Growth/Marketing", "salario": 5750.0, "data_admissao": "2022-10-22", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 58, "nome": "Bianca Alves", "genero": "Feminino", "raca_cor": "Parda", "departamento": "Recursos Humanos", "cargo": "Assistente de RH", "salario": 3000.0, "data_admissao": "2022-08-05", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 59, "nome": "Camila Marques", "genero": "Feminino", "raca_cor": "Preta", "departamento": "Recursos Humanos", "cargo": "Especialista em D&I", "salario": 7850.0, "data_admissao": "2022-04-06", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 60, "nome": "Lucas Santos", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Operações", "cargo": "Analista de Operações", "salario": 4900.0, "data_admissao": "2025-04-23", "status": "Desligado", "data_desligamento": "2026-01-20", "motivo_desligamento": "Demissão sem Justa Causa"}, {"id": 61, "nome": "Igor Nascimento", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Comercial", "cargo": "Executivo(a) de Contas", "salario": 5250.0, "data_admissao": "2024-09-05", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 62, "nome": "Bernardo Carvalho", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Operações", "cargo": "Coordenador(a) de Suporte", "salario": 7550.0, "data_admissao": "2024-02-16", "status": "Desligado", "data_desligamento": "2024-08-18", "motivo_desligamento": "Pedido de Demissão"}, {"id": 63, "nome": "Bianca Soares", "genero": "Feminino", "raca_cor": "Amarela", "departamento": "Marketing", "cargo": "Especialista de Conteúdo", "salario": 5850.0, "data_admissao": "2025-03-27", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 64, "nome": "Natalia Almeida", "genero": "Feminino", "raca_cor": "Preta", "departamento": "Operações", "cargo": "Analista de Operações", "salario": 4700.0, "data_admissao": "2025-03-20", "status": "Desligado", "data_desligamento": "2026-04-10", "motivo_desligamento": "Pedido de Demissão"}, {"id": 65, "nome": "Luana Pereira", "genero": "Feminino", "raca_cor": "Branca", "departamento": "Tecnologia", "cargo": "Desenvolvedor(a) Sênior", "salario": 12850.0, "data_admissao": "2022-04-26", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 66, "nome": "Natalia Oliveira", "genero": "Feminino", "raca_cor": "Branca", "departamento": "Recursos Humanos", "cargo": "Especialista em D&I", "salario": 7250.0, "data_admissao": "2021-11-09", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 67, "nome": "Marcelo Carvalho", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Comercial", "cargo": "Gerente Comercial", "salario": 12650.0, "data_admissao": "2022-02-28", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 68, "nome": "Daniela Vieira", "genero": "Feminino", "raca_cor": "Preta", "departamento": "Tecnologia", "cargo": "Desenvolvedor(a) Júnior", "salario": 5050.0, "data_admissao": "2025-04-17", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 69, "nome": "Ana Ribeiro", "genero": "Feminino", "raca_cor": "Branca", "departamento": "Comercial", "cargo": "Executivo(a) de Contas", "salario": 7050.0, "data_admissao": "2026-05-07", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 70, "nome": "Caio Pereira", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Operações", "cargo": "Analista de Operações", "salario": 4050.0, "data_admissao": "2022-11-20", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 71, "nome": "Tatiane Ferreira", "genero": "Feminino", "raca_cor": "Parda", "departamento": "Tecnologia", "cargo": "Designer UI/UX", "salario": 7450.0, "data_admissao": "2023-12-30", "status": "Desligado", "data_desligamento": "2025-04-06", "motivo_desligamento": "Demissão sem Justa Causa"}, {"id": 72, "nome": "Gabriel Rocha", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Comercial", "cargo": "Gerente Comercial", "salario": 11750.0, "data_admissao": "2022-06-17", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 73, "nome": "Vinicius Costa", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Comercial", "cargo": "Executivo(a) de Contas", "salario": 5350.0, "data_admissao": "2026-05-03", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 74, "nome": "Camila Lopes", "genero": "Feminino", "raca_cor": "Branca", "departamento": "Operações", "cargo": "Gerente de Projetos", "salario": 9700.0, "data_admissao": "2026-05-04", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 75, "nome": "Bernardo Rocha", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Tecnologia", "cargo": "Desenvolvedor(a) Júnior", "salario": 5150.0, "data_admissao": "2022-02-13", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 76, "nome": "Guilherme Rodrigues", "genero": "Masculino", "raca_cor": "Parda", "departamento": "Tecnologia", "cargo": "Cientista de Dados", "salario": 10550.0, "data_admissao": "2022-03-23", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 77, "nome": "Daniela Ribeiro", "genero": "Feminino", "raca_cor": "Branca", "departamento": "Marketing", "cargo": "Especialista de Conteúdo", "salario": 7150.0, "data_admissao": "2025-01-11", "status": "Desligado", "data_desligamento": "2025-08-26", "motivo_desligamento": "Término de Contrato"}, {"id": 78, "nome": "Danilo Silva", "genero": "Masculino", "raca_cor": "Preta", "departamento": "Marketing", "cargo": "Analista de Growth/Marketing", "salario": 5900.0, "data_admissao": "2026-05-17", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 79, "nome": "Gabriel Vieira", "genero": "Masculino", "raca_cor": "Parda", "departamento": "Recursos Humanos", "cargo": "Especialista em D&I", "salario": 6700.0, "data_admissao": "2025-05-02", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 80, "nome": "Danilo Nunes", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Operações", "cargo": "Gerente de Projetos", "salario": 11200.0, "data_admissao": "2023-01-29", "status": "Desligado", "data_desligamento": "2025-02-25", "motivo_desligamento": "Pedido de Demissão"}, {"id": 81, "nome": "Vanessa Souza", "genero": "Feminino", "raca_cor": "Parda", "departamento": "Financeiro", "cargo": "Especialista Fiscal", "salario": 8400.0, "data_admissao": "2025-08-25", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 82, "nome": "Marcelo Ferreira", "genero": "Masculino", "raca_cor": "Parda", "departamento": "Recursos Humanos", "cargo": "Coordenador(a) de Gente e Gestão", "salario": 10850.0, "data_admissao": "2026-02-27", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 83, "nome": "Renata Carvalho", "genero": "Feminino", "raca_cor": "Parda", "departamento": "Marketing", "cargo": "Analista de Growth/Marketing", "salario": 5100.0, "data_admissao": "2025-10-11", "status": "Desligado", "data_desligamento": "2026-01-23", "motivo_desligamento": "Pedido de Demissão"}, {"id": 84, "nome": "Patricia Moreira", "genero": "Feminino", "raca_cor": "Parda", "departamento": "Marketing", "cargo": "Especialista de Conteúdo", "salario": 6550.0, "data_admissao": "2022-11-20", "status": "Desligado", "data_desligamento": "2024-11-14", "motivo_desligamento": "Pedido de Demissão"}, {"id": 85, "nome": "Eduardo Nunes", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Recursos Humanos", "cargo": "Coordenador(a) de Gente e Gestão", "salario": 11650.0, "data_admissao": "2024-12-07", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 86, "nome": "Diego Alves", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Comercial", "cargo": "Analista de Vendas B2B", "salario": 4400.0, "data_admissao": "2025-04-02", "status": "Desligado", "data_desligamento": "2026-01-30", "motivo_desligamento": "Demissão sem Justa Causa"}, {"id": 87, "nome": "Renata Nunes", "genero": "Feminino", "raca_cor": "Branca", "departamento": "Financeiro", "cargo": "Assistente Financeiro", "salario": 2850.0, "data_admissao": "2024-11-17", "status": "Desligado", "data_desligamento": "2026-01-28", "motivo_desligamento": "Pedido de Demissão"}, {"id": 88, "nome": "Carolina Andrade", "genero": "Feminino", "raca_cor": "Parda", "departamento": "Financeiro", "cargo": "Especialista Fiscal", "salario": 8550.0, "data_admissao": "2022-07-09", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 89, "nome": "Rodrigo Andrade", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Tecnologia", "cargo": "Cientista de Dados", "salario": 11350.0, "data_admissao": "2026-05-02", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 90, "nome": "Bruno Alves", "genero": "Masculino", "raca_cor": "Parda", "departamento": "Recursos Humanos", "cargo": "Coordenador(a) de Gente e Gestão", "salario": 11150.0, "data_admissao": "2025-04-06", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 91, "nome": "Juliana Marques", "genero": "Feminino", "raca_cor": "Branca", "departamento": "Recursos Humanos", "cargo": "Especialista em D&I", "salario": 7200.0, "data_admissao": "2022-09-12", "status": "Desligado", "data_desligamento": "2025-11-08", "motivo_desligamento": "Pedido de Demissão"}, {"id": 92, "nome": "Mateus Fernandes", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Tecnologia", "cargo": "Designer UI/UX", "salario": 6600.0, "data_admissao": "2025-03-22", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 93, "nome": "Danilo Gomes", "genero": "Masculino", "raca_cor": "Parda", "departamento": "Comercial", "cargo": "Gerente Comercial", "salario": 12350.0, "data_admissao": "2026-06-01", "status": "Desligado", "data_desligamento": "2026-08-30", "motivo_desligamento": "Pedido de Demissão"}, {"id": 94, "nome": "Andre Lopes", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Tecnologia", "cargo": "Desenvolvedor(a) Pleno", "salario": 6800.0, "data_admissao": "2025-07-20", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 95, "nome": "Camila Pereira", "genero": "Feminino", "raca_cor": "Branca", "departamento": "Comercial", "cargo": "Analista de Vendas B2B", "salario": 4550.0, "data_admissao": "2025-06-08", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 96, "nome": "Renata Freitas", "genero": "Feminino", "raca_cor": "Parda", "departamento": "Marketing", "cargo": "Analista de Growth/Marketing", "salario": 6500.0, "data_admissao": "2022-09-18", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 97, "nome": "Vitor Andrade", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Recursos Humanos", "cargo": "Analista de RH Pleno", "salario": 5300.0, "data_admissao": "2022-06-26", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 98, "nome": "Guilherme Ferreira", "genero": "Masculino", "raca_cor": "Parda", "departamento": "Recursos Humanos", "cargo": "Assistente de RH", "salario": 2600.0, "data_admissao": "2023-07-12", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 99, "nome": "Leticia Santos", "genero": "Feminino", "raca_cor": "Branca", "departamento": "Financeiro", "cargo": "Assistente Financeiro", "salario": 3200.0, "data_admissao": "2023-07-19", "status": "Desligado", "data_desligamento": "2025-01-07", "motivo_desligamento": "Demissão com Justa Causa"}, {"id": 100, "nome": "Marcelo Souza", "genero": "Masculino", "raca_cor": "Parda", "departamento": "Tecnologia", "cargo": "Designer UI/UX", "salario": 7250.0, "data_admissao": "2025-08-20", "status": "Desligado", "data_desligamento": "2025-11-18", "motivo_desligamento": "Pedido de Demissão"}];
