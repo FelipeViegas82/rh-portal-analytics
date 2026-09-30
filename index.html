@@ -1,351 +1,3 @@
-HTML
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="refresh" content="0; url=web-portal/index.html">
-  <title>Redirecionando...</title>
-</head>
-<body>
-  <p>Redirecionando para o <a href="web-portal/index.html">People Hub & HR Analytics</a>...</p>
-</body>
-</html>
-Passo 2: Fazer Commit e Push pelo GitHub Desktop
-Abra o GitHub Desktop.
-
-No canto inferior esquerdo, digite no resumo:
-feat: adiciona index raiz para publicar no github pages
-
-Clique no botão azul Commit to main.   
-PNG
-+ 1
-
-Clique em Push origin no topo para enviar para o GitHub.   
-PNG
-+ 1
-
-Passo 3: Ativar o GitHub Pages no site
-Abra a página do seu repositório no navegador (ou clique em View on GitHub no meio do GitHub Desktop).   
-PNG
-
-No topo da página do repositório, clique na aba Settings (com o ícone de engrenagem, à direita de Insights).   
-PNG
-+ 1
-
-No menu lateral esquerdo, clique em Pages (fica na seção Code and automation).
-
-Na seção Build and deployment:
-
-Onde diz Source, garanta que está selecionado Deploy from a branch.
-
-Em Branch, selecione main e mantenha a pasta como /(root).
-
-Clique no botão Save.
-
-Passo 4: Pegar o link público
-Espere cerca de 1 a 2 minutos (o GitHub compila a página na nuvem).
-
-Atualize a página do Settings > Pages com F5.
-
-No topo dessa mesma tela, vai surgir uma caixa destacada com a mensagem:
-
-Your site is live at: [https://felipeviegas82.github.io/rh-portal-analytics/](https://felipeviegas82.github.io/rh-portal-analytics/)
-
-Esse é o link oficial do seu projeto! Qualquer pessoa no mundo com acesso à internet consegue abrir esse link, visualizar as métricas de RH em tempo real e interagir com os filtros.
-
-Faça essas etapas e me diga se o link já apareceu ativo para você!
-
-eu vou ficar com 2 arquivos chamados index.html?
-
-Sim, exatamente! E não tem problema nenhum, porque eles ficam em pastas diferentes:   
-PNG
-+ 1
-
-O index.html da pasta principal (raiz rh-portal-analytics/): funciona apenas como uma "porta de entrada". O GitHub Pages sempre procura um arquivo chamado index.html logo na raiz. Esse arquivo tem apenas 6 linhas e serve unicamente para dizer ao navegador: "redirecione direto para a pasta web-portal".   
-PNG
-
-O index.html dentro da pasta web-portal/: é a sua aplicação real, onde estão o visual, os cartões, o turnover e a tabela com os 100 colaboradores.   
-PNG
-+ 2
-
-Quer simplificar e ficar com um só?
-Se você preferir ter apenas 1 arquivo para deixar tudo mais enxuto e sem duplicidade de nomes:
-
-Pegue o index.html completo (o que tem a tela bonita e os 100 dados) e coloque-o diretamente na pasta raiz (rh-portal-analytics/), ao lado do README.md.   
-PNG
-+ 2
-
-A pasta web-portal pode até ser apagada ou mantida vazia.
-
-Dessa forma:
-
-Você tem só um index.html no projeto inteiro.
-
-O GitHub Pages abre o seu sistema direto na raiz sem precisar de redirecionamento nenhum!
-
-Qual dos dois formatos você acha mais prático e organizado para manter?
-
-aonde?
-
-Olhe para a coluna lateral esquerda (onde diz General, Access, Code, planning, and automation):   
-PNG
-
-Role essa coluna lateral esquerda para baixo com a roda do rato.   
-PNG
-
-Logo abaixo de Codespaces e Pages, encontrará a opção Pages (com o ícone de um documento ou browser).   
-PNG
-
-Clique em Pages.
-
-O que configurar quando abrir o Pages:
-Dentro da secção Build and deployment:
-
-Em Branch: clique no menu onde diz None e mude para main.
-
-No campo ao lado onde diz /(root), mantenha /(root).
-
-Clique no botão Save.
-
-Assim que guardar, aguarde cerca de 1 a 2 minutos e atualize a página (F5) para ver o endereço web gerado.
-
-só que ele leva para o read.me
-
-Isso acontece porque, por predefinição, quando o GitHub Pages não encontra um ficheiro chamado index.html logo na raiz do repositório, ele apresenta automaticamente o conteúdo do README.md como se fosse a página inicial.
-
-Como a sua aplicação está guardada dentro da pasta web-portal, há duas formas muito simples de resolver:
-
-Solução Direta (Recomendada: Mover o ficheiro para a raiz)
-Esta é a opção mais limpa e infalível, evitando redirecionamentos:
-
-No Explorador de Ficheiros do Windows, entre na pasta do projeto: rh-portal-analytics > web-portal.   
-PNG
-
-Copie ou corte o ficheiro index.html.   
-PNG
-
-Volte atrás para a pasta principal (rh-portal-analytics), onde se encontra o README.md.   
-PNG
-
-Cole o ficheiro index.html aí mesmo na raiz (ao lado do README.md).   
-PNG
-
-Abra o GitHub Desktop:
-
-O programa detetará que o index.html foi movido para a raiz.
-
-No campo de resumo (Summary), escreva: fix: move index.html para a raiz para o github pages.
-
-Clique em Commit to main e de seguida em Push origin.   
-PNG
-+ 1
-
-Testar no navegador
-Aguarde cerca de 1 a 2 minutos para que o GitHub atualize a publicação.
-
-Abra novamente a hiperligação do site ou aceda diretamente com o sufixo da pasta caso ainda não tenha sincronizado:
-[https://felipeviegas82.github.io/rh-portal-analytics/web-portal/](https://felipeviegas82.github.io/rh-portal-analytics/web-portal/)
-
-Assim que o ficheiro estiver na raiz e enviado via Push, o endereço principal ([https://felipeviegas82.github.io/rh-portal-analytics/](https://felipeviegas82.github.io/rh-portal-analytics/)) abrirá diretamente o painel com os cartões e a tabela de colaboradores em vez do README.md.
-
-o que eu estou fazendo de errado?
-
-O problema reside na extensão oculta do ficheiro: repare que na coluna Tipo o ficheiro index.html está classificado como "Documento de Te..." (ou seja, Documento de Texto .txt) com o ícone de uma folha de bloco de notas, em vez do ícone de um navegador de internet.   
-PNG
-
-No Windows, quando as extensões estão ocultas, o nome real do ficheiro passa a ser index.html.txt, pelo que o GitHub Pages não o reconhece como uma página web.   
-PNG
-
-Como corrigir no Windows:
-Na barra superior do Explorador de Ficheiros, clique no menu Visualizar.   
-PNG
-
-Passe o cursor por cima de Mostrar (na parte inferior do menu que se abre).
-
-Clique em Extensões de nomes de ficheiros (para marcar com um visto).
-
-O nome do ficheiro passará a exibir .txt no final (index.html.txt).
-
-Clique com o botão direito no ficheiro > Mudar o nome (ou prima F2).
-
-Apague o .txt do final, deixando estritamente: index.html.
-
-O Windows apresentará um aviso a perguntar se deseja mesmo alterar a extensão do ficheiro — confirme clicando em Sim.
-
-Enviar a correção:
-Assim que confirmar, o ícone do ficheiro mudará para o símbolo do seu navegador (como o Edge ou o Chrome). De seguida:   
-PNG
-
-Abra o GitHub Desktop.
-
-O ficheiro renomeado surgirá pronto para registo.
-
-Insira no campo de resumo: fix: corrige extensao do index.html.
-
-Clique em Commit to main e depois em Push origin.   
-PNG
-+ 1
-
-Aguarde 1 minuto e recarregue a hiperligação no navegador; o painel será carregado de imediato.
-
-continua mostrando o danado do readme
-
-Repare num detalhe essencial na imagem: o ficheiro index.html está agora com a extensão correta do Microsoft Edge, mas o seu tamanho é de apenas 1 KB.   
-PNG
-
-O ficheiro completo do portal (com o design, os filtros, o turnover e os 100 colaboradores) tem cerca de 41 KB. Este ficheiro de 1 KB é apenas o rascunho de texto antigo ou o ficheiro de redirecionamento simples.   
-HTML
-+ 1
-
-Para resolver isso de forma definitiva:
-
-Passo 1: Substituir pelo ficheiro completo na raiz
-Aceda à pasta web-portal (onde testou e funcionou com sucesso).   
-PNG
-+ 1
-
-Copie o ficheiro index.html que está lá dentro.
-
-Volte à pasta principal (rh-portal-analytics) e cole por cima deste index.html de 1 KB (substituindo-o).   
-PNG
-
-Verifique se a coluna Tamanho passou a indicar cerca de 41 KB em vez de 1 KB.   
-PNG
-
-Passo 2: Registar e Enviar no GitHub Desktop
-Abra a aplicação GitHub Desktop.
-
-No resumo inferior esquerdo (Summary), escreva:
-feat: publica portal completo de rh na raiz
-
-Clique em Commit to main.   
-PNG
-
-Clique em Push origin no topo para enviar as alterações para o GitHub.   
-PNG
-+ 1
-
-Passo 3: Limpar a cache do navegador
-Após o Push origin, aguarde cerca de 60 a 90 segundos para que o GitHub Pages processe a nova versão.
-
-Em seguida, abra o endereço do site:
-[https://felipeviegas82.github.io/rh-portal-analytics/](https://felipeviegas82.github.io/rh-portal-analytics/)
-
-Prima as teclas Ctrl + F5 (para forçar o navegador a descartar a memória temporária antiga). O painel azul com os 5 cartões e a tabela surgirá no ecrã.
-
-limpei cache e foi...
-
-Excelente notícia! Agora o seu projeto já está oficialmente publicado e acessível na web para qualquer pessoa consultar através da hiperligação pública do GitHub Pages.
-
-Com a base de dados consolidada e o front-end web operacional, completámos com sucesso a primeira grande etapa do repositório.
-
-Próximos Passos: Power BI ou Power Apps?
-Para continuar a construir o ecossistema integrado de Recursos Humanos:
-
-Power BI Desktop (power-bi/):
-
-Conectar diretamente ao ficheiro data/colaboradores.csv.
-
-Criar o modelo dimensional e as medidas DAX essenciais (Headcount Ativo, Desligamentos acumulados, Taxa de Turnover anualizada, Distribuição salarial por departamento e métricas de D&I).
-
-Estruturar o painel visual e guardar o ficheiro .pbix na pasta correspondente.
-
-Power Apps (power-apps/):
-
-Modelar a aplicação corporativa de registo e edição de colaboradores (formulários de admissão, alteração de cargo e processo de demissão).
-
-Exportar o pacote da aplicação para a pasta do repositório.
-
-Indique por qual das duas ferramentas prefere avançar agora.
-
-tá, mas qual é o domínio que eu tenho que compartilhar com ele
-
-O link exato que deve enviar ao seu colega é:
-
-[https://felipeviegas82.github.io/rh-portal-analytics/](https://felipeviegas82.github.io/rh-portal-analytics/)
-
-Como confirmar a hiperligação no próprio GitHub:
-No navegador, aceda à página do seu repositório no GitHub.   
-PNG
-
-Clique na aba Settings (no topo à direita).   
-PNG
-+ 1
-
-Na barra lateral esquerda, clique em Pages.   
-PNG
-
-No topo dessa secção, surgirá a confirmação a verde:
-
-Your site is live at https://felipeviegas82.github.io/rh-portal-analytics/
-
-Basta copiar esse endereço e enviá-lo por mensagem (WhatsApp, Teams, e-mail, etc.). Qualquer pessoa consegue abrir e interagir com o portal a partir desse domínio.
-
-esse link?
-
-Sim, é exatamente esse link: [https://felipeviegas82.github.io/rh-portal-analytics/](https://felipeviegas82.github.io/rh-portal-analytics/).   
-PNG
-
-Você também pode simplesmente clicar no botão azul Visit site que está ali ao lado para abrir e conferir como ficou.   
-PNG
-
-Esse é o link oficial para compartilhar com qualquer pessoa; ela poderá acessar o portal de qualquer computador ou celular com internet.   
-PNG
-
-estiliza pra mim nesse formato? Eu quero acoplar nesse menu lateral, no futuro, outras tags sobre as pessoas
-
-O layout foi totalmente reestruturado para o modelo profissional de plataforma empresarial com menu lateral (Sidebar).
-
-O que foi implementado nesta nova estrutura:
-Menu Lateral Fixo (Sidebar):
-
-Secção Gestão de Pessoas: módulo ativo de Colaboradores, preparado com os marcadores de expansão futura (Desempenho, Férias & Ausências, Formação & Skills com etiquetas "Em breve").
-
-Secção Ecossistema & Integração: atalhos dedicados para os próximos passos (Power BI Analytics, Power Apps Form e Base de Dados CSV).
-
-Rodapé da barra lateral com indicador de estado do sistema em tempo real.
-
-Área de Conteúdo com Barra Superior (Topbar):
-
-Título unificado e botão de acesso direto ao repositório público no GitHub.
-
-Os 5 cartões de indicadores (Headcount, Ativos, Desligados, Taxa de Turnover a 27,0% e Salário Médio) alinhados de forma responsiva.
-
-Painel de pesquisa rápida e filtros com a tabela dinâmica de 100 registos.
-
-O ficheiro atualizado com o menu lateral e preparado para as novas tags está pronto para descarregar:
-
-Ícone do app HTML
-index
- HTML 
-Procedimento para publicar:
-Descarregue o ficheiro acima (index.html).
-
-Aceda à pasta principal do repositório no Windows (rh-portal-analytics) e substitua o index.html existente por este novo.   
-PNG
-+ 1
-
-Abra a aplicação GitHub Desktop:
-
-O GitHub identificará a atualização no index.html.
-
-No resumo (Summary), insira: feat: adiciona sidebar corporativa e estrutura modular de navegacao.
-
-Clique em Commit to main e de seguida em Push origin.   
-PNG
-+ 1
-
-Aguarde cerca de 60 segundos e recarregue a página pública no navegador com Ctrl + F5:
-[https://felipeviegas82.github.io/rh-portal-analytics/](https://felipeviegas82.github.io/rh-portal-analytics/)
-
-
-
-
-
-
-O Gemini é uma IA e pode cometer erros.
-
-Analisando
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -357,20 +9,21 @@ Analisando
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg-body: #090d16;
-      --bg-sidebar: #0f172a;
-      --bg-card: #1e293b;
-      --bg-input: #0b1324;
-      --border: #334155;
-      --border-subtle: #1e293b;
-      --text: #f8fafc;
-      --text-muted: #94a3b8;
+      --bg: #0b1120;
+      --card-bg: #152033;
+      --border: #23334d;
+      --nav-bg: #080c16;
+      --text: #f1f5f9;
+      --text-muted: #8e9fb5;
       --primary: #38bdf8;
       --primary-hover: #0284c7;
       --success: #34d399;
       --danger: #f87171;
       --warning: #fbbf24;
-      --sidebar-width: 260px;
+      --violet: #8b5cf6;
+      --emerald: #10b981;
+      --amber: #f59e0b;
+      --nav-width: 68px;
     }
     * {
       margin: 0;
@@ -379,135 +32,123 @@ Analisando
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     }
     body {
-      background-color: var(--bg-body);
+      background-color: var(--bg);
       color: var(--text);
       display: flex;
       min-height: 100vh;
       overflow-x: hidden;
     }
 
-    /* Barra Lateral / Sidebar */
-    .sidebar {
-      width: var(--sidebar-width);
-      background-color: var(--bg-sidebar);
+    /* Barra de Navegação Estilo Power BI Executivo (Faixa Vertical Esquerda) */
+    .nav-rail {
+      width: var(--nav-width);
+      background-color: var(--nav-bg);
       border-right: 1px solid var(--border);
       display: flex;
       flex-direction: column;
-      flex-shrink: 0;
+      align-items: center;
+      padding: 20px 0;
       position: sticky;
       top: 0;
       height: 100vh;
-      overflow-y: auto;
+      flex-shrink: 0;
       z-index: 100;
     }
-    .sidebar-header {
-      padding: 24px 20px;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      border-bottom: 1px solid var(--border);
-    }
-    .sidebar-logo {
-      width: 40px;
-      height: 40px;
-      background: linear-gradient(135deg, #0284c7, #38bdf8);
+    .nav-logo {
+      width: 42px;
+      height: 42px;
+      background: #0ea5e9;
       color: #fff;
-      font-weight: 700;
       border-radius: 10px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.1rem;
-      box-shadow: 0 4px 10px rgba(56, 189, 248, 0.25);
-    }
-    .sidebar-brand h2 {
-      font-size: 1rem;
       font-weight: 700;
-      letter-spacing: -0.02em;
-      color: #fff;
+      font-size: 1rem;
+      margin-bottom: 28px;
+      box-shadow: 0 4px 10px rgba(14, 165, 233, 0.3);
     }
-    .sidebar-brand p {
-      font-size: 0.72rem;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-    .sidebar-menu {
-      padding: 20px 14px;
+    .nav-items {
       display: flex;
       flex-direction: column;
-      gap: 6px;
+      gap: 16px;
+      width: 100%;
+      align-items: center;
       flex-grow: 1;
     }
-    .menu-category {
-      font-size: 0.68rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: #64748b;
-      margin: 16px 10px 6px 10px;
-    }
-    .menu-item {
+    .nav-btn {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: transparent;
+      border: 1px solid transparent;
+      color: var(--text-muted);
       display: flex;
       align-items: center;
-      gap: 12px;
+      justify-content: center;
+      cursor: pointer;
+      position: relative;
+      transition: all 0.2s ease;
+    }
+    .nav-btn svg {
+      width: 20px;
+      height: 20px;
+      fill: currentColor;
+    }
+    .nav-btn:hover {
+      background: rgba(255, 255, 255, 0.06);
+      color: #fff;
+      border-color: rgba(255, 255, 255, 0.1);
+    }
+    .nav-btn.active {
+      background: rgba(56, 189, 248, 0.15);
+      color: var(--primary);
+      border-color: rgba(56, 189, 248, 0.4);
+      box-shadow: 0 0 12px rgba(56, 189, 248, 0.2);
+    }
+
+    /* Miniatura Flutuante (Tooltip com Preview ao passar o mouse) */
+    .nav-btn .preview-tip {
+      position: absolute;
+      left: calc(var(--nav-width) + 10px);
+      background: #111a2e;
+      border: 1px solid var(--border);
+      color: #fff;
       padding: 10px 14px;
       border-radius: 8px;
-      font-size: 0.88rem;
-      font-weight: 500;
-      color: var(--text-muted);
-      text-decoration: none;
-      cursor: pointer;
+      font-size: 0.8rem;
+      white-space: nowrap;
+      pointer-events: none;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateX(-8px);
       transition: all 0.2s ease;
-      border: 1px solid transparent;
-    }
-    .menu-item:hover {
-      background: rgba(255, 255, 255, 0.05);
-      color: var(--text);
-    }
-    .menu-item.active {
-      background: rgba(56, 189, 248, 0.12);
-      color: var(--primary);
-      border-color: rgba(56, 189, 248, 0.3);
-      font-weight: 600;
-    }
-    .menu-item .icon {
-      font-size: 1rem;
-      width: 20px;
-      text-align: center;
-    }
-    .badge-soon {
-      margin-left: auto;
-      font-size: 0.65rem;
-      background: #334155;
-      color: #cbd5e1;
-      padding: 2px 7px;
-      border-radius: 9999px;
-      font-weight: 600;
-    }
-    .sidebar-footer {
-      padding: 18px 20px;
-      border-top: 1px solid var(--border);
-      font-size: 0.75rem;
-      color: var(--text-muted);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.45);
       display: flex;
       flex-direction: column;
-      gap: 6px;
+      gap: 3px;
+      z-index: 200;
     }
-    .status-indicator {
+    .nav-btn .preview-tip strong {
+      color: var(--primary);
+      font-size: 0.82rem;
+    }
+    .nav-btn .preview-tip span {
+      color: var(--text-muted);
+      font-size: 0.72rem;
+    }
+    .nav-btn:hover .preview-tip {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(0);
+    }
+
+    .nav-bottom {
+      margin-top: auto;
       display: flex;
+      flex-direction: column;
       align-items: center;
-      gap: 8px;
-      color: var(--success);
-      font-size: 0.8rem;
-      font-weight: 500;
-    }
-    .status-dot {
-      width: 8px;
-      height: 8px;
-      background: var(--success);
-      border-radius: 50%;
-      box-shadow: 0 0 8px var(--success);
+      gap: 12px;
     }
 
     /* Conteúdo Principal */
@@ -516,89 +157,116 @@ Analisando
       display: flex;
       flex-direction: column;
       min-width: 0;
-      overflow-y: auto;
-    }
-    .topbar {
-      padding: 20px 32px;
-      background: rgba(15, 23, 42, 0.6);
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid var(--border);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 50;
-    }
-    .topbar-info h1 {
-      font-size: 1.25rem;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-    }
-    .topbar-info p {
-      font-size: 0.8rem;
-      color: var(--text-muted);
-    }
-    .topbar-actions {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-    .tag-repo {
-      background: rgba(56, 189, 248, 0.1);
-      color: var(--primary);
-      border: 1px solid rgba(56, 189, 248, 0.25);
-      padding: 6px 14px;
-      border-radius: 9999px;
-      font-size: 0.78rem;
-      font-weight: 600;
-      text-decoration: none;
-      transition: all 0.2s;
-    }
-    .tag-repo:hover {
-      background: rgba(56, 189, 248, 0.2);
-    }
-
-    .content-area {
-      padding: 28px 32px;
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
-      max-width: 1400px;
+      padding: 32px 36px;
+      gap: 20px;
+      max-width: 1360px;
       margin: 0 auto;
       width: 100%;
     }
 
-    /* Grade de Métricas / Cards */
+    /* Header com os Botões Validadores no Lugar da Tag Verde */
+    .header {
+      background-color: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .brand-title h1 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      color: #ffffff;
+    }
+    .brand-title p {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      margin-top: 3px;
+    }
+
+    /* Botões Validadores (Ativo / Desligado / Todos) no Header */
+    .status-validators-header {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: #0d1527;
+      padding: 4px 6px;
+      border-radius: 9999px;
+      border: 1px solid #223249;
+    }
+    .status-validators-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      padding-left: 8px;
+      padding-right: 4px;
+    }
+    .btn-validator {
+      background: transparent;
+      border: 1px solid transparent;
+      color: var(--text-muted);
+      padding: 6px 14px;
+      border-radius: 9999px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .btn-validator:hover {
+      color: #fff;
+      background: rgba(255, 255, 255, 0.06);
+    }
+    .btn-validator.active-all {
+      background: #1e293b;
+      color: #fff;
+      border-color: #334155;
+    }
+    .btn-validator.active-ativo {
+      background: rgba(52, 211, 153, 0.18);
+      color: var(--success);
+      border-color: rgba(52, 211, 153, 0.35);
+    }
+    .btn-validator.active-desligado {
+      background: rgba(248, 113, 113, 0.18);
+      color: var(--danger);
+      border-color: rgba(248, 113, 113, 0.35);
+    }
+
+    /* Grade de Cartões */
     .metrics-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
       gap: 16px;
     }
     .metric-card {
-      background-color: var(--bg-card);
+      background-color: var(--card-bg);
       border: 1px solid var(--border);
       border-radius: 12px;
-      padding: 20px;
+      padding: 20px 24px;
       display: flex;
       flex-direction: column;
-      gap: 8px;
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
-      transition: transform 0.2s;
-    }
-    .metric-card:hover {
-      transform: translateY(-2px);
-      border-color: #475569;
+      gap: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     }
     .metric-label {
       font-size: 0.72rem;
-      font-weight: 600;
+      font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 0.05em;
+      letter-spacing: 0.06em;
       color: var(--text-muted);
     }
     .metric-val {
-      font-size: 1.7rem;
+      font-size: 1.9rem;
       font-weight: 700;
       letter-spacing: -0.02em;
     }
@@ -610,28 +278,28 @@ Analisando
 
     /* Painel de Filtros */
     .filter-panel {
-      background-color: var(--bg-card);
+      background-color: var(--card-bg);
       border: 1px solid var(--border);
       border-radius: 12px;
-      padding: 20px;
+      padding: 20px 24px;
       display: flex;
       flex-direction: column;
       gap: 16px;
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     }
     .search-box input {
       width: 100%;
-      background: var(--bg-input);
+      background: #0d1527;
       border: 1px solid var(--border);
       color: var(--text);
-      padding: 12px 16px;
+      padding: 13px 18px;
       border-radius: 8px;
       font-size: 0.95rem;
       outline: none;
       transition: border-color 0.2s;
     }
     .search-box input:focus {
-      border-color: var(--primary);
+      border-color: #38bdf8;
     }
     .selects-row {
       display: flex;
@@ -641,61 +309,71 @@ Analisando
     }
     .selects-row select {
       flex: 1;
-      min-width: 170px;
-      background: var(--bg-input);
+      min-width: 180px;
+      background: #0d1527;
       border: 1px solid var(--border);
       color: var(--text);
       padding: 10px 14px;
       border-radius: 8px;
-      font-size: 0.88rem;
+      font-size: 0.9rem;
       outline: none;
       cursor: pointer;
     }
     .selects-row select:focus {
-      border-color: var(--primary);
+      border-color: #38bdf8;
     }
     .btn-reset {
       background: transparent;
       border: 1px solid var(--border);
       color: var(--text-muted);
-      padding: 10px 18px;
+      padding: 10px 22px;
       border-radius: 8px;
       cursor: pointer;
       font-weight: 500;
-      font-size: 0.88rem;
+      font-size: 0.9rem;
       transition: all 0.2s;
     }
     .btn-reset:hover {
       background: rgba(255, 255, 255, 0.05);
-      color: var(--text);
+      color: #ffffff;
       border-color: #64748b;
+    }
+
+    /* Páginas / Vistas Dinâmicas */
+    .page-section {
+      display: none;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .page-section.active {
+      display: flex;
     }
 
     /* Tabela */
     .table-container {
-      background-color: var(--bg-card);
+      background-color: var(--card-bg);
       border: 1px solid var(--border);
       border-radius: 12px;
       overflow-x: auto;
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     }
     table {
       width: 100%;
       border-collapse: collapse;
       text-align: left;
-      font-size: 0.88rem;
+      font-size: 0.9rem;
     }
     th {
-      background-color: #162032;
+      background-color: #121c2d;
       color: var(--text-muted);
       font-weight: 600;
-      padding: 14px 18px;
+      padding: 14px 20px;
       border-bottom: 1px solid var(--border);
       white-space: nowrap;
     }
     td {
-      padding: 14px 18px;
-      border-bottom: 1px solid #223249;
+      padding: 14px 20px;
+      border-bottom: 1px solid #1a273b;
       color: #cbd5e1;
       white-space: nowrap;
     }
@@ -709,7 +387,7 @@ Analisando
       display: inline-block;
       padding: 4px 10px;
       border-radius: 9999px;
-      font-size: 0.72rem;
+      font-size: 0.75rem;
       font-weight: 600;
     }
     .badge-ativo {
@@ -722,123 +400,741 @@ Analisando
       color: var(--danger);
       border: 1px solid rgba(248, 113, 113, 0.3);
     }
+
+    /* Barra de Notificação de Filtro Cruzado Ativo (Estilo Power BI) */
+    .crossfilter-bar {
+      display: none;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(56, 189, 248, 0.12);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      padding: 10px 18px;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      color: #fff;
+    }
+    .crossfilter-bar.visible {
+      display: flex;
+    }
+    .btn-clear-cross {
+      background: #0284c7;
+      color: #fff;
+      border: none;
+      padding: 6px 14px;
+      border-radius: 6px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .btn-clear-cross:hover {
+      background: #0369a1;
+    }
+
+    /* Gráficos e Estilos Visuais Analíticos */
+    .analytics-grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 20px;
+    }
+    .analytics-grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+      gap: 20px;
+    }
+    .info-card {
+      background-color: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 22px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+    .info-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 14px;
+    }
+    .info-card-header h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .hint-click {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      background: rgba(255, 255, 255, 0.04);
+      padding: 2px 8px;
+      border-radius: 4px;
+    }
+
+    /* Donut Chart (SVG) - Centro limpo e vazado */
+    .donut-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      padding: 12px 0;
+      flex-grow: 1;
+      position: relative;
+    }
+    .donut-wrapper {
+      position: relative;
+      width: 155px;
+      height: 155px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .donut-svg {
+      width: 100%;
+      height: 100%;
+      transform: rotate(-90deg);
+    }
+    .donut-segment {
+      cursor: pointer;
+      transition: stroke-width 0.2s, opacity 0.2s;
+    }
+    .donut-segment:hover {
+      stroke-width: 7;
+      opacity: 0.9;
+    }
+    .donut-segment.selected {
+      stroke-width: 7.5;
+      filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.3));
+    }
+    .donut-segment.dimmed {
+      opacity: 0.3;
+    }
+
+    /* Tooltip Flutuante Dinâmico */
+    .chart-tooltip {
+      position: absolute;
+      background: #111a2e;
+      border: 1px solid var(--border);
+      color: #fff;
+      padding: 8px 12px;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      pointer-events: none;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.15s ease;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5);
+      z-index: 50;
+      white-space: nowrap;
+    }
+    .chart-tooltip.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    /* Legenda Lateral com % ao lado da cor */
+    .donut-legend {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .donut-legend-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.88rem;
+      cursor: pointer;
+      padding: 5px 10px;
+      border-radius: 6px;
+      transition: background 0.2s;
+    }
+    .donut-legend-item:hover {
+      background: rgba(255, 255, 255, 0.05);
+    }
+    .legend-color {
+      width: 14px;
+      height: 14px;
+      border-radius: 4px;
+      flex-shrink: 0;
+    }
+    .legend-color.violet { background-color: var(--violet); }
+    .legend-color.emerald { background-color: var(--emerald); }
+    .legend-color.amber { background-color: var(--warning); }
+    .legend-color.cyan { background-color: var(--primary); }
+    .legend-color.coral { background-color: var(--danger); }
+    .donut-legend-pct {
+      font-weight: 700;
+      font-size: 0.92rem;
+      margin-left: auto;
+      padding-left: 8px;
+    }
+
+    /* Gráficos de Barras Verticais Gerais */
+    .vbar-chart {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-around;
+      height: 175px;
+      padding: 16px 8px 8px 8px;
+      background: #0d1527;
+      border-radius: 8px;
+      border: 1px solid #1a273b;
+      gap: 8px;
+      margin-top: 6px;
+    }
+    .vbar-col {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100%;
+      justify-content: flex-end;
+      gap: 6px;
+      cursor: pointer;
+      border-radius: 6px;
+      padding: 4px 2px;
+      transition: background 0.2s;
+    }
+    .vbar-col:hover {
+      background: rgba(255, 255, 255, 0.04);
+    }
+    .vbar-col.selected .vbar-fill {
+      filter: brightness(1.3) drop-shadow(0 0 6px var(--primary));
+    }
+    .vbar-col.dimmed {
+      opacity: 0.35;
+    }
+    .vbar-val {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: #f8fafc;
+    }
+    .vbar-fill {
+      width: 100%;
+      max-width: 38px;
+      border-radius: 5px 5px 0 0;
+      transition: height 0.4s ease, opacity 0.2s;
+      min-height: 4px;
+    }
+    .vbar-fill.cyan {
+      background: linear-gradient(180deg, #38bdf8 0%, #0284c7 100%);
+    }
+    .vbar-fill.amber {
+      background: linear-gradient(180deg, #fbbf24 0%, #d97706 100%);
+    }
+    .vbar-fill.emerald {
+      background: linear-gradient(180deg, #34d399 0%, #059669 100%);
+    }
+    .vbar-label {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      text-align: center;
+      white-space: nowrap;
+      margin-top: 2px;
+    }
+
+    /* GRÁFICO DE BARRAS HORIZONTAIS: MASSA SALARIAL */
+    .hbar-chart {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      background: #0d1527;
+      border-radius: 8px;
+      border: 1px solid #1a273b;
+      padding: 18px 20px;
+      margin-top: 6px;
+    }
+    .hbar-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      cursor: pointer;
+      padding: 4px 6px;
+      border-radius: 6px;
+      transition: background 0.2s;
+    }
+    .hbar-row:hover {
+      background: rgba(255, 255, 255, 0.04);
+    }
+    .hbar-row.selected .hbar-fill {
+      filter: brightness(1.3) drop-shadow(0 0 6px var(--primary));
+    }
+    .hbar-row.dimmed {
+      opacity: 0.35;
+    }
+    .hbar-label {
+      width: 130px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      flex-shrink: 0;
+    }
+    .hbar-track {
+      flex: 1;
+      height: 14px;
+      background: #152238;
+      border-radius: 9999px;
+      overflow: hidden;
+      display: flex;
+    }
+    .hbar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #0284c7 0%, #38bdf8 100%);
+      border-radius: 9999px;
+      transition: width 0.5s ease;
+    }
+    .hbar-val {
+      width: 110px;
+      text-align: right;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: #fff;
+      flex-shrink: 0;
+    }
+
+    /* GRÁFICO CRIATIVO: SALÁRIO MÉDIO POR DEPARTAMENTO VS BENCHMARK */
+    .avg-salary-container {
+      background: #0d1527;
+      border-radius: 10px;
+      border: 1px solid #1a273b;
+      padding: 24px;
+      margin-top: 6px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      position: relative;
+    }
+    .benchmark-badge {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(251, 191, 36, 0.1);
+      border: 1px dashed rgba(251, 191, 36, 0.4);
+      padding: 8px 14px;
+      border-radius: 8px;
+      font-size: 0.8rem;
+      color: var(--warning);
+      width: fit-content;
+    }
+    .benchmark-line {
+      width: 10px;
+      height: 10px;
+      background: var(--warning);
+      border-radius: 50%;
+      box-shadow: 0 0 8px var(--warning);
+    }
+    .avg-grid {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: 10px;
+    }
+    .avg-item-card {
+      background: #131d2e;
+      border: 1px solid #1f2d44;
+      border-radius: 8px;
+      padding: 12px 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .avg-item-card:hover {
+      transform: translateY(-2px);
+      border-color: #38bdf8;
+      box-shadow: 0 4px 14px rgba(56, 189, 248, 0.15);
+    }
+    .avg-item-card.selected {
+      border-color: var(--primary);
+      background: rgba(56, 189, 248, 0.12);
+      box-shadow: 0 0 12px rgba(56, 189, 248, 0.25);
+    }
+    .avg-item-card.dimmed {
+      opacity: 0.4;
+    }
+    .avg-item-title {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: #fff;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .avg-item-val {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--primary);
+      letter-spacing: -0.02em;
+      white-space: nowrap;
+    }
+    .avg-item-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+      font-size: 0.68rem;
+      font-weight: 600;
+      padding: 2px 6px;
+      border-radius: 9999px;
+      width: fit-content;
+      white-space: nowrap;
+    }
+    .avg-item-badge.above {
+      background: rgba(52, 211, 153, 0.15);
+      color: var(--success);
+      border: 1px solid rgba(52, 211, 153, 0.3);
+    }
+    .avg-item-badge.below {
+      background: rgba(248, 113, 113, 0.15);
+      color: var(--danger);
+      border: 1px solid rgba(248, 113, 113, 0.3);
+    }
+
+    /* Card Liderança por Gênero */
+    .lead-box {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 6px;
+    }
+    .lead-progress {
+      height: 20px;
+      width: 100%;
+      background: #0d1527;
+      border-radius: 9999px;
+      overflow: hidden;
+      display: flex;
+      border: 1px solid #1a273b;
+    }
+    .lead-seg-masc {
+      background: var(--violet);
+      transition: width 0.4s ease;
+    }
+    .lead-seg-fem {
+      background: var(--emerald);
+      transition: width 0.4s ease;
+    }
+    .lead-metrics {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .lead-stat {
+      background: #0d1527;
+      border: 1px solid #1a273b;
+      border-radius: 8px;
+      padding: 14px 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .lead-stat span {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+    .lead-stat strong {
+      font-size: 1.35rem;
+      font-weight: 700;
+    }
+
+    /* ========================================================
+       PÁGINA 4: TIMELINE, BARRAS LADO A LADO E GRÁFICO EM LINHA
+       ======================================================== */
+    .timeline-chart-container {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-around;
+      height: 220px;
+      padding: 24px 14px 12px 14px;
+      background: #0d1527;
+      border-radius: 8px;
+      border: 1px solid #1a273b;
+      gap: 8px;
+      margin-top: 6px;
+    }
+    .timeline-month-col {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100%;
+      justify-content: flex-end;
+      gap: 8px;
+    }
+    .bars-pair {
+      display: flex;
+      align-items: flex-end;
+      gap: 6px;
+      height: 140px;
+      justify-content: center;
+    }
+    .tbar-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      height: 100%;
+      width: 14px;
+    }
+    .tbar-single {
+      width: 14px;
+      min-width: 14px;
+      border-radius: 4px 4px 0 0;
+      transition: height 0.4s ease;
+      min-height: 4px;
+      cursor: pointer;
+    }
+    .tbar-single.adm {
+      background: linear-gradient(180deg, #10b981 0%, #059669 100%);
+      box-shadow: 0 0 8px rgba(16, 185, 129, 0.25);
+    }
+    .tbar-single.desl {
+      background: linear-gradient(180deg, #f87171 0%, #dc2626 100%);
+      box-shadow: 0 0 8px rgba(248, 113, 113, 0.25);
+    }
+    .tbar-val {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 4px;
+    }
+    .tbar-val.adm { color: #34d399; }
+    .tbar-val.desl { color: #f87171; }
+    .tbar-month-lbl {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      text-align: center;
+      white-space: nowrap;
+    }
+    .timeline-legend {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      font-size: 0.8rem;
+    }
+    .legend-indicator {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      border-radius: 3px;
+    }
+
+    /* GRÁFICO EM LINHA MÊS A MÊS (SVG) */
+    .line-chart-card {
+      background-color: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 22px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      width: 100%;
+    }
+    .line-svg-wrapper {
+      position: relative;
+      width: 100%;
+      height: 220px;
+      background: #0d1527;
+      border-radius: 8px;
+      border: 1px solid #1a273b;
+      padding: 10px 16px;
+    }
+    .line-svg {
+      width: 100%;
+      height: 100%;
+      overflow: visible;
+    }
+    .line-path-vol {
+      fill: none;
+      stroke: var(--warning);
+      stroke-width: 3;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      filter: drop-shadow(0 2px 6px rgba(251, 191, 36, 0.3));
+    }
+    .line-path-invol {
+      fill: none;
+      stroke: var(--primary);
+      stroke-width: 3;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      filter: drop-shadow(0 2px 6px rgba(56, 189, 248, 0.3));
+    }
+    .line-dot {
+      cursor: pointer;
+      transition: r 0.2s, filter 0.2s;
+    }
+    .line-dot:hover {
+      r: 6.5;
+      filter: brightness(1.3);
+    }
+    .grid-line {
+      stroke: #1a273b;
+      stroke-dasharray: 4 4;
+      stroke-width: 1;
+    }
+    .axis-text {
+      fill: #64748b;
+      font-size: 10px;
+      font-family: inherit;
+    }
+
+    /* Memory box Turnover */
+    .turnover-formula-card {
+      background: #0d1527;
+      border: 1px solid #1a273b;
+      border-radius: 8px;
+      padding: 16px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      font-size: 0.88rem;
+    }
+    .formula-tag {
+      background: rgba(251, 191, 36, 0.15);
+      color: var(--warning);
+      border: 1px solid rgba(251, 191, 36, 0.3);
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-family: monospace;
+      font-size: 0.85rem;
+      font-weight: 600;
+      width: fit-content;
+    }
+
+    .info-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .info-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 14px;
+      background: #0d1527;
+      border-radius: 8px;
+      border: 1px solid #1a273b;
+      font-size: 0.88rem;
+    }
+    .info-row strong {
+      color: var(--primary);
+    }
+
     footer {
       text-align: center;
       color: var(--text-muted);
-      font-size: 0.78rem;
-      padding: 16px 0 24px 0;
-    }
-
-    @media (max-width: 900px) {
-      body { flex-direction: column; }
-      .sidebar {
-        width: 100%;
-        height: auto;
-        position: relative;
-      }
+      font-size: 0.8rem;
+      padding: 12px 0 20px 0;
     }
   </style>
 </head>
 <body>
-  <!-- Menu Lateral / Sidebar -->
-  <aside class="sidebar">
-    <div class="sidebar-header">
-      <div class="sidebar-logo">RH</div>
-      <div class="sidebar-brand">
-        <h2>People Hub</h2>
-        <p>Enterprise Suite</p>
-      </div>
+  <!-- Faixa de Navegação Vertical (Menu de Ícones com Miniatura/Tooltip) -->
+  <aside class="nav-rail">
+    <div class="nav-logo">RH</div>
+
+    <div class="nav-items">
+      <!-- Página 1: Geral -->
+      <button class="nav-btn active" onclick="trocarPagina('page-geral', this)" title="Quadro de Pessoal">
+        <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+        <div class="preview-tip">
+          <strong>Página 1: Quadro Geral</strong>
+          <span>Tabela, busca e filtros</span>
+        </div>
+      </button>
+
+      <!-- Página 2: Diversidade -->
+      <button class="nav-btn" onclick="trocarPagina('page-diversidade', this)" title="Diversidade, Gerações & Liderança">
+        <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+        <div class="preview-tip">
+          <strong>Página 2: D&I, Gerações & Liderança</strong>
+          <span>Donut interativo, Raça/Cor, Gerações e Gestão</span>
+        </div>
+      </button>
+
+      <!-- Página 3: Remuneração -->
+      <button class="nav-btn" onclick="trocarPagina('page-remuneracao', this)" title="Remuneração & Departamentos">
+        <svg viewBox="0 0 24 24"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/></svg>
+        <div class="preview-tip">
+          <strong>Página 3: Salários & Áreas</strong>
+          <span>Massa salarial, headcount e salário médio</span>
+        </div>
+      </button>
+
+      <!-- Página 4: Turnover -->
+      <button class="nav-btn" onclick="trocarPagina('page-turnover', this)" title="Turnover Tradicional, Linhas e Timeline">
+        <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/></svg>
+        <div class="preview-tip">
+          <strong>Página 4: Turnover & Linha do Tempo</strong>
+          <span>Timeline de admissões/desligamentos e Donut de motivos</span>
+        </div>
+      </button>
     </div>
 
-    <nav class="sidebar-menu">
-      <div class="menu-category">Gestão de Pessoas</div>
-      <a class="menu-item active" href="#">
-        <span class="icon">👥</span>
-        <span>Colaboradores</span>
+    <div class="nav-bottom">
+      <a href="https://github.com/FelipeViegas82/rh-portal-analytics" target="_blank" class="nav-btn" title="Repositório GitHub">
+        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
       </a>
-      <a class="menu-item" href="#">
-        <span class="icon">🎯</span>
-        <span>Desempenho</span>
-        <span class="badge-soon">Em breve</span>
-      </a>
-      <a class="menu-item" href="#">
-        <span class="icon">🌴</span>
-        <span>Férias & Ausências</span>
-        <span class="badge-soon">Em breve</span>
-      </a>
-      <a class="menu-item" href="#">
-        <span class="icon">🎓</span>
-        <span>Formação & Skills</span>
-        <span class="badge-soon">Em breve</span>
-      </a>
-
-      <div class="menu-category">Ecossistema & Integração</div>
-      <a class="menu-item" href="#">
-        <span class="icon">📊</span>
-        <span>Power BI Analytics</span>
-        <span class="badge-soon">Módulo 2</span>
-      </a>
-      <a class="menu-item" href="#">
-        <span class="icon">📱</span>
-        <span>Power Apps Form</span>
-        <span class="badge-soon">Módulo 3</span>
-      </a>
-      <a class="menu-item" href="#">
-        <span class="icon">📑</span>
-        <span>Base de Dados (CSV)</span>
-      </a>
-    </nav>
-
-    <div class="sidebar-footer">
-      <div class="status-indicator">
-        <span class="status-dot"></span>
-        <span id="dbStatus">Conectado (100 itens)</span>
-      </div>
-      <span>v1.2.0 • GitHub Pages</span>
     </div>
   </aside>
 
-  <!-- Painel Principal de Conteúdo -->
-  <main class="main-wrapper">
-    <header class="topbar">
-      <div class="topbar-info">
-        <h1>Quadro Geral de Pessoal</h1>
-        <p>Visualização unificada de headcount, diversidade, salários e turnover</p>
+  <!-- Conteúdo Principal -->
+  <div class="main-wrapper">
+    <!-- Topo: Botões Validadores no Lugar da Tag Verde de Conectado -->
+    <div class="header">
+      <div class="brand">
+        <div class="brand-title">
+          <h1 id="pageTitle">People Hub & HR Analytics</h1>
+          <p id="pageSubtitle">Consulta Integrada do Quadro de Pessoal</p>
+        </div>
       </div>
-      <div class="topbar-actions">
-        <a class="tag-repo" href="https://github.com/FelipeViegas82/rh-portal-analytics" target="_blank">
-          ★ Ver Repositório GitHub
-        </a>
+
+      <!-- Botão Validador no Cabeçalho Superior -->
+      <div class="status-validators-header">
+        <span class="status-validators-label">Filtro Rápido:</span>
+        <button id="btnValAll" class="btn-validator active-all" onclick="filtrarStatusRapido('')" title="Visualizar Todos os Registros">Todos</button>
+        <button id="btnValAtivo" class="btn-validator" onclick="filtrarStatusRapido('Ativo')" title="Visualizar Somente Ativos">Ativos</button>
+        <button id="btnValDesligado" class="btn-validator" onclick="filtrarStatusRapido('Desligado')" title="Visualizar Somente Desligados">Desligados</button>
       </div>
-    </header>
+    </div>
 
-    <div class="content-area">
-      <!-- Indicadores / Cards -->
-      <section class="metrics-grid">
-        <div class="metric-card">
-          <span class="metric-label">Headcount Total</span>
-          <span class="metric-val total" id="totalColab">0</span>
-        </div>
-        <div class="metric-card">
-          <span class="metric-label">Colaboradores Ativos</span>
-          <span class="metric-val ativo" id="totalAtivos">0</span>
-        </div>
-        <div class="metric-card">
-          <span class="metric-label">Desligados</span>
-          <span class="metric-val desligado" id="totalDesligados">0</span>
-        </div>
-        <div class="metric-card">
-          <span class="metric-label">Taxa de Turnover</span>
-          <span class="metric-val turnover" id="taxaTurnover">0,0%</span>
-        </div>
-        <div class="metric-card">
-          <span class="metric-label">Salário Médio</span>
-          <span class="metric-val salario" id="mediaSalario">R$ 0,00</span>
-        </div>
-      </section>
+    <!-- Indicadores / Cards Principais com o Headcount Limpo -->
+    <div class="metrics-grid">
+      <div class="metric-card">
+        <span class="metric-label">Headcount Total</span>
+        <span class="metric-val total" id="totalColab">0</span>
+      </div>
+      <div class="metric-card">
+        <span class="metric-label">Colaboradores Ativos</span>
+        <span class="metric-val ativo" id="totalAtivos">0</span>
+      </div>
+      <div class="metric-card">
+        <span class="metric-label">Desligados</span>
+        <span class="metric-val desligado" id="totalDesligados">0</span>
+      </div>
+      <div class="metric-card">
+        <span class="metric-label">Taxa de Turnover (Regra Clássica)</span>
+        <span class="metric-val turnover" id="taxaTurnover">0,0%</span>
+      </div>
+      <div class="metric-card">
+        <span class="metric-label">Salário Médio</span>
+        <span class="metric-val salario" id="mediaSalario">R$ 0,00</span>
+      </div>
+    </div>
 
-      <!-- Painel de Filtros e Busca -->
-      <section class="filter-panel">
+    <!-- PÁGINA 1: QUADRO GERAL -->
+    <section id="page-geral" class="page-section active">
+      <div class="filter-panel">
         <div class="search-box">
           <input type="text" id="buscaGeral" placeholder="Pesquisar por nome, cargo ou ID...">
         </div>
@@ -858,10 +1154,9 @@ Analisando
           </select>
           <button id="btnLimpar" class="btn-reset">Limpar Filtros</button>
         </div>
-      </section>
+      </div>
 
-      <!-- Tabela de Registos -->
-      <section class="table-container">
+      <div class="table-container">
         <table>
           <thead>
             <tr>
@@ -878,16 +1173,300 @@ Analisando
           </thead>
           <tbody id="tabelaCorpo"></tbody>
         </table>
-      </section>
+      </div>
+    </section>
 
-      <footer>
-        People Hub & HR Analytics • Projeto Integrado: Power BI • Power Apps • Web Portal
-      </footer>
-    </div>
-  </main>
+    <!-- PÁGINA 2: DIVERSIDADE, GERAÇÕES E LIDERANÇA COM FILTRO CRUZADO -->
+    <section id="page-diversidade" class="page-section">
+      <!-- Barra Informativa de Filtro Cruzado Ativo -->
+      <div id="crossfilterBar" class="crossfilter-bar">
+        <span>Filtro interativo ativo: <strong id="crossfilterLabel" style="color:var(--primary);">Nenhum</strong></span>
+        <button class="btn-clear-cross" onclick="limparFiltroCruzado()">Limpar Seleção do Gráfico</button>
+      </div>
+
+      <!-- Linha 1: 3 Gráficos Lado a Lado (Donut Gênero + Barras Raça/Cor + Barras Gerações) -->
+      <div class="analytics-grid-3">
+        <!-- 1. Donut de Gênero (Centro limpo, Rótulos % na legenda lateral) -->
+        <div class="info-card">
+          <div class="info-card-header">
+            <h3>Distribuição por Gênero</h3>
+            <span class="hint-click">Clique para filtrar</span>
+          </div>
+          <div class="donut-container">
+            <div class="donut-wrapper">
+              <svg class="donut-svg" viewBox="0 0 42 42">
+                <circle cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#1e293b" stroke-width="5.5"></circle>
+                <!-- Segmento Masculino (Violeta) -->
+                <circle id="donutMasc" class="donut-segment" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#8b5cf6" stroke-width="5.5" stroke-dasharray="60 40" stroke-dashoffset="0" onclick="toggleFiltroCruzado('genero', 'Masculino')"></circle>
+                <!-- Segmento Feminino (Esmeralda) -->
+                <circle id="donutFem" class="donut-segment" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#10b981" stroke-width="5.5" stroke-dasharray="40 60" stroke-dashoffset="-60" onclick="toggleFiltroCruzado('genero', 'Feminino')"></circle>
+              </svg>
+            </div>
+            <!-- Legenda com o % de dados posicionado ao lado de cada cor -->
+            <div class="donut-legend">
+              <div class="donut-legend-item" onclick="toggleFiltroCruzado('genero', 'Masculino')" title="Clique para filtrar Masculino">
+                <span class="legend-color violet"></span>
+                <span>Masculino</span>
+                <span class="donut-legend-pct" style="color:var(--violet);" id="lblLegendPctMasc">60%</span>
+              </div>
+              <div class="donut-legend-item" onclick="toggleFiltroCruzado('genero', 'Feminino')" title="Clique para filtrar Feminino">
+                <span class="legend-color emerald"></span>
+                <span>Feminino</span>
+                <span class="donut-legend-pct" style="color:var(--emerald);" id="lblLegendPctFem">40%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Barras Verticais de Raça / Cor (Padrão IBGE) -->
+        <div class="info-card">
+          <div class="info-card-header">
+            <h3>Distribuição por Raça / Cor</h3>
+            <span class="hint-click">Clique para filtrar</span>
+          </div>
+          <div class="vbar-chart" id="vbarRaca"></div>
+        </div>
+
+        <!-- 3. Quebra Geracional da População -->
+        <div class="info-card">
+          <div class="info-card-header">
+            <h3>Quebra Geracional</h3>
+            <span class="hint-click">Clique para filtrar</span>
+          </div>
+          <div class="vbar-chart" id="vbarGeracao"></div>
+        </div>
+      </div>
+
+      <!-- Linha 2: Quebra de Liderança por Gênero (Gerências & Coordenações) -->
+      <div class="info-card">
+        <div class="info-card-header">
+          <h3>Liderança por Gênero (Gerências & Coordenações)</h3>
+          <span style="font-size:0.75rem; color:var(--text-muted);">Proporção em cargos de tomada de decisão</span>
+        </div>
+        <div class="lead-box">
+          <div class="lead-progress">
+            <div id="barLeadMasc" class="lead-seg-masc" style="width: 75%;" title="Masculino"></div>
+            <div id="barLeadFem" class="lead-seg-fem" style="width: 25%;" title="Feminino"></div>
+          </div>
+          <div class="lead-metrics">
+            <div class="lead-stat">
+              <span style="color: var(--violet);">● Líderes Masculinos</span>
+              <strong id="leadMascVal" style="color: var(--violet);">15 (75%)</strong>
+              <small style="color: var(--text-muted); font-size: 0.75rem;">Gerentes e Coordenadores</small>
+            </div>
+            <div class="lead-stat">
+              <span style="color: var(--emerald);">● Líderes Femininas</span>
+              <strong id="leadFemVal" style="color: var(--emerald);">5 (25%)</strong>
+              <small style="color: var(--text-muted); font-size: 0.75rem;">Gerentes e Coordenadoras</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PÁGINA 3: REMUNERAÇÃO, HEADCOUNT E SALÁRIO MÉDIO POR DEPARTAMENTO -->
+    <section id="page-remuneracao" class="page-section">
+      <!-- Linha Superior: Massa Salarial (Horizontal) & Colaboradores (Vertical) -->
+      <div class="analytics-grid-2">
+        <div class="info-card">
+          <div class="info-card-header">
+            <h3>Massa Salarial por Departamento</h3>
+            <span class="hint-click">Clique para filtrar</span>
+          </div>
+          <div class="hbar-chart" id="hbarSalarioDepto"></div>
+        </div>
+
+        <div class="info-card">
+          <div class="info-card-header">
+            <h3>Colaboradores por Departamento</h3>
+            <span class="hint-click">Clique para filtrar</span>
+          </div>
+          <div class="vbar-chart" id="vbarColabDepto" style="height: 220px;"></div>
+        </div>
+      </div>
+
+      <!-- Linha Inferior: Gráfico de Salário Médio em Linha Única de 6 Colunas -->
+      <div class="info-card">
+        <div class="info-card-header">
+          <h3>Salário Médio por Departamento & Benchmark Corporativo</h3>
+          <span class="hint-click">Clique no departamento para filtrar</span>
+        </div>
+        <div class="avg-salary-container">
+          <div class="benchmark-badge">
+            <span class="benchmark-line"></span>
+            <span>Média Salarial Global da Empresa: <strong style="color:#fff;" id="benchGeralVal">R$ 7.136,50</strong></span>
+          </div>
+          <div class="avg-grid" id="avgSalaryGrid"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PÁGINA 4: TURNOVER, TIMELINE LADO A LADO, GRÁFICO EM LINHA E DONUT DE MOTIVOS -->
+    <section id="page-turnover" class="page-section">
+      <!-- 1. Linha do Tempo: Admissões vs Desligamentos (Barras Verticais Lado a Lado Mês a Mês) -->
+      <div class="info-card">
+        <div class="info-card-header">
+          <h3>Linha do Tempo: Admissões vs. Desligamentos (Mês a Mês)</h3>
+          <div class="timeline-legend">
+            <span><span class="legend-indicator" style="background:#10b981;"></span> Admissões</span>
+            <span><span class="legend-indicator" style="background:#f87171;"></span> Desligamentos</span>
+          </div>
+        </div>
+        <div class="timeline-chart-container" id="timelineBars"></div>
+      </div>
+
+      <!-- 2. Gráfico em Linha Ocupando a Linha Inteira: Turnover Voluntário vs Involuntário Mês a Mês -->
+      <div class="line-chart-card">
+        <div class="info-card-header">
+          <h3>Evolução Mensal do Turnover: Voluntário vs. Involuntário</h3>
+          <div class="timeline-legend">
+            <span><span class="legend-indicator" style="background:var(--warning);"></span> Turnover Voluntário (Iniciativa do Colaborador)</span>
+            <span><span class="legend-indicator" style="background:var(--primary);"></span> Turnover Involuntário (Iniciativa da Empresa)</span>
+          </div>
+        </div>
+        <div class="line-svg-wrapper">
+          <svg class="line-svg" id="svgTurnoverLines" viewBox="0 0 900 180" preserveAspectRatio="none"></svg>
+        </div>
+      </div>
+
+      <!-- 3. Memória de Cálculo e Gráfico DONUT de Motivos de Desligamento -->
+      <div class="analytics-grid-2">
+        <div class="info-card">
+          <div class="info-card-header">
+            <h3>Memória de Cálculo do Turnover</h3>
+          </div>
+          <div class="turnover-formula-card">
+            <span class="formula-tag">Fórmula: ((Admissões + Demissões) / 2) / Quadro Total</span>
+            <p style="color: var(--text-muted); font-size: 0.85rem; line-height: 1.5;">
+              A regra tradicional pondera as entradas e saídas no ciclo de apuração sobre o efetivo médio ou total do quadro.
+            </p>
+            <div class="info-row">
+              <span>Admissões no Ciclo (2025-2026)</span>
+              <strong style="color: var(--success);" id="tAdmissoes">31</strong>
+            </div>
+            <div class="info-row">
+              <span>Demissões Acumuladas</span>
+              <strong style="color: var(--danger);" id="tDemissoes">27</strong>
+            </div>
+            <div class="info-row">
+              <span>Quadro Total Avaliado</span>
+              <strong style="color: #fff;" id="tQuadro">100</strong>
+            </div>
+            <div class="info-row" style="background: rgba(251, 191, 36, 0.1); border-color: rgba(251, 191, 36, 0.25);">
+              <span style="font-weight: 600; color: var(--warning);">Taxa de Turnover Resultante</span>
+              <strong style="font-size: 1.1rem; color: var(--warning);" id="tTaxaFinal">29,0%</strong>
+            </div>
+          </div>
+        </div>
+
+        <!-- GRÁFICO DONUT DE MOTIVOS DE DESLIGAMENTO -->
+        <div class="info-card">
+          <div class="info-card-header">
+            <h3>Motivos de Desligamento</h3>
+            <span class="hint-click">Clique para filtrar</span>
+          </div>
+          <div class="donut-container" id="donutMotivosContainer">
+            <div class="donut-wrapper">
+              <svg class="donut-svg" id="donutMotivosSvg" viewBox="0 0 42 42">
+                <circle cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#1e293b" stroke-width="5.5"></circle>
+                <g id="donutMotivosSlices"></g>
+              </svg>
+            </div>
+            <div class="donut-legend" id="donutMotivosLegend"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      Projeto Integrado: Power BI • Power Apps • Web Portal | Base simulada de RH
+    </footer>
+  </div>
+
+  <!-- Tooltip Global para Donut e Linhas -->
+  <div id="donutTooltip" class="chart-tooltip"></div>
 
   <script>
-    const colaboradores = [{"id": 1, "nome": "Lucas Andrade", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Recursos Humanos", "cargo": "Especialista em D&I", "salario": 6800.0, "data_admissao": "2021-07-29", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 2, "nome": "Danilo Carvalho", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Tecnologia", "cargo": "Desenvolvedor(a) Sênior", "salario": 10850.0, "data_admissao": "2023-11-01", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 3, "nome": "Igor Rocha", "genero": "Masculino", "raca_cor": "Parda", "departamento": "Comercial", "cargo": "Analista de Vendas B2B", "salario": 4050.0, "data_admissao": "2024-04-21", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 4, "nome": "Bernardo Nunes", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Comercial", "cargo": "Analista de Vendas B2B", "salario": 4200.0, "data_admissao": "2021-11-15", "status": "Desligado", "data_desligamento": "2026-04-26", "motivo_desligamento": "Pedido de Demissão"}, {"id": 5, "nome": "Andre Souza", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Financeiro", "cargo": "Especialista Fiscal", "salario": 8350.0, "data_admissao": "2025-07-11", "status": "Desligado", "data_desligamento": "2026-05-02", "motivo_desligamento": "Pedido de Demissão"}, {"id": 6, "nome": "Camila Fernandes", "genero": "Feminino", "raca_cor": "Branca", "departamento": "Marketing", "cargo": "Especialista de Conteúdo", "salario": 6950.0, "data_admissao": "2023-01-11", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 7, "nome": "Mateus Dias", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Financeiro", "cargo": "Assistente Financeiro", "salario": 3400.0, "data_admissao": "2025-10-18", "status": "Desligado", "data_desligamento": "2026-02-06", "motivo_desligamento": "Pedido de Demissão"}, {"id": 8, "nome": "Luana Marques", "genero": "Feminino", "raca_cor": "Branca", "departamento": "Financeiro", "cargo": "Especialista Fiscal", "salario": 7800.0, "data_admissao": "2024-10-04", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 9, "nome": "Vitor Rocha", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Recursos Humanos", "cargo": "Especialista em D&I", "salario": 6850.0, "data_admissao": "2023-02-17", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 10, "nome": "Murilo Costa", "genero": "Masculino", "raca_cor": "Parda", "departamento": "Tecnologia", "cargo": "Desenvolvedor(a) Pleno", "salario": 6950.0, "data_admissao": "2021-03-07", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 11, "nome": "Amanda Oliveira", "genero": "Feminino", "raca_cor": "Branca", "departamento": "Marketing", "cargo": "Analista de Growth/Marketing", "salario": 6250.0, "data_admissao": "2022-10-07", "status": "Desligado", "data_desligamento": "2025-09-23", "motivo_desligamento": "Pedido de Demissão"}, {"id": 12, "nome": "Mariana Lima", "genero": "Feminino", "raca_cor": "Branca", "departamento": "Operações", "cargo": "Gerente de Projetos", "salario": 11650.0, "data_admissao": "2025-03-10", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 13, "nome": "Jessica Pereira", "genero": "Feminino", "raca_cor": "Indígena", "departamento": "Tecnologia", "cargo": "Designer UI/UX", "salario": 6250.0, "data_admissao": "2021-07-06", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 14, "nome": "Felipe Rocha", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Comercial", "cargo": "Analista de Vendas B2B", "salario": 4500.0, "data_admissao": "2023-02-28", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 15, "nome": "Gabriela Lima", "genero": "Feminino", "raca_cor": "Amarela", "departamento": "Tecnologia", "cargo": "Desenvolvedor(a) Júnior", "salario": 4900.0, "data_admissao": "2021-08-23", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 16, "nome": "Daniela Rocha", "genero": "Feminino", "raca_cor": "Branca", "departamento": "Financeiro", "cargo": "Assistente Financeiro", "salario": 3000.0, "data_admissao": "2023-07-19", "status": "Desligado", "data_desligamento": "2025-03-09", "motivo_desligamento": "Término de Contrato"}, {"id": 17, "nome": "Diego Freitas", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Financeiro", "cargo": "Assistente Financeiro", "salario": 3300.0, "data_admissao": "2023-11-06", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 18, "nome": "Eduardo Moreira", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Operações", "cargo": "Coordenador(a) de Suporte", "salario": 8600.0, "data_admissao": "2024-05-11", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 19, "nome": "Rodrigo Freitas", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Financeiro", "cargo": "Assistente Financeiro", "salario": 2850.0, "data_admissao": "2022-05-09", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 20, "nome": "Gabriel Andrade", "genero": "Masculino", "raca_cor": "Parda", "departamento": "Tecnologia", "cargo": "Desenvolvedor(a) Sênior", "salario": 13900.0, "data_admissao": "2023-12-27", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 21, "nome": "Murilo Lopes", "genero": "Masculino", "raca_cor": "Preta", "departamento": "Recursos Humanos", "cargo": "Assistente de RH", "salario": 2750.0, "data_admissao": "2025-11-22", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 22, "nome": "Alexandre Moreira", "genero": "Masculino", "raca_cor": "Parda", "departamento": "Recursos Humanos", "cargo": "Analista de RH Pleno", "salario": 5450.0, "data_admissao": "2023-03-29", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 23, "nome": "Renata Mendes", "genero": "Feminino", "raca_cor": "Parda", "departamento": "Tecnologia", "cargo": "Cientista de Dados", "salario": 9100.0, "data_admissao": "2021-05-12", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 24, "nome": "Danilo Pereira", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Tecnologia", "cargo": "Desenvolvedor(a) Pleno", "salario": 6950.0, "data_admissao": "2026-01-29", "status": "Desligado", "data_desligamento": "2026-06-22", "motivo_desligamento": "Pedido de Demissão"}, {"id": 25, "nome": "Rafael Dias", "genero": "Masculino", "raca_cor": "Parda", "departamento": "Operações", "cargo": "Gerente de Projetos", "salario": 10050.0, "data_admissao": "2026-03-31", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 26, "nome": "Patricia Nunes", "genero": "Feminino", "raca_cor": "Parda", "departamento": "Comercial", "cargo": "Analista de Vendas B2B", "salario": 4050.0, "data_admissao": "2021-07-18", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 27, "nome": "Carolina Carvalho", "genero": "Feminino", "raca_cor": "Parda", "departamento": "Tecnologia", "cargo": "Desenvolvedor(a) Pleno", "salario": 7850.0, "data_admissao": "2024-08-16", "status": "Desligado", "data_desligamento": "2025-12-01", "motivo_desligamento": "Demissão sem Justa Causa"}, {"id": 28, "nome": "Guilherme Alves", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Comercial", "cargo": "Gerente Comercial", "salario": 11550.0, "data_admissao": "2022-01-11", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 29, "nome": "Gabriel Almeida", "genero": "Masculino", "raca_cor": "Parda", "departamento": "Operações", "cargo": "Gerente de Projetos", "salario": 9900.0, "data_admissao": "2024-08-28", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 30, "nome": "Gabriel Freitas", "genero": "Masculino", "raca_cor": "Parda", "departamento": "Recursos Humanos", "cargo": "Especialista em D&I", "salario": 6850.0, "data_admissao": "2023-09-22", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 31, "nome": "Beatriz Ferreira", "genero": "Feminino", "raca_cor": "Branca", "departamento": "Comercial", "cargo": "Executivo(a) de Contas", "salario": 5300.0, "data_admissao": "2025-05-25", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 32, "nome": "Carolina Nascimento", "genero": "Feminino", "raca_cor": "Preta", "departamento": "Operações", "cargo": "Gerente de Projetos", "salario": 12150.0, "data_admissao": "2023-09-24", "status": "Desligado", "data_desligamento": "2024-09-21", "motivo_desligamento": "Pedido de Demissão"}, {"id": 33, "nome": "Danilo Andrade", "genero": "Masculino", "raca_cor": "Parda", "departamento": "Financeiro", "cargo": "Analista Financeiro Pleno", "salario": 4900.0, "data_admissao": "2024-04-11", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 34, "nome": "Mateus Soares", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Recursos Humanos", "cargo": "Assistente de RH", "salario": 2650.0, "data_admissao": "2021-05-20", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 35, "nome": "Andre Souza", "genero": "Masculino", "raca_cor": "Preta", "departamento": "Marketing", "cargo": "Analista de Growth/Marketing", "salario": 5050.0, "data_admissao": "2024-05-02", "status": "Desligado", "data_desligamento": "2024-09-22", "motivo_desligamento": "Pedido de Demissão"}, {"id": 36, "nome": "Amanda Alves", "genero": "Feminino", "raca_cor": "Parda", "departamento": "Financeiro", "cargo": "Analista Financeiro Pleno", "salario": 5150.0, "data_admissao": "2023-03-22", "status": "Desligado", "data_desligamento": "2025-01-24", "motivo_desligamento": "Pedido de Demissão"}, {"id": 37, "nome": "Lucas Almeida", "genero": "Masculino", "raca_cor": "Parda", "departamento": "Marketing", "cargo": "Analista de Growth/Marketing", "salario": 6500.0, "data_admissao": "2021-05-31", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 38, "nome": "Mariana Freitas", "genero": "Feminino", "raca_cor": "Branca", "departamento": "Tecnologia", "cargo": "Desenvolvedor(a) Sênior", "salario": 13500.0, "data_admissao": "2023-01-27", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 39, "nome": "Natalia Nascimento", "genero": "Feminino", "raca_cor": "Branca", "departamento": "Operações", "cargo": "Coordenador(a) de Suporte", "salario": 6500.0, "data_admissao": "2025-08-01", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 40, "nome": "Felipe Lima", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Tecnologia", "cargo": "Cientista de Dados", "salario": 11350.0, "data_admissao": "2021-11-15", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 41, "nome": "Igor Costa", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Recursos Humanos", "cargo": "Coordenador(a) de Gente e Gestão", "salario": 10500.0, "data_admissao": "2022-05-30", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 42, "nome": "Gabriel Rocha", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Recursos Humanos", "cargo": "Coordenador(a) de Gente e Gestão", "salario": 9150.0, "data_admissao": "2022-11-15", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 43, "nome": "Larissa Andrade", "genero": "Feminino", "raca_cor": "Parda", "departamento": "Comercial", "cargo": "Analista de Vendas B2B", "salario": 4450.0, "data_admissao": "2021-08-18", "status": "Desligado", "data_desligamento": "2025-09-01", "motivo_desligamento": "Demissão com Justa Causa"}, {"id": 44, "nome": "Eduardo Vieira", "genero": "Masculino", "raca_cor": "Parda", "departamento": "Comercial", "cargo": "Analista de Vendas B2B", "salario": 3950.0, "data_admissao": "2022-09-24", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 45, "nome": "Eduardo Alves", "genero": "Masculino", "raca_cor": "Parda", "departamento": "Tecnologia", "cargo": "Cientista de Dados", "salario": 9600.0, "data_admissao": "2024-02-21", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 46, "nome": "Priscila Andrade", "genero": "Feminino", "raca_cor": "Branca", "departamento": "Recursos Humanos", "cargo": "Especialista em D&I", "salario": 8250.0, "data_admissao": "2025-06-27", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 47, "nome": "Ana Ferreira", "genero": "Feminino", "raca_cor": "Parda", "departamento": "Financeiro", "cargo": "Analista Financeiro Pleno", "salario": 5900.0, "data_admissao": "2023-04-24", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 48, "nome": "Rafael Ferreira", "genero": "Masculino", "raca_cor": "Parda", "departamento": "Tecnologia", "cargo": "Cientista de Dados", "salario": 9700.0, "data_admissao": "2021-03-21", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 49, "nome": "Bruno Marques", "genero": "Masculino", "raca_cor": "Preta", "departamento": "Financeiro", "cargo": "Especialista Fiscal", "salario": 7650.0, "data_admissao": "2025-06-17", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 50, "nome": "Lucas Dias", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Financeiro", "cargo": "Analista Financeiro Pleno", "salario": 5200.0, "data_admissao": "2021-05-23", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 51, "nome": "Jessica Rocha", "genero": "Feminino", "raca_cor": "Parda", "departamento": "Operações", "cargo": "Gerente de Projetos", "salario": 10800.0, "data_admissao": "2021-02-26", "status": "Desligado", "data_desligamento": "2022-10-13", "motivo_desligamento": "Pedido de Demissão"}, {"id": 52, "nome": "Beatriz Souza", "genero": "Feminino", "raca_cor": "Parda", "departamento": "Financeiro", "cargo": "Especialista Fiscal", "salario": 8600.0, "data_admissao": "2022-10-05", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 53, "nome": "Andre Mendes", "genero": "Masculino", "raca_cor": "Parda", "departamento": "Recursos Humanos", "cargo": "Coordenador(a) de Gente e Gestão", "salario": 9150.0, "data_admissao": "2023-06-13", "status": "Desligado", "data_desligamento": "2026-08-18", "motivo_desligamento": "Demissão sem Justa Causa"}, {"id": 54, "nome": "Eduardo Carvalho", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Financeiro", "cargo": "Analista Financeiro Pleno", "salario": 5650.0, "data_admissao": "2024-09-20", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 55, "nome": "Gabriela Gomes", "genero": "Feminino", "raca_cor": "Parda", "departamento": "Financeiro", "cargo": "Analista Financeiro Pleno", "salario": 5350.0, "data_admissao": "2022-08-29", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 56, "nome": "Marcelo Dias", "genero": "Masculino", "raca_cor": "Preta", "departamento": "Recursos Humanos", "cargo": "Assistente de RH", "salario": 2950.0, "data_admissao": "2022-09-09", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 57, "nome": "Leonardo Gomes", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Marketing", "cargo": "Analista de Growth/Marketing", "salario": 5750.0, "data_admissao": "2022-10-22", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 58, "nome": "Bianca Alves", "genero": "Feminino", "raca_cor": "Parda", "departamento": "Recursos Humanos", "cargo": "Assistente de RH", "salario": 3000.0, "data_admissao": "2022-08-05", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 59, "nome": "Camila Marques", "genero": "Feminino", "raca_cor": "Preta", "departamento": "Recursos Humanos", "cargo": "Especialista em D&I", "salario": 7850.0, "data_admissao": "2022-04-06", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 60, "nome": "Lucas Santos", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Operações", "cargo": "Analista de Operações", "salario": 4900.0, "data_admissao": "2025-04-23", "status": "Desligado", "data_desligamento": "2026-01-20", "motivo_desligamento": "Demissão sem Justa Causa"}, {"id": 61, "nome": "Igor Nascimento", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Comercial", "cargo": "Executivo(a) de Contas", "salario": 5250.0, "data_admissao": "2024-09-05", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 62, "nome": "Bernardo Carvalho", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Operações", "cargo": "Coordenador(a) de Suporte", "salario": 7550.0, "data_admissao": "2024-02-16", "status": "Desligado", "data_desligamento": "2024-08-18", "motivo_desligamento": "Pedido de Demissão"}, {"id": 63, "nome": "Bianca Soares", "genero": "Feminino", "raca_cor": "Amarela", "departamento": "Marketing", "cargo": "Especialista de Conteúdo", "salario": 5850.0, "data_admissao": "2025-03-27", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 64, "nome": "Natalia Almeida", "genero": "Feminino", "raca_cor": "Preta", "departamento": "Operações", "cargo": "Analista de Operações", "salario": 4700.0, "data_admissao": "2025-03-20", "status": "Desligado", "data_desligamento": "2026-04-10", "motivo_desligamento": "Pedido de Demissão"}, {"id": 65, "nome": "Luana Pereira", "genero": "Feminino", "raca_cor": "Branca", "departamento": "Tecnologia", "cargo": "Desenvolvedor(a) Sênior", "salario": 12850.0, "data_admissao": "2022-04-26", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 66, "nome": "Natalia Oliveira", "genero": "Feminino", "raca_cor": "Branca", "departamento": "Recursos Humanos", "cargo": "Especialista em D&I", "salario": 7250.0, "data_admissao": "2021-11-09", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 67, "nome": "Marcelo Carvalho", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Comercial", "cargo": "Gerente Comercial", "salario": 12650.0, "data_admissao": "2022-02-28", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 68, "nome": "Daniela Vieira", "genero": "Feminino", "raca_cor": "Preta", "departamento": "Tecnologia", "cargo": "Desenvolvedor(a) Júnior", "salario": 5050.0, "data_admissao": "2025-04-17", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 69, "nome": "Ana Ribeiro", "genero": "Feminino", "raca_cor": "Branca", "departamento": "Comercial", "cargo": "Executivo(a) de Contas", "salario": 7050.0, "data_admissao": "2026-05-07", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 70, "nome": "Caio Pereira", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Operações", "cargo": "Analista de Operações", "salario": 4050.0, "data_admissao": "2022-11-20", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 71, "nome": "Tatiane Ferreira", "genero": "Feminino", "raca_cor": "Parda", "departamento": "Tecnologia", "cargo": "Designer UI/UX", "salario": 7450.0, "data_admissao": "2023-12-30", "status": "Desligado", "data_desligamento": "2025-04-06", "motivo_desligamento": "Demissão sem Justa Causa"}, {"id": 72, "nome": "Gabriel Rocha", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Comercial", "cargo": "Gerente Comercial", "salario": 11750.0, "data_admissao": "2022-06-17", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 73, "nome": "Vinicius Costa", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Comercial", "cargo": "Executivo(a) de Contas", "salario": 5350.0, "data_admissao": "2026-05-03", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 74, "nome": "Camila Lopes", "genero": "Feminino", "raca_cor": "Branca", "departamento": "Operações", "cargo": "Gerente de Projetos", "salario": 9700.0, "data_admissao": "2026-05-04", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 75, "nome": "Bernardo Rocha", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Tecnologia", "cargo": "Desenvolvedor(a) Júnior", "salario": 5150.0, "data_admissao": "2022-02-13", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 76, "nome": "Guilherme Rodrigues", "genero": "Masculino", "raca_cor": "Parda", "departamento": "Tecnologia", "cargo": "Cientista de Dados", "salario": 10550.0, "data_admissao": "2022-03-23", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 77, "nome": "Daniela Ribeiro", "genero": "Feminino", "raca_cor": "Branca", "departamento": "Marketing", "cargo": "Especialista de Conteúdo", "salario": 7150.0, "data_admissao": "2025-01-11", "status": "Desligado", "data_desligamento": "2025-08-26", "motivo_desligamento": "Término de Contrato"}, {"id": 78, "nome": "Danilo Silva", "genero": "Masculino", "raca_cor": "Preta", "departamento": "Marketing", "cargo": "Analista de Growth/Marketing", "salario": 5900.0, "data_admissao": "2026-05-17", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 79, "nome": "Gabriel Vieira", "genero": "Masculino", "raca_cor": "Parda", "departamento": "Recursos Humanos", "cargo": "Especialista em D&I", "salario": 6700.0, "data_admissao": "2025-05-02", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 80, "nome": "Danilo Nunes", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Operações", "cargo": "Gerente de Projetos", "salario": 11200.0, "data_admissao": "2023-01-29", "status": "Desligado", "data_desligamento": "2025-02-25", "motivo_desligamento": "Pedido de Demissão"}, {"id": 81, "nome": "Vanessa Souza", "genero": "Feminino", "raca_cor": "Parda", "departamento": "Financeiro", "cargo": "Especialista Fiscal", "salario": 8400.0, "data_admissao": "2025-08-25", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 82, "nome": "Marcelo Ferreira", "genero": "Masculino", "raca_cor": "Parda", "departamento": "Recursos Humanos", "cargo": "Coordenador(a) de Gente e Gestão", "salario": 10850.0, "data_admissao": "2026-02-27", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 83, "nome": "Renata Carvalho", "genero": "Feminino", "raca_cor": "Parda", "departamento": "Marketing", "cargo": "Analista de Growth/Marketing", "salario": 5100.0, "data_admissao": "2025-10-11", "status": "Desligado", "data_desligamento": "2026-01-23", "motivo_desligamento": "Pedido de Demissão"}, {"id": 84, "nome": "Patricia Moreira", "genero": "Feminino", "raca_cor": "Parda", "departamento": "Marketing", "cargo": "Especialista de Conteúdo", "salario": 6550.0, "data_admissao": "2022-11-20", "status": "Desligado", "data_desligamento": "2024-11-14", "motivo_desligamento": "Pedido de Demissão"}, {"id": 85, "nome": "Eduardo Nunes", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Recursos Humanos", "cargo": "Coordenador(a) de Gente e Gestão", "salario": 11650.0, "data_admissao": "2024-12-07", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 86, "nome": "Diego Alves", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Comercial", "cargo": "Analista de Vendas B2B", "salario": 4400.0, "data_admissao": "2025-04-02", "status": "Desligado", "data_desligamento": "2026-01-30", "motivo_desligamento": "Demissão sem Justa Causa"}, {"id": 87, "nome": "Renata Nunes", "genero": "Feminino", "raca_cor": "Branca", "departamento": "Financeiro", "cargo": "Assistente Financeiro", "salario": 2850.0, "data_admissao": "2024-11-17", "status": "Desligado", "data_desligamento": "2026-01-28", "motivo_desligamento": "Pedido de Demissão"}, {"id": 88, "nome": "Carolina Andrade", "genero": "Feminino", "raca_cor": "Parda", "departamento": "Financeiro", "cargo": "Especialista Fiscal", "salario": 8550.0, "data_admissao": "2022-07-09", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 89, "nome": "Rodrigo Andrade", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Tecnologia", "cargo": "Cientista de Dados", "salario": 11350.0, "data_admissao": "2026-05-02", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 90, "nome": "Bruno Alves", "genero": "Masculino", "raca_cor": "Parda", "departamento": "Recursos Humanos", "cargo": "Coordenador(a) de Gente e Gestão", "salario": 11150.0, "data_admissao": "2025-04-06", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 91, "nome": "Juliana Marques", "genero": "Feminino", "raca_cor": "Branca", "departamento": "Recursos Humanos", "cargo": "Especialista em D&I", "salario": 7200.0, "data_admissao": "2022-09-12", "status": "Desligado", "data_desligamento": "2025-11-08", "motivo_desligamento": "Pedido de Demissão"}, {"id": 92, "nome": "Mateus Fernandes", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Tecnologia", "cargo": "Designer UI/UX", "salario": 6600.0, "data_admissao": "2025-03-22", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 93, "nome": "Danilo Gomes", "genero": "Masculino", "raca_cor": "Parda", "departamento": "Comercial", "cargo": "Gerente Comercial", "salario": 12350.0, "data_admissao": "2026-06-01", "status": "Desligado", "data_desligamento": "2026-08-30", "motivo_desligamento": "Pedido de Demissão"}, {"id": 94, "nome": "Andre Lopes", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Tecnologia", "cargo": "Desenvolvedor(a) Pleno", "salario": 6800.0, "data_admissao": "2025-07-20", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 95, "nome": "Camila Pereira", "genero": "Feminino", "raca_cor": "Branca", "departamento": "Comercial", "cargo": "Analista de Vendas B2B", "salario": 4550.0, "data_admissao": "2025-06-08", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 96, "nome": "Renata Freitas", "genero": "Feminino", "raca_cor": "Parda", "departamento": "Marketing", "cargo": "Analista de Growth/Marketing", "salario": 6500.0, "data_admissao": "2022-09-18", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 97, "nome": "Vitor Andrade", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Recursos Humanos", "cargo": "Analista de RH Pleno", "salario": 5300.0, "data_admissao": "2022-06-26", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 98, "nome": "Guilherme Ferreira", "genero": "Masculino", "raca_cor": "Parda", "departamento": "Recursos Humanos", "cargo": "Assistente de RH", "salario": 2600.0, "data_admissao": "2023-07-12", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": ""}, {"id": 99, "nome": "Leticia Santos", "genero": "Feminino", "raca_cor": "Branca", "departamento": "Financeiro", "cargo": "Assistente Financeiro", "salario": 3200.0, "data_admissao": "2023-07-19", "status": "Desligado", "data_desligamento": "2025-01-07", "motivo_desligamento": "Demissão com Justa Causa"}, {"id": 100, "nome": "Marcelo Souza", "genero": "Masculino", "raca_cor": "Parda", "departamento": "Tecnologia", "cargo": "Designer UI/UX", "salario": 7250.0, "data_admissao": "2025-08-20", "status": "Desligado", "data_desligamento": "2025-11-18", "motivo_desligamento": "Pedido de Demissão"}];
+    const colaboradores = [{"id": 1, "nome": "Lucas Andrade", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Recursos Humanos", "cargo": "Especialista em D&I", "salario": 6800.0, "data_admissao": "2021-07-29", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": "", "geracao": "Millennials"}, {"id": 2, "nome": "Danilo Carvalho", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Tecnologia", "cargo": "Desenvolvedor(a) Sênior", "salario": 10850.0, "data_admissao": "2023-11-01", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": "", "geracao": "Millennials"}, {"id": 3, "nome": "Igor Rocha", "genero": "Masculino", "raca_cor": "Parda", "departamento": "Comercial", "cargo": "Analista de Vendas B2B", "salario": 4050.0, "data_admissao": "2024-04-21", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": "", "geracao": "Geração X"}, {"id": 4, "nome": "Bernardo Nunes", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Comercial", "cargo": "Analista de Vendas B2B", "salario": 4200.0, "data_admissao": "2021-11-15", "status": "Desligado", "data_desligamento": "2026-04-26", "motivo_desligamento": "Pedido de Demissão", "geracao": "Geração X"}, {"id": 5, "nome": "Andre Souza", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Financeiro", "cargo": "Especialista Fiscal", "salario": 8350.0, "data_admissao": "2025-07-11", "status": "Desligado", "data_desligamento": "2026-05-02", "motivo_desligamento": "Pedido de Demissão", "geracao": "Millennials"}, {"id": 6, "nome": "Camila Fernandes", "genero": "Feminino", "raca_cor": "Branca", "departamento": "Marketing", "cargo": "Especialista de Conteúdo", "salario": 6950.0, "data_admissao": "2023-01-11", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": "", "geracao": "Millennials"}, {"id": 7, "nome": "Mateus Dias", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Financeiro", "cargo": "Assistente Financeiro", "salario": 3400.0, "data_admissao": "2025-10-18", "status": "Desligado", "data_desligamento": "2026-02-06", "motivo_desligamento": "Pedido de Demissão", "geracao": "Geração Z"}, {"id": 8, "nome": "Luana Marques", "genero": "Feminino", "raca_cor": "Branca", "departamento": "Financeiro", "cargo": "Especialista Fiscal", "salario": 7800.0, "data_admissao": "2024-10-04", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": "", "geracao": "Millennials"}, {"id": 9, "nome": "Vitor Rocha", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Recursos Humanos", "cargo": "Especialista em D&I", "salario": 6850.0, "data_admissao": "2023-02-17", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": "", "geracao": "Millennials"}, {"id": 10, "nome": "Murilo Costa", "genero": "Masculino", "raca_cor": "Parda", "departamento": "Tecnologia", "cargo": "Desenvolvedor(a) Pleno", "salario": 6950.0, "data_admissao": "2021-03-07", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": "", "geracao": "Millennials"}, {"id": 11, "nome": "Amanda Oliveira", "genero": "Feminino", "raca_cor": "Branca", "departamento": "Marketing", "cargo": "Analista de Growth/Marketing", "salario": 6250.0, "data_admissao": "2022-10-07", "status": "Desligado", "data_desligamento": "2025-09-23", "motivo_desligamento": "Pedido de Demissão", "geracao": "Millennials"}, {"id": 12, "nome": "Mariana Lima", "genero": "Feminino", "raca_cor": "Branca", "departamento": "Operações", "cargo": "Gerente de Projetos", "salario": 11650.0, "data_admissao": "2025-03-10", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": "", "geracao": "Baby Boomers"}, {"id": 13, "nome": "Jessica Pereira", "genero": "Feminino", "raca_cor": "Indígena", "departamento": "Tecnologia", "cargo": "Designer UI/UX", "salario": 6250.0, "data_admissao": "2021-07-06", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": "", "geracao": "Geração Z"}, {"id": 14, "nome": "Felipe Rocha", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Comercial", "cargo": "Analista de Vendas B2B", "salario": 4500.0, "data_admissao": "2023-02-28", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": "", "geracao": "Millennials"}, {"id": 15, "nome": "Gabriela Lima", "genero": "Feminino", "raca_cor": "Amarela", "departamento": "Tecnologia", "cargo": "Desenvolvedor(a) Júnior", "salario": 4900.0, "data_admissao": "2021-08-23", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": "", "geracao": "Geração Z"}, {"id": 16, "nome": "Daniela Rocha", "genero": "Feminino", "raca_cor": "Branca", "departamento": "Financeiro", "cargo": "Assistente Financeiro", "salario": 3000.0, "data_admissao": "2023-07-19", "status": "Desligado", "data_desligamento": "2025-03-09", "motivo_desligamento": "Término de Contrato", "geracao": "Millennials"}, {"id": 17, "nome": "Diego Freitas", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Financeiro", "cargo": "Assistente Financeiro", "salario": 3300.0, "data_admissao": "2023-11-06", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": "", "geracao": "Geração Z"}, {"id": 18, "nome": "Eduardo Moreira", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Operações", "cargo": "Coordenador(a) de Suporte", "salario": 8600.0, "data_admissao": "2024-05-11", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": "", "geracao": "Geração X"}, {"id": 19, "nome": "Rodrigo Freitas", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Financeiro", "cargo": "Assistente Financeiro", "salario": 2850.0, "data_admissao": "2022-05-09", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": "", "geracao": "Geração Z"}, {"id": 20, "nome": "Gabriel Andrade", "genero": "Masculino", "raca_cor": "Parda", "departamento": "Tecnologia", "cargo": "Desenvolvedor(a) Sênior", "salario": 13900.0, "data_admissao": "2023-12-27", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": "", "geracao": "Geração X"}, {"id": 21, "nome": "Murilo Lopes", "genero": "Masculino", "raca_cor": "Preta", "departamento": "Recursos Humanos", "cargo": "Assistente de RH", "salario": 2750.0, "data_admissao": "2025-11-22", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": "", "geracao": "Geração Z"}, {"id": 22, "nome": "Alexandre Moreira", "genero": "Masculino", "raca_cor": "Parda", "departamento": "Recursos Humanos", "cargo": "Analista de RH Pleno", "salario": 5450.0, "data_admissao": "2023-03-29", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": "", "geracao": "Millennials"}, {"id": 23, "nome": "Renata Mendes", "genero": "Feminino", "raca_cor": "Parda", "departamento": "Tecnologia", "cargo": "Cientista de Dados", "salario": 9100.0, "data_admissao": "2021-05-12", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": "", "geracao": "Millennials"}, {"id": 24, "nome": "Danilo Pereira", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Tecnologia", "cargo": "Desenvolvedor(a) Pleno", "salario": 6950.0, "data_admissao": "2026-01-29", "status": "Desligado", "data_desligamento": "2026-06-22", "motivo_desligamento": "Pedido de Demissão", "geracao": "Millennials"}, {"id": 25, "nome": "Rafael Dias", "genero": "Masculino", "raca_cor": "Parda", "departamento": "Operações", "cargo": "Gerente de Projetos", "salario": 10050.0, "data_admissao": "2026-03-31", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": "", "geracao": "Millennials"}, {"id": 26, "nome": "Patricia Nunes", "genero": "Feminino", "raca_cor": "Parda", "departamento": "Comercial", "cargo": "Analista de Vendas B2B", "salario": 4050.0, "data_admissao": "2021-07-18", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": "", "geracao": "Geração X"}, {"id": 27, "nome": "Carolina Carvalho", "genero": "Feminino", "raca_cor": "Parda", "departamento": "Tecnologia", "cargo": "Desenvolvedor(a) Pleno", "salario": 7850.0, "data_admissao": "2024-08-16", "status": "Desligado", "data_desligamento": "2025-12-01", "motivo_desligamento": "Demissão sem Justa Causa", "geracao": "Millennials"}, {"id": 28, "nome": "Guilherme Alves", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Comercial", "cargo": "Gerente Comercial", "salario": 11550.0, "data_admissao": "2022-01-11", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": "", "geracao": "Geração X"}, {"id": 29, "nome": "Gabriel Almeida", "genero": "Masculino", "raca_cor": "Parda", "departamento": "Operações", "cargo": "Gerente de Projetos", "salario": 9900.0, "data_admissao": "2024-08-28", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": "", "geracao": "Geração X"}, {"id": 30, "nome": "Gabriel Freitas", "genero": "Masculino", "raca_cor": "Parda", "departamento": "Recursos Humanos", "cargo": "Especialista em D&I", "salario": 6850.0, "data_admissao": "2023-09-22", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": "", "geracao": "Millennials"}, {"id": 31, "nome": "Beatriz Ferreira", "genero": "Feminino", "raca_cor": "Branca", "departamento": "Comercial", "cargo": "Executivo(a) de Contas", "salario": 5300.0, "data_admissao": "2025-05-25", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": "", "geracao": "Millennials"}, {"id": 32, "nome": "Carolina Nascimento", "genero": "Feminino", "raca_cor": "Preta", "departamento": "Operações", "cargo": "Gerente de Projetos", "salario": 12150.0, "data_admissao": "2023-09-24", "status": "Desligado", "data_desligamento": "2024-09-21", "motivo_desligamento": "Pedido de Demissão", "geracao": "Millennials"}, {"id": 33, "nome": "Danilo Andrade", "genero": "Masculino", "raca_cor": "Parda", "departamento": "Financeiro", "cargo": "Analista Financeiro Pleno", "salario": 4900.0, "data_admissao": "2024-04-11", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": "", "geracao": "Millennials"}, {"id": 34, "nome": "Mateus Soares", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Recursos Humanos", "cargo": "Assistente de RH", "salario": 2650.0, "data_admissao": "2021-05-20", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": "", "geracao": "Millennials"}, {"id": 35, "nome": "Andre Souza", "genero": "Masculino", "raca_cor": "Preta", "departamento": "Marketing", "cargo": "Analista de Growth/Marketing", "salario": 5050.0, "data_admissao": "2024-05-02", "status": "Desligado", "data_desligamento": "2024-09-22", "motivo_desligamento": "Pedido de Demissão", "geracao": "Geração Z"}, {"id": 36, "nome": "Amanda Alves", "genero": "Feminino", "raca_cor": "Parda", "departamento": "Financeiro", "cargo": "Analista Financeiro Pleno", "salario": 5150.0, "data_admissao": "2023-03-22", "status": "Desligado", "data_desligamento": "2025-01-24", "motivo_desligamento": "Pedido de Demissão", "geracao": "Millennials"}, {"id": 37, "nome": "Lucas Almeida", "genero": "Masculino", "raca_cor": "Parda", "departamento": "Marketing", "cargo": "Analista de Growth/Marketing", "salario": 6500.0, "data_admissao": "2021-05-31", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": "", "geracao": "Millennials"}, {"id": 38, "nome": "Mariana Freitas", "genero": "Feminino", "raca_cor": "Branca", "departamento": "Tecnologia", "cargo": "Desenvolvedor(a) Sênior", "salario": 13500.0, "data_admissao": "2023-01-27", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": "", "geracao": "Millennials"}, {"id": 39, "nome": "Natalia Nascimento", "genero": "Feminino", "raca_cor": "Branca", "departamento": "Operações", "cargo": "Coordenador(a) de Suporte", "salario": 6500.0, "data_admissao": "2025-08-01", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": "", "geracao": "Millennials"}, {"id": 40, "nome": "Felipe Lima", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Tecnologia", "cargo": "Cientista de Dados", "salario": 11350.0, "data_admissao": "2021-11-15", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": "", "geracao": "Millennials"}, {"id": 41, "nome": "Igor Costa", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Recursos Humanos", "cargo": "Coordenador(a) de Gente e Gestão", "salario": 10500.0, "data_admissao": "2022-05-30", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": "", "geracao": "Millennials"}, {"id": 42, "nome": "Gabriel Rocha", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Recursos Humanos", "cargo": "Coordenador(a) de Gente e Gestão", "salario": 9150.0, "data_admissao": "2022-11-15", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": "", "geracao": "Geração X"}, {"id": 43, "nome": "Larissa Andrade", "genero": "Feminino", "raca_cor": "Parda", "departamento": "Comercial", "cargo": "Analista de Vendas B2B", "salario": 4450.0, "data_admissao": "2021-08-18", "status": "Desligado", "data_desligamento": "2025-09-01", "motivo_desligamento": "Demissão com Justa Causa", "geracao": "Millennials"}, {"id": 44, "nome": "Eduardo Vieira", "genero": "Masculino", "raca_cor": "Parda", "departamento": "Comercial", "cargo": "Analista de Vendas B2B", "salario": 3950.0, "data_admissao": "2022-09-24", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": "", "geracao": "Geração Z"}, {"id": 45, "nome": "Eduardo Alves", "genero": "Masculino", "raca_cor": "Parda", "departamento": "Tecnologia", "cargo": "Cientista de Dados", "salario": 9600.0, "data_admissao": "2024-02-21", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": "", "geracao": "Millennials"}, {"id": 46, "nome": "Priscila Andrade", "genero": "Feminino", "raca_cor": "Branca", "departamento": "Recursos Humanos", "cargo": "Especialista em D&I", "salario": 8250.0, "data_admissao": "2025-06-27", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": "", "geracao": "Geração Z"}, {"id": 47, "nome": "Ana Ferreira", "genero": "Feminino", "raca_cor": "Parda", "departamento": "Financeiro", "cargo": "Analista Financeiro Pleno", "salario": 5900.0, "data_admissao": "2023-04-24", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": "", "geracao": "Millennials"}, {"id": 48, "nome": "Rafael Ferreira", "genero": "Masculino", "raca_cor": "Parda", "departamento": "Tecnologia", "cargo": "Cientista de Dados", "salario": 9700.0, "data_admissao": "2021-03-21", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": "", "geracao": "Millennials"}, {"id": 49, "nome": "Bruno Marques", "genero": "Masculino", "raca_cor": "Preta", "departamento": "Financeiro", "cargo": "Especialista Fiscal", "salario": 7650.0, "data_admissao": "2025-06-17", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": "", "geracao": "Millennials"}, {"id": 50, "nome": "Lucas Dias", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Financeiro", "cargo": "Analista Financeiro Pleno", "salario": 5200.0, "data_admissao": "2021-05-23", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": "", "geracao": "Millennials"}, {"id": 51, "nome": "Jessica Rocha", "genero": "Feminino", "raca_cor": "Parda", "departamento": "Operações", "cargo": "Gerente de Projetos", "salario": 10800.0, "data_admissao": "2021-02-26", "status": "Desligado", "data_desligamento": "2022-10-13", "motivo_desligamento": "Pedido de Demissão", "geracao": "Geração X"}, {"id": 52, "nome": "Beatriz Souza", "genero": "Feminino", "raca_cor": "Parda", "departamento": "Financeiro", "cargo": "Especialista Fiscal", "salario": 8600.0, "data_admissao": "2022-10-05", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": "", "geracao": "Millennials"}, {"id": 53, "nome": "Andre Mendes", "genero": "Masculino", "raca_cor": "Parda", "departamento": "Recursos Humanos", "cargo": "Coordenador(a) de Gente e Gestão", "salario": 9150.0, "data_admissao": "2023-06-13", "status": "Desligado", "data_desligamento": "2026-08-18", "motivo_desligamento": "Demissão sem Justa Causa", "geracao": "Geração X"}, {"id": 54, "nome": "Eduardo Carvalho", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Financeiro", "cargo": "Analista Financeiro Pleno", "salario": 5650.0, "data_admissao": "2024-09-20", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": "", "geracao": "Geração X"}, {"id": 55, "nome": "Gabriela Gomes", "genero": "Feminino", "raca_cor": "Parda", "departamento": "Financeiro", "cargo": "Analista Financeiro Pleno", "salario": 5350.0, "data_admissao": "2022-08-29", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": "", "geracao": "Millennials"}, {"id": 56, "nome": "Marcelo Dias", "genero": "Masculino", "raca_cor": "Preta", "departamento": "Recursos Humanos", "cargo": "Assistente de RH", "salario": 2950.0, "data_admissao": "2022-09-09", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": "", "geracao": "Millennials"}, {"id": 57, "nome": "Leonardo Gomes", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Marketing", "cargo": "Analista de Growth/Marketing", "salario": 5750.0, "data_admissao": "2022-10-22", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": "", "geracao": "Millennials"}, {"id": 58, "nome": "Bianca Alves", "genero": "Feminino", "raca_cor": "Parda", "departamento": "Recursos Humanos", "cargo": "Assistente de RH", "salario": 3000.0, "data_admissao": "2022-08-05", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": "", "geracao": "Millennials"}, {"id": 59, "nome": "Camila Marques", "genero": "Feminino", "raca_cor": "Preta", "departamento": "Recursos Humanos", "cargo": "Especialista em D&I", "salario": 7850.0, "data_admissao": "2022-04-06", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": "", "geracao": "Geração Z"}, {"id": 60, "nome": "Lucas Santos", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Operações", "cargo": "Analista de Operações", "salario": 4900.0, "data_admissao": "2025-04-23", "status": "Desligado", "data_desligamento": "2026-01-20", "motivo_desligamento": "Demissão sem Justa Causa", "geracao": "Geração Z"}, {"id": 61, "nome": "Igor Nascimento", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Comercial", "cargo": "Executivo(a) de Contas", "salario": 5250.0, "data_admissao": "2024-09-05", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": "", "geracao": "Geração Z"}, {"id": 62, "nome": "Bernardo Carvalho", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Operações", "cargo": "Coordenador(a) de Suporte", "salario": 7550.0, "data_admissao": "2024-02-16", "status": "Desligado", "data_desligamento": "2024-08-18", "motivo_desligamento": "Pedido de Demissão", "geracao": "Millennials"}, {"id": 63, "nome": "Bianca Soares", "genero": "Feminino", "raca_cor": "Amarela", "departamento": "Marketing", "cargo": "Especialista de Conteúdo", "salario": 5850.0, "data_admissao": "2025-03-27", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": "", "geracao": "Geração X"}, {"id": 64, "nome": "Natalia Almeida", "genero": "Feminino", "raca_cor": "Preta", "departamento": "Operações", "cargo": "Analista de Operações", "salario": 4700.0, "data_admissao": "2025-03-20", "status": "Desligado", "data_desligamento": "2026-04-10", "motivo_desligamento": "Pedido de Demissão", "geracao": "Geração X"}, {"id": 65, "nome": "Luana Pereira", "genero": "Feminino", "raca_cor": "Branca", "departamento": "Tecnologia", "cargo": "Desenvolvedor(a) Sênior", "salario": 12850.0, "data_admissao": "2022-04-26", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": "", "geracao": "Geração X"}, {"id": 66, "nome": "Natalia Oliveira", "genero": "Feminino", "raca_cor": "Branca", "departamento": "Recursos Humanos", "cargo": "Especialista em D&I", "salario": 7250.0, "data_admissao": "2021-11-09", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": "", "geracao": "Geração Z"}, {"id": 67, "nome": "Marcelo Carvalho", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Comercial", "cargo": "Gerente Comercial", "salario": 12650.0, "data_admissao": "2022-02-28", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": "", "geracao": "Geração X"}, {"id": 68, "nome": "Daniela Vieira", "genero": "Feminino", "raca_cor": "Preta", "departamento": "Tecnologia", "cargo": "Desenvolvedor(a) Júnior", "salario": 5050.0, "data_admissao": "2025-04-17", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": "", "geracao": "Millennials"}, {"id": 69, "nome": "Ana Ribeiro", "genero": "Feminino", "raca_cor": "Branca", "departamento": "Comercial", "cargo": "Executivo(a) de Contas", "salario": 7050.0, "data_admissao": "2026-05-07", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": "", "geracao": "Geração X"}, {"id": 70, "nome": "Caio Pereira", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Operações", "cargo": "Analista de Operações", "salario": 4050.0, "data_admissao": "2022-11-20", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": "", "geracao": "Millennials"}, {"id": 71, "nome": "Tatiane Ferreira", "genero": "Feminino", "raca_cor": "Parda", "departamento": "Tecnologia", "cargo": "Designer UI/UX", "salario": 7450.0, "data_admissao": "2023-12-30", "status": "Desligado", "data_desligamento": "2025-04-06", "motivo_desligamento": "Demissão sem Justa Causa", "geracao": "Geração Z"}, {"id": 72, "nome": "Gabriel Rocha", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Comercial", "cargo": "Gerente Comercial", "salario": 11750.0, "data_admissao": "2022-06-17", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": "", "geracao": "Millennials"}, {"id": 73, "nome": "Vinicius Costa", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Comercial", "cargo": "Executivo(a) de Contas", "salario": 5350.0, "data_admissao": "2026-05-03", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": "", "geracao": "Millennials"}, {"id": 74, "nome": "Camila Lopes", "genero": "Feminino", "raca_cor": "Branca", "departamento": "Operações", "cargo": "Gerente de Projetos", "salario": 9700.0, "data_admissao": "2026-05-04", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": "", "geracao": "Geração X"}, {"id": 75, "nome": "Bernardo Rocha", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Tecnologia", "cargo": "Desenvolvedor(a) Júnior", "salario": 5150.0, "data_admissao": "2022-02-13", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": "", "geracao": "Millennials"}, {"id": 76, "nome": "Guilherme Rodrigues", "genero": "Masculino", "raca_cor": "Parda", "departamento": "Tecnologia", "cargo": "Cientista de Dados", "salario": 10550.0, "data_admissao": "2022-03-23", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": "", "geracao": "Millennials"}, {"id": 77, "nome": "Daniela Ribeiro", "genero": "Feminino", "raca_cor": "Branca", "departamento": "Marketing", "cargo": "Especialista de Conteúdo", "salario": 7150.0, "data_admissao": "2025-01-11", "status": "Desligado", "data_desligamento": "2025-08-26", "motivo_desligamento": "Término de Contrato", "geracao": "Geração X"}, {"id": 78, "nome": "Danilo Silva", "genero": "Masculino", "raca_cor": "Preta", "departamento": "Marketing", "cargo": "Analista de Growth/Marketing", "salario": 5900.0, "data_admissao": "2026-05-17", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": "", "geracao": "Geração Z"}, {"id": 79, "nome": "Gabriel Vieira", "genero": "Masculino", "raca_cor": "Parda", "departamento": "Recursos Humanos", "cargo": "Especialista em D&I", "salario": 6700.0, "data_admissao": "2025-05-02", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": "", "geracao": "Geração X"}, {"id": 80, "nome": "Danilo Nunes", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Operações", "cargo": "Gerente de Projetos", "salario": 11200.0, "data_admissao": "2023-01-29", "status": "Desligado", "data_desligamento": "2025-02-25", "motivo_desligamento": "Pedido de Demissão", "geracao": "Geração X"}, {"id": 81, "nome": "Vanessa Souza", "genero": "Feminino", "raca_cor": "Parda", "departamento": "Financeiro", "cargo": "Especialista Fiscal", "salario": 8400.0, "data_admissao": "2025-08-25", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": "", "geracao": "Millennials"}, {"id": 82, "nome": "Marcelo Ferreira", "genero": "Masculino", "raca_cor": "Parda", "departamento": "Recursos Humanos", "cargo": "Coordenador(a) de Gente e Gestão", "salario": 10850.0, "data_admissao": "2026-02-27", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": "", "geracao": "Millennials"}, {"id": 83, "nome": "Renata Carvalho", "genero": "Feminino", "raca_cor": "Parda", "departamento": "Marketing", "cargo": "Analista de Growth/Marketing", "salario": 5100.0, "data_admissao": "2025-10-11", "status": "Desligado", "data_desligamento": "2026-01-23", "motivo_desligamento": "Pedido de Demissão", "geracao": "Millennials"}, {"id": 84, "nome": "Patricia Moreira", "genero": "Feminino", "raca_cor": "Parda", "departamento": "Marketing", "cargo": "Especialista de Conteúdo", "salario": 6550.0, "data_admissao": "2022-11-20", "status": "Desligado", "data_desligamento": "2024-11-14", "motivo_desligamento": "Pedido de Demissão", "geracao": "Millennials"}, {"id": 85, "nome": "Eduardo Nunes", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Recursos Humanos", "cargo": "Coordenador(a) de Gente e Gestão", "salario": 11650.0, "data_admissao": "2024-12-07", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": "", "geracao": "Millennials"}, {"id": 86, "nome": "Diego Alves", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Comercial", "cargo": "Analista de Vendas B2B", "salario": 4400.0, "data_admissao": "2025-04-02", "status": "Desligado", "data_desligamento": "2026-01-30", "motivo_desligamento": "Demissão sem Justa Causa", "geracao": "Geração Z"}, {"id": 87, "nome": "Renata Nunes", "genero": "Feminino", "raca_cor": "Branca", "departamento": "Financeiro", "cargo": "Assistente Financeiro", "salario": 2850.0, "data_admissao": "2024-11-17", "status": "Desligado", "data_desligamento": "2026-01-28", "motivo_desligamento": "Pedido de Demissão", "geracao": "Geração Z"}, {"id": 88, "nome": "Carolina Andrade", "genero": "Feminino", "raca_cor": "Parda", "departamento": "Financeiro", "cargo": "Especialista Fiscal", "salario": 8550.0, "data_admissao": "2022-07-09", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": "", "geracao": "Geração X"}, {"id": 89, "nome": "Rodrigo Andrade", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Tecnologia", "cargo": "Cientista de Dados", "salario": 11350.0, "data_admissao": "2026-05-02", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": "", "geracao": "Geração Z"}, {"id": 90, "nome": "Bruno Alves", "genero": "Masculino", "raca_cor": "Parda", "departamento": "Recursos Humanos", "cargo": "Coordenador(a) de Gente e Gestão", "salario": 11150.0, "data_admissao": "2025-04-06", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": "", "geracao": "Baby Boomers"}, {"id": 91, "nome": "Juliana Marques", "genero": "Feminino", "raca_cor": "Branca", "departamento": "Recursos Humanos", "cargo": "Especialista em D&I", "salario": 7200.0, "data_admissao": "2022-09-12", "status": "Desligado", "data_desligamento": "2025-11-08", "motivo_desligamento": "Pedido de Demissão", "geracao": "Millennials"}, {"id": 92, "nome": "Mateus Fernandes", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Tecnologia", "cargo": "Designer UI/UX", "salario": 6600.0, "data_admissao": "2025-03-22", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": "", "geracao": "Millennials"}, {"id": 93, "nome": "Danilo Gomes", "genero": "Masculino", "raca_cor": "Parda", "departamento": "Comercial", "cargo": "Gerente Comercial", "salario": 12350.0, "data_admissao": "2026-06-01", "status": "Desligado", "data_desligamento": "2026-08-30", "motivo_desligamento": "Pedido de Demissão", "geracao": "Millennials"}, {"id": 94, "nome": "Andre Lopes", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Tecnologia", "cargo": "Desenvolvedor(a) Pleno", "salario": 6800.0, "data_admissao": "2025-07-20", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": "", "geracao": "Geração X"}, {"id": 95, "nome": "Camila Pereira", "genero": "Feminino", "raca_cor": "Branca", "departamento": "Comercial", "cargo": "Analista de Vendas B2B", "salario": 4550.0, "data_admissao": "2025-06-08", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": "", "geracao": "Geração X"}, {"id": 96, "nome": "Renata Freitas", "genero": "Feminino", "raca_cor": "Parda", "departamento": "Marketing", "cargo": "Analista de Growth/Marketing", "salario": 6500.0, "data_admissao": "2022-09-18", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": "", "geracao": "Millennials"}, {"id": 97, "nome": "Vitor Andrade", "genero": "Masculino", "raca_cor": "Branca", "departamento": "Recursos Humanos", "cargo": "Analista de RH Pleno", "salario": 5300.0, "data_admissao": "2022-06-26", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": "", "geracao": "Geração Z"}, {"id": 98, "nome": "Guilherme Ferreira", "genero": "Masculino", "raca_cor": "Parda", "departamento": "Recursos Humanos", "cargo": "Assistente de RH", "salario": 2600.0, "data_admissao": "2023-07-12", "status": "Ativo", "data_desligamento": "", "motivo_desligamento": "", "geracao": "Millennials"}, {"id": 99, "nome": "Leticia Santos", "genero": "Feminino", "raca_cor": "Branca", "departamento": "Financeiro", "cargo": "Assistente Financeiro", "salario": 3200.0, "data_admissao": "2023-07-19", "status": "Desligado", "data_desligamento": "2025-01-07", "motivo_desligamento": "Demissão com Justa Causa", "geracao": "Millennials"}, {"id": 100, "nome": "Marcelo Souza", "genero": "Masculino", "raca_cor": "Parda", "departamento": "Tecnologia", "cargo": "Designer UI/UX", "salario": 7250.0, "data_admissao": "2025-08-20", "status": "Desligado", "data_desligamento": "2025-11-18", "motivo_desligamento": "Pedido de Demissão", "geracao": "Geração Z"}];
+
+    // Estado do Filtro Cruzado Interativo (Cross-filtering estilo Power BI)
+    let filtroCruzado = {
+      campo: null,   // 'genero' | 'raca_cor' | 'geracao' | 'departamento' | 'motivo_desligamento'
+      valor: null
+    };
+
+    function trocarPagina(pageId, btnElement) {
+      document.querySelectorAll(".page-section").forEach(sec => sec.classList.remove("active"));
+      document.querySelectorAll(".nav-btn").forEach(btn => btn.classList.remove("active"));
+
+      const target = document.getElementById(pageId);
+      if (target) target.classList.add("active");
+      if (btnElement) btnElement.classList.add("active");
+
+      const title = document.getElementById("pageTitle");
+      const subtitle = document.getElementById("pageSubtitle");
+
+      if (pageId === "page-geral") {
+        title.textContent = "People Hub & HR Analytics";
+        subtitle.textContent = "Consulta Integrada do Quadro de Pessoal";
+      } else if (pageId === "page-diversidade") {
+        title.textContent = "Diversidade, Gerações & Liderança";
+        subtitle.textContent = "Gráficos interativos com filtro cruzado: Gênero, Raça/Cor, Faixa Geracional e Gestão";
+      } else if (pageId === "page-remuneracao") {
+        title.textContent = "Remuneração & Departamentos";
+        subtitle.textContent = "Massa salarial, distribuição de headcount e análise de remuneração média vs benchmark";
+      } else if (pageId === "page-turnover") {
+        title.textContent = "Análise de Turnover & Linha do Tempo";
+        subtitle.textContent = "Admissões vs. Desligamentos, evolução mensal e gráfico donut de motivos de saída";
+      }
+    }
+
+    // Validador rápido de status no Header (Ativo / Desligado / Todos)
+    function filtrarStatusRapido(statusValor) {
+      const selectStatus = document.getElementById("filtroStatus");
+      if (selectStatus) {
+        selectStatus.value = statusValor;
+      }
+      atualizarBotoesValidador(statusValor);
+      aplicarFiltros();
+    }
+
+    function atualizarBotoesValidador(statusValor) {
+      const btnAll = document.getElementById("btnValAll");
+      const btnAtivo = document.getElementById("btnValAtivo");
+      const btnDesligado = document.getElementById("btnValDesligado");
+
+      if (!btnAll || !btnAtivo || !btnDesligado) return;
+
+      btnAll.className = "btn-validator";
+      btnAtivo.className = "btn-validator";
+      btnDesligado.className = "btn-validator";
+
+      if (statusValor === "Ativo") {
+        btnAtivo.classList.add("active-ativo");
+      } else if (statusValor === "Desligado") {
+        btnDesligado.classList.add("active-desligado");
+      } else {
+        btnAll.classList.add("active-all");
+      }
+    }
+
+    function toggleFiltroCruzado(campo, valor) {
+      if (filtroCruzado.campo === campo && filtroCruzado.valor === valor) {
+        filtroCruzado.campo = null;
+        filtroCruzado.valor = null;
+      } else {
+        filtroCruzado.campo = campo;
+        filtroCruzado.valor = valor;
+      }
+      aplicarFiltros();
+    }
+
+    function limparFiltroCruzado() {
+      filtroCruzado.campo = null;
+      filtroCruzado.valor = null;
+      aplicarFiltros();
+    }
 
     function popularFiltros(dados) {
       const deptoSelect = document.getElementById("filtroDepto");
@@ -909,7 +1488,9 @@ Analisando
       const status = document.getElementById("filtroStatus")?.value || "";
       const genero = document.getElementById("filtroGenero")?.value || "";
 
-      const filtrados = colaboradores.filter(c => {
+      atualizarBotoesValidador(status);
+
+      let filtrados = colaboradores.filter(c => {
         const matchBusca = !busca || 
           (c.nome && c.nome.toLowerCase().includes(busca)) ||
           (c.cargo && c.cargo.toLowerCase().includes(busca)) ||
@@ -922,29 +1503,64 @@ Analisando
         return matchBusca && matchDepto && matchStatus && matchGenero;
       });
 
+      const bar = document.getElementById("crossfilterBar");
+      const lbl = document.getElementById("crossfilterLabel");
+      if (filtroCruzado.campo && filtroCruzado.valor) {
+        bar.classList.add("visible");
+        const nomesCampos = { 
+          genero: "Gênero", 
+          raca_cor: "Raça/Cor", 
+          geracao: "Geração", 
+          departamento: "Departamento", 
+          motivo_desligamento: "Motivo de Saída" 
+        };
+        lbl.textContent = `${nomesCampos[filtroCruzado.campo] || filtroCruzado.campo}: ${filtroCruzado.valor}`;
+        filtrados = filtrados.filter(c => c[filtroCruzado.campo] === filtroCruzado.valor);
+      } else {
+        bar.classList.remove("visible");
+      }
+
       atualizarMetricas(filtrados);
       renderizarTabela(filtrados);
+      renderizarVistasAnaliticas(filtrados);
+    }
+
+    function calcularTurnoverTradicional(dados) {
+      const quadroTotal = dados.length;
+      if (quadroTotal === 0) return { taxa: 0, admissoes: 0, demissoes: 0, quadro: 0 };
+
+      const demissoes = dados.filter(c => c.status === "Desligado").length;
+      const admissoes = dados.filter(c => c.data_admissao >= "2025-01-01").length;
+
+      const mediaFluxo = (admissoes + demissoes) / 2;
+      const taxa = (mediaFluxo / quadroTotal) * 100;
+
+      return { taxa, admissoes, demissoes, quadro: quadroTotal };
     }
 
     function atualizarMetricas(dados) {
       const total = dados.length;
       const ativos = dados.filter(c => c.status === "Ativo").length;
       const desligados = dados.filter(c => c.status === "Desligado").length;
-      const turnover = total > 0 ? (desligados / total) * 100 : 0;
       const somaSalarios = dados.reduce((acc, c) => acc + (Number(c.salario) || 0), 0);
       const mediaSalarial = total > 0 ? somaSalarios / total : 0;
 
-      const totalElem = document.getElementById("totalColab");
-      const ativosElem = document.getElementById("totalAtivos");
-      const desligadosElem = document.getElementById("totalDesligados");
-      const turnoverElem = document.getElementById("taxaTurnover");
-      const mediaElem = document.getElementById("mediaSalario");
+      const turnoverData = calcularTurnoverTradicional(dados);
 
-      if (totalElem) totalElem.textContent = total;
-      if (ativosElem) ativosElem.textContent = ativos;
-      if (desligadosElem) desligadosElem.textContent = desligados;
-      if (turnoverElem) turnoverElem.textContent = turnover.toFixed(1).replace(".", ",") + "%";
-      if (mediaElem) mediaElem.textContent = mediaSalarial.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
+      document.getElementById("totalColab").textContent = total;
+      document.getElementById("totalAtivos").textContent = ativos;
+      document.getElementById("totalDesligados").textContent = desligados;
+      document.getElementById("taxaTurnover").textContent = turnoverData.taxa.toFixed(1).replace(".", ",") + "%";
+      document.getElementById("mediaSalario").textContent = mediaSalarial.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
+
+      const tAdm = document.getElementById("tAdmissoes");
+      const tDem = document.getElementById("tDemissoes");
+      const tQua = document.getElementById("tQuadro");
+      const tFin = document.getElementById("tTaxaFinal");
+      if (tAdm) tAdm.textContent = turnoverData.admissoes;
+      if (tDem) tDem.textContent = turnoverData.demissoes;
+      if (tQua) tQua.textContent = turnoverData.quadro;
+      if (tFin) tFin.textContent = turnoverData.taxa.toFixed(1).replace(".", ",") + "%";
     }
 
     function renderizarTabela(dados) {
@@ -975,6 +1591,445 @@ Analisando
       `).join("");
     }
 
+    function renderizarVistasAnaliticas(dados) {
+      const total = dados.length || 1;
+
+      // 1. Donut de Gênero (Centro limpo, % na legenda lateral)
+      const masc = dados.filter(c => c.genero === "Masculino").length;
+      const fem = dados.filter(c => c.genero === "Feminino").length;
+      const pctMasc = Math.round((masc / total) * 100);
+      const pctFem = Math.round((fem / total) * 100);
+
+      const donutMasc = document.getElementById("donutMasc");
+      const donutFem = document.getElementById("donutFem");
+      if (donutMasc && donutFem) {
+        donutMasc.setAttribute("stroke-dasharray", `${pctMasc} ${100 - pctMasc}`);
+        donutFem.setAttribute("stroke-dasharray", `${pctFem} ${100 - pctFem}`);
+        donutFem.setAttribute("stroke-dashoffset", `${-pctMasc}`);
+
+        donutMasc.className.baseVal = "donut-segment" + (filtroCruzado.campo === 'genero' && filtroCruzado.valor === 'Masculino' ? ' selected' : (filtroCruzado.campo === 'genero' ? ' dimmed' : ''));
+        donutFem.className.baseVal = "donut-segment" + (filtroCruzado.campo === 'genero' && filtroCruzado.valor === 'Feminino' ? ' selected' : (filtroCruzado.campo === 'genero' ? ' dimmed' : ''));
+
+        configurarTooltipElemento(donutMasc, `Masculino: <strong>${masc} colaboradores</strong> (${pctMasc}%)`);
+        configurarTooltipElemento(donutFem, `Feminino: <strong>${fem} colaboradoras</strong> (${pctFem}%)`);
+      }
+
+      document.getElementById("lblLegendPctMasc").textContent = pctMasc + "%";
+      document.getElementById("lblLegendPctFem").textContent = pctFem + "%";
+
+      // 2. Gráfico de Barras Verticais de Raça / Cor (Padrão IBGE)
+      const racas = ["Branca", "Parda", "Preta", "Amarela", "Indígena"];
+      const contagemRaca = {};
+      racas.forEach(r => contagemRaca[r] = 0);
+      dados.forEach(c => {
+        if (contagemRaca[c.raca_cor] !== undefined) contagemRaca[c.raca_cor]++;
+        else contagemRaca[c.raca_cor] = (contagemRaca[c.raca_cor] || 0) + 1;
+      });
+
+      const maxRaca = Math.max(...Object.values(contagemRaca), 1);
+      const vbarRaca = document.getElementById("vbarRaca");
+      if (vbarRaca) {
+        vbarRaca.innerHTML = Object.entries(contagemRaca).map(([raca, qtd]) => {
+          const altPx = Math.round((qtd / maxRaca) * 115) + 8;
+          const isSel = filtroCruzado.campo === 'raca_cor' && filtroCruzado.valor === raca;
+          const isDim = filtroCruzado.campo === 'raca_cor' && !isSel;
+          return `
+            <div class="vbar-col ${isSel ? 'selected' : ''} ${isDim ? 'dimmed' : ''}" onclick="toggleFiltroCruzado('raca_cor', '${raca}')" title="${raca}: ${qtd} pessoas">
+              <span class="vbar-val">${qtd}</span>
+              <div class="vbar-fill cyan" style="height: ${altPx}px;"></div>
+              <span class="vbar-label">${raca}</span>
+            </div>
+          `;
+        }).join("");
+      }
+
+      // 3. Quebra Geracional
+      const geracoes = ["Geração Z", "Millennials", "Geração X", "Baby Boomers"];
+      const contagemGen = {};
+      geracoes.forEach(g => contagemGen[g] = 0);
+      dados.forEach(c => {
+        const g = c.geracao || "Millennials";
+        if (contagemGen[g] !== undefined) contagemGen[g]++;
+        else contagemGen[g] = 1;
+      });
+
+      const maxGen = Math.max(...Object.values(contagemGen), 1);
+      const vbarGeracao = document.getElementById("vbarGeracao");
+      if (vbarGeracao) {
+        vbarGeracao.innerHTML = Object.entries(contagemGen).map(([gen, qtd]) => {
+          const altPx = Math.round((qtd / maxGen) * 115) + 8;
+          const isSel = filtroCruzado.campo === 'geracao' && filtroCruzado.valor === gen;
+          const isDim = filtroCruzado.campo === 'geracao' && !isSel;
+          const rotulo = gen === "Baby Boomers" ? "Boomers" : (gen === "Millennials" ? "Gen Y" : gen.replace("Geração ", "Gen "));
+          return `
+            <div class="vbar-col ${isSel ? 'selected' : ''} ${isDim ? 'dimmed' : ''}" onclick="toggleFiltroCruzado('geracao', '${gen}')" title="${gen}: ${qtd} pessoas">
+              <span class="vbar-val">${qtd}</span>
+              <div class="vbar-fill amber" style="height: ${altPx}px;"></div>
+              <span class="vbar-label">${rotulo}</span>
+            </div>
+          `;
+        }).join("");
+      }
+
+      // 4. Quebra de Liderança por Gênero
+      const lideres = dados.filter(c => c.cargo.includes("Gerente") || c.cargo.includes("Coordenador"));
+      const totalLideres = lideres.length || 1;
+      const lidMasc = lideres.filter(c => c.genero === "Masculino").length;
+      const lidFem = lideres.filter(c => c.genero === "Feminino").length;
+      const pctLidMasc = Math.round((lidMasc / totalLideres) * 100);
+      const pctLidFem = Math.round((lidFem / totalLideres) * 100);
+
+      const barLeadMasc = document.getElementById("barLeadMasc");
+      const barLeadFem = document.getElementById("barLeadFem");
+      if (barLeadMasc && barLeadFem) {
+        barLeadMasc.style.width = pctLidMasc + "%";
+        barLeadFem.style.width = pctLidFem + "%";
+      }
+
+      document.getElementById("leadMascVal").textContent = `${lidMasc} (${pctLidMasc}%)`;
+      document.getElementById("leadFemVal").textContent = `${lidFem} (${pctLidFem}%)`;
+
+      // ----------------------------------------------------
+      // PÁGINA 3: DADOS DE DEPARTAMENTO, MASSA E SALÁRIO MÉDIO
+      // ----------------------------------------------------
+      const deptos = {};
+      dados.forEach(c => {
+        if (!deptos[c.departamento]) deptos[c.departamento] = { qtd: 0, total: 0 };
+        deptos[c.departamento].qtd += 1;
+        deptos[c.departamento].total += Number(c.salario) || 0;
+      });
+
+      const listaDeptos = Object.entries(deptos).sort((a, b) => b[1].total - a[1].total);
+      const maxMassa = Math.max(...listaDeptos.map(d => d[1].total), 1);
+      const maxQtdDepto = Math.max(...listaDeptos.map(d => d[1].qtd), 1);
+
+      const mediaGeralTotal = dados.length > 0 
+        ? (dados.reduce((acc, c) => acc + (Number(c.salario) || 0), 0) / dados.length)
+        : 7136.5;
+      const benchElem = document.getElementById("benchGeralVal");
+      if (benchElem) benchElem.textContent = mediaGeralTotal.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
+
+      // 5. Massa Salarial por Departamento em BARRAS HORIZONTAIS
+      const hbarContainer = document.getElementById("hbarSalarioDepto");
+      if (hbarContainer) {
+        hbarContainer.innerHTML = listaDeptos.map(([dept, obj]) => {
+          const pctLargura = Math.round((obj.total / maxMassa) * 100);
+          const isSel = filtroCruzado.campo === 'departamento' && filtroCruzado.valor === dept;
+          const isDim = filtroCruzado.campo === 'departamento' && !isSel;
+          return `
+            <div class="hbar-row ${isSel ? 'selected' : ''} ${isDim ? 'dimmed' : ''}" onclick="toggleFiltroCruzado('departamento', '${dept}')" title="${dept}: ${obj.total.toLocaleString("pt-BR", { style: "currency", currency: "BRL" })}">
+              <span class="hbar-label">${dept}</span>
+              <div class="hbar-track">
+                <div class="hbar-fill" style="width: ${pctLargura}%;"></div>
+              </div>
+              <span class="hbar-val">${obj.total.toLocaleString("pt-BR", { style: "currency", currency: "BRL" })}</span>
+            </div>
+          `;
+        }).join("");
+      }
+
+      // 6. Colaboradores por Departamento em BARRAS VERTICAIS
+      const vbarColab = document.getElementById("vbarColabDepto");
+      if (vbarColab) {
+        vbarColab.innerHTML = listaDeptos.map(([dept, obj]) => {
+          const altPx = Math.round((obj.qtd / maxQtdDepto) * 135) + 12;
+          const isSel = filtroCruzado.campo === 'departamento' && filtroCruzado.valor === dept;
+          const isDim = filtroCruzado.campo === 'departamento' && !isSel;
+          const rotuloDepto = dept === "Recursos Humanos" ? "RH" : dept;
+          return `
+            <div class="vbar-col ${isSel ? 'selected' : ''} ${isDim ? 'dimmed' : ''}" onclick="toggleFiltroCruzado('departamento', '${dept}')" title="${dept}: ${obj.qtd} colaboradores">
+              <span class="vbar-val">${obj.qtd}</span>
+              <div class="vbar-fill emerald" style="height: ${altPx}px;"></div>
+              <span class="vbar-label">${rotuloDepto}</span>
+            </div>
+          `;
+        }).join("");
+      }
+
+      // 7. Gráfico Criativo de Salário Médio por Departamento com Benchmark (Linha de 6 Colunas)
+      const avgGrid = document.getElementById("avgSalaryGrid");
+      if (avgGrid) {
+        avgGrid.innerHTML = listaDeptos.map(([dept, obj]) => {
+          const mediaDepto = obj.qtd > 0 ? obj.total / obj.qtd : 0;
+          const diffPct = ((mediaDepto - mediaGeralTotal) / mediaGeralTotal) * 100;
+          const isAbove = diffPct >= 0;
+          const isSel = filtroCruzado.campo === 'departamento' && filtroCruzado.valor === dept;
+          const isDim = filtroCruzado.campo === 'departamento' && !isSel;
+
+          return `
+            <div class="avg-item-card ${isSel ? 'selected' : ''} ${isDim ? 'dimmed' : ''}" onclick="toggleFiltroCruzado('departamento', '${dept}')" title="Clique para filtrar por ${dept}">
+              <span class="avg-item-title">${dept}</span>
+              <span class="avg-item-val">${mediaDepto.toLocaleString("pt-BR", { style: "currency", currency: "BRL" })}</span>
+              <span class="avg-item-badge ${isAbove ? 'above' : 'below'}">
+                ${isAbove ? '▲ +' : '▼ '}${Math.abs(diffPct).toFixed(1)}% vs Média
+              </span>
+            </div>
+          `;
+        }).join("");
+      }
+
+      // ----------------------------------------------------
+      // PÁGINA 4: TIMELINE, LINHAS E DONUT DE MOTIVOS
+      // ----------------------------------------------------
+      renderizarTimelineETurnoverLinhas(dados);
+      renderizarDonutMotivos(dados);
+    }
+
+    // Renderiza a linha do tempo (barras lado a lado) e o gráfico em linha (voluntário vs involuntário)
+    function renderizarTimelineETurnoverLinhas(dados) {
+      const mesesChave = [
+        "2025-08", "2025-09", "2025-10", "2025-11", "2025-12", 
+        "2026-01", "2026-02", "2026-03", "2026-04", "2026-05", "2026-06", "2026-08"
+      ];
+      const nomesMeses = [
+        "Ago/25", "Set/25", "Out/25", "Nov/25", "Dez/25", 
+        "Jan/26", "Fev/26", "Mar/26", "Abr/26", "Mai/26", "Jun/26", "Ago/26"
+      ];
+
+      const containerTimeline = document.getElementById("timelineBars");
+      const contagemAdm = {};
+      const contagemDesl = {};
+      const contagemVol = {};
+      const contagemInvol = {};
+
+      mesesChave.forEach(m => {
+        contagemAdm[m] = 0;
+        contagemDesl[m] = 0;
+        contagemVol[m] = 0;
+        contagemInvol[m] = 0;
+      });
+
+      dados.forEach(c => {
+        if (c.data_admissao) {
+          const mAdm = c.data_admissao.substring(0, 7);
+          if (contagemAdm[mAdm] !== undefined) contagemAdm[mAdm]++;
+        }
+        if (c.status === "Desligado" && c.data_desligamento) {
+          const mDesl = c.data_desligamento.substring(0, 7);
+          if (contagemDesl[mDesl] !== undefined) contagemDesl[mDesl]++;
+
+          const motivo = c.motivo_desligamento || "";
+          if (motivo.toLowerCase().includes("pedido")) {
+            if (contagemVol[mDesl] !== undefined) contagemVol[mDesl]++;
+          } else {
+            if (contagemInvol[mDesl] !== undefined) contagemInvol[mDesl]++;
+          }
+        }
+      });
+
+      const maxValores = Math.max(
+        ...Object.values(contagemAdm),
+        ...Object.values(contagemDesl),
+        1
+      );
+
+      if (containerTimeline) {
+        containerTimeline.innerHTML = mesesChave.map((m, idx) => {
+          const adm = contagemAdm[m];
+          const desl = contagemDesl[m];
+          // Altura calculada em px (de 4px a 115px)
+          const altAdm = Math.round((adm / maxValores) * 110) + 4;
+          const altDesl = Math.round((desl / maxValores) * 110) + 4;
+          const rotulo = nomesMeses[idx];
+
+          return `
+            <div class="timeline-month-col">
+              <div class="bars-pair">
+                <div class="tbar-wrapper">
+                  <span class="tbar-val adm">${adm}</span>
+                  <div class="tbar-single adm" style="height: ${altAdm}px;" title="${rotulo} - Admissões: ${adm}"></div>
+                </div>
+                <div class="tbar-wrapper">
+                  <span class="tbar-val desl">${desl}</span>
+                  <div class="tbar-single desl" style="height: ${altDesl}px;" title="${rotulo} - Desligamentos: ${desl}"></div>
+                </div>
+              </div>
+              <span class="tbar-month-lbl">${rotulo}</span>
+            </div>
+          `;
+        }).join("");
+      }
+
+      renderizarSvgLinhas(mesesChave, nomesMeses, contagemVol, contagemInvol);
+    }
+
+    function renderizarSvgLinhas(mesesChave, nomesMeses, volData, involData) {
+      const svg = document.getElementById("svgTurnoverLines");
+      if (!svg) return;
+
+      const n = mesesChave.length;
+      const w = 900;
+      const h = 180;
+      const padLeft = 40;
+      const padRight = 30;
+      const padTop = 25;
+      const padBottom = 30;
+      const chartW = w - padLeft - padRight;
+      const chartH = h - padTop - padBottom;
+
+      const maxVal = Math.max(...Object.values(volData), ...Object.values(involData), 3);
+
+      const xStep = chartW / (n - 1);
+      const pointsVol = [];
+      const pointsInvol = [];
+
+      for (let i = 0; i < n; i++) {
+        const m = mesesChave[i];
+        const vVol = volData[m];
+        const vInvol = involData[m];
+
+        const x = padLeft + i * xStep;
+        const yVol = padTop + chartH - (vVol / maxVal) * chartH;
+        const yInvol = padTop + chartH - (vInvol / maxVal) * chartH;
+
+        pointsVol.push({ x, y: yVol, val: vVol, mes: nomesMeses[i] });
+        pointsInvol.push({ x, y: yInvol, val: vInvol, mes: nomesMeses[i] });
+      }
+
+      const dVol = pointsVol.reduce((acc, p, idx) => acc + (idx === 0 ? `M ${p.x} ${p.y}` : ` L ${p.x} ${p.y}`), "");
+      const dInvol = pointsInvol.reduce((acc, p, idx) => acc + (idx === 0 ? `M ${p.x} ${p.y}` : ` L ${p.x} ${p.y}`), "");
+
+      let gridHtml = "";
+      for (let g = 0; g <= maxVal; g += Math.ceil(maxVal / 3)) {
+        const yG = padTop + chartH - (g / maxVal) * chartH;
+        gridHtml += `
+          <line x1="${padLeft}" y1="${yG}" x2="${w - padRight}" y2="${yG}" class="grid-line" />
+          <text x="${padLeft - 10}" y="${yG + 3}" class="axis-text" text-anchor="end">${g}</text>
+        `;
+      }
+
+      let labelsHtml = "";
+      for (let i = 0; i < n; i++) {
+        labelsHtml += `
+          <text x="${pointsVol[i].x}" y="${h - 10}" class="axis-text" text-anchor="middle">${nomesMeses[i]}</text>
+        `;
+      }
+
+      let dotsHtml = "";
+      pointsVol.forEach(p => {
+        dotsHtml += `<circle cx="${p.x}" cy="${p.y}" r="4" fill="var(--warning)" stroke="#0d1527" stroke-width="2" class="line-dot" data-tip="Voluntário em ${p.mes}: <strong>${p.val} saídas</strong>" />`;
+      });
+      pointsInvol.forEach(p => {
+        dotsHtml += `<circle cx="${p.x}" cy="${p.y}" r="4" fill="var(--primary)" stroke="#0d1527" stroke-width="2" class="line-dot" data-tip="Involuntário em ${p.mes}: <strong>${p.val} saídas</strong>" />`;
+      });
+
+      svg.innerHTML = `
+        ${gridHtml}
+        <path d="${dVol}" class="line-path-vol" />
+        <path d="${dInvol}" class="line-path-invol" />
+        ${dotsHtml}
+        ${labelsHtml}
+      `;
+
+      svg.querySelectorAll(".line-dot").forEach(dot => {
+        dot.onmousemove = function(e) {
+          const tip = document.getElementById("donutTooltip");
+          tip.innerHTML = dot.getAttribute("data-tip");
+          tip.style.left = (e.pageX + 14) + "px";
+          tip.style.top = (e.pageY - 28) + "px";
+          tip.classList.add("active");
+        };
+        dot.onmouseleave = function() {
+          document.getElementById("donutTooltip").classList.remove("active");
+        };
+      });
+    }
+
+    // 8. Gráfico DONUT Interativo de Motivos de Desligamento
+    function renderizarDonutMotivos(dados) {
+      const desligados = dados.filter(c => c.status === "Desligado");
+      const totalDesl = desligados.length;
+
+      const motivos = {
+        "Pedido de Demissão": { cor: "#fbbf24", classColor: "amber", qtd: 0 },
+        "Demissão sem Justa Causa": { cor: "#38bdf8", classColor: "cyan", qtd: 0 },
+        "Término de Contrato": { cor: "#8b5cf6", classColor: "violet", qtd: 0 },
+        "Demissão com Justa Causa": { cor: "#f87171", classColor: "coral", qtd: 0 }
+      };
+
+      desligados.forEach(c => {
+        const m = c.motivo_desligamento || "Pedido de Demissão";
+        if (motivos[m]) motivos[m].qtd++;
+        else motivos["Pedido de Demissão"].qtd++;
+      });
+
+      const slicesGroup = document.getElementById("donutMotivosSlices");
+      const legendContainer = document.getElementById("donutMotivosLegend");
+      if (!slicesGroup || !legendContainer) return;
+
+      if (totalDesl === 0) {
+        slicesGroup.innerHTML = `<circle cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#1e293b" stroke-width="5.5"></circle>`;
+        legendContainer.innerHTML = `<span style="color:var(--text-muted); font-size:0.85rem;">Nenhum desligamento no filtro.</span>`;
+        return;
+      }
+
+      let accumulatedPct = 0;
+      let slicesHtml = "";
+      let legendHtml = "";
+
+      Object.entries(motivos).forEach(([motivo, obj]) => {
+        if (obj.qtd === 0 && totalDesl > 0) return;
+        const pct = Math.round((obj.qtd / totalDesl) * 100);
+        const dashArray = `${pct} ${100 - pct}`;
+        const dashOffset = -accumulatedPct;
+        accumulatedPct += pct;
+
+        const isSel = filtroCruzado.campo === 'motivo_desligamento' && filtroCruzado.valor === motivo;
+        const isDim = filtroCruzado.campo === 'motivo_desligamento' && !isSel;
+
+        slicesHtml += `
+          <circle cx="21" cy="21" r="15.91549430918954" fill="transparent" 
+            stroke="${obj.cor}" stroke-width="5.5" 
+            stroke-dasharray="${dashArray}" 
+            stroke-dashoffset="${dashOffset}" 
+            class="donut-segment ${isSel ? 'selected' : ''} ${isDim ? 'dimmed' : ''}" 
+            onclick="toggleFiltroCruzado('motivo_desligamento', '${motivo}')"
+            data-tip="${motivo}: <strong>${obj.qtd} pessoas</strong> (${pct}%)">
+          </circle>
+        `;
+
+        legendHtml += `
+          <div class="donut-legend-item" onclick="toggleFiltroCruzado('motivo_desligamento', '${motivo}')" title="Clique para filtrar por ${motivo}">
+            <span class="legend-color ${obj.classColor}"></span>
+            <span style="font-size:0.82rem;">${motivo}</span>
+            <span class="donut-legend-pct" style="color:${obj.cor};">${pct}%</span>
+          </div>
+        `;
+      });
+
+      slicesGroup.innerHTML = slicesHtml;
+      legendContainer.innerHTML = legendHtml;
+
+      // Eventos de tooltip para as fatias do donut de motivos
+      slicesGroup.querySelectorAll(".donut-segment").forEach(slice => {
+        slice.onmousemove = function(e) {
+          const tip = document.getElementById("donutTooltip");
+          tip.innerHTML = slice.getAttribute("data-tip");
+          tip.style.left = (e.pageX + 14) + "px";
+          tip.style.top = (e.pageY - 28) + "px";
+          tip.classList.add("active");
+        };
+        slice.onmouseleave = function() {
+          document.getElementById("donutTooltip").classList.remove("active");
+        };
+      });
+    }
+
+    function configurarTooltipElemento(elemento, conteudo) {
+      const tip = document.getElementById("donutTooltip");
+      if (!tip || !elemento) return;
+
+      elemento.onmousemove = function(e) {
+        tip.innerHTML = conteudo;
+        tip.style.left = (e.pageX + 14) + "px";
+        tip.style.top = (e.pageY - 28) + "px";
+        tip.classList.add("active");
+      };
+      elemento.onmouseleave = function() {
+        tip.classList.remove("active");
+      };
+    }
+
     function formatarData(dataStr) {
       if (!dataStr) return "-";
       const partes = dataStr.split("-");
@@ -993,6 +2048,9 @@ Analisando
       if (depto) depto.value = "";
       if (status) status.value = "";
       if (genero) genero.value = "";
+      filtroCruzado.campo = null;
+      filtroCruzado.valor = null;
+      atualizarBotoesValidador("");
       aplicarFiltros();
     }
 
@@ -1002,7 +2060,6 @@ Analisando
     document.getElementById("filtroGenero").addEventListener("change", aplicarFiltros);
     document.getElementById("btnLimpar").addEventListener("click", limparFiltros);
 
-    // Inicialização direta imediata
     popularFiltros(colaboradores);
     aplicarFiltros();
   </script>
