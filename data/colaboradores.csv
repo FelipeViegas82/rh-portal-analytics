@@ -1,101 +1,101 @@
-id,nome,genero,raca_cor,departamento,cargo,salario,data_admissao,status,data_desligamento,motivo_desligamento
-1,Lucas Andrade,Masculino,Branca,Recursos Humanos,Especialista em D&I,6800.00,2021-07-29,Ativo,,
-2,Danilo Carvalho,Masculino,Branca,Tecnologia,Desenvolvedor(a) Sênior,10850.00,2023-11-01,Ativo,,
-3,Igor Rocha,Masculino,Parda,Comercial,Analista de Vendas B2B,4050.00,2024-04-21,Ativo,,
-4,Bernardo Nunes,Masculino,Branca,Comercial,Analista de Vendas B2B,4200.00,2021-11-15,Desligado,2026-04-26,Pedido de Demissão
-5,Andre Souza,Masculino,Branca,Financeiro,Especialista Fiscal,8350.00,2025-07-11,Desligado,2026-05-02,Pedido de Demissão
-6,Camila Fernandes,Feminino,Branca,Marketing,Especialista de Conteúdo,6950.00,2023-01-11,Ativo,,
-7,Mateus Dias,Masculino,Branca,Financeiro,Assistente Financeiro,3400.00,2025-10-18,Desligado,2026-02-06,Pedido de Demissão
-8,Luana Marques,Feminino,Branca,Financeiro,Especialista Fiscal,7800.00,2024-10-04,Ativo,,
-9,Vitor Rocha,Masculino,Branca,Recursos Humanos,Especialista em D&I,6850.00,2023-02-17,Ativo,,
-10,Murilo Costa,Masculino,Parda,Tecnologia,Desenvolvedor(a) Pleno,6950.00,2021-03-07,Ativo,,
-11,Amanda Oliveira,Feminino,Branca,Marketing,Analista de Growth/Marketing,6250.00,2022-10-07,Desligado,2025-09-23,Pedido de Demissão
-12,Mariana Lima,Feminino,Branca,Operações,Gerente de Projetos,11650.00,2025-03-10,Ativo,,
-13,Jessica Pereira,Feminino,Indígena,Tecnologia,Designer UI/UX,6250.00,2021-07-06,Ativo,,
-14,Felipe Rocha,Masculino,Branca,Comercial,Analista de Vendas B2B,4500.00,2023-02-28,Ativo,,
-15,Gabriela Lima,Feminino,Amarela,Tecnologia,Desenvolvedor(a) Júnior,4900.00,2021-08-23,Ativo,,
-16,Daniela Rocha,Feminino,Branca,Financeiro,Assistente Financeiro,3000.00,2023-07-19,Desligado,2025-03-09,Término de Contrato
-17,Diego Freitas,Masculino,Branca,Financeiro,Assistente Financeiro,3300.00,2023-11-06,Ativo,,
-18,Eduardo Moreira,Masculino,Branca,Operações,Coordenador(a) de Suporte,8600.00,2024-05-11,Ativo,,
-19,Rodrigo Freitas,Masculino,Branca,Financeiro,Assistente Financeiro,2850.00,2022-05-09,Ativo,,
-20,Gabriel Andrade,Masculino,Parda,Tecnologia,Desenvolvedor(a) Sênior,13900.00,2023-12-27,Ativo,,
-21,Murilo Lopes,Masculino,Preta,Recursos Humanos,Assistente de RH,2750.00,2025-11-22,Ativo,,
-22,Alexandre Moreira,Masculino,Parda,Recursos Humanos,Analista de RH Pleno,5450.00,2023-03-29,Ativo,,
-23,Renata Mendes,Feminino,Parda,Tecnologia,Cientista de Dados,9100.00,2021-05-12,Ativo,,
-24,Danilo Pereira,Masculino,Branca,Tecnologia,Desenvolvedor(a) Pleno,6950.00,2026-01-29,Desligado,2026-06-22,Pedido de Demissão
-25,Rafael Dias,Masculino,Parda,Operações,Gerente de Projetos,10050.00,2026-03-31,Ativo,,
-26,Patricia Nunes,Feminino,Parda,Comercial,Analista de Vendas B2B,4050.00,2021-07-18,Ativo,,
-27,Carolina Carvalho,Feminino,Parda,Tecnologia,Desenvolvedor(a) Pleno,7850.00,2024-08-16,Desligado,2025-12-01,Demissão sem Justa Causa
-28,Guilherme Alves,Masculino,Branca,Comercial,Gerente Comercial,11550.00,2022-01-11,Ativo,,
-29,Gabriel Almeida,Masculino,Parda,Operações,Gerente de Projetos,9900.00,2024-08-28,Ativo,,
-30,Gabriel Freitas,Masculino,Parda,Recursos Humanos,Especialista em D&I,6850.00,2023-09-22,Ativo,,
-31,Beatriz Ferreira,Feminino,Branca,Comercial,Executivo(a) de Contas,5300.00,2025-05-25,Ativo,,
-32,Carolina Nascimento,Feminino,Preta,Operações,Gerente de Projetos,12150.00,2023-09-24,Desligado,2024-09-21,Pedido de Demissão
-33,Danilo Andrade,Masculino,Parda,Financeiro,Analista Financeiro Pleno,4900.00,2024-04-11,Ativo,,
-34,Mateus Soares,Masculino,Branca,Recursos Humanos,Assistente de RH,2650.00,2021-05-20,Ativo,,
-35,Andre Souza,Masculino,Preta,Marketing,Analista de Growth/Marketing,5050.00,2024-05-02,Desligado,2024-09-22,Pedido de Demissão
-36,Amanda Alves,Feminino,Parda,Financeiro,Analista Financeiro Pleno,5150.00,2023-03-22,Desligado,2025-01-24,Pedido de Demissão
-37,Lucas Almeida,Masculino,Parda,Marketing,Analista de Growth/Marketing,6500.00,2021-05-31,Ativo,,
-38,Mariana Freitas,Feminino,Branca,Tecnologia,Desenvolvedor(a) Sênior,13500.00,2023-01-27,Ativo,,
-39,Natalia Nascimento,Feminino,Branca,Operações,Coordenador(a) de Suporte,6500.00,2025-08-01,Ativo,,
-40,Felipe Lima,Masculino,Branca,Tecnologia,Cientista de Dados,11350.00,2021-11-15,Ativo,,
-41,Igor Costa,Masculino,Branca,Recursos Humanos,Coordenador(a) de Gente e Gestão,10500.00,2022-05-30,Ativo,,
-42,Gabriel Rocha,Masculino,Branca,Recursos Humanos,Coordenador(a) de Gente e Gestão,9150.00,2022-11-15,Ativo,,
-43,Larissa Andrade,Feminino,Parda,Comercial,Analista de Vendas B2B,4450.00,2021-08-18,Desligado,2025-09-01,Demissão com Justa Causa
-44,Eduardo Vieira,Masculino,Parda,Comercial,Analista de Vendas B2B,3950.00,2022-09-24,Ativo,,
-45,Eduardo Alves,Masculino,Parda,Tecnologia,Cientista de Dados,9600.00,2024-02-21,Ativo,,
-46,Priscila Andrade,Feminino,Branca,Recursos Humanos,Especialista em D&I,8250.00,2025-06-27,Ativo,,
-47,Ana Ferreira,Feminino,Parda,Financeiro,Analista Financeiro Pleno,5900.00,2023-04-24,Ativo,,
-48,Rafael Ferreira,Masculino,Parda,Tecnologia,Cientista de Dados,9700.00,2021-03-21,Ativo,,
-49,Bruno Marques,Masculino,Preta,Financeiro,Especialista Fiscal,7650.00,2025-06-17,Ativo,,
-50,Lucas Dias,Masculino,Branca,Financeiro,Analista Financeiro Pleno,5200.00,2021-05-23,Ativo,,
-51,Jessica Rocha,Feminino,Parda,Operações,Gerente de Projetos,10800.00,2021-02-26,Desligado,2022-10-13,Pedido de Demissão
-52,Beatriz Souza,Feminino,Parda,Financeiro,Especialista Fiscal,8600.00,2022-10-05,Ativo,,
-53,Andre Mendes,Masculino,Parda,Recursos Humanos,Coordenador(a) de Gente e Gestão,9150.00,2023-06-13,Desligado,2026-08-18,Demissão sem Justa Causa
-54,Eduardo Carvalho,Masculino,Branca,Financeiro,Analista Financeiro Pleno,5650.00,2024-09-20,Ativo,,
-55,Gabriela Gomes,Feminino,Parda,Financeiro,Analista Financeiro Pleno,5350.00,2022-08-29,Ativo,,
-56,Marcelo Dias,Masculino,Preta,Recursos Humanos,Assistente de RH,2950.00,2022-09-09,Ativo,,
-57,Leonardo Gomes,Masculino,Branca,Marketing,Analista de Growth/Marketing,5750.00,2022-10-22,Ativo,,
-58,Bianca Alves,Feminino,Parda,Recursos Humanos,Assistente de RH,3000.00,2022-08-05,Ativo,,
-59,Camila Marques,Feminino,Preta,Recursos Humanos,Especialista em D&I,7850.00,2022-04-06,Ativo,,
-60,Lucas Santos,Masculino,Branca,Operações,Analista de Operações,4900.00,2025-04-23,Desligado,2026-01-20,Demissão sem Justa Causa
-61,Igor Nascimento,Masculino,Branca,Comercial,Executivo(a) de Contas,5250.00,2024-09-05,Ativo,,
-62,Bernardo Carvalho,Masculino,Branca,Operações,Coordenador(a) de Suporte,7550.00,2024-02-16,Desligado,2024-08-18,Pedido de Demissão
-63,Bianca Soares,Feminino,Amarela,Marketing,Especialista de Conteúdo,5850.00,2025-03-27,Ativo,,
-64,Natalia Almeida,Feminino,Preta,Operações,Analista de Operações,4700.00,2025-03-20,Desligado,2026-04-10,Pedido de Demissão
-65,Luana Pereira,Feminino,Branca,Tecnologia,Desenvolvedor(a) Sênior,12850.00,2022-04-26,Ativo,,
-66,Natalia Oliveira,Feminino,Branca,Recursos Humanos,Especialista em D&I,7250.00,2021-11-09,Ativo,,
-67,Marcelo Carvalho,Masculino,Branca,Comercial,Gerente Comercial,12650.00,2022-02-28,Ativo,,
-68,Daniela Vieira,Feminino,Preta,Tecnologia,Desenvolvedor(a) Júnior,5050.00,2025-04-17,Ativo,,
-69,Ana Ribeiro,Feminino,Branca,Comercial,Executivo(a) de Contas,7050.00,2026-05-07,Ativo,,
-70,Caio Pereira,Masculino,Branca,Operações,Analista de Operações,4050.00,2022-11-20,Ativo,,
-71,Tatiane Ferreira,Feminino,Parda,Tecnologia,Designer UI/UX,7450.00,2023-12-30,Desligado,2025-04-06,Demissão sem Justa Causa
-72,Gabriel Rocha,Masculino,Branca,Comercial,Gerente Comercial,11750.00,2022-06-17,Ativo,,
-73,Vinicius Costa,Masculino,Branca,Comercial,Executivo(a) de Contas,5350.00,2026-05-03,Ativo,,
-74,Camila Lopes,Feminino,Branca,Operações,Gerente de Projetos,9700.00,2026-05-04,Ativo,,
-75,Bernardo Rocha,Masculino,Branca,Tecnologia,Desenvolvedor(a) Júnior,5150.00,2022-02-13,Ativo,,
-76,Guilherme Rodrigues,Masculino,Parda,Tecnologia,Cientista de Dados,10550.00,2022-03-23,Ativo,,
-77,Daniela Ribeiro,Feminino,Branca,Marketing,Especialista de Conteúdo,7150.00,2025-01-11,Desligado,2025-08-26,Término de Contrato
-78,Danilo Silva,Masculino,Preta,Marketing,Analista de Growth/Marketing,5900.00,2026-05-17,Ativo,,
-79,Gabriel Vieira,Masculino,Parda,Recursos Humanos,Especialista em D&I,6700.00,2025-05-02,Ativo,,
-80,Danilo Nunes,Masculino,Branca,Operações,Gerente de Projetos,11200.00,2023-01-29,Desligado,2025-02-25,Pedido de Demissão
-81,Vanessa Souza,Feminino,Parda,Financeiro,Especialista Fiscal,8400.00,2025-08-25,Ativo,,
-82,Marcelo Ferreira,Masculino,Parda,Recursos Humanos,Coordenador(a) de Gente e Gestão,10850.00,2026-02-27,Ativo,,
-83,Renata Carvalho,Feminino,Parda,Marketing,Analista de Growth/Marketing,5100.00,2025-10-11,Desligado,2026-01-23,Pedido de Demissão
-84,Patricia Moreira,Feminino,Parda,Marketing,Especialista de Conteúdo,6550.00,2022-11-20,Desligado,2024-11-14,Pedido de Demissão
-85,Eduardo Nunes,Masculino,Branca,Recursos Humanos,Coordenador(a) de Gente e Gestão,11650.00,2024-12-07,Ativo,,
-86,Diego Alves,Masculino,Branca,Comercial,Analista de Vendas B2B,4400.00,2025-04-02,Desligado,2026-01-30,Demissão sem Justa Causa
-87,Renata Nunes,Feminino,Branca,Financeiro,Assistente Financeiro,2850.00,2024-11-17,Desligado,2026-01-28,Pedido de Demissão
-88,Carolina Andrade,Feminino,Parda,Financeiro,Especialista Fiscal,8550.00,2022-07-09,Ativo,,
-89,Rodrigo Andrade,Masculino,Branca,Tecnologia,Cientista de Dados,11350.00,2026-05-02,Ativo,,
-90,Bruno Alves,Masculino,Parda,Recursos Humanos,Coordenador(a) de Gente e Gestão,11150.00,2025-04-06,Ativo,,
-91,Juliana Marques,Feminino,Branca,Recursos Humanos,Especialista em D&I,7200.00,2022-09-12,Desligado,2025-11-08,Pedido de Demissão
-92,Mateus Fernandes,Masculino,Branca,Tecnologia,Designer UI/UX,6600.00,2025-03-22,Ativo,,
-93,Danilo Gomes,Masculino,Parda,Comercial,Gerente Comercial,12350.00,2026-06-01,Desligado,2026-08-30,Pedido de Demissão
-94,Andre Lopes,Masculino,Branca,Tecnologia,Desenvolvedor(a) Pleno,6800.00,2025-07-20,Ativo,,
-95,Camila Pereira,Feminino,Branca,Comercial,Analista de Vendas B2B,4550.00,2025-06-08,Ativo,,
-96,Renata Freitas,Feminino,Parda,Marketing,Analista de Growth/Marketing,6500.00,2022-09-18,Ativo,,
-97,Vitor Andrade,Masculino,Branca,Recursos Humanos,Analista de RH Pleno,5300.00,2022-06-26,Ativo,,
-98,Guilherme Ferreira,Masculino,Parda,Recursos Humanos,Assistente de RH,2600.00,2023-07-12,Ativo,,
-99,Leticia Santos,Feminino,Branca,Financeiro,Assistente Financeiro,3200.00,2023-07-19,Desligado,2025-01-07,Demissão com Justa Causa
-100,Marcelo Souza,Masculino,Parda,Tecnologia,Designer UI/UX,7250.00,2025-08-20,Desligado,2025-11-18,Pedido de Demissão
+id;nome;genero;raca_cor;departamento;cargo;Grade;salario;data_admissao;status;data_desligamento;motivo_desligamento;100% faixa;Posic faixa
+28;Guilherme Alves;Masculino;Branca;Comercial;Gerente Comercial;11;11550;11/01/2022;Ativo;;;12000;96%
+67;Marcelo Carvalho;Masculino;Branca;Comercial;Gerente Comercial;11;12650;28/02/2022;Ativo;;;12000;105%
+72;Gabriel Rocha;Masculino;Branca;Comercial;Gerente Comercial;11;11750;17/06/2022;Ativo;;;12000;98%
+93;Danilo Gomes;Masculino;Parda;Comercial;Gerente Comercial;11;12350;01/06/2026;Desligado;30/08/2026;Pedido de Demissão;12000;103%
+12;Mariana Lima;Feminino;Branca;Operações;Gerente de Projetos;10;11650;10/03/2025;Ativo;;;10000;117%
+25;Rafael Dias;Masculino;Parda;Operações;Gerente de Projetos;10;10050;31/03/2026;Ativo;;;10000;101%
+29;Gabriel Almeida;Masculino;Parda;Operações;Gerente de Projetos;10;9900;28/08/2024;Ativo;;;10000;99%
+32;Carolina Nascimento;Feminino;Preta;Operações;Gerente de Projetos;10;12150;24/09/2023;Desligado;21/09/2024;Pedido de Demissão;10000;122%
+51;Jessica Rocha;Feminino;Parda;Operações;Gerente de Projetos;10;10800;26/02/2021;Desligado;13/10/2022;Pedido de Demissão;10000;108%
+74;Camila Lopes;Feminino;Branca;Operações;Gerente de Projetos;10;9700;04/05/2026;Ativo;;;10000;97%
+80;Danilo Nunes;Masculino;Branca;Operações;Gerente de Projetos;10;11200;29/01/2023;Desligado;25/02/2025;Pedido de Demissão;10000;112%
+18;Eduardo Moreira;Masculino;Branca;Operações;Coordenador(a) de Suporte;9;8600;11/05/2024;Ativo;;;9000;96%
+39;Natalia Nascimento;Feminino;Branca;Operações;Coordenador(a) de Suporte;9;6500;01/08/2025;Ativo;;;9000;72%
+41;Igor Costa;Masculino;Branca;Recursos Humanos;Coordenador(a) de Gente e Gestão;9;10500;30/05/2022;Ativo;;;9000;117%
+42;Gabriel Rocha;Masculino;Branca;Recursos Humanos;Coordenador(a) de Gente e Gestão;9;9150;15/11/2022;Ativo;;;9000;102%
+53;Andre Mendes;Masculino;Parda;Recursos Humanos;Coordenador(a) de Gente e Gestão;9;9150;13/06/2023;Desligado;18/08/2026;Demissão sem Justa Causa;9000;102%
+62;Bernardo Carvalho;Masculino;Branca;Operações;Coordenador(a) de Suporte;9;7550;16/02/2024;Desligado;18/08/2024;Pedido de Demissão;9000;84%
+82;Marcelo Ferreira;Masculino;Parda;Recursos Humanos;Coordenador(a) de Gente e Gestão;9;10850;27/02/2026;Ativo;;;9000;121%
+85;Eduardo Nunes;Masculino;Branca;Recursos Humanos;Coordenador(a) de Gente e Gestão;9;11650;07/12/2024;Ativo;;;9000;129%
+90;Bruno Alves;Masculino;Parda;Recursos Humanos;Coordenador(a) de Gente e Gestão;9;11150;06/04/2025;Ativo;;;9000;124%
+1;Lucas Andrade;Masculino;Branca;Recursos Humanos;Especialista em D&I;8;6800;29/07/2021;Ativo;;;8000;85%
+2;Danilo Carvalho;Masculino;Branca;Tecnologia;Desenvolvedor(a) Sênior;8;10850;01/11/2023;Ativo;;;8000;136%
+5;Andre Souza;Masculino;Branca;Financeiro;Especialista Fiscal;8;8350;11/07/2025;Desligado;02/05/2026;Pedido de Demissão;8000;104%
+6;Camila Fernandes;Feminino;Branca;Marketing;Especialista de Conteúdo;8;6950;11/01/2023;Ativo;;;8000;87%
+8;Luana Marques;Feminino;Branca;Financeiro;Especialista Fiscal;8;7800;04/10/2024;Ativo;;;8000;98%
+9;Vitor Rocha;Masculino;Branca;Recursos Humanos;Especialista em D&I;8;6850;17/02/2023;Ativo;;;8000;86%
+20;Gabriel Andrade;Masculino;Parda;Tecnologia;Desenvolvedor(a) Sênior;8;13900;27/12/2023;Ativo;;;8000;174%
+23;Renata Mendes;Feminino;Parda;Tecnologia;Cientista de Dados;8;9100;12/05/2021;Ativo;;;8000;114%
+30;Gabriel Freitas;Masculino;Parda;Recursos Humanos;Especialista em D&I;8;6850;22/09/2023;Ativo;;;8000;86%
+38;Mariana Freitas;Feminino;Branca;Tecnologia;Desenvolvedor(a) Sênior;8;13500;27/01/2023;Ativo;;;8000;169%
+40;Felipe Lima;Masculino;Branca;Tecnologia;Cientista de Dados;8;11350;15/11/2021;Ativo;;;8000;142%
+45;Eduardo Alves;Masculino;Parda;Tecnologia;Cientista de Dados;8;9600;21/02/2024;Ativo;;;8000;120%
+46;Priscila Andrade;Feminino;Branca;Recursos Humanos;Especialista em D&I;8;8250;27/06/2025;Ativo;;;8000;103%
+48;Rafael Ferreira;Masculino;Parda;Tecnologia;Cientista de Dados;8;9700;21/03/2021;Ativo;;;8000;121%
+49;Bruno Marques;Masculino;Preta;Financeiro;Especialista Fiscal;8;7650;17/06/2025;Ativo;;;8000;96%
+52;Beatriz Souza;Feminino;Parda;Financeiro;Especialista Fiscal;8;8600;05/10/2022;Ativo;;;8000;108%
+59;Camila Marques;Feminino;Preta;Recursos Humanos;Especialista em D&I;8;7850;06/04/2022;Ativo;;;8000;98%
+63;Bianca Soares;Feminino;Amarela;Marketing;Especialista de Conteúdo;8;5850;27/03/2025;Ativo;;;8000;73%
+65;Luana Pereira;Feminino;Branca;Tecnologia;Desenvolvedor(a) Sênior;8;12850;26/04/2022;Ativo;;;8000;161%
+66;Natalia Oliveira;Feminino;Branca;Recursos Humanos;Especialista em D&I;8;7250;09/11/2021;Ativo;;;8000;91%
+76;Guilherme Rodrigues;Masculino;Parda;Tecnologia;Cientista de Dados;8;10550;23/03/2022;Ativo;;;8000;132%
+77;Daniela Ribeiro;Feminino;Branca;Marketing;Especialista de Conteúdo;8;7150;11/01/2025;Desligado;26/08/2025;Término de Contrato;8000;89%
+79;Gabriel Vieira;Masculino;Parda;Recursos Humanos;Especialista em D&I;8;6700;02/05/2025;Ativo;;;8000;84%
+81;Vanessa Souza;Feminino;Parda;Financeiro;Especialista Fiscal;8;8400;25/08/2025;Ativo;;;8000;105%
+84;Patricia Moreira;Feminino;Parda;Marketing;Especialista de Conteúdo;8;6550;20/11/2022;Desligado;14/11/2024;Pedido de Demissão;8000;82%
+88;Carolina Andrade;Feminino;Parda;Financeiro;Especialista Fiscal;8;8550;09/07/2022;Ativo;;;8000;107%
+89;Rodrigo Andrade;Masculino;Branca;Tecnologia;Cientista de Dados;8;11350;02/05/2026;Ativo;;;8000;142%
+91;Juliana Marques;Feminino;Branca;Recursos Humanos;Especialista em D&I;8;7200;12/09/2022;Desligado;08/11/2025;Pedido de Demissão;8000;90%
+10;Murilo Costa;Masculino;Parda;Tecnologia;Desenvolvedor(a) Pleno;7;6950;07/03/2021;Ativo;;;7000;99%
+24;Danilo Pereira;Masculino;Branca;Tecnologia;Desenvolvedor(a) Pleno;7;6950;29/01/2026;Desligado;22/06/2026;Pedido de Demissão;7000;99%
+27;Carolina Carvalho;Feminino;Parda;Tecnologia;Desenvolvedor(a) Pleno;7;7850;16/08/2024;Desligado;01/12/2025;Demissão sem Justa Causa;7000;112%
+94;Andre Lopes;Masculino;Branca;Tecnologia;Desenvolvedor(a) Pleno;7;6800;20/07/2025;Ativo;;;7000;97%
+11;Amanda Oliveira;Feminino;Branca;Marketing;Analista de Growth/Marketing;6;6250;07/10/2022;Desligado;23/09/2025;Pedido de Demissão;5500;114%
+13;Jessica Pereira;Feminino;Indígena;Tecnologia;Designer UI/UX;6;6250;06/07/2021;Ativo;;;5500;114%
+15;Gabriela Lima;Feminino;Amarela;Tecnologia;Desenvolvedor(a) Júnior;6;4900;23/08/2021;Ativo;;;5500;89%
+31;Beatriz Ferreira;Feminino;Branca;Comercial;Executivo(a) de Contas;6;5300;25/05/2025;Ativo;;;5500;96%
+35;Andre Souza;Masculino;Preta;Marketing;Analista de Growth/Marketing;6;5050;02/05/2024;Desligado;22/09/2024;Pedido de Demissão;5500;92%
+37;Lucas Almeida;Masculino;Parda;Marketing;Analista de Growth/Marketing;6;6500;31/05/2021;Ativo;;;5500;118%
+57;Leonardo Gomes;Masculino;Branca;Marketing;Analista de Growth/Marketing;6;5750;22/10/2022;Ativo;;;5500;105%
+60;Lucas Santos;Masculino;Branca;Operações;Analista de Operações;6;4900;23/04/2025;Desligado;20/01/2026;Demissão sem Justa Causa;5500;89%
+61;Igor Nascimento;Masculino;Branca;Comercial;Executivo(a) de Contas;6;5250;05/09/2024;Ativo;;;5500;95%
+64;Natalia Almeida;Feminino;Preta;Operações;Analista de Operações;6;4700;20/03/2025;Desligado;10/04/2026;Pedido de Demissão;5500;85%
+68;Daniela Vieira;Feminino;Preta;Tecnologia;Desenvolvedor(a) Júnior;6;5050;17/04/2025;Ativo;;;5500;92%
+69;Ana Ribeiro;Feminino;Branca;Comercial;Executivo(a) de Contas;6;7050;07/05/2026;Ativo;;;5500;128%
+70;Caio Pereira;Masculino;Branca;Operações;Analista de Operações;6;4050;20/11/2022;Ativo;;;5500;74%
+71;Tatiane Ferreira;Feminino;Parda;Tecnologia;Designer UI/UX;6;7450;30/12/2023;Desligado;06/04/2025;Demissão sem Justa Causa;5500;135%
+73;Vinicius Costa;Masculino;Branca;Comercial;Executivo(a) de Contas;6;5350;03/05/2026;Ativo;;;5500;97%
+75;Bernardo Rocha;Masculino;Branca;Tecnologia;Desenvolvedor(a) Júnior;6;5150;13/02/2022;Ativo;;;5500;94%
+78;Danilo Silva;Masculino;Preta;Marketing;Analista de Growth/Marketing;6;5900;17/05/2026;Ativo;;;5500;107%
+83;Renata Carvalho;Feminino;Parda;Marketing;Analista de Growth/Marketing;6;5100;11/10/2025;Desligado;23/01/2026;Pedido de Demissão;5500;93%
+92;Mateus Fernandes;Masculino;Branca;Tecnologia;Designer UI/UX;6;6600;22/03/2025;Ativo;;;5500;120%
+96;Renata Freitas;Feminino;Parda;Marketing;Analista de Growth/Marketing;6;6500;18/09/2022;Ativo;;;5500;118%
+100;Marcelo Souza;Masculino;Parda;Tecnologia;Designer UI/UX;6;7250;20/08/2025;Desligado;18/11/2025;Pedido de Demissão;5500;132%
+3;Igor Rocha;Masculino;Parda;Comercial;Analista de Vendas B2B;5;4050;21/04/2024;Ativo;;;4500;90%
+4;Bernardo Nunes;Masculino;Branca;Comercial;Analista de Vendas B2B;5;4200;15/11/2021;Desligado;26/04/2026;Pedido de Demissão;4500;93%
+14;Felipe Rocha;Masculino;Branca;Comercial;Analista de Vendas B2B;5;4500;28/02/2023;Ativo;;;4500;100%
+22;Alexandre Moreira;Masculino;Parda;Recursos Humanos;Analista de RH Pleno;5;5450;29/03/2023;Ativo;;;4500;121%
+26;Patricia Nunes;Feminino;Parda;Comercial;Analista de Vendas B2B;5;4050;18/07/2021;Ativo;;;4500;90%
+33;Danilo Andrade;Masculino;Parda;Financeiro;Analista Financeiro Pleno;5;4900;11/04/2024;Ativo;;;4500;109%
+36;Amanda Alves;Feminino;Parda;Financeiro;Analista Financeiro Pleno;5;5150;22/03/2023;Desligado;24/01/2025;Pedido de Demissão;4500;114%
+43;Larissa Andrade;Feminino;Parda;Comercial;Analista de Vendas B2B;5;4450;18/08/2021;Desligado;01/09/2025;Demissão com Justa Causa;4500;99%
+44;Eduardo Vieira;Masculino;Parda;Comercial;Analista de Vendas B2B;5;3950;24/09/2022;Ativo;;;4500;88%
+47;Ana Ferreira;Feminino;Parda;Financeiro;Analista Financeiro Pleno;5;5900;24/04/2023;Ativo;;;4500;131%
+50;Lucas Dias;Masculino;Branca;Financeiro;Analista Financeiro Pleno;5;5200;23/05/2021;Ativo;;;4500;116%
+54;Eduardo Carvalho;Masculino;Branca;Financeiro;Analista Financeiro Pleno;5;5650;20/09/2024;Ativo;;;4500;126%
+55;Gabriela Gomes;Feminino;Parda;Financeiro;Analista Financeiro Pleno;5;5350;29/08/2022;Ativo;;;4500;119%
+86;Diego Alves;Masculino;Branca;Comercial;Analista de Vendas B2B;5;4400;02/04/2025;Desligado;30/01/2026;Demissão sem Justa Causa;4500;98%
+95;Camila Pereira;Feminino;Branca;Comercial;Analista de Vendas B2B;5;4550;08/06/2025;Ativo;;;4500;101%
+97;Vitor Andrade;Masculino;Branca;Recursos Humanos;Analista de RH Pleno;5;5300;26/06/2022;Ativo;;;4500;118%
+7;Mateus Dias;Masculino;Branca;Financeiro;Assistente Financeiro;4;3400;18/10/2025;Desligado;06/02/2026;Pedido de Demissão;3000;113%
+16;Daniela Rocha;Feminino;Branca;Financeiro;Assistente Financeiro;4;3000;19/07/2023;Desligado;09/03/2025;Término de Contrato;3000;100%
+17;Diego Freitas;Masculino;Branca;Financeiro;Assistente Financeiro;4;3300;06/11/2023;Ativo;;;3000;110%
+19;Rodrigo Freitas;Masculino;Branca;Financeiro;Assistente Financeiro;4;2850;09/05/2022;Ativo;;;3000;95%
+21;Murilo Lopes;Masculino;Preta;Recursos Humanos;Assistente de RH;4;2750;22/11/2025;Ativo;;;3000;92%
+34;Mateus Soares;Masculino;Branca;Recursos Humanos;Assistente de RH;4;2650;20/05/2021;Ativo;;;3000;88%
+56;Marcelo Dias;Masculino;Preta;Recursos Humanos;Assistente de RH;4;2950;09/09/2022;Ativo;;;3000;98%
+58;Bianca Alves;Feminino;Parda;Recursos Humanos;Assistente de RH;4;3000;05/08/2022;Ativo;;;3000;100%
+87;Renata Nunes;Feminino;Branca;Financeiro;Assistente Financeiro;4;2850;17/11/2024;Desligado;28/01/2026;Pedido de Demissão;3000;95%
+98;Guilherme Ferreira;Masculino;Parda;Recursos Humanos;Assistente de RH;4;2600;12/07/2023;Ativo;;;3000;87%
+99;Leticia Santos;Feminino;Branca;Financeiro;Assistente Financeiro;4;3200;19/07/2023;Desligado;07/01/2025;Demissão com Justa Causa;3000;107%
