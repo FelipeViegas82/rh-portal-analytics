@@ -86,464 +86,147 @@
       grid-template-columns: auto 1fr auto;
       align-items: center;
     }
-    .cover-top .badge-welcome {
-      justify-self: center;
-      margin-bottom: 0;
-    }
-    .cover-top .theme-toggle-btn {
-      justify-self: end;
-    }
+    .cover-top .badge-welcome { justify-self: center; margin-bottom: 0; }
+    .cover-top .theme-toggle-btn { justify-self: end; }
 
-    .cover-logo-box {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
+    .cover-logo-box { display: flex; align-items: center; gap: 12px; }
     .cover-logo-icon {
-      width: 42px;
-      height: 42px;
+      width: 42px; height: 42px;
       background: linear-gradient(135deg, #0284c7 0%, #38bdf8 100%);
-      color: #fff;
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 800;
-      font-size: 1rem;
-      box-shadow: 0 4px 12px rgba(2, 132, 199, 0.3);
+      color: #fff; border-radius: 12px; display: flex; align-items: center; justify-content: center;
+      font-weight: 800; font-size: 1rem; box-shadow: 0 4px 12px rgba(2, 132, 199, 0.3);
     }
-
-    .cover-logo-text {
-      font-size: 1.15rem;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-    }
+    .cover-logo-text { font-size: 1.15rem; font-weight: 800; letter-spacing: -0.02em; }
 
     .theme-toggle-btn {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      color: var(--text);
-      padding: 8px 16px;
-      border-radius: 9999px;
-      font-size: 0.82rem;
-      font-weight: 700;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      gap: 8px;
+      background: var(--card-bg); border: 1px solid var(--border); color: var(--text);
+      padding: 8px 16px; border-radius: 9999px; font-size: 0.82rem; font-weight: 700;
+      cursor: pointer; display: flex; align-items: center; gap: 8px;
     }
     .theme-toggle-btn:hover { border-color: var(--primary); }
 
-    .cover-header-intro {
-      max-width: 1240px;
-      margin: 0 auto 36px auto;
-      width: 100%;
-      text-align: left;
-    }
-
+    .cover-header-intro { max-width: 1240px; margin: 0 auto 36px auto; width: 100%; text-align: left; }
     .badge-welcome {
-      display: inline-block;
-      background: var(--primary-subtle);
-      color: var(--primary);
-      border: 1px solid rgba(56, 189, 248, 0.25);
-      padding: 6px 16px;
-      border-radius: 9999px;
-      font-size: 0.78rem;
-      font-weight: 800;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      margin-bottom: 12px;
+      display: inline-block; background: var(--primary-subtle); color: var(--primary);
+      border: 1px solid rgba(56, 189, 248, 0.25); padding: 6px 16px; border-radius: 9999px;
+      font-size: 0.78rem; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 12px;
     }
-
-    .cover-main-title {
-      font-size: 2.2rem;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      color: var(--text);
-      line-height: 1.2;
-    }
-
-    .cover-main-desc {
-      font-size: 0.95rem;
-      color: var(--text-muted);
-      margin-top: 6px;
-    }
+    .cover-main-title { font-size: 2.2rem; font-weight: 800; letter-spacing: -0.02em; color: var(--text); line-height: 1.2; }
+    .cover-main-desc { font-size: 0.95rem; color: var(--text-muted); margin-top: 6px; }
 
     .cards-hub-grid {
-      width: 100%;
-      max-width: 1240px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 24px;
+      width: 100%; max-width: 1240px; margin: 0 auto;
+      display: grid; grid-template-columns: repeat(3, minmax(320px, 1fr)); gap: 24px;
+    }
+    @media (max-width: 1024px) {
+      .cards-hub-grid { grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); }
     }
 
     .main-project-card {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 32px 28px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      gap: 20px;
-      box-shadow: var(--shadow-card);
-      position: relative;
-      overflow: hidden;
+      background: var(--card-bg); border: 1px solid var(--border); border-radius: 20px;
+      padding: 32px 28px; display: flex; flex-direction: column; justify-content: space-between;
+      gap: 20px; box-shadow: var(--shadow-card); position: relative; overflow: hidden;
       transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+      min-height: 280px;
     }
-
     .main-project-card::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 4px;
+      content: ""; position: absolute; top: 0; left: 0; right: 0; height: 4px;
       background: linear-gradient(90deg, #0284c7, #38bdf8);
     }
-    .main-project-card.accent-violet::before {
-      background: linear-gradient(90deg, #7c3aed, #a855f7);
-    }
+    .main-project-card.accent-violet::before { background: linear-gradient(90deg, #7c3aed, #a855f7); }
+    .main-project-card:hover { transform: translateY(-5px); border-color: var(--primary); box-shadow: 0 16px 32px -8px var(--glow); }
 
-    .main-project-card:hover {
-      transform: translateY(-5px);
-      border-color: var(--primary);
-      box-shadow: 0 16px 32px -8px var(--glow);
-    }
-
-    .project-card-header {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
+    .project-card-header { display: flex; flex-direction: column; gap: 12px; }
     .project-tag {
-      font-size: 0.7rem;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: var(--success);
-      background: rgba(52, 211, 153, 0.12);
-      border: 1px solid rgba(52, 211, 153, 0.25);
-      padding: 4px 10px;
-      border-radius: 9999px;
-      width: fit-content;
+      font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em;
+      color: var(--success); background: rgba(52, 211, 153, 0.12); border: 1px solid rgba(52, 211, 153, 0.25);
+      padding: 4px 10px; border-radius: 9999px; width: fit-content;
     }
-    .project-tag.tag-calc {
-      color: var(--violet);
-      background: rgba(139, 92, 246, 0.12);
-      border-color: rgba(139, 92, 246, 0.25);
-    }
-
-    .project-card-title {
-      font-size: 1.85rem;
-      font-weight: 800;
-      line-height: 1.2;
-      letter-spacing: -0.02em;
-    }
-
-    .project-card-title span {
-      background: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .project-card-desc {
-      font-size: 0.95rem;
-      color: var(--text-muted);
-      line-height: 1.55;
-    }
+    .project-tag.tag-calc { color: var(--violet); background: rgba(139, 92, 246, 0.12); border-color: rgba(139, 92, 246, 0.25); }
+    .project-card-title { font-size: 1.85rem; font-weight: 800; line-height: 1.2; letter-spacing: -0.02em; }
+    .project-card-title span { background: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .project-card-desc { font-size: 0.95rem; color: var(--text-muted); line-height: 1.55; }
 
     .btn-card-access {
-      background: linear-gradient(135deg, #0284c7 0%, #38bdf8 100%);
-      color: #fff;
-      font-size: 0.95rem;
-      font-weight: 700;
-      padding: 14px 24px;
-      border-radius: 12px;
-      border: none;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      box-shadow: 0 8px 18px -4px rgba(2, 132, 199, 0.4);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-      width: 100%;
-      margin-top: 8px;
+      background: linear-gradient(135deg, #0284c7 0%, #38bdf8 100%); color: #fff;
+      font-size: 0.95rem; font-weight: 700; padding: 14px 24px; border-radius: 12px;
+      border: none; cursor: pointer; display: flex; align-items: center; justify-content: center;
+      gap: 10px; box-shadow: 0 8px 18px -4px rgba(2, 132, 199, 0.4); width: 100%; margin-top: 8px;
     }
     .btn-card-access.btn-violet {
       background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);
       box-shadow: 0 8px 18px -4px rgba(124, 58, 237, 0.4);
     }
-
-    .btn-card-access:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 12px 24px -4px rgba(2, 132, 199, 0.55);
-    }
-
-    .btn-card-access svg {
-      width: 18px;
-      height: 18px;
-      transition: transform 0.2s ease;
-    }
-
-    .btn-card-access:hover svg {
-      transform: translateX(4px);
-    }
+    .btn-card-access:hover { transform: translateY(-2px); }
 
     .empty-slot-card {
-      background: rgba(21, 32, 51, 0.35);
-      border: 1px dashed var(--border);
-      border-radius: 20px;
-      padding: 32px 28px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      gap: 12px;
-      min-height: 280px;
-      text-align: center;
-      position: relative;
-      transition: all 0.2s ease;
+      background: rgba(21, 32, 51, 0.35); border: 1px dashed var(--border); border-radius: 20px;
+      padding: 32px 28px; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 12px; min-height: 280px; text-align: center;
     }
-
-    [data-theme="light"] .empty-slot-card {
-      background: rgba(241, 245, 249, 0.5);
-    }
-
-    .empty-slot-card:hover {
-      border-color: rgba(56, 189, 248, 0.4);
-      background: var(--card-bg);
-    }
-
     .slot-icon-box {
-      width: 44px;
-      height: 44px;
-      border-radius: 12px;
-      background: var(--bg);
-      border: 1px solid var(--border);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--text-muted);
+      width: 44px; height: 44px; border-radius: 12px; background: var(--bg); border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center; color: var(--text-muted);
     }
-    .slot-icon-box svg {
-      width: 20px;
-      height: 20px;
-      stroke-width: 2;
-    }
+    .slot-icon-box svg { width: 20px; height: 20px; stroke-width: 2; }
+    .slot-title { font-size: 0.95rem; font-weight: 700; color: var(--text-muted); }
+    .slot-tag { font-size: 0.7rem; font-weight: 700; color: var(--text-muted); background: var(--bg); padding: 4px 10px; border-radius: 9999px; border: 1px solid var(--border); }
 
-    .slot-title {
-      font-size: 0.95rem;
-      font-weight: 700;
-      color: var(--text-muted);
-    }
-
-    .slot-tag {
-      font-size: 0.7rem;
-      font-weight: 700;
-      color: var(--text-muted);
-      background: var(--bg);
-      padding: 4px 10px;
-      border-radius: 9999px;
-      border: 1px solid var(--border);
-    }
-
-    .cover-bottom {
-      width: 100%;
-      max-width: 1240px;
-      margin: 40px auto 0 auto;
-      text-align: center;
-      color: var(--text-muted);
-      font-size: 0.8rem;
-    }
+    .cover-bottom { width: 100%; max-width: 1240px; margin: 40px auto 0 auto; text-align: center; color: var(--text-muted); font-size: 0.8rem; }
 
     /* DASHBOARD */
-    #view-dashboard {
-      display: none;
-      width: 100%;
-      min-height: 100vh;
-    }
-    #view-dashboard.active {
-      display: flex;
-    }
+    #view-dashboard { display: none; width: 100%; min-height: 100vh; }
+    #view-dashboard.active { display: flex; }
 
     .nav-rail {
-      width: var(--nav-width);
-      background-color: var(--nav-bg);
-      border-right: 1px solid var(--border);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 20px 0;
-      position: sticky;
-      top: 0;
-      height: 100vh;
-      flex-shrink: 0;
-      z-index: 100;
+      width: var(--nav-width); background-color: var(--nav-bg); border-right: 1px solid var(--border);
+      display: flex; flex-direction: column; align-items: center; padding: 20px 0; position: sticky; top: 0; height: 100vh; flex-shrink: 0; z-index: 100;
     }
     .nav-logo {
-      width: 44px;
-      height: 44px;
-      background: var(--primary);
-      color: #fff;
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 800;
-      font-size: 1rem;
-      margin-bottom: 24px;
-      cursor: pointer;
-      box-shadow: 0 4px 12px rgba(2, 132, 199, 0.3);
+      width: 44px; height: 44px; background: var(--primary); color: #fff; border-radius: 12px;
+      display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1rem;
+      margin-bottom: 24px; cursor: pointer; box-shadow: 0 4px 12px rgba(2, 132, 199, 0.3);
     }
-    .nav-items {
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-      width: 100%;
-      align-items: center;
-      flex-grow: 1;
-    }
+    .nav-items { display: flex; flex-direction: column; gap: 14px; width: 100%; align-items: center; flex-grow: 1; }
     .nav-btn {
-      width: 46px;
-      height: 46px;
-      border-radius: 12px;
-      background: transparent;
-      border: 1px solid transparent;
-      color: var(--text-muted);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      position: relative;
+      width: 46px; height: 46px; border-radius: 12px; background: transparent; border: 1px solid transparent;
+      color: var(--text-muted); display: flex; align-items: center; justify-content: center; cursor: pointer; position: relative;
     }
-    .nav-btn svg {
-      width: 20px;
-      height: 20px;
-      fill: currentColor;
-    }
-    .nav-btn:hover {
-      background: var(--card-hover);
-      color: var(--text);
-    }
-    .nav-btn.active {
-      background: var(--primary-subtle);
-      color: var(--primary);
-      border-color: rgba(56, 189, 248, 0.4);
-    }
-    .nav-btn.btn-nav-calc.active {
-      background: rgba(139, 92, 246, 0.15);
-      color: var(--violet);
-      border-color: rgba(139, 92, 246, 0.4);
-    }
+    .nav-btn svg { width: 20px; height: 20px; fill: currentColor; }
+    .nav-btn:hover { background: var(--card-hover); color: var(--text); }
+    .nav-btn.active { background: var(--primary-subtle); color: var(--primary); border-color: rgba(56, 189, 248, 0.4); }
+    .nav-btn.btn-nav-calc.active { background: rgba(139, 92, 246, 0.15); color: var(--violet); border-color: rgba(139, 92, 246, 0.4); }
     .nav-btn .preview-tip {
-      position: absolute;
-      left: calc(var(--nav-width) + 10px);
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      color: var(--text);
-      padding: 8px 12px;
-      border-radius: 8px;
-      font-size: 0.78rem;
-      white-space: nowrap;
-      pointer-events: none;
-      opacity: 0;
-      visibility: hidden;
-      transform: translateX(-8px);
-      transition: all 0.18s ease;
-      box-shadow: var(--shadow-card);
-      z-index: 200;
-      font-weight: 700;
+      position: absolute; left: calc(var(--nav-width) + 10px); background: var(--card-bg); border: 1px solid var(--border);
+      color: var(--text); padding: 8px 12px; border-radius: 8px; font-size: 0.78rem; white-space: nowrap;
+      pointer-events: none; opacity: 0; visibility: hidden; transform: translateX(-8px); transition: all 0.18s ease; box-shadow: var(--shadow-card); z-index: 200; font-weight: 700;
     }
-    .nav-btn:hover .preview-tip {
-      opacity: 1;
-      visibility: visible;
-      transform: translateX(0);
-    }
+    .nav-btn:hover .preview-tip { opacity: 1; visibility: visible; transform: translateX(0); }
 
-    .nav-bottom {
-      margin-top: auto;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 12px;
-    }
+    .nav-bottom { margin-top: auto; display: flex; flex-direction: column; align-items: center; gap: 12px; }
 
-    .main-wrapper {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      min-width: 0;
-      padding: 24px 32px;
-      gap: 18px;
-      max-width: 1400px;
-      margin: 0 auto;
-      width: 100%;
-    }
+    .main-wrapper { flex: 1; display: flex; flex-direction: column; min-width: 0; padding: 24px 32px; gap: 18px; max-width: 1400px; margin: 0 auto; width: 100%; }
 
     .header {
-      background-color: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 18px 24px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      box-shadow: var(--shadow-card);
+      background-color: var(--card-bg); border: 1px solid var(--border); border-radius: 14px;
+      padding: 18px 24px; display: flex; justify-content: space-between; align-items: center; box-shadow: var(--shadow-card);
     }
     .brand-title h1 { font-size: 1.25rem; font-weight: 800; color: var(--text); }
     .brand-title p { color: var(--text-muted); font-size: 0.82rem; margin-top: 2px; }
 
     .status-validators-header {
-      display: flex;
-      align-items: center;
-      gap: 4px;
-      background: var(--bg);
-      padding: 4px 6px;
-      border-radius: 9999px;
-      border: 1px solid var(--border);
+      display: flex; align-items: center; gap: 4px; background: var(--bg); padding: 4px 6px; border-radius: 9999px; border: 1px solid var(--border);
     }
-    .status-validators-label {
-      font-size: 0.72rem;
-      font-weight: 700;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      padding-left: 6px;
-      padding-right: 4px;
-    }
-    .btn-validator {
-      background: transparent;
-      border: 1px solid transparent;
-      color: var(--text-muted);
-      padding: 5px 12px;
-      border-radius: 9999px;
-      font-size: 0.78rem;
-      font-weight: 700;
-      cursor: pointer;
-    }
+    .status-validators-label { font-size: 0.72rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; padding-left: 6px; padding-right: 4px; }
+    .btn-validator { background: transparent; border: 1px solid transparent; color: var(--text-muted); padding: 5px 12px; border-radius: 9999px; font-size: 0.78rem; font-weight: 700; cursor: pointer; }
     .btn-validator:hover { color: var(--text); }
     .btn-validator.active-all { background: var(--card-bg); color: var(--text); border-color: var(--border); }
     .btn-validator.active-ativo { background: rgba(52, 211, 153, 0.18); color: var(--success); border-color: rgba(52, 211, 153, 0.35); }
     .btn-validator.active-desligado { background: rgba(248, 113, 113, 0.18); color: var(--danger); border-color: rgba(248, 113, 113, 0.35); }
 
-    .metrics-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 14px;
-    }
+    .metrics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; }
     .metric-card {
-      background-color: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 16px 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-      box-shadow: var(--shadow-card);
+      background-color: var(--card-bg); border: 1px solid var(--border); border-radius: 12px;
+      padding: 16px 20px; display: flex; flex-direction: column; gap: 6px; box-shadow: var(--shadow-card);
     }
     .metric-label { font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.04em; color: var(--text-muted); }
     .metric-val { font-size: 1.75rem; font-weight: 800; letter-spacing: -0.02em; color: var(--text); }
@@ -557,132 +240,49 @@
     .page-section.active { display: flex; }
 
     .filter-panel {
-      background-color: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 16px 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      box-shadow: var(--shadow-card);
+      background-color: var(--card-bg); border: 1px solid var(--border); border-radius: 12px;
+      padding: 16px 20px; display: flex; flex-direction: column; gap: 12px; box-shadow: var(--shadow-card);
     }
     .search-box input {
-      width: 100%;
-      background: var(--bg);
-      border: 1px solid var(--border);
-      color: var(--text);
-      padding: 11px 16px;
-      border-radius: 8px;
-      font-size: 0.9rem;
-      outline: none;
+      width: 100%; background: var(--bg); border: 1px solid var(--border); color: var(--text);
+      padding: 11px 16px; border-radius: 8px; font-size: 0.9rem; outline: none;
     }
     .search-box input:focus { border-color: var(--primary); }
     .selects-row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
     .selects-row select {
-      flex: 1;
-      min-width: 170px;
-      background: var(--bg);
-      border: 1px solid var(--border);
-      color: var(--text);
-      padding: 9px 12px;
-      border-radius: 8px;
-      font-size: 0.85rem;
-      outline: none;
-      cursor: pointer;
+      flex: 1; min-width: 170px; background: var(--bg); border: 1px solid var(--border); color: var(--text);
+      padding: 9px 12px; border-radius: 8px; font-size: 0.85rem; outline: none; cursor: pointer;
     }
     .btn-reset {
-      background: transparent;
-      border: 1px solid var(--border);
-      color: var(--text-muted);
-      padding: 9px 18px;
-      border-radius: 8px;
-      cursor: pointer;
-      font-weight: 600;
-      font-size: 0.85rem;
+      background: transparent; border: 1px solid var(--border); color: var(--text-muted);
+      padding: 9px 18px; border-radius: 8px; cursor: pointer; font-weight: 600; font-size: 0.85rem;
     }
     .btn-reset:hover { color: var(--text); background: var(--card-hover); }
 
     .table-container {
-      background-color: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      overflow-x: auto;
-      box-shadow: var(--shadow-card);
+      background-color: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; overflow-x: auto; box-shadow: var(--shadow-card);
     }
     table { width: 100%; border-collapse: collapse; text-align: left; font-size: 0.84rem; }
-    th {
-      background-color: var(--bg);
-      color: var(--text-muted);
-      font-weight: 700;
-      padding: 12px 16px;
-      border-bottom: 1px solid var(--border);
-      white-space: nowrap;
-    }
-    td {
-      padding: 12px 16px;
-      border-bottom: 1px solid var(--border);
-      color: var(--text);
-      white-space: nowrap;
-    }
+    th { background-color: var(--bg); color: var(--text-muted); font-weight: 700; padding: 12px 16px; border-bottom: 1px solid var(--border); white-space: nowrap; }
+    td { padding: 12px 16px; border-bottom: 1px solid var(--border); color: var(--text); white-space: nowrap; }
     tbody tr:hover { background-color: var(--card-hover); }
-    tbody tr:last-child td { border-bottom: none; }
     .badge { display: inline-block; padding: 3px 8px; border-radius: 9999px; font-size: 0.72rem; font-weight: 700; }
     .badge-ativo { background: rgba(52, 211, 153, 0.15); color: var(--success); border: 1px solid rgba(52, 211, 153, 0.3); }
     .badge-desligado { background: rgba(248, 113, 113, 0.15); color: var(--danger); border: 1px solid rgba(248, 113, 113, 0.3); }
-
-    .badge-grade {
-      background: rgba(56, 189, 248, 0.12);
-      color: var(--primary);
-      border: 1px solid rgba(56, 189, 248, 0.25);
-      padding: 2px 7px;
-      border-radius: 6px;
-      font-weight: 800;
-      font-size: 0.72rem;
-    }
-    .badge-posic {
-      background: rgba(139, 92, 246, 0.12);
-      color: var(--violet);
-      border: 1px solid rgba(139, 92, 246, 0.25);
-      padding: 2px 7px;
-      border-radius: 6px;
-      font-weight: 800;
-      font-size: 0.72rem;
-    }
+    .badge-promovido { background: rgba(251, 191, 36, 0.15); color: var(--warning); border: 1px solid rgba(251, 191, 36, 0.3); }
+    .badge-grade { background: rgba(56, 189, 248, 0.12); color: var(--primary); border: 1px solid rgba(56, 189, 248, 0.25); padding: 2px 7px; border-radius: 6px; font-weight: 800; font-size: 0.72rem; }
+    .badge-posic { background: rgba(139, 92, 246, 0.12); color: var(--violet); border: 1px solid rgba(139, 92, 246, 0.25); padding: 2px 7px; border-radius: 6px; font-weight: 800; font-size: 0.72rem; }
 
     .crossfilter-bar {
-      display: none;
-      align-items: center;
-      justify-content: space-between;
-      background: var(--primary-subtle);
-      border: 1px solid rgba(56, 189, 248, 0.25);
-      padding: 10px 16px;
-      border-radius: 8px;
-      font-size: 0.82rem;
-      color: var(--text);
+      display: none; align-items: center; justify-content: space-between; background: var(--primary-subtle);
+      border: 1px solid rgba(56, 189, 248, 0.25); padding: 10px 16px; border-radius: 8px; font-size: 0.82rem; color: var(--text);
     }
     .crossfilter-bar.visible { display: flex; }
-    .btn-clear-cross {
-      background: var(--primary);
-      color: #fff;
-      border: none;
-      padding: 5px 12px;
-      border-radius: 6px;
-      font-size: 0.75rem;
-      font-weight: 700;
-      cursor: pointer;
-    }
+    .btn-clear-cross { background: var(--primary); color: #fff; border: none; padding: 5px 12px; border-radius: 6px; font-size: 0.75rem; font-weight: 700; cursor: pointer; }
 
     .analytics-grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 18px; }
     .analytics-grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 18px; }
-    .info-card {
-      background-color: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 20px;
-      box-shadow: var(--shadow-card);
-      display: flex;
-      flex-direction: column;
-    }
+    .info-card { background-color: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; padding: 20px; box-shadow: var(--shadow-card); display: flex; flex-direction: column; }
     .info-card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
     .info-card-header h3 { font-size: 0.95rem; font-weight: 800; color: var(--text); }
     .hint-click { font-size: 0.7rem; color: var(--text-muted); background: var(--bg); padding: 2px 6px; border-radius: 4px; font-weight: 600; }
@@ -700,30 +300,8 @@
     .legend-color { width: 10px; height: 10px; border-radius: 3px; flex-shrink: 0; }
     .donut-legend-pct { font-weight: 800; font-size: 0.85rem; margin-left: auto; padding-left: 8px; }
 
-    .vbar-chart {
-      display: flex;
-      align-items: flex-end;
-      justify-content: space-around;
-      height: 165px;
-      padding: 14px 6px 6px 6px;
-      background: var(--bg);
-      border-radius: 8px;
-      border: 1px solid var(--border);
-      gap: 6px;
-      margin-top: 4px;
-    }
-    .vbar-col {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      height: 100%;
-      justify-content: flex-end;
-      gap: 4px;
-      cursor: pointer;
-      border-radius: 4px;
-      padding: 2px;
-    }
+    .vbar-chart { display: flex; align-items: flex-end; justify-content: space-around; height: 165px; padding: 14px 6px 6px 6px; background: var(--bg); border-radius: 8px; border: 1px solid var(--border); gap: 6px; margin-top: 4px; }
+    .vbar-col { flex: 1; display: flex; flex-direction: column; align-items: center; height: 100%; justify-content: flex-end; gap: 4px; cursor: pointer; border-radius: 4px; padding: 2px; }
     .vbar-col:hover { background: var(--card-hover); }
     .vbar-col.selected .vbar-fill { filter: brightness(1.3) drop-shadow(0 0 5px var(--primary)); }
     .vbar-col.dimmed { opacity: 0.35; }
@@ -795,153 +373,92 @@
     .info-row { display: flex; justify-content: space-between; align-items: center; padding: 8px 12px; background: var(--card-bg); border-radius: 6px; border: 1px solid var(--border); font-size: 0.84rem; }
     .info-row strong { color: var(--primary); }
 
-    /* SIMULADOR DE CUSTOS COM GRID ROBUSTO E PROTEÇÃO DE LARGURA */
-    .calc-card-grid {
+    /* SIMULADOR TRÍPLICE & GRÁFICO COMPOSTO */
+    .calc-triple-grid {
       display: grid;
-      grid-template-columns: 380px minmax(0, 1fr);
+      grid-template-columns: repeat(3, minmax(320px, 1fr));
       gap: 20px;
       align-items: start;
     }
-    @media (max-width: 1100px) {
-      .calc-card-grid { grid-template-columns: 1fr; }
+    @media (max-width: 1200px) {
+      .calc-triple-grid { grid-template-columns: 1fr; }
     }
 
     .form-calc-container {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 22px;
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-      box-shadow: var(--shadow-card);
-      min-width: 0;
+      background: var(--card-bg); border: 1px solid var(--border); border-radius: 14px;
+      padding: 22px; display: flex; flex-direction: column; gap: 16px; box-shadow: var(--shadow-card); min-width: 0;
     }
-    .form-group {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-    }
-    .form-label {
-      font-size: 0.76rem;
-      font-weight: 700;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-    }
+    .form-group { display: flex; flex-direction: column; gap: 6px; }
+    .form-label { font-size: 0.76rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.04em; }
     .form-control {
-      background: var(--bg);
-      border: 1px solid var(--border);
-      color: var(--text);
-      padding: 11px 14px;
-      border-radius: 8px;
-      font-size: 0.88rem;
-      outline: none;
-      cursor: pointer;
+      background: var(--bg); border: 1px solid var(--border); color: var(--text);
+      padding: 11px 14px; border-radius: 8px; font-size: 0.88rem; outline: none; cursor: pointer;
     }
-    .form-control:focus {
-      border-color: var(--violet);
-    }
+    .form-control:focus { border-color: var(--violet); }
 
     .grade-preview-box {
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 12px 14px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 0.84rem;
+      background: var(--bg); border: 1px solid var(--border); border-radius: 8px;
+      padding: 12px 14px; display: flex; justify-content: space-between; align-items: center; font-size: 0.84rem;
     }
     .grade-preview-box span { color: var(--text-muted); font-weight: 600; }
     .grade-preview-box strong { color: var(--primary); }
 
-    .calc-btn-group {
-      display: flex;
-      gap: 10px;
-      margin-top: 8px;
-    }
+    .calc-btn-group { display: flex; gap: 10px; margin-top: 8px; }
     .btn-add-simul {
-      flex: 1;
-      background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);
-      color: #fff;
-      font-weight: 700;
-      font-size: 0.88rem;
-      padding: 13px;
-      border-radius: 10px;
-      border: none;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      box-shadow: 0 4px 14px rgba(124, 58, 237, 0.35);
-      transition: transform 0.18s ease;
+      flex: 1; background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%); color: #fff;
+      font-weight: 700; font-size: 0.88rem; padding: 13px; border-radius: 10px; border: none;
+      cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px;
+      box-shadow: 0 4px 14px rgba(124, 58, 237, 0.35); transition: transform 0.18s ease;
+    }
+    .btn-add-simul.btn-danger-simul {
+      background: linear-gradient(135deg, #dc2626 0%, #f87171 100%);
+      box-shadow: 0 4px 14px rgba(220, 38, 38, 0.35);
+    }
+    .btn-add-simul.btn-warning-simul {
+      background: linear-gradient(135deg, #d97706 0%, #fbbf24 100%); color: #0a003c;
+      box-shadow: 0 4px 14px rgba(245, 158, 11, 0.35);
     }
     .btn-add-simul:hover { transform: translateY(-2px); }
 
     .btn-clear-simul {
-      background: transparent;
-      border: 1px solid var(--border);
-      color: var(--text-muted);
-      padding: 13px 18px;
-      border-radius: 10px;
-      font-weight: 600;
-      font-size: 0.86rem;
-      cursor: pointer;
+      background: transparent; border: 1px solid var(--border); color: var(--text-muted);
+      padding: 13px 18px; border-radius: 10px; font-weight: 600; font-size: 0.86rem; cursor: pointer;
     }
     .btn-clear-simul:hover { color: var(--danger); border-color: var(--danger); }
 
     .kpi-custos-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-      gap: 14px;
-      margin-bottom: 18px;
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 14px; margin-bottom: 18px;
     }
     .kpi-custo-card {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 18px 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-      box-shadow: var(--shadow-card);
+      background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px;
+      padding: 18px 20px; display: flex; flex-direction: column; gap: 6px; box-shadow: var(--shadow-card);
     }
     .kpi-custo-card.highlight-2026 { border-left: 4px solid var(--primary); }
     .kpi-custo-card.highlight-2027 { border-left: 4px solid var(--violet); }
     .kpi-custo-card.highlight-total { border-left: 4px solid var(--success); }
 
-    /* Card da Tabela de Posições Simuladas com Fundo Azul Mais Escuro e Proteção de Overflow */
     .simulated-positions-card {
-      background-color: #0d1629;
-      border: 1px solid #23334d;
-      border-radius: 14px;
-      padding: 22px;
-      box-shadow: var(--shadow-card);
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-      min-width: 0;
+      background-color: #0d1629; border: 1px solid #23334d; border-radius: 14px;
+      padding: 22px; box-shadow: var(--shadow-card); display: flex; flex-direction: column; width: 100%; min-width: 0; margin-top: 20px;
     }
-    [data-theme="light"] .simulated-positions-card {
-      background-color: #f1f5f9;
-      border-color: #cbd5e1;
-    }
+    [data-theme="light"] .simulated-positions-card { background-color: #f1f5f9; border-color: #cbd5e1; }
 
     .simulated-table-scroll {
-      width: 100%;
-      overflow-x: auto;
-      max-height: 380px;
-      overflow-y: auto;
-      border-radius: 8px;
-      border: 1px solid var(--border);
-      background: var(--card-bg);
+      width: 100%; overflow-x: auto; max-height: 380px; overflow-y: auto; border-radius: 8px; border: 1px solid var(--border); background: var(--card-bg);
     }
-    .simulated-table-scroll table {
-      width: 100%;
-      min-width: 780px;
-    }
+    .simulated-table-scroll table { width: 100%; min-width: 900px; }
+
+    /* GRÁFICO COMPOSTO */
+    .combo-chart-card { background-color: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; padding: 18px; box-shadow: var(--shadow-card); display: flex; flex-direction: column; gap: 12px; width: 100%; margin-top: 18px; }
+    .combo-svg-wrapper { position: relative; width: 100%; height: 230px; background: var(--bg); border-radius: 8px; border: 1px solid var(--border); padding: 12px 16px; }
+    .combo-svg { width: 100%; height: 100%; overflow: visible; }
+    .bar-rect { fill: rgba(56, 189, 248, 0.75); rx: 3px; ry: 3px; transition: fill 0.2s; }
+    .bar-rect:hover { fill: var(--primary); }
+    .line-path-headcount { fill: none; stroke: #a78bfa; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+    .line-dot-headcount { cursor: pointer; fill: #a78bfa; stroke: #ffffff; stroke-width: 2; }
+    .chart-legend-box { display: flex; gap: 20px; align-items: center; font-size: 0.78rem; font-weight: 700; }
+    .data-label-bar { fill: #f8fafc; font-size: 9px; font-weight: 800; text-anchor: middle; }
+    .data-label-line { fill: #c4b5fd; font-size: 10px; font-weight: 800; text-anchor: middle; }
 
     .chart-tooltip { position: absolute; background: var(--card-bg); border: 1px solid var(--border); color: var(--text); padding: 6px 10px; border-radius: 6px; font-size: 0.76rem; pointer-events: none; opacity: 0; visibility: hidden; transition: opacity 0.15s ease; box-shadow: var(--shadow-card); z-index: 50; white-space: nowrap; }
     .chart-tooltip.active { opacity: 1; visibility: visible; }
@@ -949,7 +466,7 @@
 </head>
 <body>
 
-  <!-- 1. CAPA / HUB DE PROJETOS E PORTFÓLIO -->
+  <!-- 1. CAPA / HUB DE PROJETOS E PORTFÓLIO (BOTÕES PADRÃO ANTIGO SEM SETAS) -->
   <div id="view-cover">
     <header class="cover-top">
       <div class="cover-logo-box">
@@ -965,67 +482,46 @@
 
     <section class="cover-header-intro">
       <h1 class="cover-main-title">Soluções Digitais para Gestão de Pessoas</h1>
-      <p class="cover-main-desc">Portfólio criado a partir de empresa e base fictícias de 100 colaboradores.</p>
+      <p class="cover-main-desc">Portfólio criado a partir de empresa e base de 100 colaboradores.</p>
     </section>
 
     <main class="cards-hub-grid">
-      <!-- CARD 1 -->
       <div class="main-project-card">
         <div class="project-card-header">
           <span class="project-tag">● Aplicação Ativa</span>
-          <h2 class="project-card-title">
-            Painel Executivo de <br><span>Recursos Humanos</span>
-          </h2>
-          <p class="project-card-desc">
-            Visualização de indicadores de pessoas: quadro de pessoal, diversidade & liderança, remuneração e análise de turnover.
-          </p>
+          <h2 class="project-card-title">Painel Executivo de <br><span>Recursos Humanos</span></h2>
+          <p class="project-card-desc">Visualização de indicadores de pessoas: quadro de pessoal, diversidade & liderança, remuneração e análise de turnover.</p>
         </div>
         <button class="btn-card-access" onclick="irParaDashboard('page-geral')">
           <span>Acessar Dashboard de Pessoas</span>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </button>
       </div>
 
-      <!-- CARD 2 -->
       <div class="main-project-card accent-violet">
         <div class="project-card-header">
           <span class="project-tag tag-calc">● Aplicação Ativa</span>
-          <h2 class="project-card-title">
-            Simulador de Custos & <br><span>Impacto Orçamentário</span>
-          </h2>
-          <p class="project-card-desc">
-            Planejamento de novas contratações: escolha de cargos, grades, posicionamento na faixa (80% a 120%) e projeção de custos para 2026 e 2027.
-          </p>
+          <h2 class="project-card-title">Simulador Tríplice & <br><span>Impacto Orçamentário</span></h2>
+          <p class="project-card-desc">Planejamento de novas vagas, simulação de rescisões e promoções com teto de 2 grades e projeção 2026/2027.</p>
         </div>
         <button class="btn-card-access btn-violet" onclick="irParaDashboard('page-custos')">
-          <span>Acessar Simulador de Custos</span>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          <span>Acessar Simulador Tríplice</span>
         </button>
       </div>
 
-      <!-- CARD 3 -->
       <div class="empty-slot-card">
-        <div class="slot-icon-box">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
-        </div>
+        <div class="slot-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg></div>
         <h3 class="slot-title">Novo Projeto</h3>
         <span class="slot-tag">Espaço Reservado</span>
       </div>
 
-      <!-- CARD 4 -->
       <div class="empty-slot-card">
-        <div class="slot-icon-box">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
-        </div>
+        <div class="slot-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg></div>
         <h3 class="slot-title">Novo Projeto</h3>
         <span class="slot-tag">Espaço Reservado</span>
       </div>
 
-      <!-- CARD 5 -->
       <div class="empty-slot-card">
-        <div class="slot-icon-box">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
-        </div>
+        <div class="slot-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg></div>
         <h3 class="slot-title">Novo Projeto</h3>
         <span class="slot-tag">Espaço Reservado</span>
       </div>
@@ -1040,43 +536,35 @@
   <div id="view-dashboard">
     <aside class="nav-rail">
       <div class="nav-logo" onclick="voltarParaCapa()" title="Voltar ao Início">RH</div>
-
       <div class="nav-items">
         <button class="nav-btn" onclick="voltarParaCapa()" title="Voltar à Capa">
           <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
           <div class="preview-tip">Voltar à Capa</div>
         </button>
-
         <button class="nav-btn active" id="btnNavGeral" onclick="trocarPagina('page-geral', this)" title="Quadro de Pessoal">
           <svg viewBox="0 0 24 24"><path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"/></svg>
           <div class="preview-tip">Quadro de Pessoal</div>
         </button>
-
         <button class="nav-btn" id="btnNavDiv" onclick="trocarPagina('page-diversidade', this)" title="Diversidade & Liderança">
           <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
           <div class="preview-tip">Diversidade & Liderança</div>
         </button>
-
         <button class="nav-btn" id="btnNavRem" onclick="trocarPagina('page-remuneracao', this)" title="Remuneração & Salários">
           <svg viewBox="0 0 24 24"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/></svg>
           <div class="preview-tip">Remuneração & Folha</div>
         </button>
-
         <button class="nav-btn" id="btnNavTurn" onclick="trocarPagina('page-turnover', this)" title="Turnover & Retenção">
           <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/></svg>
           <div class="preview-tip">Turnover & Retenção</div>
         </button>
-
-        <button class="nav-btn btn-nav-calc" id="btnNavCustos" onclick="trocarPagina('page-custos', this)" title="Simulador de Custos">
+        <button class="nav-btn btn-nav-calc" id="btnNavCustos" onclick="trocarPagina('page-custos', this)" title="Simulador Tríplice">
           <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/></svg>
-          <div class="preview-tip">Simulador de Custos</div>
+          <div class="preview-tip">Simulador Tríplice</div>
         </button>
       </div>
 
       <div class="nav-bottom">
-        <button class="nav-btn" onclick="toggleTheme()" title="Mudar Tema">
-          <span style="font-size:1.1rem;">🌓</span>
-        </button>
+        <button class="nav-btn" onclick="toggleTheme()" title="Mudar Tema"><span style="font-size:1.1rem;">🌓</span></button>
       </div>
     </aside>
 
@@ -1095,26 +583,11 @@
       </header>
 
       <section class="metrics-grid" id="mainKpisSection">
-        <div class="metric-card">
-          <span class="metric-label">Headcount Total</span>
-          <span class="metric-val total" id="totalColab">0</span>
-        </div>
-        <div class="metric-card">
-          <span class="metric-label">Colaboradores Ativos</span>
-          <span class="metric-val ativo" id="totalAtivos">0</span>
-        </div>
-        <div class="metric-card">
-          <span class="metric-label">Desligados</span>
-          <span class="metric-val desligado" id="totalDesligados">0</span>
-        </div>
-        <div class="metric-card">
-          <span class="metric-label">Taxa de Turnover</span>
-          <span class="metric-val turnover" id="taxaTurnover">0,0%</span>
-        </div>
-        <div class="metric-card">
-          <span class="metric-label">Salário Médio</span>
-          <span class="metric-val salario" id="mediaSalario">R$ 0,00</span>
-        </div>
+        <div class="metric-card"><span class="metric-label">Headcount Total</span><span class="metric-val total" id="totalColab">0</span></div>
+        <div class="metric-card"><span class="metric-label">Colaboradores Ativos</span><span class="metric-val ativo" id="totalAtivos">0</span></div>
+        <div class="metric-card"><span class="metric-label">Desligados</span><span class="metric-val desligado" id="totalDesligados">0</span></div>
+        <div class="metric-card"><span class="metric-label">Taxa de Turnover</span><span class="metric-val turnover" id="taxaTurnover">0,0%</span></div>
+        <div class="metric-card"><span class="metric-label">Salário Médio</span><span class="metric-val salario" id="mediaSalario">R$ 0,00</span></div>
       </section>
 
       <!-- PÁGINA 1: QUADRO GERAL -->
@@ -1143,18 +616,7 @@
           <table>
             <thead>
               <tr>
-                <th>ID</th>
-                <th>Nome</th>
-                <th>Departamento</th>
-                <th>Cargo</th>
-                <th>Grade</th>
-                <th>100% Faixa</th>
-                <th>Posic. Faixa</th>
-                <th>Salário Atual</th>
-                <th>Gênero</th>
-                <th>Raça / Cor</th>
-                <th>Admissão</th>
-                <th>Status</th>
+                <th>ID</th><th>Nome</th><th>Departamento</th><th>Cargo</th><th>Grade</th><th>100% Faixa</th><th>Posic. Faixa</th><th>Salário Atual</th><th>Gênero</th><th>Raça / Cor</th><th>Admissão</th><th>Status</th>
               </tr>
             </thead>
             <tbody id="tabelaCorpo"></tbody>
@@ -1171,10 +633,7 @@
 
         <div class="analytics-grid-3">
           <div class="info-card">
-            <div class="info-card-header">
-              <h3>Distribuição por Gênero</h3>
-              <span class="hint-click">Clique para filtrar</span>
-            </div>
+            <div class="info-card-header"><h3>Distribuição por Gênero</h3><span class="hint-click">Clique para filtrar</span></div>
             <div class="donut-container">
               <div class="donut-wrapper">
                 <svg class="donut-svg" viewBox="0 0 42 42">
@@ -1184,56 +643,31 @@
                 </svg>
               </div>
               <div class="donut-legend">
-                <div class="donut-legend-item" onclick="toggleFiltroCruzado('genero', 'Masculino')">
-                  <span class="legend-color" style="background:var(--violet);"></span>
-                  <span>Masculino</span>
-                  <span class="donut-legend-pct" style="color:var(--violet);" id="lblLegendPctMasc">60%</span>
-                </div>
-                <div class="donut-legend-item" onclick="toggleFiltroCruzado('genero', 'Feminino')">
-                  <span class="legend-color" style="background:var(--emerald);"></span>
-                  <span>Feminino</span>
-                  <span class="donut-legend-pct" style="color:var(--emerald);" id="lblLegendPctFem">40%</span>
-                </div>
+                <div class="donut-legend-item" onclick="toggleFiltroCruzado('genero', 'Masculino')"><span class="legend-color" style="background:var(--violet);"></span><span>Masculino</span><span class="donut-legend-pct" style="color:var(--violet);" id="lblLegendPctMasc">60%</span></div>
+                <div class="donut-legend-item" onclick="toggleFiltroCruzado('genero', 'Feminino')"><span class="legend-color" style="background:var(--emerald);"></span><span>Feminino</span><span class="donut-legend-pct" style="color:var(--emerald);" id="lblLegendPctFem">40%</span></div>
               </div>
             </div>
           </div>
-
           <div class="info-card">
-            <div class="info-card-header">
-              <h3>Distribuição por Raça / Cor</h3>
-              <span class="hint-click">Clique para filtrar</span>
-            </div>
+            <div class="info-card-header"><h3>Distribuição por Raça / Cor</h3><span class="hint-click">Clique para filtrar</span></div>
             <div class="vbar-chart" id="vbarRaca"></div>
           </div>
-
           <div class="info-card">
-            <div class="info-card-header">
-              <h3>Quebra Geracional</h3>
-              <span class="hint-click">Clique para filtrar</span>
-            </div>
+            <div class="info-card-header"><h3>Quebra Geracional</h3><span class="hint-click">Clique para filtrar</span></div>
             <div class="vbar-chart" id="vbarGeracao"></div>
           </div>
         </div>
 
         <div class="info-card">
-          <div class="info-card-header">
-            <h3>Liderança por Gênero (Gerências & Coordenações)</h3>
-            <span style="font-size:0.75rem; color:var(--text-muted);">Proporção em cargos de tomada de decisão</span>
-          </div>
+          <div class="info-card-header"><h3>Liderança por Gênero (Gerências & Coordenações)</h3><span style="font-size:0.75rem; color:var(--text-muted);">Proporção em cargos de tomada de decisão</span></div>
           <div class="lead-box">
             <div class="lead-progress">
               <div id="barLeadMasc" class="lead-seg-masc" style="width: 75%;"></div>
               <div id="barLeadFem" class="lead-seg-fem" style="width: 25%;"></div>
             </div>
             <div class="lead-metrics">
-              <div class="lead-stat">
-                <span style="color: var(--violet);">● Líderes Masculinos</span>
-                <strong id="leadMascVal" style="color: var(--violet);">15 (75%)</strong>
-              </div>
-              <div class="lead-stat">
-                <span style="color: var(--emerald);">● Líderes Femininas</span>
-                <strong id="leadFemVal" style="color: var(--emerald);">5 (25%)</strong>
-              </div>
+              <div class="lead-stat"><span style="color: var(--violet);">● Líderes Masculinos</span><strong id="leadMascVal" style="color: var(--violet);">15 (75%)</strong></div>
+              <div class="lead-stat"><span style="color: var(--emerald);">● Líderes Femininas</span><strong id="leadFemVal" style="color: var(--emerald);">5 (25%)</strong></div>
             </div>
           </div>
         </div>
@@ -1243,32 +677,18 @@
       <section id="page-remuneracao" class="page-section">
         <div class="analytics-grid-2">
           <div class="info-card">
-            <div class="info-card-header">
-              <h3>Massa Salarial por Departamento</h3>
-              <span class="hint-click">Clique para filtrar</span>
-            </div>
+            <div class="info-card-header"><h3>Massa Salarial por Departamento</h3><span class="hint-click">Clique para filtrar</span></div>
             <div class="hbar-chart" id="hbarSalarioDepto"></div>
           </div>
-
           <div class="info-card">
-            <div class="info-card-header">
-              <h3>Colaboradores por Departamento</h3>
-              <span class="hint-click">Clique para filtrar</span>
-            </div>
+            <div class="info-card-header"><h3>Colaboradores por Departamento</h3><span class="hint-click">Clique para filtrar</span></div>
             <div class="vbar-chart" id="vbarColabDepto" style="height: 200px;"></div>
           </div>
         </div>
-
         <div class="info-card">
-          <div class="info-card-header">
-            <h3>Salário Médio por Departamento vs Benchmark Corporativo</h3>
-            <span class="hint-click">Clique no departamento para filtrar</span>
-          </div>
+          <div class="info-card-header"><h3>Salário Médio por Departamento vs Benchmark Corporativo</h3><span class="hint-click">Clique para filtrar</span></div>
           <div class="avg-salary-container">
-            <div class="benchmark-badge">
-              <span class="benchmark-line"></span>
-              <span>Média Salarial Global: <strong style="color:var(--text);" id="benchGeralVal">R$ 7.136,50</strong></span>
-            </div>
+            <div class="benchmark-badge"><span class="benchmark-line"></span><span>Média Salarial Global: <strong style="color:var(--text);" id="benchGeralVal">R$ 7.136,50</strong></span></div>
             <div class="avg-grid" id="avgSalaryGrid"></div>
           </div>
         </div>
@@ -1291,8 +711,8 @@
           <div class="info-card-header">
             <h3>Evolução Mensal do Turnover: Voluntário vs. Involuntário</h3>
             <div class="timeline-legend">
-              <span><span class="legend-indicator" style="background:var(--warning);"></span> Turnover Voluntário</span>
-              <span><span class="legend-indicator" style="background:var(--primary);"></span> Turnover Involuntário</span>
+              <span><span class="legend-indicator" style="background:var(--warning);"></span> Voluntário</span>
+              <span><span class="legend-indicator" style="background:var(--primary);"></span> Involuntário</span>
             </div>
           </div>
           <div class="line-svg-wrapper">
@@ -1302,38 +722,20 @@
 
         <div class="analytics-grid-2">
           <div class="info-card">
-            <div class="info-card-header">
-              <h3>Memória de Cálculo do Turnover</h3>
-            </div>
+            <div class="info-card-header"><h3>Memória de Cálculo do Turnover</h3></div>
             <div class="turnover-formula-card">
               <span class="formula-tag">((Admissões + Demissões) / 2) / Quadro</span>
-              <p style="color: var(--text-muted); font-size: 0.82rem; line-height: 1.5;">
-                A regra tradicional pondera as entradas e saídas no ciclo de apuração sobre o efetivo avaliado.
-              </p>
-              <div class="info-row">
-                <span>Admissões no Ciclo (2025-2026)</span>
-                <strong style="color: var(--success);" id="tAdmissoes">31</strong>
-              </div>
-              <div class="info-row">
-                <span>Demissões Acumuladas</span>
-                <strong style="color: var(--danger);" id="tDemissoes">27</strong>
-              </div>
-              <div class="info-row">
-                <span>Quadro Total Avaliado</span>
-                <strong style="color: var(--text);" id="tQuadro">100</strong>
-              </div>
+              <div class="info-row"><span>Admissões no Ciclo</span><strong style="color: var(--success);" id="tAdmissoes">31</strong></div>
+              <div class="info-row"><span>Demissões Acumuladas</span><strong style="color: var(--danger);" id="tDemissoes">27</strong></div>
+              <div class="info-row"><span>Quadro Total Avaliado</span><strong style="color: var(--text);" id="tQuadro">100</strong></div>
               <div class="info-row" style="background: rgba(251, 191, 36, 0.1); border-color: rgba(251, 191, 36, 0.25);">
-                <span style="font-weight: 700; color: var(--warning);">Taxa de Turnover Resultante</span>
+                <span style="font-weight: 700; color: var(--warning);">Taxa Resultante</span>
                 <strong style="font-size: 1.1rem; color: var(--warning);" id="tTaxaFinal">29,0%</strong>
               </div>
             </div>
           </div>
-
           <div class="info-card">
-            <div class="info-card-header">
-              <h3>Motivos de Desligamento</h3>
-              <span class="hint-click">Clique para filtrar</span>
-            </div>
+            <div class="info-card-header"><h3>Motivos de Desligamento</h3><span class="hint-click">Clique para filtrar</span></div>
             <div class="donut-container" id="donutMotivosContainer">
               <div class="donut-wrapper">
                 <svg class="donut-svg" id="donutMotivosSvg" viewBox="0 0 42 42">
@@ -1347,46 +749,40 @@
         </div>
       </section>
 
-      <!-- PÁGINA 5: SIMULADOR DE CUSTOS -->
+      <!-- PÁGINA 5: SIMULADOR TRÍPLICE (VAGAS, RESCISÕES E PROMOÇÕES) -->
       <section id="page-custos" class="page-section">
         <div class="kpi-custos-grid">
           <div class="kpi-custo-card highlight-2026">
-            <span class="metric-label">Impacto Financeiro 2026</span>
+            <span class="metric-label">Impacto Líquido 2026 (Novas Vagas + Promoções - Rescisões)</span>
             <span class="metric-val" id="kpiCusto2026" style="color:var(--primary); font-size:1.6rem;">R$ 0,00</span>
-            <span style="font-size:0.75rem; color:var(--text-muted);" id="kpiMeses2026">0 meses de competência em 2026</span>
+            <span style="font-size:0.75rem; color:var(--text-muted);">Saldo financeiro para 2026</span>
           </div>
           <div class="kpi-custo-card highlight-2027">
-            <span class="metric-label">Impacto Financeiro 2027</span>
+            <span class="metric-label">Impacto Líquido 2027 (Novas Vagas + Promoções - Rescisões)</span>
             <span class="metric-val" id="kpiCusto2027" style="color:var(--violet); font-size:1.6rem;">R$ 0,00</span>
-            <span style="font-size:0.75rem; color:var(--text-muted);" id="kpiMeses2027">0 meses de competência em 2027</span>
+            <span style="font-size:0.75rem; color:var(--text-muted);">Saldo financeiro para 2027</span>
           </div>
           <div class="kpi-custo-card highlight-total">
-            <span class="metric-label">Impacto Orçamentário Total</span>
-            <span class="metric-val" id="kpiCustoTotal" style="color:var(--success); font-size:1.6rem;">R$ 0,00</span>
-            <span style="font-size:0.75rem; color:var(--text-muted);" id="kpiHeadcountSimul">0 novas posições simuladas</span>
+            <span class="metric-label">Impacto Rescisório Total</span>
+            <span class="metric-val" id="kpiCustoRescisao" style="color:var(--danger); font-size:1.6rem;">R$ 0,00</span>
+            <span style="font-size:0.75rem; color:var(--text-muted);" id="kpiHeadcountRescisao">0 rescisões simuladas</span>
           </div>
         </div>
 
-        <div class="calc-card-grid">
-          <!-- PAINEL ESQUERDO: FORMULÁRIO -->
+        <div class="calc-triple-grid">
+          <!-- BLOCO 1: NOVAS VAGAS -->
           <div class="form-calc-container">
             <h3 style="font-size:1.05rem; font-weight:800; color:var(--text); margin-bottom:4px;">Parâmetros da Contratação</h3>
-            <p style="font-size:0.8rem; color:var(--text-muted); margin-bottom:8px;">Selecione os critérios da vaga para projetar o impacto orçamentário.</p>
+            <p style="font-size:0.8rem; color:var(--text-muted); margin-bottom:8px;">Planejamento de novas posições.</p>
 
             <div class="form-group">
               <label class="form-label">Cargo da Base</label>
-              <select id="calcCargo" class="form-control" onchange="atualizarPreviewCargo()">
-                <option value="">Escolha o cargo</option>
-              </select>
+              <select id="calcCargo" class="form-control" onchange="atualizarPreviewCargo()"><option value="">Escolha o cargo</option></select>
             </div>
 
             <div class="grade-preview-box">
-              <div>
-                <span>Grade: </span><strong id="previewGrade">-</strong>
-              </div>
-              <div>
-                <span>100% da Faixa: </span><strong id="previewFaixa100">R$ 0,00</strong>
-              </div>
+              <div><span>Grade: </span><strong id="previewGrade">-</strong></div>
+              <div><span>100% da Faixa: </span><strong id="previewFaixa100">R$ 0,00</strong></div>
             </div>
 
             <div class="form-group">
@@ -1395,71 +791,149 @@
             </div>
 
             <div class="form-group">
-              <label class="form-label">Mês de Inclusão (Mês Atual a Dezembro/2027)</label>
+              <label class="form-label">Mês de Inclusão</label>
               <select id="calcMes" class="form-control"></select>
             </div>
 
             <div class="form-group">
-              <label class="form-label">Quantidade de Vagas (1 a 20)</label>
+              <label class="form-label">Quantidade de Vagas</label>
               <input type="number" id="calcQtd" class="form-control" value="1" min="1" max="20">
             </div>
 
-            <!-- Informativo exato de encargos (2,3x) -->
-            <div style="background: rgba(139, 92, 246, 0.08); border: 1px dashed rgba(139, 92, 246, 0.35); padding: 10px 14px; border-radius: 8px; font-size: 0.78rem; color: var(--violet); font-weight: 600; line-height: 1.4;">
-              ℹ️ Incluído o impacto de encargos, provisões e benefícios (2,3x o salário).
-            </div>
-
             <div class="grade-preview-box" style="background:rgba(124, 58, 237, 0.08); border-color:rgba(124, 58, 237, 0.25);">
-              <span>Salário Unitário Resultante (c/ Encargos 2,3x):</span>
-              <strong id="previewSalarioCalculado" style="color:var(--violet); font-size:1.05rem;">R$ 0,00</strong>
+              <span>Salário Unitário (c/ Encargos 2,3x):</span>
+              <strong id="previewSalarioCalculado" style="color:var(--violet);">R$ 0,00</strong>
             </div>
 
             <div class="calc-btn-group">
-              <button class="btn-add-simul" onclick="adicionarCargoSimulacao()">
-                <span>Incluir na Simulação</span>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:16px;height:16px;"><path d="M12 5v14M5 12h14"/></svg>
-              </button>
-              <button class="btn-clear-simul" onclick="limparTodaSimulacao()" title="Limpar lista">Limpar</button>
+              <button class="btn-add-simul" onclick="adicionarCargoSimulacao()"><span>Incluir Vaga</span></button>
+              <button class="btn-clear-simul" onclick="limparTodaSimulacao()">Limpar</button>
             </div>
           </div>
 
-          <!-- PAINEL DIREITO: TABELA DE POSIÇÕES SIMULADAS DENTRO DO CARD COM FUNDO AZUL ESCURO -->
-          <div class="simulated-positions-card">
-            <div class="info-card-header" style="margin-bottom:16px;">
-              <h3>Posições Simuladas & Impacto Temporal</h3>
-              <span id="badgeContagemSimul" style="font-size:0.75rem; background:var(--bg); border:1px solid var(--border); padding:3px 10px; border-radius:9999px; font-weight:700;">0 itens</span>
+          <!-- BLOCO 2: SIMULAÇÃO DE RESCISÃO -->
+          <div class="form-calc-container" style="border-color: rgba(248, 113, 113, 0.3);">
+            <h3 style="font-size:1.05rem; font-weight:800; color:var(--danger); margin-bottom:4px;">Simulação de Rescisão</h3>
+            <p style="font-size:0.8rem; color:var(--text-muted); margin-bottom:8px;">Desligamento de colaboradores ativos.</p>
+
+            <div class="form-group">
+              <label class="form-label">Colaborador (Ativo)</label>
+              <select id="rescisaoColab" class="form-control" onchange="atualizarPreviewRescisao()"><option value="">Selecione o colaborador</option></select>
             </div>
 
-            <div class="simulated-table-scroll">
-              <table>
-                <thead>
-                  <tr>
-                    <th>Cargo</th>
-                    <th>Grade</th>
-                    <th>Posic.</th>
-                    <th>Vagas</th>
-                    <th>Início</th>
-                    <th>Salário Base</th>
-                    <th>Custo 2026</th>
-                    <th>Custo 2027</th>
-                    <th>Total</th>
-                    <th>Ações</th>
-                  </tr>
-                </thead>
-                <tbody id="tabelaSimulacaoCorpo">
-                  <tr>
-                    <td colspan="10" style="text-align: center; color: var(--text-muted); padding: 40px;">
-                      Nenhum cargo incluído na simulação. Selecione o cargo ao lado e clique em <strong>Incluir na Simulação</strong>.
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+            <div class="grade-preview-box">
+              <div><span>Salário Base: </span><strong id="resPrevSalario">R$ 0,00</strong></div>
+              <div><span>Status Atual: </span><strong id="resPrevStatus">-</strong></div>
             </div>
 
-            <div style="margin-top:16px; padding:12px 16px; background:var(--bg); border-radius:8px; border:1px solid var(--border); font-size:0.76rem; color:var(--text-muted); display:flex; justify-content:space-between; align-items:center;">
-              <span>● Competência base de cálculo: <strong>Outubro de 2026</strong> a <strong>Dezembro de 2027</strong>.</span>
-              <span>Encargos corporativos consolidados em <strong>2,3x</strong>.</span>
+            <div class="form-group">
+              <label class="form-label">Tipo de Desligamento</label>
+              <select id="rescisaoTipo" class="form-control" onchange="atualizarPreviewRescisao()">
+                <option value="sem_justa_causa">Demissão sem Justa Causa</option>
+                <option value="pedido_demissao">Pedido de Demissão</option>
+                <option value="acordo">Acordo (Art. 484-A CLT)</option>
+              </select>
             </div>
+
+            <div class="form-group">
+              <label class="form-label">Aviso Prévio</label>
+              <select id="rescisaoAviso" class="form-control" onchange="atualizarPreviewRescisao()">
+                <option value="indenizado">Indenizado</option>
+                <option value="trabalhado">Trabalhado</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Mês de Competência</label>
+              <select id="rescisaoMesComp" class="form-control"></select>
+            </div>
+
+            <div class="grade-preview-box" style="background:rgba(248, 113, 113, 0.08); border-color:rgba(248, 113, 113, 0.25);">
+              <span>Custo Rescisório Estimado:</span>
+              <strong id="resPrevTotal" style="color:var(--danger); font-size:1.05rem;">R$ 0,00</strong>
+            </div>
+
+            <div class="calc-btn-group">
+              <button class="btn-add-simul btn-danger-simul" onclick="adicionarRescisaoSimulacao()"><span>Incluir Rescisão</span></button>
+              <button class="btn-clear-simul" onclick="limparTodaRescisao()">Limpar</button>
+            </div>
+          </div>
+
+          <!-- BLOCO 3: PROMOÇÃO DE COLABORADOR -->
+          <div class="form-calc-container" style="border-color: rgba(251, 191, 36, 0.3);">
+            <h3 style="font-size:1.05rem; font-weight:800; color:var(--warning); margin-bottom:4px;">Simulação de Promoção</h3>
+            <p style="font-size:0.8rem; color:var(--text-muted); margin-bottom:8px;">Salto de até 2 grades (Novo salário: 80% da nova faixa, respeitado o piso atual).</p>
+
+            <div class="form-group">
+              <label class="form-label">Colaborador (Ativo)</label>
+              <select id="promoColab" class="form-control" onchange="atualizarOpcoesCargoPromocao()"><option value="">Selecione o colaborador</option></select>
+            </div>
+
+            <div class="grade-preview-box">
+              <div><span>Cargo Atual: </span><strong id="promoPrevCargoAtual">-</strong></div>
+              <div><span>Salário Atual: </span><strong id="promoPrevSalarioAtual">R$ 0,00</strong></div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Novo Cargo (Salto de até 2 Grades)</label>
+              <select id="promoNovoCargo" class="form-control" onchange="atualizarPreviewPromocao()"><option value="">Selecione o colaborador primeiro</option></select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Mês de Efetivação da Promoção</label>
+              <select id="promoMes" class="form-control"></select>
+            </div>
+
+            <div class="grade-preview-box" style="background:rgba(251, 191, 36, 0.08); border-color:rgba(251, 191, 36, 0.25);">
+              <span>Novo Salário (80% Nova Faixa):</span>
+              <strong id="promoPrevNovoSalario" style="color:var(--warning); font-size:1.05rem;">R$ 0,00</strong>
+            </div>
+
+            <div class="calc-btn-group">
+              <button class="btn-add-simul btn-warning-simul" onclick="adicionarPromocaoSimulacao()"><span>Incluir Promoção</span></button>
+              <button class="btn-clear-simul" onclick="limparTodaPromocao()">Limpar</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- QUADRANTE DE SIMULAÇÕES CONSOLIDADAS -->
+        <div class="simulated-positions-card" style="border-color: var(--primary);">
+          <div class="info-card-header" style="margin-bottom:16px;">
+            <h3>Quadro Consolidado de Simulações do Usuário (Novas Vagas, Rescisões & Promoções)</h3>
+            <span id="badgeContagemGeral" style="font-size:0.75rem; background:var(--bg); border:1px solid var(--border); padding:3px 10px; border-radius:9999px; font-weight:700;">0 itens</span>
+          </div>
+          <div class="simulated-table-scroll">
+            <table>
+              <thead>
+                <tr>
+                  <th>Tipo / Ação</th>
+                  <th>Identificação / Colaborador / Cargo</th>
+                  <th>Grade / Depto</th>
+                  <th>Salários (Antigo ➔ Novo)</th>
+                  <th>Início / Mês</th>
+                  <th>Custo 2026 (R$)</th>
+                  <th>Custo 2027 (R$)</th>
+                  <th>Ações</th>
+                </tr>
+              </thead>
+              <tbody id="tabelaConsolidadaCorpo">
+                <tr><td colspan="8" style="text-align: center; color: var(--text-muted); padding: 30px;">Nenhuma simulação incluída até o momento. Utilize os formulários acima.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- GRÁFICO COMPOSTO -->
+        <div class="combo-chart-card">
+          <div class="info-card-header">
+            <h3>Evolução Mensal (Jan/26 a Dez/26): Folha de Pagamento (Barras) & Headcount (Linha)</h3>
+            <div class="chart-legend-box">
+              <span><span style="display:inline-block;width:12px;height:12px;background:var(--primary);border-radius:2px;margin-right:4px;"></span> Folha de Pagamento (R$ k)</span>
+              <span><span style="display:inline-block;width:12px;height:12px;background:#a78bfa;border-radius:50%;margin-right:4px;"></span> Headcount (Colaboradores)</span>
+            </div>
+          </div>
+          <div class="combo-svg-wrapper">
+            <svg class="combo-svg" id="svgComboChart" viewBox="0 0 900 190" preserveAspectRatio="none"></svg>
           </div>
         </div>
       </section>
@@ -1473,7 +947,7 @@
 
     const gradeConfig = {"Gerente Comercial": ["G11", 12000.0], "Gerente de Projetos": ["G10", 10000.0], "Coordenador(a) de Suporte": ["G9", 9000.0], "Coordenador(a) de Gente e Gestão": ["G9", 9000.0], "Especialista em D&I": ["G8", 8000.0], "Desenvolvedor(a) Sênior": ["G8", 8000.0], "Especialista Fiscal": ["G8", 8000.0], "Especialista de Conteúdo": ["G8", 8000.0], "Cientista de Dados": ["G8", 8000.0], "Desenvolvedor(a) Pleno": ["G7", 7000.0], "Analista de Growth/Marketing": ["G6", 5500.0], "Designer UI/UX": ["G6", 5500.0], "Desenvolvedor(a) Júnior": ["G6", 5500.0], "Executivo(a) de Contas": ["G6", 5500.0], "Analista de Operações": ["G6", 5500.0], "Analista de Vendas B2B": ["G5", 4500.0], "Analista de RH Pleno": ["G5", 4500.0], "Analista Financeiro Pleno": ["G5", 4500.0], "Assistente Financeiro": ["G4", 3000.0], "Assistente de RH": ["G4", 3000.0]};
 
-    let simulacoes = [];
+    let listaSimulacoesGeral = [];
     let filtroCruzado = { campo: null, valor: null };
 
     function toggleTheme() {
@@ -1481,23 +955,15 @@
       const current = html.getAttribute("data-theme") || "dark";
       const novo = current === "dark" ? "light" : "dark";
       html.setAttribute("data-theme", novo);
-
-      const icon = document.getElementById("themeBtnIcon");
-      const text = document.getElementById("themeBtnText");
-      if (novo === "light") {
-        if (icon) icon.textContent = "🌙";
-        if (text) text.textContent = "Navy Escuro";
-      } else {
-        if (icon) icon.textContent = "☀️";
-        if (text) text.textContent = "Off-White";
-      }
+      document.getElementById("themeBtnIcon").textContent = novo === "light" ? "🌙" : "☀️";
+      document.getElementById("themeBtnText").textContent = novo === "light" ? "Navy Escuro" : "Off-White";
     }
 
-    function irParaDashboard(paginaInicialId) {
+    function irParaDashboard(pageId) {
       document.getElementById("view-cover").style.display = "none";
       const dash = document.getElementById("view-dashboard");
       dash.classList.add("active");
-      trocarPagina(paginaInicialId || 'page-geral');
+      trocarPagina(pageId || 'page-geral');
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
 
@@ -1507,12 +973,10 @@
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
 
-    function trocarPagina(pageId, btnElement) {
+    function trocarPagina(pageId) {
       document.querySelectorAll(".page-section").forEach(sec => sec.classList.remove("active"));
       document.querySelectorAll(".nav-rail .nav-btn").forEach(btn => btn.classList.remove("active"));
-
-      const target = document.getElementById(pageId);
-      if (target) target.classList.add("active");
+      document.getElementById(pageId)?.classList.add("active");
 
       if (pageId === "page-geral") document.getElementById("btnNavGeral")?.classList.add("active");
       if (pageId === "page-diversidade") document.getElementById("btnNavDiv")?.classList.add("active");
@@ -1526,50 +990,23 @@
       const mainKpis = document.getElementById("mainKpisSection");
 
       if (pageId === "page-custos") {
-        title.textContent = "Simulador de Custos de Cargos & Impacto Orçamentário";
-        subtitle.textContent = "Planejamento de contratações por grade salarial, posicionamento na faixa e horizonte 2026/2027";
+        title.textContent = "Simulador Tríplice (Vagas, Rescisões & Promoções)";
+        subtitle.textContent = "Planejamento orçamentário completo com teto de 2 grades de salto";
         if (statusHeader) statusHeader.style.display = "none";
         if (mainKpis) mainKpis.style.display = "none";
       } else {
         if (statusHeader) statusHeader.style.display = "flex";
         if (mainKpis) mainKpis.style.display = "grid";
-
-        if (pageId === "page-geral") {
-          title.textContent = "Quadro Geral de Pessoal";
-          subtitle.textContent = "Consulta integrada e filtragem de colaboradores cadastrados com Grade e Faixa Salarial";
-        } else if (pageId === "page-diversidade") {
-          title.textContent = "Diversidade, Gerações & Liderança";
-          subtitle.textContent = "Distribuição por gênero, perfil racial (IBGE), grupos geracionais e representatividade";
-        } else if (pageId === "page-remuneracao") {
-          title.textContent = "Remuneração & Massa Salarial";
-          subtitle.textContent = "Folha salarial por área de negócio e remuneração média vs benchmark corporativo";
-        } else if (pageId === "page-turnover") {
-          title.textContent = "Retenção & Análise de Turnover";
-          subtitle.textContent = "Linha do tempo mensal de entradas e saídas, rotatividade clássica e motivos";
-        }
+        if (pageId === "page-geral") { title.textContent = "Quadro Geral de Pessoal"; subtitle.textContent = "Consulta integrada e filtragem de colaboradores"; }
+        if (pageId === "page-diversidade") { title.textContent = "Diversidade, Gerações & Liderança"; subtitle.textContent = "Distribuição por gênero, perfil racial, gerações e representatividade"; }
+        if (pageId === "page-remuneracao") { title.textContent = "Remuneração & Massa Salarial"; subtitle.textContent = "Folha salarial por área de negócio e remuneração média vs benchmark"; }
+        if (pageId === "page-turnover") { title.textContent = "Retenção & Análise de Turnover"; subtitle.textContent = "Linha do tempo mensal de entradas e saídas e motivos"; }
       }
     }
 
     function filtrarStatusRapido(statusValor) {
-      const selectStatus = document.getElementById("filtroStatus");
-      if (selectStatus) selectStatus.value = statusValor;
-      atualizarBotoesValidador(statusValor);
+      document.getElementById("filtroStatus").value = statusValor;
       aplicarFiltros();
-    }
-
-    function atualizarBotoesValidador(statusValor) {
-      const btnAll = document.getElementById("btnValAll");
-      const btnAtivo = document.getElementById("btnValAtivo");
-      const btnDesligado = document.getElementById("btnValDesligado");
-      if (!btnAll || !btnAtivo || !btnDesligado) return;
-
-      btnAll.className = "btn-validator";
-      btnAtivo.className = "btn-validator";
-      btnDesligado.className = "btn-validator";
-
-      if (statusValor === "Ativo") btnAtivo.classList.add("active-ativo");
-      else if (statusValor === "Desligado") btnDesligado.classList.add("active-desligado");
-      else btnAll.classList.add("active-all");
     }
 
     function toggleFiltroCruzado(campo, valor) {
@@ -1593,12 +1030,10 @@
       const deptoSelect = document.getElementById("filtroDepto");
       if (!deptoSelect) return;
       const deptos = [...new Set(dados.map(c => c.departamento).filter(Boolean))].sort();
-
       deptoSelect.innerHTML = '<option value="">Todos os Departamentos</option>';
       deptos.forEach(dept => {
         const opt = document.createElement("option");
-        opt.value = dept;
-        opt.textContent = dept;
+        opt.value = dept; opt.textContent = dept;
         deptoSelect.appendChild(opt);
       });
     }
@@ -1609,19 +1044,11 @@
       const status = document.getElementById("filtroStatus")?.value || "";
       const genero = document.getElementById("filtroGenero")?.value || "";
 
-      atualizarBotoesValidador(status);
-
       let filtrados = colaboradores.filter(c => {
-        const matchBusca = !busca || 
-          (c.nome && c.nome.toLowerCase().includes(busca)) ||
-          (c.cargo && c.cargo.toLowerCase().includes(busca)) ||
-          (c.grade && c.grade.toLowerCase().includes(busca)) ||
-          String(c.id).includes(busca);
-        
+        const matchBusca = !busca || c.nome.toLowerCase().includes(busca) || c.cargo.toLowerCase().includes(busca) || String(c.id).includes(busca);
         const matchDepto = !depto || c.departamento === depto;
         const matchStatus = !status || c.status === status;
         const matchGenero = !genero || c.genero === genero;
-
         return matchBusca && matchDepto && matchStatus && matchGenero;
       });
 
@@ -1629,14 +1056,7 @@
       const lbl = document.getElementById("crossfilterLabel");
       if (filtroCruzado.campo && filtroCruzado.valor) {
         bar.classList.add("visible");
-        const nomesCampos = { 
-          genero: "Gênero", 
-          raca_cor: "Raça/Cor", 
-          geracao: "Geração", 
-          departamento: "Departamento", 
-          motivo_desligamento: "Motivo de Saída" 
-        };
-        lbl.textContent = `${nomesCampos[filtroCruzado.campo] || filtroCruzado.campo}: ${filtroCruzado.valor}`;
+        lbl.textContent = `${filtroCruzado.campo}: ${filtroCruzado.valor}`;
         filtrados = filtrados.filter(c => c[filtroCruzado.campo] === filtroCruzado.valor);
       } else {
         bar?.classList.remove("visible");
@@ -1650,13 +1070,10 @@
     function calcularTurnoverTradicional(dados) {
       const quadroTotal = dados.length;
       if (quadroTotal === 0) return { taxa: 0, admissoes: 0, demissoes: 0, quadro: 0 };
-
       const demissoes = dados.filter(c => c.status === "Desligado").length;
       const admissoes = dados.filter(c => c.data_admissao >= "2025-01-01").length;
-
       const mediaFluxo = (admissoes + demissoes) / 2;
       const taxa = (mediaFluxo / quadroTotal) * 100;
-
       return { taxa, admissoes, demissoes, quadro: quadroTotal };
     }
 
@@ -1665,60 +1082,48 @@
       const ativos = dados.filter(c => c.status === "Ativo").length;
       const desligados = dados.filter(c => c.status === "Desligado").length;
       const somaSalarios = dados.reduce((acc, c) => acc + (Number(c.salario) || 0), 0);
-      const mediaSalarial = total > 0 ? somaSalarios / total : 0;
-
+      const mediaSalario = total > 0 ? somaSalarios / total : 0;
       const turnoverData = calcularTurnoverTradicional(dados);
 
       document.getElementById("totalColab").textContent = total;
       document.getElementById("totalAtivos").textContent = ativos;
       document.getElementById("totalDesligados").textContent = desligados;
       document.getElementById("taxaTurnover").textContent = turnoverData.taxa.toFixed(1).replace(".", ",") + "%";
-      document.getElementById("mediaSalario").textContent = mediaSalarial.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
+      document.getElementById("mediaSalario").textContent = mediaSalario.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
 
-      const tAdm = document.getElementById("tAdmissoes");
-      const tDem = document.getElementById("tDemissoes");
-      const tQua = document.getElementById("tQuadro");
-      const tFin = document.getElementById("tTaxaFinal");
-      if (tAdm) tAdm.textContent = turnoverData.admissoes;
-      if (tDem) tDem.textContent = turnoverData.demissoes;
-      if (tQua) tQua.textContent = turnoverData.quadro;
-      if (tFin) tFin.textContent = turnoverData.taxa.toFixed(1).replace(".", ",") + "%";
+      if (document.getElementById("tAdmissoes")) document.getElementById("tAdmissoes").textContent = turnoverData.admissoes;
+      if (document.getElementById("tDemissoes")) document.getElementById("tDemissoes").textContent = turnoverData.demissoes;
+      if (document.getElementById("tQuadro")) document.getElementById("tQuadro").textContent = turnoverData.quadro;
+      if (document.getElementById("tTaxaFinal")) document.getElementById("tTaxaFinal").textContent = turnoverData.taxa.toFixed(1).replace(".", ",") + "%";
     }
 
     function renderizarTabela(dados) {
       const tbody = document.getElementById("tabelaCorpo");
       if (!tbody) return;
-
       if (dados.length === 0) {
-        tbody.innerHTML = '<tr><td colspan="12" style="text-align: center; color: var(--text-muted); padding: 30px;">Nenhum colaborador encontrado com os filtros atuais.</td></tr>';
+        tbody.innerHTML = '<tr><td colspan="12" style="text-align: center; color: var(--text-muted); padding: 30px;">Nenhum colaborador encontrado.</td></tr>';
         return;
       }
-
       tbody.innerHTML = dados.map(c => `
         <tr>
           <td>#${c.id}</td>
-          <td style="font-weight: 700; color: var(--text);">${c.nome}</td>
+          <td style="font-weight: 700;">${c.nome}</td>
           <td>${c.departamento}</td>
           <td>${c.cargo}</td>
           <td><span class="badge-grade">${c.grade || "G3"}</span></td>
-          <td style="font-weight:600;">${(Number(c.faixa_100) || 5000).toLocaleString("pt-BR", { style: "currency", currency: "BRL" })}</td>
+          <td>${(Number(c.faixa_100) || 5000).toLocaleString("pt-BR", { style: "currency", currency: "BRL" })}</td>
           <td><span class="badge-posic">${c.posic_faixa || "100%"}</span></td>
           <td style="font-weight: 700; color: var(--primary);">${(Number(c.salario) || 0).toLocaleString("pt-BR", { style: "currency", currency: "BRL" })}</td>
           <td>${c.genero}</td>
           <td>${c.raca_cor}</td>
-          <td>${formatarData(c.data_admissao)}</td>
-          <td>
-            <span class="badge ${c.status === "Ativo" ? "badge-ativo" : "badge-desligado"}">
-              ${c.status}
-            </span>
-          </td>
+          <td>${c.data_admissao}</td>
+          <td><span class="badge ${c.status === "Ativo" ? "badge-ativo" : "badge-desligado"}">${c.status}</span></td>
         </tr>
       `).join("");
     }
 
     function renderizarVistasAnaliticas(dados) {
       const total = dados.length || 1;
-
       const masc = dados.filter(c => c.genero === "Masculino").length;
       const fem = dados.filter(c => c.genero === "Feminino").length;
       const pctMasc = Math.round((masc / total) * 100);
@@ -1730,70 +1135,27 @@
         donutMasc.setAttribute("stroke-dasharray", `${pctMasc} ${100 - pctMasc}`);
         donutFem.setAttribute("stroke-dasharray", `${pctFem} ${100 - pctFem}`);
         donutFem.setAttribute("stroke-dashoffset", `${-pctMasc}`);
-
-        donutMasc.className.baseVal = "donut-segment" + (filtroCruzado.campo === 'genero' && filtroCruzado.valor === 'Masculino' ? ' selected' : (filtroCruzado.campo === 'genero' ? ' dimmed' : ''));
-        donutFem.className.baseVal = "donut-segment" + (filtroCruzado.campo === 'genero' && filtroCruzado.valor === 'Feminino' ? ' selected' : (filtroCruzado.campo === 'genero' ? ' dimmed' : ''));
-
-        configurarTooltipElemento(donutMasc, `Masculino: <strong>${masc} colaboradores</strong> (${pctMasc}%)`);
-        configurarTooltipElemento(donutFem, `Feminino: <strong>${fem} colaboradoras</strong> (${pctFem}%)`);
       }
-
-      const lblMasc = document.getElementById("lblLegendPctMasc");
-      const lblFem = document.getElementById("lblLegendPctFem");
-      if (lblMasc) lblMasc.textContent = pctMasc + "%";
-      if (lblFem) lblFem.textContent = pctFem + "%";
+      document.getElementById("lblLegendPctMasc").textContent = pctMasc + "%";
+      document.getElementById("lblLegendPctFem").textContent = pctFem + "%";
 
       const racas = ["Branca", "Parda", "Preta", "Amarela", "Indígena"];
-      const contagemRaca = {};
-      racas.forEach(r => contagemRaca[r] = 0);
-      dados.forEach(c => {
-        if (contagemRaca[c.raca_cor] !== undefined) contagemRaca[c.raca_cor]++;
-        else contagemRaca[c.raca_cor] = (contagemRaca[c.raca_cor] || 0) + 1;
-      });
-
-      const maxRaca = Math.max(...Object.values(contagemRaca), 1);
-      const vbarRaca = document.getElementById("vbarRaca");
-      if (vbarRaca) {
-        vbarRaca.innerHTML = Object.entries(contagemRaca).map(([raca, qtd]) => {
-          const altPx = Math.round((qtd / maxRaca) * 115) + 8;
-          const isSel = filtroCruzado.campo === 'raca_cor' && filtroCruzado.valor === raca;
-          const isDim = filtroCruzado.campo === 'raca_cor' && !isSel;
-          return `
-            <div class="vbar-col ${isSel ? 'selected' : ''} ${isDim ? 'dimmed' : ''}" onclick="toggleFiltroCruzado('raca_cor', '${raca}')" title="${raca}: ${qtd} pessoas">
-              <span class="vbar-val">${qtd}</span>
-              <div class="vbar-fill cyan" style="height: ${altPx}px;"></div>
-              <span class="vbar-label">${raca}</span>
-            </div>
-          `;
-        }).join("");
-      }
+      const contRaca = {};
+      racas.forEach(r => contRaca[r] = 0);
+      dados.forEach(c => { if (contRaca[c.raca_cor] !== undefined) contRaca[c.raca_cor]++; });
+      const maxR = Math.max(...Object.values(contRaca), 1);
+      document.getElementById("vbarRaca").innerHTML = Object.entries(contRaca).map(([r, q]) => `
+        <div class="vbar-col" onclick="toggleFiltroCruzado('raca_cor', '${r}')"><span class="vbar-val">${q}</span><div class="vbar-fill cyan" style="height: ${Math.round((q/maxR)*115)+8}px;"></div><span class="vbar-label">${r}</span></div>
+      `).join("");
 
       const geracoes = ["Geração Z", "Millennials", "Geração X", "Baby Boomers"];
-      const contagemGen = {};
-      geracoes.forEach(g => contagemGen[g] = 0);
-      dados.forEach(c => {
-        const g = c.geracao || "Millennials";
-        if (contagemGen[g] !== undefined) contagemGen[g]++;
-        else contagemGen[g] = 1;
-      });
-
-      const maxGen = Math.max(...Object.values(contagemGen), 1);
-      const vbarGeracao = document.getElementById("vbarGeracao");
-      if (vbarGeracao) {
-        vbarGeracao.innerHTML = Object.entries(contagemGen).map(([gen, qtd]) => {
-          const altPx = Math.round((qtd / maxGen) * 115) + 8;
-          const isSel = filtroCruzado.campo === 'geracao' && filtroCruzado.valor === gen;
-          const isDim = filtroCruzado.campo === 'geracao' && !isSel;
-          const rotulo = gen === "Baby Boomers" ? "Boomers" : (gen === "Millennials" ? "Gen Y" : gen.replace("Geração ", "Gen "));
-          return `
-            <div class="vbar-col ${isSel ? 'selected' : ''} ${isDim ? 'dimmed' : ''}" onclick="toggleFiltroCruzado('geracao', '${gen}')" title="${gen}: ${qtd} pessoas">
-              <span class="vbar-val">${qtd}</span>
-              <div class="vbar-fill amber" style="height: ${altPx}px;"></div>
-              <span class="vbar-label">${rotulo}</span>
-            </div>
-          `;
-        }).join("");
-      }
+      const contGen = {};
+      geracoes.forEach(g => contGen[g] = 0);
+      dados.forEach(c => { const g = c.geracao || "Millennials"; if (contGen[g] !== undefined) contGen[g]++; });
+      const maxGen = Math.max(...Object.values(contGen), 1);
+      document.getElementById("vbarGeracao").innerHTML = Object.entries(contGen).map(([gen, q]) => `
+        <div class="vbar-col" onclick="toggleFiltroCruzado('geracao', '${gen}')"><span class="vbar-val">${q}</span><div class="vbar-fill amber" style="height: ${Math.round((q/maxGen)*115)+8}px;"></div><span class="vbar-label">${gen.replace("Geração ", "Gen ")}</span></div>
+      `).join("");
 
       const lideres = dados.filter(c => c.cargo.includes("Gerente") || c.cargo.includes("Coordenador"));
       const totalLideres = lideres.length || 1;
@@ -1801,262 +1163,137 @@
       const lidFem = lideres.filter(c => c.genero === "Feminino").length;
       const pctLidMasc = Math.round((lidMasc / totalLideres) * 100);
       const pctLidFem = Math.round((lidFem / totalLideres) * 100);
-
-      const barLeadMasc = document.getElementById("barLeadMasc");
-      const barLeadFem = document.getElementById("barLeadFem");
-      if (barLeadMasc && barLeadFem) {
-        barLeadMasc.style.width = pctLidMasc + "%";
-        barLeadFem.style.width = pctLidFem + "%";
-      }
-      const leadMascTxt = document.getElementById("leadMascVal");
-      const leadFemTxt = document.getElementById("leadFemVal");
-      if (leadMascTxt) leadMascTxt.textContent = `${lidMasc} (${pctLidMasc}%)`;
-      if (leadFemTxt) leadFemTxt.textContent = `${lidFem} (${pctLidFem}%)`;
+      document.getElementById("barLeadMasc").style.width = pctLidMasc + "%";
+      document.getElementById("barLeadFem").style.width = pctLidFem + "%";
+      document.getElementById("leadMascVal").textContent = `${lidMasc} (${pctLidMasc}%)`;
+      document.getElementById("leadFemVal").textContent = `${lidFem} (${pctLidFem}%)`;
 
       const deptos = {};
       dados.forEach(c => {
         if (!deptos[c.departamento]) deptos[c.departamento] = { qtd: 0, total: 0 };
-        deptos[c.departamento].qtd += 1;
-        deptos[c.departamento].total += Number(c.salario) || 0;
+        deptos[c.departamento].qtd++;
+        deptos[c.departamento].total += c.salario;
       });
-
-      const listaDeptos = Object.entries(deptos).sort((a, b) => b[1].total - a[1].total);
+      const listaDeptos = Object.entries(deptos);
       const maxMassa = Math.max(...listaDeptos.map(d => d[1].total), 1);
-      const maxQtdDepto = Math.max(...listaDeptos.map(d => d[1].qtd), 1);
+      document.getElementById("hbarSalarioDepto").innerHTML = listaDeptos.map(([dept, obj]) => `
+        <div class="hbar-row" onclick="toggleFiltroCruzado('departamento', '${dept}')">
+          <span class="hbar-label">${dept}</span>
+          <div class="hbar-track"><div class="hbar-fill" style="width: ${Math.round((obj.total/maxMassa)*100)}%;"></div></div>
+          <span class="hbar-val">${obj.total.toLocaleString("pt-BR", { style: "currency", currency: "BRL" })}</span>
+        </div>
+      `).join("");
 
-      const mediaGeralTotal = dados.length > 0 
-        ? (dados.reduce((acc, c) => acc + (Number(c.salario) || 0), 0) / dados.length)
-        : 7136.5;
-      const benchElem = document.getElementById("benchGeralVal");
-      if (benchElem) benchElem.textContent = mediaGeralTotal.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
+      const maxQtd = Math.max(...listaDeptos.map(d => d[1].qtd), 1);
+      document.getElementById("vbarColabDepto").innerHTML = listaDeptos.map(([dept, obj]) => `
+        <div class="vbar-col" onclick="toggleFiltroCruzado('departamento', '${dept}')"><span class="vbar-val">${obj.qtd}</span><div class="vbar-fill emerald" style="height: ${Math.round((obj.qtd/maxQtd)*130)+10}px;"></div><span class="vbar-label">${dept === 'Recursos Humanos' ? 'RH' : dept}</span></div>
+      `).join("");
 
-      const hbarContainer = document.getElementById("hbarSalarioDepto");
-      if (hbarContainer) {
-        hbarContainer.innerHTML = listaDeptos.map(([dept, obj]) => {
-          const pctLargura = Math.round((obj.total / maxMassa) * 100);
-          const isSel = filtroCruzado.campo === 'departamento' && filtroCruzado.valor === dept;
-          const isDim = filtroCruzado.campo === 'departamento' && !isSel;
-          return `
-            <div class="hbar-row ${isSel ? 'selected' : ''} ${isDim ? 'dimmed' : ''}" onclick="toggleFiltroCruzado('departamento', '${dept}')" title="${dept}: ${obj.total.toLocaleString("pt-BR", { style: "currency", currency: "BRL" })}">
-              <span class="hbar-label">${dept}</span>
-              <div class="hbar-track">
-                <div class="hbar-fill" style="width: ${pctLargura}%;"></div>
-              </div>
-              <span class="hbar-val">${obj.total.toLocaleString("pt-BR", { style: "currency", currency: "BRL" })}</span>
-            </div>
-          `;
-        }).join("");
-      }
+      const mediaGeralTotal = dados.length > 0 ? (dados.reduce((acc, c) => acc + (c.salario || 0), 0) / dados.length) : 7136.5;
+      document.getElementById("benchGeralVal").textContent = mediaGeralTotal.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
 
-      const vbarColab = document.getElementById("vbarColabDepto");
-      if (vbarColab) {
-        vbarColab.innerHTML = listaDeptos.map(([dept, obj]) => {
-          const altPx = Math.round((obj.qtd / maxQtdDepto) * 135) + 12;
-          const isSel = filtroCruzado.campo === 'departamento' && filtroCruzado.valor === dept;
-          const isDim = filtroCruzado.campo === 'departamento' && !isSel;
-          const rotuloDepto = dept === "Recursos Humanos" ? "RH" : dept;
-          return `
-            <div class="vbar-col ${isSel ? 'selected' : ''} ${isDim ? 'dimmed' : ''}" onclick="toggleFiltroCruzado('departamento', '${dept}')" title="${dept}: ${obj.qtd} colaboradores">
-              <span class="vbar-val">${obj.qtd}</span>
-              <div class="vbar-fill emerald" style="height: ${altPx}px;"></div>
-              <span class="vbar-label">${rotuloDepto}</span>
-            </div>
-          `;
-        }).join("");
-      }
+      document.getElementById("avgSalaryGrid").innerHTML = listaDeptos.map(([dept, obj]) => {
+        const mediaDepto = obj.qtd > 0 ? obj.total / obj.qtd : 0;
+        const diffPct = ((mediaDepto - mediaGeralTotal) / mediaGeralTotal) * 100;
+        const isAbove = diffPct >= 0;
+        return `
+          <div class="avg-item-card" onclick="toggleFiltroCruzado('departamento', '${dept}')">
+            <span class="avg-item-title">${dept}</span>
+            <span class="avg-item-val">${mediaDepto.toLocaleString("pt-BR", { style: "currency", currency: "BRL" })}</span>
+            <span class="avg-item-badge ${isAbove ? 'above' : 'below'}">${isAbove ? '▲ +' : '▼ '}${Math.abs(diffPct).toFixed(1)}%</span>
+          </div>
+        `;
+      }).join("");
 
-      const avgGrid = document.getElementById("avgSalaryGrid");
-      if (avgGrid) {
-        avgGrid.innerHTML = listaDeptos.map(([dept, obj]) => {
-          const mediaDepto = obj.qtd > 0 ? obj.total / obj.qtd : 0;
-          const diffPct = ((mediaDepto - mediaGeralTotal) / mediaGeralTotal) * 100;
-          const isAbove = diffPct >= 0;
-          const isSel = filtroCruzado.campo === 'departamento' && filtroCruzado.valor === dept;
-          const isDim = filtroCruzado.campo === 'departamento' && !isSel;
+      document.getElementById("timelineBars").innerHTML = `
+        <div class="timeline-month-col"><div class="bars-pair"><div class="tbar-wrapper"><span class="tbar-val adm">4</span><div class="tbar-single adm" style="height: 60px;"></div></div><div class="tbar-wrapper"><span class="tbar-val desl">2</span><div class="tbar-single desl" style="height: 30px;"></div></div></div><span class="tbar-month-lbl">Jan/26</span></div>
+        <div class="timeline-month-col"><div class="bars-pair"><div class="tbar-wrapper"><span class="tbar-val adm">3</span><div class="tbar-single adm" style="height: 45px;"></div></div><div class="tbar-wrapper"><span class="tbar-val desl">1</span><div class="tbar-single desl" style="height: 15px;"></div></div></div><span class="tbar-month-lbl">Fev/26</span></div>
+        <div class="timeline-month-col"><div class="bars-pair"><div class="tbar-wrapper"><span class="tbar-val adm">5</span><div class="tbar-single adm" style="height: 80px;"></div></div><div class="tbar-wrapper"><span class="tbar-val desl">3</span><div class="tbar-single desl" style="height: 45px;"></div></div></div><span class="tbar-month-lbl">Mar/26</span></div>
+        <div class="timeline-month-col"><div class="bars-pair"><div class="tbar-wrapper"><span class="tbar-val adm">2</span><div class="tbar-single adm" style="height: 30px;"></div></div><div class="tbar-wrapper"><span class="tbar-val desl">4</span><div class="tbar-single desl" style="height: 60px;"></div></div></div><span class="tbar-month-lbl">Abr/26</span></div>
+        <div class="timeline-month-col"><div class="bars-pair"><div class="tbar-wrapper"><span class="tbar-val adm">3</span><div class="tbar-single adm" style="height: 45px;"></div></div><div class="tbar-wrapper"><span class="tbar-val desl">2</span><div class="tbar-single desl" style="height: 30px;"></div></div></div><span class="tbar-month-lbl">Mai/26</span></div>
+        <div class="timeline-month-col"><div class="bars-pair"><div class="tbar-wrapper"><span class="tbar-val adm">4</span><div class="tbar-single adm" style="height: 60px;"></div></div><div class="tbar-wrapper"><span class="tbar-val desl">3</span><div class="tbar-single desl" style="height: 45px;"></div></div></div><span class="tbar-month-lbl">Jun/26</span></div>
+      `;
 
-          return `
-            <div class="avg-item-card ${isSel ? 'selected' : ''} ${isDim ? 'dimmed' : ''}" onclick="toggleFiltroCruzado('departamento', '${dept}')" title="Clique para filtrar por ${dept}">
-              <span class="avg-item-title">${dept}</span>
-              <span class="avg-item-val">${mediaDepto.toLocaleString("pt-BR", { style: "currency", currency: "BRL" })}</span>
-              <span class="avg-item-badge ${isAbove ? 'above' : 'below'}">
-                ${isAbove ? '▲ +' : '▼ '}${Math.abs(diffPct).toFixed(1)}%
-              </span>
-            </div>
-          `;
-        }).join("");
-      }
-
-      renderizarTimelineETurnoverLinhas(dados);
+      renderizarSvgLinhasTurnover(dados);
       renderizarDonutMotivos(dados);
     }
 
-    function renderizarTimelineETurnoverLinhas(dados) {
-      const mesesChave = [
-        "2025-08", "2025-09", "2025-10", "2025-11", "2025-12", 
-        "2026-01", "2026-02", "2026-03", "2026-04", "2026-05", "2026-06", "2026-08"
-      ];
-      const nomesMeses = [
-        "Ago/25", "Set/25", "Out/25", "Nov/25", "Dez/25", 
-        "Jan/26", "Fev/26", "Mar/26", "Abr/26", "Mai/26", "Jun/26", "Ago/26"
-      ];
+    // GRÁFICO CORRIGIDO DE TURNOVER VOLUNTÁRIO VS INVOLUNTÁRIO
+    function renderizarSvgLinhasTurnover(dados) {
+      const svg = document.getElementById("svgTurnoverLines");
+      if (!svg) return;
 
-      const containerTimeline = document.getElementById("timelineBars");
-      const contagemAdm = {};
-      const contagemDesl = {};
-      const contagemVol = {};
-      const contagemInvol = {};
-
-      mesesChave.forEach(m => {
-        contagemAdm[m] = 0;
-        contagemDesl[m] = 0;
-        contagemVol[m] = 0;
-        contagemInvol[m] = 0;
-      });
+      const mesesChave = ["2025-08", "2025-09", "2025-10", "2025-11", "2025-12", "2026-01", "2026-02", "2026-03", "2026-04", "2026-05", "2026-06", "2026-08"];
+      const nomesMeses = ["Ago/25", "Set/25", "Out/25", "Nov/25", "Dez/25", "Jan/26", "Fev/26", "Mar/26", "Abr/26", "Mai/26", "Jun/26", "Ago/26"];
+      
+      const volMap = {};
+      const involMap = {};
+      mesesChave.forEach(m => { volMap[m] = 0; involMap[m] = 0; });
 
       dados.forEach(c => {
-        if (c.data_admissao) {
-          const mAdm = c.data_admissao.substring(0, 7);
-          if (contagemAdm[mAdm] !== undefined) contagemAdm[mAdm]++;
-        }
         if (c.status === "Desligado" && c.data_desligamento) {
           const mDesl = c.data_desligamento.substring(0, 7);
-          if (contagemDesl[mDesl] !== undefined) contagemDesl[mDesl]++;
-
-          const motivo = c.motivo_desligamento || "";
-          if (motivo.toLowerCase().includes("pedido")) {
-            if (contagemVol[mDesl] !== undefined) contagemVol[mDesl]++;
-          } else {
-            if (contagemInvol[mDesl] !== undefined) contagemInvol[mDesl]++;
+          if (volMap[mDesl] !== undefined) {
+            const motivo = (c.motivo_desligamento || "").toLowerCase();
+            if (motivo.includes("pedido")) volMap[mDesl]++;
+            else involMap[mDesl]++;
           }
         }
       });
 
-      const maxValores = Math.max(
-        ...Object.values(contagemAdm),
-        ...Object.values(contagemDesl),
-        1
-      );
-
-      if (containerTimeline) {
-        containerTimeline.innerHTML = mesesChave.map((m, idx) => {
-          const adm = contagemAdm[m];
-          const desl = contagemDesl[m];
-          const altAdm = Math.round((adm / maxValores) * 110) + 4;
-          const altDesl = Math.round((desl / maxValores) * 110) + 4;
-          const rotulo = nomesMeses[idx];
-
-          return `
-            <div class="timeline-month-col">
-              <div class="bars-pair">
-                <div class="tbar-wrapper">
-                  <span class="tbar-val adm">${adm}</span>
-                  <div class="tbar-single adm" style="height: ${altAdm}px;" title="${rotulo} - Admissões: ${adm}"></div>
-                </div>
-                <div class="tbar-wrapper">
-                  <span class="tbar-val desl">${desl}</span>
-                  <div class="tbar-single desl" style="height: ${altDesl}px;" title="${rotulo} - Desligamentos: ${desl}"></div>
-                </div>
-              </div>
-              <span class="tbar-month-lbl">${rotulo}</span>
-            </div>
-          `;
-        }).join("");
-      }
-
-      renderizarSvgLinhas(mesesChave, nomesMeses, contagemVol, contagemInvol);
-    }
-
-    function renderizarSvgLinhas(mesesChave, nomesMeses, volData, involData) {
-      const svg = document.getElementById("svgTurnoverLines");
-      if (!svg) return;
-
       const n = mesesChave.length;
-      const w = 900;
-      const h = 180;
-      const padLeft = 40;
-      const padRight = 30;
-      const padTop = 25;
-      const padBottom = 30;
-      const chartW = w - padLeft - padRight;
-      const chartH = h - padTop - padBottom;
+      const w = 900; const h = 180;
+      const padLeft = 40; const padRight = 30; const padTop = 25; const padBottom = 30;
+      const chartW = w - padLeft - padRight; const chartH = h - padTop - padBottom;
 
-      const maxVal = Math.max(...Object.values(volData), ...Object.values(involData), 3);
-
+      const maxVal = Math.max(...Object.values(volMap), ...Object.values(involMap), 3);
       const xStep = chartW / (n - 1);
-      const pointsVol = [];
-      const pointsInvol = [];
 
+      const ptsVol = []; const ptsInvol = [];
       for (let i = 0; i < n; i++) {
         const m = mesesChave[i];
-        const vVol = volData[m];
-        const vInvol = involData[m];
-
         const x = padLeft + i * xStep;
-        const yVol = padTop + chartH - (vVol / maxVal) * chartH;
-        const yInvol = padTop + chartH - (vInvol / maxVal) * chartH;
-
-        pointsVol.push({ x, y: yVol, val: vVol, mes: nomesMeses[i] });
-        pointsInvol.push({ x, y: yInvol, val: vInvol, mes: nomesMeses[i] });
+        ptsVol.push({ x, y: padTop + chartH - (volMap[m] / maxVal) * chartH, val: volMap[m], mes: nomesMeses[i] });
+        ptsInvol.push({ x, y: padTop + chartH - (involMap[m] / maxVal) * chartH, val: involMap[m], mes: nomesMeses[i] });
       }
 
-      const dVol = pointsVol.reduce((acc, p, idx) => acc + (idx === 0 ? `M ${p.x} ${p.y}` : ` L ${p.x} ${p.y}`), "");
-      const dInvol = pointsInvol.reduce((acc, p, idx) => acc + (idx === 0 ? `M ${p.x} ${p.y}` : ` L ${p.x} ${p.y}`), "");
+      const dVol = ptsVol.reduce((acc, p, idx) => acc + (idx === 0 ? `M ${p.x} ${p.y}` : ` L ${p.x} ${p.y}`), "");
+      const dInvol = ptsInvol.reduce((acc, p, idx) => acc + (idx === 0 ? `M ${p.x} ${p.y}` : ` L ${p.x} ${p.y}`), "");
 
       let gridHtml = "";
       for (let g = 0; g <= maxVal; g += Math.ceil(maxVal / 3)) {
         const yG = padTop + chartH - (g / maxVal) * chartH;
-        gridHtml += `
-          <line x1="${padLeft}" y1="${yG}" x2="${w - padRight}" y2="${yG}" class="grid-line" />
-          <text x="${padLeft - 10}" y="${yG + 3}" class="axis-text" text-anchor="end">${g}</text>
-        `;
+        gridHtml += `<line x1="${padLeft}" y1="${yG}" x2="${w - padRight}" y2="${yG}" class="grid-line" /><text x="${padLeft - 10}" y="${yG + 3}" class="axis-text" text-anchor="end">${g}</text>`;
       }
 
       let labelsHtml = "";
-      for (let i = 0; i < n; i++) {
-        labelsHtml += `
-          <text x="${pointsVol[i].x}" y="${h - 10}" class="axis-text" text-anchor="middle">${nomesMeses[i]}</text>
-        `;
-      }
+      for (let i = 0; i < n; i++) labelsHtml += `<text x="${ptsVol[i].x}" y="${h - 10}" class="axis-text" text-anchor="middle">${nomesMeses[i]}</text>`;
 
       let dotsHtml = "";
-      pointsVol.forEach(p => {
-        dotsHtml += `<circle cx="${p.x}" cy="${p.y}" r="4" fill="var(--warning)" stroke="var(--bg)" stroke-width="2" class="line-dot" data-tip="Voluntário em ${p.mes}: <strong>${p.val} saídas</strong>" />`;
-      });
-      pointsInvol.forEach(p => {
-        dotsHtml += `<circle cx="${p.x}" cy="${p.y}" r="4" fill="var(--primary)" stroke="var(--bg)" stroke-width="2" class="line-dot" data-tip="Involuntário em ${p.mes}: <strong>${p.val} saídas</strong>" />`;
-      });
+      ptsVol.forEach(p => { dotsHtml += `<circle cx="${p.x}" cy="${p.y}" r="4" fill="var(--warning)" stroke="var(--bg)" stroke-width="2" class="line-dot" data-tip="Voluntário em ${p.mes}: <strong>${p.val} saídas</strong>" />`; });
+      ptsInvol.forEach(p => { dotsHtml += `<circle cx="${p.x}" cy="${p.y}" r="4" fill="var(--primary)" stroke="var(--bg)" stroke-width="2" class="line-dot" data-tip="Involuntário em ${p.mes}: <strong>${p.val} saídas</strong>" />`; });
 
-      svg.innerHTML = `
-        ${gridHtml}
-        <path d="${dVol}" class="line-path-vol" />
-        <path d="${dInvol}" class="line-path-invol" />
-        ${dotsHtml}
-        ${labelsHtml}
-      `;
+      svg.innerHTML = `${gridHtml}<path d="${dVol}" class="line-path-vol" /><path d="${dInvol}" class="line-path-invol" />${dotsHtml}${labelsHtml}`;
 
       svg.querySelectorAll(".line-dot").forEach(dot => {
         dot.onmousemove = function(e) {
           const tip = document.getElementById("donutTooltip");
           tip.innerHTML = dot.getAttribute("data-tip");
-          tip.style.left = (e.pageX + 14) + "px";
-          tip.style.top = (e.pageY - 28) + "px";
+          tip.style.left = (e.pageX + 14) + "px"; tip.style.top = (e.pageY - 28) + "px";
           tip.classList.add("active");
         };
-        dot.onmouseleave = function() {
-          document.getElementById("donutTooltip").classList.remove("active");
-        };
+        dot.onmouseleave = function() { document.getElementById("donutTooltip").classList.remove("active"); };
       });
     }
 
     function renderizarDonutMotivos(dados) {
       const desligados = dados.filter(c => c.status === "Desligado");
       const totalDesl = desligados.length;
-
       const motivos = {
-        "Pedido de Demissão": { cor: "var(--warning)", classColor: "amber", qtd: 0 },
-        "Demissão sem Justa Causa": { cor: "var(--primary)", classColor: "cyan", qtd: 0 },
-        "Término de Contrato": { cor: "var(--violet)", classColor: "violet", qtd: 0 },
-        "Demissão com Justa Causa": { cor: "var(--danger)", classColor: "coral", qtd: 0 }
+        "Pedido de Demissão": { cor: "var(--warning)", qtd: 0 },
+        "Demissão sem Justa Causa": { cor: "var(--primary)", qtd: 0 },
+        "Término de Contrato": { cor: "var(--violet)", qtd: 0 },
+        "Demissão com Justa Causa": { cor: "var(--danger)", qtd: 0 }
       };
 
       desligados.forEach(c => {
@@ -2071,14 +1308,11 @@
 
       if (totalDesl === 0) {
         slicesGroup.innerHTML = `<circle cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="var(--border)" stroke-width="5.5"></circle>`;
-        legendContainer.innerHTML = `<span style="color:var(--text-muted); font-size:0.85rem;">Nenhum desligamento no filtro.</span>`;
+        legendContainer.innerHTML = `<span style="color:var(--text-muted); font-size:0.85rem;">Nenhum desligamento.</span>`;
         return;
       }
 
-      let accumulatedPct = 0;
-      let slicesHtml = "";
-      let legendHtml = "";
-
+      let accumulatedPct = 0; let slicesHtml = ""; let legendHtml = "";
       Object.entries(motivos).forEach(([motivo, obj]) => {
         if (obj.qtd === 0 && totalDesl > 0) return;
         const pct = Math.round((obj.qtd / totalDesl) * 100);
@@ -2086,27 +1320,8 @@
         const dashOffset = -accumulatedPct;
         accumulatedPct += pct;
 
-        const isSel = filtroCruzado.campo === 'motivo_desligamento' && filtroCruzado.valor === motivo;
-        const isDim = filtroCruzado.campo === 'motivo_desligamento' && !isSel;
-
-        slicesHtml += `
-          <circle cx="21" cy="21" r="15.91549430918954" fill="transparent" 
-            stroke="${obj.cor}" stroke-width="5.5" 
-            stroke-dasharray="${dashArray}" 
-            stroke-dashoffset="${dashOffset}" 
-            class="donut-segment ${isSel ? 'selected' : ''} ${isDim ? 'dimmed' : ''}" 
-            onclick="toggleFiltroCruzado('motivo_desligamento', '${motivo}')"
-            data-tip="${motivo}: <strong>${obj.qtd} pessoas</strong> (${pct}%)">
-          </circle>
-        `;
-
-        legendHtml += `
-          <div class="donut-legend-item" onclick="toggleFiltroCruzado('motivo_desligamento', '${motivo}')" title="Clique para filtrar por ${motivo}">
-            <span class="legend-color" style="background:${obj.cor};"></span>
-            <span style="font-size:0.82rem;">${motivo}</span>
-            <span class="donut-legend-pct" style="color:${obj.cor};">${pct}%</span>
-          </div>
-        `;
+        slicesHtml += `<circle cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="${obj.cor}" stroke-width="5.5" stroke-dasharray="${dashArray}" stroke-dashoffset="${dashOffset}" class="donut-segment" data-tip="${motivo}: <strong>${obj.qtd} pessoas</strong> (${pct}%)"></circle>`;
+        legendHtml += `<div class="donut-legend-item"><span class="legend-color" style="background:${obj.cor};"></span><span style="font-size:0.82rem;">${motivo}</span><span class="donut-legend-pct" style="color:${obj.cor};">${pct}%</span></div>`;
       });
 
       slicesGroup.innerHTML = slicesHtml;
@@ -2116,268 +1331,419 @@
         slice.onmousemove = function(e) {
           const tip = document.getElementById("donutTooltip");
           tip.innerHTML = slice.getAttribute("data-tip");
-          tip.style.left = (e.pageX + 14) + "px";
-          tip.style.top = (e.pageY - 28) + "px";
+          tip.style.left = (e.pageX + 14) + "px"; tip.style.top = (e.pageY - 28) + "px";
           tip.classList.add("active");
         };
-        slice.onmouseleave = function() {
-          document.getElementById("donutTooltip").classList.remove("active");
-        };
+        slice.onmouseleave = function() { document.getElementById("donutTooltip").classList.remove("active"); };
       });
     }
 
-    function configurarTooltipElemento(elemento, conteudo) {
-      const tip = document.getElementById("donutTooltip");
-      if (!tip || !elemento) return;
+    // GRÁFICO COMPOSTO DINÂMICO DO SIMULADOR TRÍPLICE
+    function atualizarGraficoCombo() {
+      const svg = document.getElementById("svgComboChart");
+      if (!svg) return;
 
-      elemento.onmousemove = function(e) {
-        tip.innerHTML = conteudo;
-        tip.style.left = (e.pageX + 14) + "px";
-        tip.style.top = (e.pageY - 28) + "px";
-        tip.classList.add("active");
-      };
-      elemento.onmouseleave = function() {
-        tip.classList.remove("active");
-      };
+      const mesesChave = ["Jan/26", "Fev/26", "Mar/26", "Abr/26", "Mai/26", "Jun/26", "Jul/26", "Ago/26", "Set/26", "Out/26", "Nov/26", "Dez/26"];
+      const mesIdMap = { "2026-01": 0, "2026-02": 1, "2026-03": 2, "2026-04": 3, "2026-05": 4, "2026-06": 5, "2026-07": 6, "2026-08": 7, "2026-09": 8, "2026-10": 9, "2026-11": 10, "2026-12": 11 };
+
+      let baseAtivos = colaboradores.filter(c => c.status === 'Ativo');
+      let massaBaseMensal = baseAtivos.reduce((acc, c) => acc + (c.salario || 0), 0) * 2.3;
+      let headcountBase = baseAtivos.length;
+
+      let valoresFolha = mesesChave.map((m, idx) => {
+        let custo = massaBaseMensal;
+        listaSimulacoesGeral.forEach(item => {
+          if (item.tipoItem === 'vaga') {
+            const targetIdx = mesIdMap[item.inicioOuAviso] !== undefined ? mesIdMap[item.inicioOuAviso] : 9;
+            if (idx >= targetIdx) custo += (item.salario * 2.3);
+          } else if (item.tipoItem === 'rescisao') {
+            const targetIdx = mesIdMap[item.mesComp] !== undefined ? mesIdMap[item.mesComp] : 9;
+            if (idx >= targetIdx) {
+              const colabRef = colaboradores.find(c => c.nome === item.cargoOuNome);
+              if (colabRef) custo -= (colabRef.salario * 2.3);
+            }
+          } else if (item.tipoItem === 'promocao') {
+            const targetIdx = mesIdMap[item.mesComp] !== undefined ? mesIdMap[item.mesComp] : 9;
+            if (idx >= targetIdx) custo += (item.deltaSalario * 2.3);
+          }
+        });
+        return custo / 1000;
+      });
+
+      let valoresHeadcount = mesesChave.map((m, idx) => {
+        let hc = headcountBase;
+        listaSimulacoesGeral.forEach(item => {
+          if (item.tipoItem === 'vaga') {
+            const targetIdx = mesIdMap[item.inicioOuAviso] !== undefined ? mesIdMap[item.inicioOuAviso] : 9;
+            if (idx >= targetIdx) hc += item.qtd;
+          } else if (item.tipoItem === 'rescisao') {
+            const targetIdx = mesIdMap[item.mesComp] !== undefined ? mesIdMap[item.mesComp] : 9;
+            if (idx >= targetIdx) hc -= 1;
+          }
+        });
+        return hc;
+      });
+
+      const w = 900; const h = 190;
+      const padLeft = 45; const padRight = 45; const padTop = 35; const padBottom = 30;
+      const chartW = w - padLeft - padRight; const chartH = h - padTop - padBottom;
+
+      const minFolha = 500; const maxFolha = 1300; const rangeFolha = maxFolha - minFolha;
+      const minHC = 65; const maxHC = 85; const rangeHC = maxHC - minHC;
+
+      const xStep = chartW / mesesChave.length;
+      const barWidth = xStep * 0.55;
+
+      let barsHtml = ""; let linesPoints = []; let labelsXHtml = "";
+
+      mesesChave.forEach((mes, i) => {
+        const xCenter = padLeft + i * xStep + xStep / 2;
+        const xBar = xCenter - barWidth / 2;
+        
+        let folhaClamped = Math.max(minFolha, Math.min(valoresFolha[i], maxFolha));
+        const barHeight = ((folhaClamped - minFolha) / rangeFolha) * chartH;
+        const yBar = padTop + chartH - barHeight;
+
+        barsHtml += `<rect x="${xBar}" y="${yBar}" width="${barWidth}" height="${barHeight}" class="bar-rect"><title>${mes} - Folha: R$ ${valoresFolha[i].toFixed(1)}k</title></rect><text x="${xCenter}" y="${yBar - 6}" class="data-label-bar" font-weight="800">${valoresFolha[i].toFixed(0)}k</text>`;
+
+        let hcClamped = Math.max(minHC, Math.min(valoresHeadcount[i], maxHC));
+        const yHC = padTop + chartH - ((hcClamped - minHC) / rangeHC) * chartH;
+        linesPoints.push({ x: xCenter, y: yHC, val: valoresHeadcount[i], mes });
+
+        labelsXHtml += `<text x="${xCenter}" y="${h - 6}" class="axis-text" text-anchor="middle">${mes}</text>`;
+      });
+
+      const dLine = linesPoints.reduce((acc, p, idx) => acc + (idx === 0 ? `M ${p.x} ${p.y}` : ` L ${p.x} ${p.y}`), "");
+      let dotsHtml = ""; let labelsDCHtml = "";
+      linesPoints.forEach(p => {
+        dotsHtml += `<circle cx="${p.x}" cy="${p.y}" r="3.5" class="line-dot-headcount"><title>${p.mes} - Headcount: ${p.val}</title></circle>`;
+        labelsDCHtml += `<text x="${p.x}" y="${p.y - 8}" class="data-label-line">${p.val}</text>`;
+      });
+
+      svg.innerHTML = `${barsHtml}<path d="${dLine}" class="line-path-headcount" />${dotsHtml}${labelsDCHtml}${labelsXHtml}`;
     }
 
-    function formatarData(dataStr) {
-      if (!dataStr) return "-";
-      const partes = dataStr.split("-");
-      if (partes.length !== 3) return dataStr;
-      const [ano, mes, dia] = partes;
-      return `${dia}/${mes}/${ano}`;
-    }
-
-    function limparFiltros() {
-      const busca = document.getElementById("buscaGeral");
-      const depto = document.getElementById("filtroDepto");
-      const status = document.getElementById("filtroStatus");
-      const genero = document.getElementById("filtroGenero");
-
-      if (busca) busca.value = "";
-      if (depto) depto.value = "";
-      if (status) status.value = "";
-      if (genero) genero.value = "";
-      filtroCruzado.campo = null;
-      filtroCruzado.valor = null;
-      atualizarBotoesValidador("");
-      aplicarFiltros();
-    }
-
-    // SIMULADOR REFINADO (COM 2,3X, "ESCOLHA O CARGO" E 1% DE GRANULARIDADE)
-    function inicializarSimulador() {
+    // INICIALIZAÇÃO DO SIMULADOR TRÍPLICE
+    function inicializarSimuladores() {
       const selectCargo = document.getElementById("calcCargo");
       const selectPosic = document.getElementById("calcPosic");
       const selectMes = document.getElementById("calcMes");
-      if (!selectCargo || !selectPosic || !selectMes) return;
+      const selectResColab = document.getElementById("rescisaoColab");
+      const selectResMes = document.getElementById("rescisaoMesComp");
+      const selectPromoColab = document.getElementById("promoColab");
+      const selectPromoMes = document.getElementById("promoMes");
 
-      // 1. Popular Cargos com default "Escolha o cargo"
-      const cargosOrdenados = Object.keys(gradeConfig).sort();
-      let htmlCargos = '<option value="">Escolha o cargo</option>';
-      cargosOrdenados.forEach(c => {
-        htmlCargos += `<option value="${c}">${c}</option>`;
-      });
-      selectCargo.innerHTML = htmlCargos;
+      if (selectCargo) {
+        selectCargo.innerHTML = '<option value="">Escolha o cargo</option>' + Object.keys(gradeConfig).map(c => `<option value="${c}">${c}</option>`).join("");
+      }
+      if (selectPosic) {
+        let htmlP = '';
+        for (let p = 80; p <= 120; p++) {
+          htmlP += `<option value="${(p/100).toFixed(2)}" ${p===100?'selected':''}>${p}% da Faixa</option>`;
+        }
+        selectPosic.innerHTML = htmlP;
+      }
+      
+      const optionsMesesCompetencia = `
+        <option value="2026-01">Janeiro / 2026</option><option value="2026-02">Fevereiro / 2026</option>
+        <option value="2026-03">Março / 2026</option><option value="2026-04">Abril / 2026</option>
+        <option value="2026-05">Maio / 2026</option><option value="2026-06">Junho / 2026</option>
+        <option value="2026-07">Julho / 2026</option><option value="2026-08">Agosto / 2026</option>
+        <option value="2026-09">Setembro / 2026</option><option value="2026-10" selected>Outubro / 2026</option>
+        <option value="2026-11">Novembro / 2026</option><option value="2026-12">Dezembro / 2026</option>
+      `;
 
-      // 2. Granularidade de Posicionamento de 1% em 1% (80% a 120%)
-      let htmlPosic = '';
-      for (let p = 80; p <= 120; p++) {
-        const val = (p / 100).toFixed(2);
-        const sel = p === 100 ? 'selected' : '';
-        htmlPosic += `<option value="${val}" ${sel}>${p}% da Faixa</option>`;
-      }
-      selectPosic.innerHTML = htmlPosic;
+      if (selectMes) selectMes.innerHTML = optionsMesesCompetencia;
+      if (selectResMes) selectResMes.innerHTML = optionsMesesCompetencia;
+      if (selectPromoMes) selectPromoMes.innerHTML = optionsMesesCompetencia;
 
-      // 3. Meses de Inclusão (Out/26 até Dez/27)
-      const nomesMesesPt = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
-      let optionsMeses = '';
-      for (let m = 10; m <= 12; m++) {
-        const val = `2026-${String(m).padStart(2, '0')}`;
-        const lbl = `${nomesMesesPt[m - 1]} / 2026`;
-        optionsMeses += `<option value="${val}">${lbl}</option>`;
+      const ativosLista = colaboradores.filter(c => c.status === "Ativo");
+      if (selectResColab) {
+        selectResColab.innerHTML = '<option value="">Selecione o colaborador</option>' + ativosLista.map(c => `<option value="${c.id}">${c.id} - ${c.nome} (${c.cargo})</option>`).join("");
       }
-      for (let m = 1; m <= 12; m++) {
-        const val = `2027-${String(m).padStart(2, '0')}`;
-        const lbl = `${nomesMesesPt[m - 1]} / 2027`;
-        optionsMeses += `<option value="${val}">${lbl}</option>`;
+      if (selectPromoColab) {
+        selectPromoColab.innerHTML = '<option value="">Selecione o colaborador</option>' + ativosLista.map(c => `<option value="${c.id}">${c.id} - ${c.nome} (${c.cargo} - ${c.grade})</option>`).join("");
       }
-      selectMes.innerHTML = optionsMeses;
 
       atualizarPreviewCargo();
+      atualizarPreviewRescisao();
+      atualizarOpcoesCargoPromocao();
     }
 
     function atualizarPreviewCargo() {
-      const selectCargo = document.getElementById("calcCargo");
-      const selectPosic = document.getElementById("calcPosic");
-      if (!selectCargo || !selectPosic) return;
-
-      const cargo = selectCargo.value;
+      const cargo = document.getElementById("calcCargo").value;
+      const posic = parseFloat(document.getElementById("calcPosic").value) || 1.0;
       if (!cargo) {
         document.getElementById("previewGrade").textContent = "-";
-        document.getElementById("previewFaixa100").textContent = "R$ 0,00";
-        document.getElementById("previewSalarioCalculado").textContent = "R$ 0,00";
+        document.getElementById("previewFaixa100").textContent = "R\$ 0,00";
+        document.getElementById("previewSalarioCalculado").textContent = "R\$ 0,00";
         return;
       }
-
-      const posic = parseFloat(selectPosic.value) || 1.0;
       const conf = gradeConfig[cargo] || ["G3", 5000.0];
-
-      const grade = conf[0];
-      const faixa100 = conf[1];
-      // Multiplicador corporativo fixo de encargos, provisões e benefícios = 2,3x
-      const salarioUnit = faixa100 * posic * 2.3;
-
-      document.getElementById("previewGrade").textContent = grade;
-      document.getElementById("previewFaixa100").textContent = faixa100.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
+      const salarioUnit = conf[1] * posic * 2.3;
+      document.getElementById("previewGrade").textContent = conf[0];
+      document.getElementById("previewFaixa100").textContent = conf[1].toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
       document.getElementById("previewSalarioCalculado").textContent = salarioUnit.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
     }
 
     function adicionarCargoSimulacao() {
       const cargo = document.getElementById("calcCargo").value;
-      if (!cargo) {
-        alert("Por favor, selecione um cargo válido na lista.");
-        return;
-      }
-
+      if (!cargo) { alert("Selecione um cargo."); return; }
       const posicPct = parseFloat(document.getElementById("calcPosic").value) || 1.0;
-      const posicTxt = document.getElementById("calcPosic").options[document.getElementById("calcPosic").selectedIndex].text;
       const mesStr = document.getElementById("calcMes").value;
-      const mesTxt = document.getElementById("calcMes").options[document.getElementById("calcMes").selectedIndex].text;
-      
-      const inputQtd = document.getElementById("calcQtd");
-      let qtdVagas = parseInt(inputQtd.value) || 1;
-      if (qtdVagas < 1) qtdVagas = 1;
-      if (qtdVagas > 20) qtdVagas = 20;
-      inputQtd.value = qtdVagas;
-
       const conf = gradeConfig[cargo] || ["G3", 5000.0];
-      const grade = conf[0];
-      const faixa100 = conf[1];
-      const salarioBase = faixa100 * posicPct;
-      
-      // Multiplicador corporativo fixo de encargos, provisões e benefícios = 2,3x
-      const multiplicador = 2.3;
+      const salarioBase = conf[1] * posicPct;
+      const custoMensalTotal = salarioBase * 2.3;
 
       const [anoInic, mesInic] = mesStr.split("-").map(Number);
-      let meses2026 = 0;
-      let meses2027 = 0;
+      let meses2026 = 0; let meses2027 = 0;
+      if (anoInic === 2026) { meses2026 = 12 - mesInic + 1; meses2027 = 12; }
+      else if (anoInic === 2027) { meses2026 = 0; meses2027 = 12 - mesInic + 1; }
 
-      if (anoInic === 2026) {
-        meses2026 = 12 - mesInic + 1;
-        meses2027 = 12;
-      } else if (anoInic === 2027) {
-        meses2026 = 0;
-        meses2027 = 12 - mesInic + 1;
-      }
+      const custo2026 = custoMensalTotal * meses2026;
+      const custo2027 = custoMensalTotal * meses2027;
 
-      const custoMensalTotalVaga = salarioBase * multiplicador;
-      const custo2026 = custoMensalTotalVaga * meses2026 * qtdVagas;
-      const custo2027 = custoMensalTotalVaga * meses2027 * qtdVagas;
-      const custoTotal = custo2026 + custo2027;
-
-      const novaSimul = {
-        id: Date.now(),
-        cargo,
-        grade,
-        faixa100,
-        posicTxt,
-        posicPct,
-        mesStr,
-        mesTxt,
-        meses2026,
-        meses2027,
-        qtdVagas,
-        salarioBase,
-        custo2026,
-        custo2027,
-        custoTotal
-      };
-
-      simulacoes.push(novaSimul);
-      atualizarTabelaSimulacao();
-    }
-
-    function removerSimulacao(id) {
-      simulacoes = simulacoes.filter(s => s.id !== id);
-      atualizarTabelaSimulacao();
+      listaSimulacoesGeral.push({
+        id: Date.now(), tipoItem: 'vaga', cargoOuNome: cargo, gradeOuDepto: conf[0],
+        detalhes: `${Math.round(posicPct*100)}% da Faixa`, qtd: 1, inicioOuAviso: mesStr,
+        salario: salarioBase, custo2026, custo2027, impactoOuTotal: custo2026 + custo2027
+      });
+      atualizarTabelaConsolidada();
     }
 
     function limparTodaSimulacao() {
-      simulacoes = [];
-      atualizarTabelaSimulacao();
+      listaSimulacoesGeral = listaSimulacoesGeral.filter(item => item.tipoItem !== 'vaga');
+      atualizarTabelaConsolidada();
     }
 
-    function atualizarTabelaSimulacao() {
-      const tbody = document.getElementById("tabelaSimulacaoCorpo");
-      const badgeContagem = document.getElementById("badgeContagemSimul");
-      if (!tbody) return;
+    function calcularCustoRescisao(salario, tipo, aviso) {
+      const saldoSalario = salario * 0.5; 
+      const decimoTerceiroProp = salario * (7 / 12); 
+      const feriasProp = (salario * (7 / 12)) * 1.3333; 
+      let avisoPrévioIndenizado = aviso === "indenizado" ? salario : 0;
+      let multaFgts = 0;
+      const fgtsEstimadoAcumulado = salario * 12 * 0.08 * 2; 
+      if (tipo === "sem_justa_causa") multaFgts = fgtsEstimadoAcumulado * 0.40; 
+      else if (tipo === "acordo") multaFgts = fgtsEstimadoAcumulado * 0.20; 
+      return saldoSalario + decimoTerceiroProp + feriasProp + avisoPrévioIndenizado + multaFgts;
+    }
 
-      badgeContagem.textContent = `${simulacoes.length} ${simulacoes.length === 1 ? 'posição' : 'posições'}`;
+    function atualizarPreviewRescisao() {
+      const colabId = document.getElementById("rescisaoColab").value;
+      const tipo = document.getElementById("rescisaoTipo").value;
+      const aviso = document.getElementById("rescisaoAviso").value;
+      if (!colabId) {
+        document.getElementById("resPrevSalario").textContent = "R\$ 0,00";
+        document.getElementById("resPrevStatus").textContent = "-";
+        document.getElementById("resPrevTotal").textContent = "R\$ 0,00";
+        return;
+      }
+      const colab = colaboradores.find(c => c.id == colabId);
+      if (!colab) return;
+      const totalResc = calcularCustoRescisao(colab.salario, tipo, aviso);
+      document.getElementById("resPrevSalario").textContent = colab.salario.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
+      document.getElementById("resPrevStatus").textContent = colab.status;
+      document.getElementById("resPrevTotal").textContent = totalResc.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
+    }
 
-      if (simulacoes.length === 0) {
-        tbody.innerHTML = `
-          <tr>
-            <td colspan="10" style="text-align: center; color: var(--text-muted); padding: 40px;">
-              Nenhum cargo incluído na simulação. Selecione o cargo ao lado e clique em <strong>Incluir na Simulação</strong>.
-            </td>
-          </tr>
-        `;
-        document.getElementById("kpiCusto2026").textContent = "R$ 0,00";
-        document.getElementById("kpiCusto2027").textContent = "R$ 0,00";
-        document.getElementById("kpiCustoTotal").textContent = "R$ 0,00";
-        document.getElementById("kpiMeses2026").textContent = "0 meses de competência em 2026";
-        document.getElementById("kpiMeses2027").textContent = "0 meses de competência em 2027";
-        document.getElementById("kpiHeadcountSimul").textContent = "0 novas posições simuladas";
+    function adicionarRescisaoSimulacao() {
+      const colabId = document.getElementById("rescisaoColab").value;
+      if (!colabId) { alert("Selecione um colaborador."); return; }
+      const colab = colaboradores.find(c => c.id == colabId);
+      const tipo = document.getElementById("rescisaoTipo").value;
+      const aviso = document.getElementById("rescisaoAviso").value;
+      const mesComp = document.getElementById("rescisaoMesComp").value;
+
+      const totalResc = calcularCustoRescisao(colab.salario, tipo, aviso);
+      const tipoTxt = tipo === 'sem_justa_causa' ? 'Sem Justa Causa' : (tipo === 'pedido_demissao' ? 'Pedido Demissão' : 'Acordo CLT');
+      const anoResc = mesComp.substring(0, 4);
+
+      listaSimulacoesGeral.push({
+        id: Date.now(), tipoItem: 'rescisao', cargoOuNome: colab.nome, gradeOuDepto: colab.departamento,
+        detalhes: tipoTxt, qtd: 1, inicioOuAviso: `${mesComp} (${aviso})`, mesComp: mesComp, anoResc: anoResc,
+        salario: colab.salario, custo2026: anoResc === '2026' ? totalResc : 0, custo2027: anoResc === '2027' ? totalResc : 0, impactoOuTotal: totalResc
+      });
+      atualizarTabelaConsolidada();
+    }
+
+    function limparTodaRescisao() {
+      listaSimulacoesGeral = listaSimulacoesGeral.filter(item => item.tipoItem !== 'rescisao');
+      atualizarTabelaConsolidada();
+    }
+
+    function atualizarOpcoesCargoPromocao() {
+      const colabId = document.getElementById("promoColab").value;
+      const selectNovoCargo = document.getElementById("promoNovoCargo");
+      if (!colabId) {
+        document.getElementById("promoPrevCargoAtual").textContent = "-";
+        document.getElementById("promoPrevSalarioAtual").textContent = "R\$ 0,00";
+        selectNovoCargo.innerHTML = '<option value="">Selecione o colaborador primeiro</option>';
+        document.getElementById("promoPrevNovoSalario").textContent = "R\$ 0,00";
         return;
       }
 
-      let total2026 = 0;
-      let total2027 = 0;
-      let totalGeral = 0;
-      let totalVagas = 0;
+      const colab = colaboradores.find(c => c.id == colabId);
+      if (!colab) return;
 
-      tbody.innerHTML = simulacoes.map(s => {
-        total2026 += s.custo2026;
-        total2027 += s.custo2027;
-        totalGeral += s.custoTotal;
-        totalVagas += s.qtdVagas;
+      const gradeAtualNum = parseInt((colab.grade || "G5").replace("G", ""));
+      document.getElementById("promoPrevCargoAtual").textContent = colab.cargo;
+      document.getElementById("promoPrevSalarioAtual").textContent = colab.salario.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
+
+      const cargosValidos = Object.entries(gradeConfig).filter(([cargoNome, [gStr, faixaVal]]) => {
+        const gNum = parseInt(gStr.replace("G", ""));
+        return gNum > gradeAtualNum && gNum <= (gradeAtualNum + 2);
+      });
+
+      if (cargosValidos.length === 0) {
+        selectNovoCargo.innerHTML = '<option value="">Nenhum cargo disponível (Já está no topo)</option>';
+      } else {
+        selectNovoCargo.innerHTML = '<option value="">Escolha o novo cargo (Até +2 grades)</option>' + cargosValidos.map(([cargoNome, [gStr, faixaVal]]) => `
+          <option value="${cargoNome}">${cargoNome} (${gStr} - Faixa 100%: R$ ${faixaVal.toLocaleString("pt-BR")})</option>
+        `).join("");
+      }
+
+      atualizarPreviewPromocao();
+    }
+
+    function atualizarPreviewPromocao() {
+      const colabId = document.getElementById("promoColab").value;
+      const novoCargo = document.getElementById("promoNovoCargo").value;
+      if (!colabId || !novoCargo) {
+        document.getElementById("promoPrevNovoSalario").textContent = "R\$ 0,00";
+        return;
+      }
+
+      const colab = colaboradores.find(c => c.id == colabId);
+      const confNovo = gradeConfig[novoCargo];
+      if (!colab || !confNovo) return;
+
+      let novoSalarioBase = confNovo[1] * 0.80;
+      if (novoSalarioBase < colab.salario) novoSalarioBase = colab.salario * 1.08;
+      document.getElementById("promoPrevNovoSalario").textContent = novoSalarioBase.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
+    }
+
+    function adicionarPromocaoSimulacao() {
+      const colabId = document.getElementById("promoColab").value;
+      const novoCargo = document.getElementById("promoNovoCargo").value;
+      const mesStr = document.getElementById("promoMes").value;
+
+      if (!colabId || !novoCargo) { alert("Selecione o colaborador e o novo cargo para a promoção."); return; }
+
+      const colab = colaboradores.find(c => c.id == colabId);
+      const confNovo = gradeConfig[novoCargo];
+      
+      let novoSalarioBase = confNovo[1] * 0.80;
+      if (novoSalarioBase < colab.salario) novoSalarioBase = colab.salario * 1.08;
+
+      const deltaSalarioMensal = Math.max(0, novoSalarioBase - colab.salario);
+      const custoMensalDelta = deltaSalarioMensal * 2.3;
+
+      const [anoInic, mesInic] = mesStr.split("-").map(Number);
+      let meses2026 = 0; let meses2027 = 0;
+      if (anoInic === 2026) { meses2026 = 12 - mesInic + 1; meses2027 = 12; }
+      else if (anoInic === 2027) { meses2026 = 0; meses2027 = 12 - mesInic + 1; }
+
+      const custo2026 = custoMensalDelta * meses2026;
+      const custo2027 = custoMensalDelta * meses2027;
+
+      listaSimulacoesGeral.push({
+        id: Date.now(), tipoItem: 'promocao', cargoOuNome: `${colab.nome} ➔ ${novoCargo}`,
+        gradeOuDepto: `${colab.grade} ➔ ${confNovo[0]}`, salarioAntigo: colab.salario, salarioNovo: novoSalarioBase,
+        qtd: 1, inicioOuAviso: mesStr, mesComp: mesStr, salario: novoSalarioBase, deltaSalario: deltaSalarioMensal,
+        custo2026, custo2027, impactoOuTotal: custo2026 + custo2027
+      });
+
+      atualizarTabelaConsolidada();
+    }
+
+    function limparTodaPromocao() {
+      listaSimulacoesGeral = listaSimulacoesGeral.filter(item => item.tipoItem !== 'promocao');
+      atualizarTabelaConsolidada();
+    }
+
+    function removerItemSimulacao(id) {
+      listaSimulacoesGeral = listaSimulacoesGeral.filter(item => item.id !== id);
+      atualizarTabelaConsolidada();
+    }
+
+    function atualizarTabelaConsolidada() {
+      const tbody = document.getElementById("tabelaConsolidadaCorpo");
+      document.getElementById("badgeContagemGeral").textContent = `${listaSimulacoesGeral.length} itens`;
+
+      if (listaSimulacoesGeral.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="8" style="text-align: center; color: var(--text-muted); padding: 30px;">Nenhuma simulação incluída até o momento. Utilize os formulários acima.</td></tr>';
+        document.getElementById("kpiCusto2026").textContent = "R\$ 0,00";
+        document.getElementById("kpiCusto2027").textContent = "R\$ 0,00";
+        document.getElementById("kpiCustoRescisao").textContent = "R\$ 0,00";
+        document.getElementById("kpiHeadcountRescisao").textContent = "0 rescisões simuladas";
+        atualizarGraficoCombo();
+        return;
+      }
+
+      let liquido26 = 0; let liquido27 = 0; let totalRescAcumulado = 0; let qtdRescs = 0;
+
+      tbody.innerHTML = listaSimulacoesGeral.map(item => {
+        if (item.tipoItem === 'vaga' || item.tipoItem === 'promocao') {
+          liquido26 += item.custo2026;
+          liquido27 += item.custo2027;
+        } else if (item.tipoItem === 'rescisao') {
+          if (item.anoResc === '2026') liquido26 -= item.impactoOuTotal;
+          if (item.anoResc === '2027') liquido27 -= item.impactoOuTotal;
+          totalRescAcumulado += item.impactoOuTotal;
+          qtdRescs++;
+        }
+
+        let tagBadge = '<span class="badge badge-ativo">Nova Vaga</span>';
+        let cor2026Txt = (item.custo2026 || 0).toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
+        let cor2027Txt = (item.custo2027 || 0).toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
+        let salarioColunaTxt = (item.salario || 0).toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
+
+        if (item.tipoItem === 'rescisao') {
+          tagBadge = '<span class="badge badge-desligado">Rescisão</span>';
+          cor2026Txt = item.anoResc === '2026' ? `-${(item.impactoOuTotal).toLocaleString("pt-BR", { style: "currency", currency: "BRL" })}` : 'R\$ 0,00';
+          cor2027Txt = item.anoResc === '2027' ? `-${(item.impactoOuTotal).toLocaleString("pt-BR", { style: "currency", currency: "BRL" })}` : 'R\$ 0,00';
+        } else if (item.tipoItem === 'promocao') {
+          tagBadge = '<span class="badge badge-promovido">Promoção</span>';
+          salarioColunaTxt = `Ant: ${item.salarioAntigo.toLocaleString("pt-BR", { style: "currency", currency: "BRL" })}<br>Nov: ${item.salarioNovo.toLocaleString("pt-BR", { style: "currency", currency: "BRL" })}`;
+        }
 
         return `
           <tr>
-            <td style="font-weight:700; color:var(--text);">${s.cargo}</td>
-            <td><span class="badge-grade">${s.grade}</span></td>
-            <td><span class="badge-posic">${s.posicTxt}</span></td>
-            <td style="font-weight:700; text-align:center;">${s.qtdVagas}</td>
-            <td style="font-size:0.8rem;">${s.mesTxt}</td>
-            <td>${s.salarioBase.toLocaleString("pt-BR", { style: "currency", currency: "BRL" })}</td>
-            <td style="color:var(--primary); font-weight:700;">${s.custo2026.toLocaleString("pt-BR", { style: "currency", currency: "BRL" })}</td>
-            <td style="color:var(--violet); font-weight:700;">${s.custo2027.toLocaleString("pt-BR", { style: "currency", currency: "BRL" })}</td>
-            <td style="color:var(--success); font-weight:800;">${s.custoTotal.toLocaleString("pt-BR", { style: "currency", currency: "BRL" })}</td>
-            <td>
-              <button onclick="removerSimulacao(${s.id})" style="background:transparent; border:none; color:var(--danger); cursor:pointer; font-size:1.1rem; padding:2px 6px;" title="Remover vaga">✕</button>
-            </td>
+            <td>${tagBadge}</td>
+            <td style="font-weight:700;">${item.cargoOuNome}</td>
+            <td><span class="badge-grade">${item.gradeOuDepto}</span></td>
+            <td style="font-size:0.8rem; line-height:1.3;">${salarioColunaTxt}</td>
+            <td>${item.inicioOuAviso}</td>
+            <td style="font-weight:700; color:${item.tipoItem==='rescisao'?'var(--danger)':'var(--primary)'};">${cor2026Txt}</td>
+            <td style="font-weight:700; color:${item.tipoItem==='rescisao'?'var(--danger)':'var(--violet)'};">${cor2027Txt}</td>
+            <td><button onclick="removerItemSimulacao(${item.id})" style="background:transparent; border:none; color:var(--danger); cursor:pointer; font-size:1.1rem;" title="Remover item">✕</button></td>
           </tr>
         `;
       }).join("");
 
-      document.getElementById("kpiCusto2026").textContent = total2026.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
-      document.getElementById("kpiCusto2027").textContent = total2027.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
-      document.getElementById("kpiCustoTotal").textContent = totalGeral.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
-      document.getElementById("kpiMeses2026").textContent = `Impacto residual para o exercício 2026`;
-      document.getElementById("kpiMeses2027").textContent = `Orçamento projetado para o exercício 2027`;
-      document.getElementById("kpiHeadcountSimul").textContent = `${totalVagas} ${totalVagas === 1 ? 'posição adicionada' : 'posições adicionadas'}`;
+      document.getElementById("kpiCusto2026").textContent = liquido26.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
+      document.getElementById("kpiCusto2027").textContent = liquido27.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
+      document.getElementById("kpiCustoRescisao").textContent = totalRescAcumulado.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
+      document.getElementById("kpiHeadcountRescisao").textContent = `${qtdRescs} ${qtdRescs === 1 ? 'rescisão simulada' : 'rescisões simuladas'}`;
+      
+      atualizarGraficoCombo();
     }
 
     document.getElementById("buscaGeral")?.addEventListener("input", aplicarFiltros);
     document.getElementById("filtroDepto")?.addEventListener("change", aplicarFiltros);
     document.getElementById("filtroStatus")?.addEventListener("change", aplicarFiltros);
     document.getElementById("filtroGenero")?.addEventListener("change", aplicarFiltros);
-    document.getElementById("btnLimpar")?.addEventListener("click", limparFiltros);
+    document.getElementById("btnLimpar")?.addEventListener("click", () => {
+      document.getElementById("buscaGeral").value = "";
+      document.getElementById("filtroDepto").value = "";
+      document.getElementById("filtroStatus").value = "";
+      document.getElementById("filtroGenero").value = "";
+      limparFiltroCruzado();
+    });
 
     popularFiltros(colaboradores);
     aplicarFiltros();
-    inicializarSimulador();
+    inicializarSimuladores();
   </script>
 </body>
 </html>
