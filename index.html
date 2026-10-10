@@ -3,60 +3,51 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>People Hub | Portfólio de Gestão Estratégica</title>
+  <title>People Hub | Gestão Estratégica & Analytics</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #0b1120;
-      --card-bg: #152033;
-      --card-hover: #1b2942;
-      --border: #23334d;
-      --nav-bg: #080c16;
-      --text: #f8fafc;
-      --text-muted: #8e9fb5;
-      --primary: #38bdf8;
-      --primary-hover: #0284c7;
-      --primary-subtle: rgba(56, 189, 248, 0.1);
-      --success: #34d399;
-      --danger: #f87171;
-      --warning: #fbbf24;
-      --violet: #8b5cf6;
-      --emerald: #10b981;
-      --amber: #f59e0b;
-      --nav-width: 72px;
-      --glow: rgba(56, 189, 248, 0.15);
-      --shadow-card: 0 10px 25px -5px rgba(0, 0, 0, 0.35);
+      --bg: #000000;
+      --surface: #161617;
+      --surface-hover: #1c1c1e;
+      --card-bg: #1c1c1e;
+      --border: #38383a;
+      --text: #f5f5f7;
+      --text-muted: #86868b;
+      --accent: #2997ff;
+      --accent-hover: #0077ed;
+      --success: #30d158;
+      --danger: #ff453a;
+      --warning: #ffd60a;
+      --violet: #bf5af2;
+      --shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+      --transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     [data-theme="light"] {
-      --bg: #f8fafc;
+      --bg: #f5f5f7;
+      --surface: #ffffff;
+      --surface-hover: #f2f2f7;
       --card-bg: #ffffff;
-      --card-hover: #f1f5f9;
-      --border: #e2e8f0;
-      --nav-bg: #ffffff;
-      --text: #0f172a;
-      --text-muted: #64748b;
-      --primary: #0284c7;
-      --primary-hover: #0369a1;
-      --primary-subtle: rgba(2, 132, 199, 0.08);
-      --success: #059669;
-      --danger: #dc2626;
-      --warning: #d97706;
-      --violet: #7c3aed;
-      --emerald: #059669;
-      --amber: #d97706;
-      --glow: rgba(2, 132, 199, 0.08);
-      --shadow-card: 0 4px 14px -2px rgba(15, 23, 42, 0.06);
+      --border: #d2d2d7;
+      --text: #1d1d1f;
+      --text-muted: #515154;
+      --accent: #0066cc;
+      --accent-hover: #004499;
+      --success: #248a3d;
+      --danger: #d70015;
+      --warning: #b25000;
+      --violet: #8944ab;
+      --shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
     }
 
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
-      transition: background-color 0.2s ease, border-color 0.2s ease, color 0.15s ease;
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
     }
 
     body {
@@ -66,318 +57,431 @@
       display: flex;
       flex-direction: column;
       overflow-x: hidden;
+      transition: background-color 0.4s ease, color 0.4s ease;
     }
 
-    /* CAPA */
+    /* CAPA ESTILO APPLE (GRANDES CARDS, IMAGENS MODERNAS, MOTION) */
     #view-cover {
       display: flex;
       flex-direction: column;
       min-height: 100vh;
       width: 100%;
-      background: radial-gradient(circle at 50% 15%, var(--primary-subtle) 0%, transparent 60%);
-      padding: 32px 24px 48px 24px;
+      padding: 48px 32px 64px 32px;
+      max-width: 1400px;
+      margin: 0 auto;
     }
 
-    .cover-top {
-      width: 100%;
-      max-width: 1240px;
-      margin: 0 auto 30px auto;
-      display: grid;
-      grid-template-columns: auto 1fr auto;
+    .apple-nav {
+      display: flex;
+      justify-content: space-between;
       align-items: center;
-    }
-    .cover-top .badge-welcome { justify-self: center; margin-bottom: 0; }
-    .cover-top .theme-toggle-btn { justify-self: end; }
-
-    .cover-logo-box { display: flex; align-items: center; gap: 12px; }
-    .cover-logo-icon {
-      width: 42px; height: 42px;
-      background: linear-gradient(135deg, #0284c7 0%, #38bdf8 100%);
-      color: #fff; border-radius: 12px; display: flex; align-items: center; justify-content: center;
-      font-weight: 800; font-size: 1rem; box-shadow: 0 4px 12px rgba(2, 132, 199, 0.3);
-    }
-    .cover-logo-text { font-size: 1.15rem; font-weight: 800; letter-spacing: -0.02em; }
-
-    .theme-toggle-btn {
-      background: var(--card-bg); border: 1px solid var(--border); color: var(--text);
-      padding: 8px 16px; border-radius: 9999px; font-size: 0.82rem; font-weight: 700;
-      cursor: pointer; display: flex; align-items: center; gap: 8px;
-    }
-    .theme-toggle-btn:hover { border-color: var(--primary); }
-
-    .cover-header-intro { max-width: 1240px; margin: 0 auto 36px auto; width: 100%; text-align: left; }
-    .badge-welcome {
-      display: inline-block; background: var(--primary-subtle); color: var(--primary);
-      border: 1px solid rgba(56, 189, 248, 0.25); padding: 6px 16px; border-radius: 9999px;
-      font-size: 0.78rem; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 12px;
-    }
-    .cover-main-title { font-size: 2.2rem; font-weight: 800; letter-spacing: -0.02em; color: var(--text); line-height: 1.2; }
-    .cover-main-desc { font-size: 0.95rem; color: var(--text-muted); margin-top: 6px; }
-
-    .cards-hub-grid {
-      width: 100%; max-width: 1240px; margin: 0 auto;
-      display: grid; grid-template-columns: repeat(3, minmax(320px, 1fr)); gap: 24px;
-    }
-    @media (max-width: 1024px) {
-      .cards-hub-grid { grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); }
+      width: 100%;
+      margin-bottom: 60px;
     }
 
-    .main-project-card {
-      background: var(--card-bg); border: 1px solid var(--border); border-radius: 20px;
-      padding: 32px 28px; display: flex; flex-direction: column; justify-content: space-between;
-      gap: 20px; box-shadow: var(--shadow-card); position: relative; overflow: hidden;
-      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
-      min-height: 280px;
+    .apple-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      letter-spacing: -0.01em;
     }
-    .main-project-card::before {
-      content: ""; position: absolute; top: 0; left: 0; right: 0; height: 4px;
-      background: linear-gradient(90deg, #0284c7, #38bdf8);
-    }
-    .main-project-card.accent-violet::before { background: linear-gradient(90deg, #7c3aed, #a855f7); }
-    .main-project-card:hover { transform: translateY(-5px); border-color: var(--primary); box-shadow: 0 16px 32px -8px var(--glow); }
 
-    .project-card-header { display: flex; flex-direction: column; gap: 12px; }
-    .project-tag {
-      font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em;
-      color: var(--success); background: rgba(52, 211, 153, 0.12); border: 1px solid rgba(52, 211, 153, 0.25);
-      padding: 4px 10px; border-radius: 9999px; width: fit-content;
+    .apple-brand-icon {
+      width: 36px; height: 36px;
+      background: linear-gradient(135deg, var(--accent), var(--violet));
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      color: #fff; font-weight: 800; font-size: 0.95rem;
     }
-    .project-tag.tag-calc { color: var(--violet); background: rgba(139, 92, 246, 0.12); border-color: rgba(139, 92, 246, 0.25); }
-    .project-card-title { font-size: 1.85rem; font-weight: 800; line-height: 1.2; letter-spacing: -0.02em; }
-    .project-card-title span { background: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-    .project-card-desc { font-size: 0.95rem; color: var(--text-muted); line-height: 1.55; }
 
-    .btn-card-access {
-      background: linear-gradient(135deg, #0284c7 0%, #38bdf8 100%); color: #fff;
-      font-size: 0.95rem; font-weight: 700; padding: 14px 24px; border-radius: 12px;
-      border: none; cursor: pointer; display: flex; align-items: center; justify-content: center;
-      gap: 10px; box-shadow: 0 8px 18px -4px rgba(2, 132, 199, 0.4); width: 100%; margin-top: 8px;
+    .apple-toggle {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 8px 18px;
+      border-radius: 9999px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.04);
     }
-    .btn-card-access.btn-violet {
-      background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);
-      box-shadow: 0 8px 18px -4px rgba(124, 58, 237, 0.4);
-    }
-    .btn-card-access:hover { transform: translateY(-2px); }
+    .apple-toggle:hover { border-color: var(--accent); }
 
-    .empty-slot-card {
-      background: rgba(21, 32, 51, 0.35); border: 1px dashed var(--border); border-radius: 20px;
-      padding: 32px 28px; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 12px; min-height: 280px; text-align: center;
+    .apple-hero {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 56px auto;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
     }
-    .slot-icon-box {
-      width: 44px; height: 44px; border-radius: 12px; background: var(--bg); border: 1px solid var(--border);
-      display: flex; align-items: center; justify-content: center; color: var(--text-muted);
+
+    .apple-hero-tag {
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--accent);
     }
-    .slot-icon-box svg { width: 20px; height: 20px; stroke-width: 2; }
-    .slot-title { font-size: 0.95rem; font-weight: 700; color: var(--text-muted); }
-    .slot-tag { font-size: 0.7rem; font-weight: 700; color: var(--text-muted); background: var(--bg); padding: 4px 10px; border-radius: 9999px; border: 1px solid var(--border); }
 
-    .cover-bottom { width: 100%; max-width: 1240px; margin: 40px auto 0 auto; text-align: center; color: var(--text-muted); font-size: 0.8rem; }
+    .apple-hero h1 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+    }
 
-    /* DASHBOARD */
-    #view-dashboard { display: none; width: 100%; min-height: 100vh; }
+    .apple-hero p {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    .apple-bento-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(380px, 1fr));
+      gap: 32px;
+      width: 100%;
+    }
+    @media (max-width: 850px) {
+      .apple-bento-grid { grid-template-columns: 1fr; }
+    }
+
+    .apple-card {
+      background-color: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      cursor: pointer;
+      position: relative;
+      min-height: 440px;
+    }
+    .apple-card:hover {
+      transform: translateY(-8px) scale(1.01);
+      border-color: var(--accent);
+      box-shadow: 0 30px 60px rgba(0,0,0,0.25);
+    }
+
+    .apple-card-media {
+      width: 100%;
+      height: 220px;
+      overflow: hidden;
+      position: relative;
+      background: #000;
+    }
+
+    .apple-card-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.85;
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .apple-card:hover .apple-card-media img {
+      transform: scale(1.06);
+      opacity: 1;
+    }
+
+    .apple-card-content {
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      flex-grow: 1;
+      justify-content: space-between;
+    }
+
+    .apple-card-badge {
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--success);
+      background: rgba(48, 209, 88, 0.12);
+      padding: 4px 12px;
+      border-radius: 999px;
+      width: fit-content;
+    }
+    .apple-card-badge.violet { color: var(--violet); background: rgba(191, 90, 242, 0.12); }
+
+    .apple-card-title {
+      font-size: 1.8rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+
+    .apple-card-desc {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    .apple-card-action {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--accent);
+      margin-top: 8px;
+    }
+    .apple-card-action svg { width: 16px; height: 16px; transition: transform 0.2s ease; }
+    .apple-card:hover .apple-card-action svg { transform: translateX(5px); }
+
+    /* DASHBOARD INTERIOR COM BOTÃO DE RETORNO À CAPA */
+    #view-dashboard { display: none; width: 100%; min-height: 100vh; flex-direction: column; }
     #view-dashboard.active { display: flex; }
 
-    .nav-rail {
-      width: var(--nav-width); background-color: var(--nav-bg); border-right: 1px solid var(--border);
-      display: flex; flex-direction: column; align-items: center; padding: 20px 0; position: sticky; top: 0; height: 100vh; flex-shrink: 0; z-index: 100;
+    .dash-top-bar {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 16px 36px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(20px);
     }
-    .nav-logo {
-      width: 44px; height: 44px; background: var(--primary); color: #fff; border-radius: 12px;
-      display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1rem;
-      margin-bottom: 24px; cursor: pointer; box-shadow: 0 4px 12px rgba(2, 132, 199, 0.3);
-    }
-    .nav-items { display: flex; flex-direction: column; gap: 14px; width: 100%; align-items: center; flex-grow: 1; }
-    .nav-btn {
-      width: 46px; height: 46px; border-radius: 12px; background: transparent; border: 1px solid transparent;
-      color: var(--text-muted); display: flex; align-items: center; justify-content: center; cursor: pointer; position: relative;
-    }
-    .nav-btn svg { width: 20px; height: 20px; fill: currentColor; }
-    .nav-btn:hover { background: var(--card-hover); color: var(--text); }
-    .nav-btn.active { background: var(--primary-subtle); color: var(--primary); border-color: rgba(56, 189, 248, 0.4); }
-    .nav-btn.btn-nav-calc.active { background: rgba(139, 92, 246, 0.15); color: var(--violet); border-color: rgba(139, 92, 246, 0.4); }
-    .nav-btn .preview-tip {
-      position: absolute; left: calc(var(--nav-width) + 10px); background: var(--card-bg); border: 1px solid var(--border);
-      color: var(--text); padding: 8px 12px; border-radius: 8px; font-size: 0.78rem; white-space: nowrap;
-      pointer-events: none; opacity: 0; visibility: hidden; transform: translateX(-8px); transition: all 0.18s ease; box-shadow: var(--shadow-card); z-index: 200; font-weight: 700;
-    }
-    .nav-btn:hover .preview-tip { opacity: 1; visibility: visible; transform: translateX(0); }
 
-    .nav-bottom { margin-top: auto; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+    .btn-back-home {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 8px 16px;
+      border-radius: 10px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .btn-back-home:hover { border-color: var(--accent); background: var(--surface-hover); }
 
-    .main-wrapper { flex: 1; display: flex; flex-direction: column; min-width: 0; padding: 24px 32px; gap: 18px; max-width: 1400px; margin: 0 auto; width: 100%; }
+    .dash-tabs-nav {
+      display: flex;
+      gap: 8px;
+      background: var(--bg);
+      padding: 4px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+    }
+
+    .dash-tab-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .dash-tab-btn:hover { color: var(--text); }
+    .dash-tab-btn.active { background: var(--surface); color: var(--text); box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+
+    .main-wrapper {
+      flex: 1;
+      max-width: 1400px;
+      margin: 0 auto;
+      width: 100%;
+      padding: 36px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
 
     .header {
-      background-color: var(--card-bg); border: 1px solid var(--border); border-radius: 14px;
-      padding: 18px 24px; display: flex; justify-content: space-between; align-items: center; box-shadow: var(--shadow-card);
+      background-color: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 24px 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: var(--shadow);
     }
-    .brand-title h1 { font-size: 1.25rem; font-weight: 800; color: var(--text); }
-    .brand-title p { color: var(--text-muted); font-size: 0.82rem; margin-top: 2px; }
+    .brand-title h1 { font-size: 1.5rem; font-weight: 700; letter-spacing: -0.02em; }
+    .brand-title p { color: var(--text-muted); font-size: 0.88rem; margin-top: 4px; }
 
     .status-validators-header {
-      display: flex; align-items: center; gap: 4px; background: var(--bg); padding: 4px 6px; border-radius: 9999px; border: 1px solid var(--border);
+      display: flex; align-items: center; gap: 6px; background: var(--bg); padding: 5px 8px; border-radius: 9999px; border: 1px solid var(--border);
     }
-    .status-validators-label { font-size: 0.72rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; padding-left: 6px; padding-right: 4px; }
-    .btn-validator { background: transparent; border: 1px solid transparent; color: var(--text-muted); padding: 5px 12px; border-radius: 9999px; font-size: 0.78rem; font-weight: 700; cursor: pointer; }
+    .status-validators-label { font-size: 0.75rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; padding-left: 8px; padding-right: 6px; }
+    .btn-validator { background: transparent; border: 1px solid transparent; color: var(--text-muted); padding: 6px 14px; border-radius: 9999px; font-size: 0.8rem; font-weight: 700; cursor: pointer; }
     .btn-validator:hover { color: var(--text); }
-    .btn-validator.active-all { background: var(--card-bg); color: var(--text); border-color: var(--border); }
-    .btn-validator.active-ativo { background: rgba(52, 211, 153, 0.18); color: var(--success); border-color: rgba(52, 211, 153, 0.35); }
-    .btn-validator.active-desligado { background: rgba(248, 113, 113, 0.18); color: var(--danger); border-color: rgba(248, 113, 113, 0.35); }
+    .btn-validator.active-all { background: var(--surface); color: var(--text); border-color: var(--border); }
+    .btn-validator.active-ativo { background: rgba(48, 209, 88, 0.18); color: var(--success); border-color: rgba(48, 209, 88, 0.35); }
+    .btn-validator.active-desligado { background: rgba(255, 69, 58, 0.18); color: var(--danger); border-color: rgba(255, 69, 58, 0.35); }
 
-    .metrics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; }
+    .metrics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
     .metric-card {
-      background-color: var(--card-bg); border: 1px solid var(--border); border-radius: 12px;
-      padding: 16px 20px; display: flex; flex-direction: column; gap: 6px; box-shadow: var(--shadow-card);
+      background-color: var(--surface); border: 1px solid var(--border); border-radius: 20px;
+      padding: 24px 28px; display: flex; flex-direction: column; gap: 8px; box-shadow: var(--shadow);
     }
-    .metric-label { font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.04em; color: var(--text-muted); }
-    .metric-val { font-size: 1.75rem; font-weight: 800; letter-spacing: -0.02em; color: var(--text); }
+    .metric-label { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted); }
+    .metric-val { font-size: 2.1rem; font-weight: 800; letter-spacing: -0.02em; color: var(--text); }
     .metric-val.total { color: var(--text); }
     .metric-val.ativo { color: var(--success); }
     .metric-val.desligado { color: var(--danger); }
     .metric-val.turnover { color: var(--warning); }
-    .metric-val.salario { color: var(--primary); }
+    .metric-val.salario { color: var(--accent); }
 
-    .page-section { display: none; flex-direction: column; gap: 18px; }
+    .page-section { display: none; flex-direction: column; gap: 24px; }
     .page-section.active { display: flex; }
 
     .filter-panel {
-      background-color: var(--card-bg); border: 1px solid var(--border); border-radius: 12px;
-      padding: 16px 20px; display: flex; flex-direction: column; gap: 12px; box-shadow: var(--shadow-card);
+      background-color: var(--surface); border: 1px solid var(--border); border-radius: 20px;
+      padding: 22px 28px; display: flex; flex-direction: column; gap: 16px; box-shadow: var(--shadow);
     }
     .search-box input {
       width: 100%; background: var(--bg); border: 1px solid var(--border); color: var(--text);
-      padding: 11px 16px; border-radius: 8px; font-size: 0.9rem; outline: none;
+      padding: 14px 18px; border-radius: 12px; font-size: 0.95rem; outline: none;
     }
-    .search-box input:focus { border-color: var(--primary); }
-    .selects-row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+    .search-box input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(41, 151, 255, 0.15); }
+    .selects-row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
     .selects-row select {
-      flex: 1; min-width: 170px; background: var(--bg); border: 1px solid var(--border); color: var(--text);
-      padding: 9px 12px; border-radius: 8px; font-size: 0.85rem; outline: none; cursor: pointer;
+      flex: 1; min-width: 180px; background: var(--bg); border: 1px solid var(--border); color: var(--text);
+      padding: 12px 16px; border-radius: 12px; font-size: 0.9rem; outline: none; cursor: pointer;
     }
     .btn-reset {
       background: transparent; border: 1px solid var(--border); color: var(--text-muted);
-      padding: 9px 18px; border-radius: 8px; cursor: pointer; font-weight: 600; font-size: 0.85rem;
+      padding: 12px 20px; border-radius: 12px; cursor: pointer; font-weight: 600; font-size: 0.9rem;
     }
-    .btn-reset:hover { color: var(--text); background: var(--card-hover); }
+    .btn-reset:hover { color: var(--text); background: var(--surface-hover); }
 
     .table-container {
-      background-color: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; overflow-x: auto; box-shadow: var(--shadow-card);
+      background-color: var(--surface); border: 1px solid var(--border); border-radius: 20px; overflow-x: auto; box-shadow: var(--shadow);
     }
-    table { width: 100%; border-collapse: collapse; text-align: left; font-size: 0.84rem; }
-    th { background-color: var(--bg); color: var(--text-muted); font-weight: 700; padding: 12px 16px; border-bottom: 1px solid var(--border); white-space: nowrap; }
-    td { padding: 12px 16px; border-bottom: 1px solid var(--border); color: var(--text); white-space: nowrap; }
-    tbody tr:hover { background-color: var(--card-hover); }
-    .badge { display: inline-block; padding: 3px 8px; border-radius: 9999px; font-size: 0.72rem; font-weight: 700; }
-    .badge-ativo { background: rgba(52, 211, 153, 0.15); color: var(--success); border: 1px solid rgba(52, 211, 153, 0.3); }
-    .badge-desligado { background: rgba(248, 113, 113, 0.15); color: var(--danger); border: 1px solid rgba(248, 113, 113, 0.3); }
-    .badge-promovido { background: rgba(251, 191, 36, 0.15); color: var(--warning); border: 1px solid rgba(251, 191, 36, 0.3); }
-    .badge-grade { background: rgba(56, 189, 248, 0.12); color: var(--primary); border: 1px solid rgba(56, 189, 248, 0.25); padding: 2px 7px; border-radius: 6px; font-weight: 800; font-size: 0.72rem; }
-    .badge-posic { background: rgba(139, 92, 246, 0.12); color: var(--violet); border: 1px solid rgba(139, 92, 246, 0.25); padding: 2px 7px; border-radius: 6px; font-weight: 800; font-size: 0.72rem; }
+    table { width: 100%; border-collapse: collapse; text-align: left; font-size: 0.88rem; }
+    th { background-color: var(--bg); color: var(--text-muted); font-weight: 700; padding: 16px 20px; border-bottom: 1px solid var(--border); white-space: nowrap; }
+    td { padding: 16px 20px; border-bottom: 1px solid var(--border); color: var(--text); white-space: nowrap; }
+    tbody tr:hover { background-color: var(--surface-hover); }
+    .badge { display: inline-block; padding: 4px 10px; border-radius: 9999px; font-size: 0.74rem; font-weight: 700; }
+    .badge-ativo { background: rgba(48, 209, 88, 0.15); color: var(--success); border: 1px solid rgba(48, 209, 88, 0.3); }
+    .badge-desligado { background: rgba(255, 69, 58, 0.15); color: var(--danger); border: 1px solid rgba(255, 69, 58, 0.3); }
+    .badge-promovido { background: rgba(255, 214, 10, 0.15); color: var(--warning); border: 1px solid rgba(255, 214, 10, 0.3); }
+    .badge-grade { background: rgba(41, 151, 255, 0.12); color: var(--accent); border: 1px solid rgba(41, 151, 255, 0.25); padding: 3px 8px; border-radius: 8px; font-weight: 800; font-size: 0.74rem; }
+    .badge-posic { background: rgba(191, 90, 242, 0.12); color: var(--violet); border: 1px solid rgba(191, 90, 242, 0.25); padding: 3px 8px; border-radius: 8px; font-weight: 800; font-size: 0.74rem; }
 
     .crossfilter-bar {
-      display: none; align-items: center; justify-content: space-between; background: var(--primary-subtle);
-      border: 1px solid rgba(56, 189, 248, 0.25); padding: 10px 16px; border-radius: 8px; font-size: 0.82rem; color: var(--text);
+      display: none; align-items: center; justify-content: space-between; background: rgba(41, 151, 255, 0.1);
+      border: 1px solid rgba(41, 151, 255, 0.25); padding: 14px 20px; border-radius: 14px; font-size: 0.88rem; color: var(--text);
     }
     .crossfilter-bar.visible { display: flex; }
-    .btn-clear-cross { background: var(--primary); color: #fff; border: none; padding: 5px 12px; border-radius: 6px; font-size: 0.75rem; font-weight: 700; cursor: pointer; }
+    .btn-clear-cross { background: var(--accent); color: #fff; border: none; padding: 6px 14px; border-radius: 8px; font-size: 0.8rem; font-weight: 700; cursor: pointer; }
 
-    .analytics-grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 18px; }
-    .analytics-grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 18px; }
-    .info-card { background-color: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; padding: 20px; box-shadow: var(--shadow-card); display: flex; flex-direction: column; }
-    .info-card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
-    .info-card-header h3 { font-size: 0.95rem; font-weight: 800; color: var(--text); }
-    .hint-click { font-size: 0.7rem; color: var(--text-muted); background: var(--bg); padding: 2px 6px; border-radius: 4px; font-weight: 600; }
+    .analytics-grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 24px; }
+    .analytics-grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(440px, 1fr)); gap: 24px; }
+    .info-card { background-color: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 24px; box-shadow: var(--shadow); display: flex; flex-direction: column; }
+    .info-card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
+    .info-card-header h3 { font-size: 1.05rem; font-weight: 700; color: var(--text); }
+    .hint-click { font-size: 0.72rem; color: var(--text-muted); background: var(--bg); padding: 3px 8px; border-radius: 6px; font-weight: 600; }
 
-    .donut-container { display: flex; align-items: center; justify-content: space-around; padding: 10px 0; flex-grow: 1; }
-    .donut-wrapper { position: relative; width: 145px; height: 145px; display: flex; align-items: center; justify-content: center; }
+    .donut-container { display: flex; align-items: center; justify-content: space-around; padding: 12px 0; flex-grow: 1; }
+    .donut-wrapper { position: relative; width: 160px; height: 160px; display: flex; align-items: center; justify-content: center; }
     .donut-svg { width: 100%; height: 100%; transform: rotate(-90deg); }
     .donut-segment { cursor: pointer; transition: stroke-width 0.2s, opacity 0.2s; }
     .donut-segment:hover { stroke-width: 7; opacity: 0.9; }
-    .donut-segment.selected { stroke-width: 7.5; filter: drop-shadow(0 0 6px var(--primary)); }
+    .donut-segment.selected { stroke-width: 7.5; filter: drop-shadow(0 0 6px var(--accent)); }
     .donut-segment.dimmed { opacity: 0.3; }
-    .donut-legend { display: flex; flex-direction: column; gap: 8px; }
-    .donut-legend-item { display: flex; align-items: center; gap: 8px; font-size: 0.82rem; cursor: pointer; padding: 4px 6px; border-radius: 4px; }
-    .donut-legend-item:hover { background: var(--card-hover); }
-    .legend-color { width: 10px; height: 10px; border-radius: 3px; flex-shrink: 0; }
-    .donut-legend-pct { font-weight: 800; font-size: 0.85rem; margin-left: auto; padding-left: 8px; }
+    .donut-legend { display: flex; flex-direction: column; gap: 10px; }
+    .donut-legend-item { display: flex; align-items: center; gap: 10px; font-size: 0.88rem; cursor: pointer; padding: 6px 10px; border-radius: 8px; }
+    .donut-legend-item:hover { background: var(--surface-hover); }
+    .legend-color { width: 12px; height: 12px; border-radius: 4px; flex-shrink: 0; }
+    .donut-legend-pct { font-weight: 800; font-size: 0.9rem; margin-left: auto; padding-left: 12px; }
 
-    .vbar-chart { display: flex; align-items: flex-end; justify-content: space-around; height: 165px; padding: 14px 6px 6px 6px; background: var(--bg); border-radius: 8px; border: 1px solid var(--border); gap: 6px; margin-top: 4px; }
-    .vbar-col { flex: 1; display: flex; flex-direction: column; align-items: center; height: 100%; justify-content: flex-end; gap: 4px; cursor: pointer; border-radius: 4px; padding: 2px; }
-    .vbar-col:hover { background: var(--card-hover); }
-    .vbar-col.selected .vbar-fill { filter: brightness(1.3) drop-shadow(0 0 5px var(--primary)); }
+    .vbar-chart { display: flex; align-items: flex-end; justify-content: space-around; height: 180px; padding: 16px 8px 8px 8px; background: var(--bg); border-radius: 12px; border: 1px solid var(--border); gap: 8px; margin-top: 4px; }
+    .vbar-col { flex: 1; display: flex; flex-direction: column; align-items: center; height: 100%; justify-content: flex-end; gap: 6px; cursor: pointer; border-radius: 6px; padding: 2px; }
+    .vbar-col:hover { background: var(--surface-hover); }
+    .vbar-col.selected .vbar-fill { filter: brightness(1.3) drop-shadow(0 0 5px var(--accent)); }
     .vbar-col.dimmed { opacity: 0.35; }
-    .vbar-val { font-size: 0.74rem; font-weight: 800; color: var(--text); }
-    .vbar-fill { width: 100%; max-width: 32px; border-radius: 4px 4px 0 0; min-height: 4px; }
-    .vbar-fill.cyan { background: linear-gradient(180deg, #38bdf8 0%, #0284c7 100%); }
-    .vbar-fill.amber { background: linear-gradient(180deg, #fbbf24 0%, #d97706 100%); }
-    .vbar-fill.emerald { background: linear-gradient(180deg, #34d399 0%, #059669 100%); }
-    .vbar-label { font-size: 0.68rem; color: var(--text-muted); text-align: center; white-space: nowrap; }
+    .vbar-val { font-size: 0.8rem; font-weight: 800; color: var(--text); }
+    .vbar-fill { width: 100%; max-width: 34px; border-radius: 8px 8px 0 0; min-height: 4px; }
+    .vbar-fill.cyan { background: linear-gradient(180deg, #2997ff 0%, #0066cc 100%); }
+    .vbar-fill.amber { background: linear-gradient(180deg, #ffd60a 0%, #b25000 100%); }
+    .vbar-fill.emerald { background: linear-gradient(180deg, #30d158 0%, #248a3d 100%); }
+    .vbar-label { font-size: 0.72rem; color: var(--text-muted); text-align: center; white-space: nowrap; }
 
-    .hbar-chart { display: flex; flex-direction: column; gap: 10px; background: var(--bg); border-radius: 8px; border: 1px solid var(--border); padding: 16px 18px; margin-top: 4px; }
-    .hbar-row { display: flex; align-items: center; gap: 10px; cursor: pointer; padding: 4px 6px; border-radius: 4px; }
-    .hbar-row:hover { background: var(--card-hover); }
-    .hbar-row.selected .hbar-fill { filter: brightness(1.3) drop-shadow(0 0 5px var(--primary)); }
+    .hbar-chart { display: flex; flex-direction: column; gap: 12px; background: var(--bg); border-radius: 12px; border: 1px solid var(--border); padding: 20px; margin-top: 4px; }
+    .hbar-row { display: flex; align-items: center; gap: 12px; cursor: pointer; padding: 6px 8px; border-radius: 8px; }
+    .hbar-row:hover { background: var(--surface-hover); }
+    .hbar-row.selected .hbar-fill { filter: brightness(1.3) drop-shadow(0 0 5px var(--accent)); }
     .hbar-row.dimmed { opacity: 0.35; }
-    .hbar-label { width: 120px; font-size: 0.78rem; font-weight: 600; color: var(--text-muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; flex-shrink: 0; }
-    .hbar-track { flex: 1; height: 12px; background: var(--card-bg); border-radius: 9999px; overflow: hidden; display: flex; border: 1px solid var(--border); }
-    .hbar-fill { height: 100%; background: linear-gradient(90deg, #0284c7 0%, #38bdf8 100%); border-radius: 9999px; }
-    .hbar-val { width: 105px; text-align: right; font-size: 0.78rem; font-weight: 800; color: var(--text); flex-shrink: 0; }
+    .hbar-label { width: 130px; font-size: 0.85rem; font-weight: 600; color: var(--text-muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; flex-shrink: 0; }
+    .hbar-track { flex: 1; height: 14px; background: var(--surface); border-radius: 9999px; overflow: hidden; display: flex; border: 1px solid var(--border); }
+    .hbar-fill { height: 100%; background: linear-gradient(90deg, #0066cc 100%, #2997ff 0%); border-radius: 9999px; }
+    .hbar-val { width: 110px; text-align: right; font-size: 0.85rem; font-weight: 800; color: var(--text); flex-shrink: 0; }
 
-    .avg-salary-container { background: var(--bg); border-radius: 8px; border: 1px solid var(--border); padding: 18px; margin-top: 4px; display: flex; flex-direction: column; gap: 14px; }
-    .benchmark-badge { display: flex; align-items: center; gap: 8px; background: rgba(251, 191, 36, 0.1); border: 1px dashed rgba(251, 191, 36, 0.4); padding: 6px 12px; border-radius: 6px; font-size: 0.76rem; color: var(--warning); width: fit-content; font-weight: 600; }
-    .benchmark-line { width: 8px; height: 8px; background: var(--warning); border-radius: 50%; box-shadow: 0 0 6px var(--warning); }
-    .avg-grid { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 8px; }
-    .avg-item-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 8px; padding: 10px 8px; display: flex; flex-direction: column; gap: 4px; cursor: pointer; transition: all 0.2s ease; }
-    .avg-item-card:hover { transform: translateY(-2px); border-color: var(--primary); }
-    .avg-item-card.selected { border-color: var(--primary); background: var(--primary-subtle); }
+    .avg-salary-container { background: var(--bg); border-radius: 12px; border: 1px solid var(--border); padding: 20px; margin-top: 4px; display: flex; flex-direction: column; gap: 16px; }
+    .benchmark-badge { display: flex; align-items: center; gap: 10px; background: rgba(255, 214, 10, 0.12); border: 1px dashed rgba(255, 214, 10, 0.4); padding: 8px 14px; border-radius: 8px; font-size: 0.8rem; color: var(--warning); width: fit-content; font-weight: 600; }
+    .benchmark-line { width: 9px; height: 9px; background: var(--warning); border-radius: 50%; box-shadow: 0 0 8px var(--warning); }
+    .avg-grid { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 10px; }
+    .avg-item-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 12px 10px; display: flex; flex-direction: column; gap: 6px; cursor: pointer; transition: all 0.2s ease; }
+    .avg-item-card:hover { transform: translateY(-2px); border-color: var(--accent); }
+    .avg-item-card.selected { border-color: var(--accent); background: rgba(41,151,255,0.08); }
     .avg-item-card.dimmed { opacity: 0.4; }
-    .avg-item-title { font-size: 0.74rem; font-weight: 700; color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-    .avg-item-val { font-size: 1.05rem; font-weight: 800; color: var(--primary); letter-spacing: -0.02em; white-space: nowrap; }
-    .avg-item-badge { display: inline-flex; align-items: center; gap: 2px; font-size: 0.65rem; font-weight: 700; padding: 2px 5px; border-radius: 9999px; width: fit-content; }
-    .avg-item-badge.above { background: rgba(52, 211, 153, 0.15); color: var(--success); }
-    .avg-item-badge.below { background: rgba(248, 113, 113, 0.15); color: var(--danger); }
+    .avg-item-title { font-size: 0.78rem; font-weight: 700; color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .avg-item-val { font-size: 1.15rem; font-weight: 800; color: var(--accent); letter-spacing: -0.02em; white-space: nowrap; }
+    .avg-item-badge { display: inline-flex; align-items: center; gap: 3px; font-size: 0.7rem; font-weight: 700; padding: 2px 6px; border-radius: 9999px; width: fit-content; }
+    .avg-item-badge.above { background: rgba(48, 209, 88, 0.15); color: var(--success); }
+    .avg-item-badge.below { background: rgba(255, 69, 58, 0.15); color: var(--danger); }
 
-    .lead-box { display: flex; flex-direction: column; gap: 12px; margin-top: 4px; }
-    .lead-progress { height: 16px; width: 100%; background: var(--bg); border-radius: 9999px; overflow: hidden; display: flex; border: 1px solid var(--border); }
+    .lead-box { display: flex; flex-direction: column; gap: 14px; margin-top: 4px; }
+    .lead-progress { height: 18px; width: 100%; background: var(--bg); border-radius: 9999px; overflow: hidden; display: flex; border: 1px solid var(--border); }
     .lead-seg-masc { background: var(--violet); }
-    .lead-seg-fem { background: var(--emerald); }
-    .lead-metrics { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-    .lead-stat { background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 12px 14px; display: flex; flex-direction: column; gap: 3px; }
-    .lead-stat span { font-size: 0.72rem; color: var(--text-muted); text-transform: uppercase; font-weight: 700; }
-    .lead-stat strong { font-size: 1.2rem; font-weight: 800; }
+    .lead-seg-fem { background: var(--success); }
+    .lead-metrics { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .lead-stat { background: var(--bg); border: 1px solid var(--border); border-radius: 12px; padding: 14px 16px; display: flex; flex-direction: column; gap: 4px; }
+    .lead-stat span { font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; font-weight: 700; }
+    .lead-stat strong { font-size: 1.3rem; font-weight: 800; }
 
-    .timeline-chart-container { display: flex; align-items: flex-end; justify-content: space-around; height: 195px; padding: 16px 10px 10px 10px; background: var(--bg); border-radius: 8px; border: 1px solid var(--border); gap: 6px; margin-top: 4px; }
+    .timeline-chart-container { display: flex; align-items: flex-end; justify-content: space-around; height: 210px; padding: 20px 12px 12px 12px; background: var(--bg); border-radius: 12px; border: 1px solid var(--border); gap: 8px; margin-top: 4px; }
     .timeline-month-col { flex: 1; display: flex; flex-direction: column; align-items: center; height: 100%; justify-content: flex-end; gap: 6px; }
-    .bars-pair { display: flex; align-items: flex-end; gap: 4px; height: 125px; justify-content: center; }
-    .tbar-wrapper { display: flex; flex-direction: column; align-items: center; justify-content: flex-end; height: 100%; width: 14px; }
-    .tbar-single { width: 14px; min-width: 14px; border-radius: 3px 3px 0 0; min-height: 4px; cursor: pointer; }
-    .tbar-single.adm { background: linear-gradient(180deg, #10b981 0%, #059669 100%); }
-    .tbar-single.desl { background: linear-gradient(180deg, #f87171 0%, #dc2626 100%); }
-    .tbar-val { font-size: 0.68rem; font-weight: 800; text-align: center; margin-bottom: 3px; }
+    .bars-pair { display: flex; align-items: flex-end; gap: 6px; height: 135px; justify-content: center; }
+    .tbar-wrapper { display: flex; flex-direction: column; align-items: center; justify-content: flex-end; height: 100%; width: 16px; }
+    .tbar-single { width: 16px; min-width: 16px; border-radius: 4px 4px 0 0; min-height: 4px; cursor: pointer; }
+    .tbar-single.adm { background: linear-gradient(180deg, #30d158 0%, #248a3d 100%); }
+    .tbar-single.desl { background: linear-gradient(180deg, #ff453a 0%, #d70015 100%); }
+    .tbar-val { font-size: 0.72rem; font-weight: 800; text-align: center; margin-bottom: 4px; }
     .tbar-val.adm { color: var(--success); }
     .tbar-val.desl { color: var(--danger); }
-    .tbar-month-lbl { font-size: 0.68rem; color: var(--text-muted); text-align: center; white-space: nowrap; font-weight: 600; }
-    .timeline-legend { display: flex; gap: 16px; align-items: center; font-size: 0.76rem; font-weight: 600; }
-    .legend-indicator { display: inline-block; width: 10px; height: 10px; border-radius: 2px; }
+    .tbar-month-lbl { font-size: 0.72rem; color: var(--text-muted); text-align: center; white-space: nowrap; font-weight: 600; }
+    .timeline-legend { display: flex; gap: 18px; align-items: center; font-size: 0.8rem; font-weight: 600; }
+    .legend-indicator { display: inline-block; width: 10px; height: 10px; border-radius: 3px; }
 
-    .line-chart-card { background-color: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; padding: 18px; box-shadow: var(--shadow-card); display: flex; flex-direction: column; gap: 12px; width: 100%; }
-    .line-svg-wrapper { position: relative; width: 100%; height: 195px; background: var(--bg); border-radius: 8px; border: 1px solid var(--border); padding: 8px 14px; }
+    .line-chart-card { background-color: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 24px; box-shadow: var(--shadow); display: flex; flex-direction: column; gap: 16px; width: 100%; }
+    .line-svg-wrapper { position: relative; width: 100%; height: 210px; background: var(--bg); border-radius: 12px; border: 1px solid var(--border); padding: 10px 16px; }
     .line-svg { width: 100%; height: 100%; overflow: visible; }
     .line-path-vol { fill: none; stroke: var(--warning); stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
-    .line-path-invol { fill: none; stroke: var(--primary); stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+    .line-path-invol { fill: none; stroke: var(--accent); stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
     .line-dot { cursor: pointer; }
     .grid-line { stroke: var(--border); stroke-dasharray: 4 4; stroke-width: 1; }
     .axis-text { fill: var(--text-muted); font-size: 9px; }
 
-    .turnover-formula-card { background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 14px 18px; display: flex; flex-direction: column; gap: 8px; font-size: 0.84rem; }
-    .formula-tag { background: rgba(251, 191, 36, 0.15); color: var(--warning); border: 1px solid rgba(251, 191, 36, 0.3); padding: 3px 8px; border-radius: 4px; font-family: monospace; font-size: 0.8rem; font-weight: 700; width: fit-content; }
-    .info-row { display: flex; justify-content: space-between; align-items: center; padding: 8px 12px; background: var(--card-bg); border-radius: 6px; border: 1px solid var(--border); font-size: 0.84rem; }
-    .info-row strong { color: var(--primary); }
+    .turnover-formula-card { background: var(--bg); border: 1px solid var(--border); border-radius: 12px; padding: 18px 22px; display: flex; flex-direction: column; gap: 12px; font-size: 0.88rem; }
+    .formula-tag { background: rgba(255, 214, 10, 0.15); color: var(--warning); border: 1px solid rgba(255, 214, 10, 0.3); padding: 4px 12px; border-radius: 6px; font-family: monospace; font-size: 0.84rem; font-weight: 700; width: fit-content; }
+    .info-row { display: flex; justify-content: space-between; align-items: center; padding: 10px 14px; background: var(--surface); border-radius: 8px; border: 1px solid var(--border); font-size: 0.88rem; }
+    .info-row strong { color: var(--accent); }
 
-    /* SIMULADOR TRÍPLICE & GRÁFICO COMPOSTO */
+    /* SIMULADORES TRÍPLICE & GRÁFICO COMPOSTO */
     .calc-triple-grid {
       display: grid;
-      grid-template-columns: repeat(3, minmax(320px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(3, minmax(340px, 1fr));
+      gap: 24px;
       align-items: start;
     }
     @media (max-width: 1200px) {
@@ -385,188 +489,167 @@
     }
 
     .form-calc-container {
-      background: var(--card-bg); border: 1px solid var(--border); border-radius: 14px;
-      padding: 22px; display: flex; flex-direction: column; gap: 16px; box-shadow: var(--shadow-card); min-width: 0;
+      background: var(--surface); border: 1px solid var(--border); border-radius: 20px;
+      padding: 28px; display: flex; flex-direction: column; gap: 18px; box-shadow: var(--shadow); min-width: 0;
     }
-    .form-group { display: flex; flex-direction: column; gap: 6px; }
-    .form-label { font-size: 0.76rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.04em; }
+    .form-group { display: flex; flex-direction: column; gap: 8px; }
+    .form-label { font-size: 0.78rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.04em; }
     .form-control {
       background: var(--bg); border: 1px solid var(--border); color: var(--text);
-      padding: 11px 14px; border-radius: 8px; font-size: 0.88rem; outline: none; cursor: pointer;
+      padding: 13px 16px; border-radius: 12px; font-size: 0.92rem; outline: none; cursor: pointer;
     }
-    .form-control:focus { border-color: var(--violet); }
+    .form-control:focus { border-color: var(--violet); box-shadow: 0 0 0 3px rgba(191, 90, 242, 0.15); }
 
     .grade-preview-box {
-      background: var(--bg); border: 1px solid var(--border); border-radius: 8px;
-      padding: 12px 14px; display: flex; justify-content: space-between; align-items: center; font-size: 0.84rem;
+      background: var(--bg); border: 1px solid var(--border); border-radius: 12px;
+      padding: 14px 16px; display: flex; justify-content: space-between; align-items: center; font-size: 0.88rem;
     }
     .grade-preview-box span { color: var(--text-muted); font-weight: 600; }
-    .grade-preview-box strong { color: var(--primary); }
+    .grade-preview-box strong { color: var(--accent); }
 
-    .calc-btn-group { display: flex; gap: 10px; margin-top: 8px; }
+    .calc-btn-group { display: flex; gap: 12px; margin-top: 10px; }
     .btn-add-simul {
-      flex: 1; background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%); color: #fff;
-      font-weight: 700; font-size: 0.88rem; padding: 13px; border-radius: 10px; border: none;
+      flex: 1; background: linear-gradient(135deg, #7c3aed 0%, #bf5af2 100%); color: #fff;
+      font-weight: 700; font-size: 0.92rem; padding: 15px; border-radius: 14px; border: none;
       cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px;
-      box-shadow: 0 4px 14px rgba(124, 58, 237, 0.35); transition: transform 0.18s ease;
+      box-shadow: 0 8px 20px rgba(124, 58, 237, 0.35);
     }
     .btn-add-simul.btn-danger-simul {
-      background: linear-gradient(135deg, #dc2626 0%, #f87171 100%);
-      box-shadow: 0 4px 14px rgba(220, 38, 38, 0.35);
+      background: linear-gradient(135deg, #ff453a 0%, #ff6961 100%);
+      box-shadow: 0 8px 20px rgba(255, 69, 58, 0.35);
     }
     .btn-add-simul.btn-warning-simul {
-      background: linear-gradient(135deg, #d97706 0%, #fbbf24 100%); color: #0a003c;
-      box-shadow: 0 4px 14px rgba(245, 158, 11, 0.35);
+      background: linear-gradient(135deg, #b25000 0%, #ffd60a 100%); color: #000;
+      box-shadow: 0 8px 20px rgba(255, 214, 10, 0.35);
     }
-    .btn-add-simul:hover { transform: translateY(-2px); }
+    .btn-add-simul:hover { transform: translateY(-2px); filter: brightness(1.08); }
 
     .btn-clear-simul {
       background: transparent; border: 1px solid var(--border); color: var(--text-muted);
-      padding: 13px 18px; border-radius: 10px; font-weight: 600; font-size: 0.86rem; cursor: pointer;
+      padding: 15px 20px; border-radius: 14px; font-weight: 600; font-size: 0.9rem; cursor: pointer;
     }
-    .btn-clear-simul:hover { color: var(--danger); border-color: var(--danger); }
+    .btn-clear-simul:hover { color: var(--danger); border-color: var(--danger); background: var(--surface-hover); }
 
     .kpi-custos-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 14px; margin-bottom: 18px;
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; margin-bottom: 22px;
     }
     .kpi-custo-card {
-      background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px;
-      padding: 18px 20px; display: flex; flex-direction: column; gap: 6px; box-shadow: var(--shadow-card);
+      background: var(--surface); border: 1px solid var(--border); border-radius: 20px;
+      padding: 22px 26px; display: flex; flex-direction: column; gap: 8px; box-shadow: var(--shadow);
     }
-    .kpi-custo-card.highlight-2026 { border-left: 4px solid var(--primary); }
-    .kpi-custo-card.highlight-2027 { border-left: 4px solid var(--violet); }
-    .kpi-custo-card.highlight-total { border-left: 4px solid var(--success); }
+    .kpi-custo-card.highlight-2026 { border-left: 5px solid var(--accent); }
+    .kpi-custo-card.highlight-2027 { border-left: 5px solid var(--violet); }
+    .kpi-custo-card.highlight-total { border-left: 5px solid var(--success); }
 
     .simulated-positions-card {
-      background-color: #0d1629; border: 1px solid #23334d; border-radius: 14px;
-      padding: 22px; box-shadow: var(--shadow-card); display: flex; flex-direction: column; width: 100%; min-width: 0; margin-top: 20px;
+      background-color: var(--surface); border: 1px solid var(--border); border-radius: 20px;
+      padding: 28px; box-shadow: var(--shadow); display: flex; flex-direction: column; width: 100%; min-width: 0; margin-top: 24px;
     }
-    [data-theme="light"] .simulated-positions-card { background-color: #f1f5f9; border-color: #cbd5e1; }
-
     .simulated-table-scroll {
-      width: 100%; overflow-x: auto; max-height: 380px; overflow-y: auto; border-radius: 8px; border: 1px solid var(--border); background: var(--card-bg);
+      width: 100%; overflow-x: auto; max-height: 400px; overflow-y: auto; border-radius: 12px; border: 1px solid var(--border); background: var(--bg);
     }
-    .simulated-table-scroll table { width: 100%; min-width: 900px; }
+    .simulated-table-scroll table { width: 100%; min-width: 950px; }
 
     /* GRÁFICO COMPOSTO */
-    .combo-chart-card { background-color: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; padding: 18px; box-shadow: var(--shadow-card); display: flex; flex-direction: column; gap: 12px; width: 100%; margin-top: 18px; }
-    .combo-svg-wrapper { position: relative; width: 100%; height: 230px; background: var(--bg); border-radius: 8px; border: 1px solid var(--border); padding: 12px 16px; }
+    .combo-chart-card { background-color: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 24px; box-shadow: var(--shadow); display: flex; flex-direction: column; gap: 16px; width: 100%; margin-top: 24px; }
+    .combo-svg-wrapper { position: relative; width: 100%; height: 250px; background: var(--bg); border-radius: 12px; border: 1px solid var(--border); padding: 14px 18px; }
     .combo-svg { width: 100%; height: 100%; overflow: visible; }
-    .bar-rect { fill: rgba(56, 189, 248, 0.75); rx: 3px; ry: 3px; transition: fill 0.2s; }
-    .bar-rect:hover { fill: var(--primary); }
-    .line-path-headcount { fill: none; stroke: #a78bfa; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
-    .line-dot-headcount { cursor: pointer; fill: #a78bfa; stroke: #ffffff; stroke-width: 2; }
-    .chart-legend-box { display: flex; gap: 20px; align-items: center; font-size: 0.78rem; font-weight: 700; }
-    .data-label-bar { fill: #f8fafc; font-size: 9px; font-weight: 800; text-anchor: middle; }
-    .data-label-line { fill: #c4b5fd; font-size: 10px; font-weight: 800; text-anchor: middle; }
+    .bar-rect { fill: rgba(41, 151, 255, 0.75); rx: 4px; ry: 4px; transition: fill 0.2s; }
+    .bar-rect:hover { fill: var(--accent); }
+    .line-path-headcount { fill: none; stroke: var(--violet); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+    .line-dot-headcount { cursor: pointer; fill: var(--violet); stroke: var(--surface); stroke-width: 2.5; }
+    .chart-legend-box { display: flex; gap: 24px; align-items: center; font-size: 0.82rem; font-weight: 700; }
+    .data-label-bar { fill: var(--text); font-size: 10px; font-weight: 800; text-anchor: middle; }
+    .data-label-line { fill: var(--violet); font-size: 11px; font-weight: 800; text-anchor: middle; }
 
-    .chart-tooltip { position: absolute; background: var(--card-bg); border: 1px solid var(--border); color: var(--text); padding: 6px 10px; border-radius: 6px; font-size: 0.76rem; pointer-events: none; opacity: 0; visibility: hidden; transition: opacity 0.15s ease; box-shadow: var(--shadow-card); z-index: 50; white-space: nowrap; }
+    .chart-tooltip { position: absolute; background: var(--surface); border: 1px solid var(--border); color: var(--text); padding: 8px 12px; border-radius: 8px; font-size: 0.8rem; pointer-events: none; opacity: 0; visibility: hidden; transition: opacity 0.15s ease; box-shadow: var(--shadow); z-index: 50; white-space: nowrap; }
     .chart-tooltip.active { opacity: 1; visibility: visible; }
   </style>
 </head>
 <body>
 
-  <!-- 1. CAPA / HUB DE PROJETOS E PORTFÓLIO (BOTÕES PADRÃO ANTIGO SEM SETAS) -->
+  <!-- 1. CAPA / HUB DE PROJETOS ESTILO APPLE BENTO -->
   <div id="view-cover">
-    <header class="cover-top">
-      <div class="cover-logo-box">
-        <div class="cover-logo-icon">RH</div>
-        <span class="cover-logo-text">People Analytics</span>
+    <nav class="apple-nav">
+      <div class="apple-brand">
+        <div class="apple-brand-icon">RH</div>
+        <span>People Hub</span>
       </div>
-      <div class="badge-welcome" style="margin-bottom:0;">Portfólio de Gestão Estratégica</div>
-      <button class="theme-toggle-btn" onclick="toggleTheme()" title="Mudar Tema">
+      <button class="apple-toggle" onclick="toggleTheme()" title="Alternar Tema">
         <span id="themeBtnIcon">☀️</span>
-        <span id="themeBtnText">Off-White</span>
+        <span id="themeBtnText">Tema Claro</span>
       </button>
-    </header>
+    </nav>
 
-    <section class="cover-header-intro">
-      <h1 class="cover-main-title">Soluções Digitais para Gestão de Pessoas</h1>
-      <p class="cover-main-desc">Portfólio criado a partir de empresa e base de 100 colaboradores.</p>
-    </section>
+    <div class="apple-hero">
+      <span class="apple-hero-tag">Design System • Apple Standard</span>
+      <h1>Inteligência Estratégica em Gestão de Pessoas</h1>
+      <p>Plataforma executiva para análise de headcount, diversidade, remuneração, retenção e simulações orçamentárias preditivas.</p>
+    </div>
 
-    <main class="cards-hub-grid">
-      <div class="main-project-card">
-        <div class="project-card-header">
-          <span class="project-tag">● Aplicação Ativa</span>
-          <h2 class="project-card-title">Painel Executivo de <br><span>Recursos Humanos</span></h2>
-          <p class="project-card-desc">Visualização de indicadores de pessoas: quadro de pessoal, diversidade & liderança, remuneração e análise de turnover.</p>
+    <div class="apple-bento-grid">
+      <!-- CARD 1: PAINEL EXECUTIVO -->
+      <div class="apple-card" onclick="irParaDashboard('page-geral')">
+        <div class="apple-card-media">
+          <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=800&q=80" alt="Painel Executivo">
         </div>
-        <button class="btn-card-access" onclick="irParaDashboard('page-geral')">
-          <span>Acessar Dashboard de Pessoas</span>
-        </button>
-      </div>
-
-      <div class="main-project-card accent-violet">
-        <div class="project-card-header">
-          <span class="project-tag tag-calc">● Aplicação Ativa</span>
-          <h2 class="project-card-title">Simulador Tríplice & <br><span>Impacto Orçamentário</span></h2>
-          <p class="project-card-desc">Planejamento de novas vagas, simulação de rescisões e promoções com teto de 2 grades e projeção 2026/2027.</p>
+        <div class="apple-card-content">
+          <div class="apple-card-header">
+            <span class="apple-card-badge">Módulo Ativo</span>
+            <h3 class="apple-card-title">Painel Executivo de Recursos Humanos</h3>
+            <p class="apple-card-desc">Consulta de colaboradores, diversidade, liderança, massa salarial e análise detalhada de turnover.</p>
+          </div>
+          <div class="apple-card-action">
+            <span>Explorar Painel</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
         </div>
-        <button class="btn-card-access btn-violet" onclick="irParaDashboard('page-custos')">
-          <span>Acessar Simulador Tríplice</span>
-        </button>
       </div>
 
-      <div class="empty-slot-card">
-        <div class="slot-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg></div>
-        <h3 class="slot-title">Novo Projeto</h3>
-        <span class="slot-tag">Espaço Reservado</span>
+      <!-- CARD 2: SIMULADOR TRÍPLICE -->
+      <div class="apple-card" onclick="irParaDashboard('page-custos')">
+        <div class="apple-card-media">
+          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" alt="Simulador Tríplice">
+        </div>
+        <div class="apple-card-content">
+          <div class="apple-card-header">
+            <span class="apple-card-badge violet">Módulo Preditivo</span>
+            <h3 class="apple-card-title">Simulador Tríplice & Impacto Orçamentário</h3>
+            <p class="apple-card-desc">Planejamento de novas vagas, simulação de rescisões e promoções com teto de 2 grades e projeção 2026/2027.</p>
+          </div>
+          <div class="apple-card-action" style="color:var(--violet);">
+            <span>Acessar Simulador</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </div>
       </div>
-
-      <div class="empty-slot-card">
-        <div class="slot-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg></div>
-        <h3 class="slot-title">Novo Projeto</h3>
-        <span class="slot-tag">Espaço Reservado</span>
-      </div>
-
-      <div class="empty-slot-card">
-        <div class="slot-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg></div>
-        <h3 class="slot-title">Novo Projeto</h3>
-        <span class="slot-tag">Espaço Reservado</span>
-      </div>
-    </main>
+    </div>
 
     <footer class="cover-bottom">
-      Portfólio de Gestão Estratégica & People Analytics • Felipe Viegas
+      People Analytics & Gestão Estratégica • Felipe Viegas
     </footer>
   </div>
 
-  <!-- 2. DASHBOARD DE PESSOAS & SIMULADOR -->
+  <!-- 2. DASHBOARD & SIMULADOR (COM BOTÃO DE RETORNO À CAPA) -->
   <div id="view-dashboard">
-    <aside class="nav-rail">
-      <div class="nav-logo" onclick="voltarParaCapa()" title="Voltar ao Início">RH</div>
-      <div class="nav-items">
-        <button class="nav-btn" onclick="voltarParaCapa()" title="Voltar à Capa">
-          <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
-          <div class="preview-tip">Voltar à Capa</div>
-        </button>
-        <button class="nav-btn active" id="btnNavGeral" onclick="trocarPagina('page-geral', this)" title="Quadro de Pessoal">
-          <svg viewBox="0 0 24 24"><path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"/></svg>
-          <div class="preview-tip">Quadro de Pessoal</div>
-        </button>
-        <button class="nav-btn" id="btnNavDiv" onclick="trocarPagina('page-diversidade', this)" title="Diversidade & Liderança">
-          <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
-          <div class="preview-tip">Diversidade & Liderança</div>
-        </button>
-        <button class="nav-btn" id="btnNavRem" onclick="trocarPagina('page-remuneracao', this)" title="Remuneração & Salários">
-          <svg viewBox="0 0 24 24"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/></svg>
-          <div class="preview-tip">Remuneração & Folha</div>
-        </button>
-        <button class="nav-btn" id="btnNavTurn" onclick="trocarPagina('page-turnover', this)" title="Turnover & Retenção">
-          <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/></svg>
-          <div class="preview-tip">Turnover & Retenção</div>
-        </button>
-        <button class="nav-btn btn-nav-calc" id="btnNavCustos" onclick="trocarPagina('page-custos', this)" title="Simulador Tríplice">
-          <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/></svg>
-          <div class="preview-tip">Simulador Tríplice</div>
-        </button>
+    <div class="dash-top-bar">
+      <button class="btn-back-home" onclick="voltarParaCapa()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:16px;height:16px;"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        <span>Voltar à Capa Principal</span>
+      </button>
+
+      <div class="dash-tabs-nav">
+        <button class="dash-tab-btn active" id="tabGeral" onclick="trocarPagina('page-geral')">Quadro</button>
+        <button class="dash-tab-btn" id="tabDiv" onclick="trocarPagina('page-diversidade')">Diversidade</button>
+        <button class="dash-tab-btn" id="tabRem" onclick="trocarPagina('page-remuneracao')">Remuneração</button>
+        <button class="dash-tab-btn" id="tabTurn" onclick="trocarPagina('page-turnover')">Turnover</button>
+        <button class="dash-tab-btn" id="tabCustos" onclick="trocarPagina('page-custos')">Simulador Tríplice</button>
       </div>
 
-      <div class="nav-bottom">
-        <button class="nav-btn" onclick="toggleTheme()" title="Mudar Tema"><span style="font-size:1.1rem;">🌓</span></button>
-      </div>
-    </aside>
+      <button class="apple-toggle" onclick="toggleTheme()" title="Alternar Tema" style="padding:6px 14px; font-size:0.75rem;">
+        <span id="themeDashIcon">☀️</span>
+      </button>
+    </div>
 
     <main class="main-wrapper">
       <header class="header">
@@ -627,7 +710,7 @@
       <!-- PÁGINA 2: DIVERSIDADE -->
       <section id="page-diversidade" class="page-section">
         <div id="crossfilterBar" class="crossfilter-bar">
-          <span>Filtro ativo: <strong id="crossfilterLabel" style="color:var(--primary);">Nenhum</strong></span>
+          <span>Filtro ativo: <strong id="crossfilterLabel" style="color:var(--accent);">Nenhum</strong></span>
           <button class="btn-clear-cross" onclick="limparFiltroCruzado()">Limpar Seleção</button>
         </div>
 
@@ -639,12 +722,12 @@
                 <svg class="donut-svg" viewBox="0 0 42 42">
                   <circle cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="var(--border)" stroke-width="5.5"></circle>
                   <circle id="donutMasc" class="donut-segment" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="var(--violet)" stroke-width="5.5" stroke-dasharray="60 40" stroke-dashoffset="0" onclick="toggleFiltroCruzado('genero', 'Masculino')"></circle>
-                  <circle id="donutFem" class="donut-segment" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="var(--emerald)" stroke-width="5.5" stroke-dasharray="40 60" stroke-dashoffset="-60" onclick="toggleFiltroCruzado('genero', 'Feminino')"></circle>
+                  <circle id="donutFem" class="donut-segment" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="var(--success)" stroke-width="5.5" stroke-dasharray="40 60" stroke-dashoffset="-60" onclick="toggleFiltroCruzado('genero', 'Feminino')"></circle>
                 </svg>
               </div>
               <div class="donut-legend">
                 <div class="donut-legend-item" onclick="toggleFiltroCruzado('genero', 'Masculino')"><span class="legend-color" style="background:var(--violet);"></span><span>Masculino</span><span class="donut-legend-pct" style="color:var(--violet);" id="lblLegendPctMasc">60%</span></div>
-                <div class="donut-legend-item" onclick="toggleFiltroCruzado('genero', 'Feminino')"><span class="legend-color" style="background:var(--emerald);"></span><span>Feminino</span><span class="donut-legend-pct" style="color:var(--emerald);" id="lblLegendPctFem">40%</span></div>
+                <div class="donut-legend-item" onclick="toggleFiltroCruzado('genero', 'Feminino')"><span class="legend-color" style="background:var(--success);"></span><span>Feminino</span><span class="donut-legend-pct" style="color:var(--success);" id="lblLegendPctFem">40%</span></div>
               </div>
             </div>
           </div>
@@ -667,7 +750,7 @@
             </div>
             <div class="lead-metrics">
               <div class="lead-stat"><span style="color: var(--violet);">● Líderes Masculinos</span><strong id="leadMascVal" style="color: var(--violet);">15 (75%)</strong></div>
-              <div class="lead-stat"><span style="color: var(--emerald);">● Líderes Femininas</span><strong id="leadFemVal" style="color: var(--emerald);">5 (25%)</strong></div>
+              <div class="lead-stat"><span style="color: var(--success);">● Líderes Femininas</span><strong id="leadFemVal" style="color: var(--success);">5 (25%)</strong></div>
             </div>
           </div>
         </div>
@@ -700,8 +783,8 @@
           <div class="info-card-header">
             <h3>Linha do Tempo: Admissões vs. Desligamentos (Mês a Mês)</h3>
             <div class="timeline-legend">
-              <span><span class="legend-indicator" style="background:#10b981;"></span> Admissões</span>
-              <span><span class="legend-indicator" style="background:#f87171;"></span> Desligamentos</span>
+              <span><span class="legend-indicator" style="background:var(--success);"></span> Admissões</span>
+              <span><span class="legend-indicator" style="background:var(--danger);"></span> Desligamentos</span>
             </div>
           </div>
           <div class="timeline-chart-container" id="timelineBars"></div>
@@ -712,7 +795,7 @@
             <h3>Evolução Mensal do Turnover: Voluntário vs. Involuntário</h3>
             <div class="timeline-legend">
               <span><span class="legend-indicator" style="background:var(--warning);"></span> Voluntário</span>
-              <span><span class="legend-indicator" style="background:var(--primary);"></span> Involuntário</span>
+              <span><span class="legend-indicator" style="background:var(--accent);"></span> Involuntário</span>
             </div>
           </div>
           <div class="line-svg-wrapper">
@@ -728,7 +811,7 @@
               <div class="info-row"><span>Admissões no Ciclo</span><strong style="color: var(--success);" id="tAdmissoes">31</strong></div>
               <div class="info-row"><span>Demissões Acumuladas</span><strong style="color: var(--danger);" id="tDemissoes">27</strong></div>
               <div class="info-row"><span>Quadro Total Avaliado</span><strong style="color: var(--text);" id="tQuadro">100</strong></div>
-              <div class="info-row" style="background: rgba(251, 191, 36, 0.1); border-color: rgba(251, 191, 36, 0.25);">
+              <div class="info-row" style="background: rgba(255, 214, 10, 0.1); border-color: rgba(255, 214, 10, 0.25);">
                 <span style="font-weight: 700; color: var(--warning);">Taxa Resultante</span>
                 <strong style="font-size: 1.1rem; color: var(--warning);" id="tTaxaFinal">29,0%</strong>
               </div>
@@ -749,12 +832,12 @@
         </div>
       </section>
 
-      <!-- PÁGINA 5: SIMULADOR TRÍPLICE (VAGAS, RESCISÕES E PROMOÇÕES) -->
+      <!-- PÁGINA 5: SIMULADOR TRÍPLICE -->
       <section id="page-custos" class="page-section">
         <div class="kpi-custos-grid">
           <div class="kpi-custo-card highlight-2026">
             <span class="metric-label">Impacto Líquido 2026 (Novas Vagas + Promoções - Rescisões)</span>
-            <span class="metric-val" id="kpiCusto2026" style="color:var(--primary); font-size:1.6rem;">R$ 0,00</span>
+            <span class="metric-val" id="kpiCusto2026" style="color:var(--accent); font-size:1.6rem;">R$ 0,00</span>
             <span style="font-size:0.75rem; color:var(--text-muted);">Saldo financeiro para 2026</span>
           </div>
           <div class="kpi-custo-card highlight-2027">
@@ -800,7 +883,7 @@
               <input type="number" id="calcQtd" class="form-control" value="1" min="1" max="20">
             </div>
 
-            <div class="grade-preview-box" style="background:rgba(124, 58, 237, 0.08); border-color:rgba(124, 58, 237, 0.25);">
+            <div class="grade-preview-box" style="background:rgba(191, 90, 242, 0.08); border-color:rgba(191, 90, 242, 0.25);">
               <span>Salário Unitário (c/ Encargos 2,3x):</span>
               <strong id="previewSalarioCalculado" style="color:var(--violet);">R$ 0,00</strong>
             </div>
@@ -812,7 +895,7 @@
           </div>
 
           <!-- BLOCO 2: SIMULAÇÃO DE RESCISÃO -->
-          <div class="form-calc-container" style="border-color: rgba(248, 113, 113, 0.3);">
+          <div class="form-calc-container" style="border-color: rgba(255, 69, 58, 0.3);">
             <h3 style="font-size:1.05rem; font-weight:800; color:var(--danger); margin-bottom:4px;">Simulação de Rescisão</h3>
             <p style="font-size:0.8rem; color:var(--text-muted); margin-bottom:8px;">Desligamento de colaboradores ativos.</p>
 
@@ -848,7 +931,7 @@
               <select id="rescisaoMesComp" class="form-control"></select>
             </div>
 
-            <div class="grade-preview-box" style="background:rgba(248, 113, 113, 0.08); border-color:rgba(248, 113, 113, 0.25);">
+            <div class="grade-preview-box" style="background:rgba(255, 69, 58, 0.08); border-color:rgba(255, 69, 58, 0.25);">
               <span>Custo Rescisório Estimado:</span>
               <strong id="resPrevTotal" style="color:var(--danger); font-size:1.05rem;">R$ 0,00</strong>
             </div>
@@ -860,7 +943,7 @@
           </div>
 
           <!-- BLOCO 3: PROMOÇÃO DE COLABORADOR -->
-          <div class="form-calc-container" style="border-color: rgba(251, 191, 36, 0.3);">
+          <div class="form-calc-container" style="border-color: rgba(255, 214, 10, 0.3);">
             <h3 style="font-size:1.05rem; font-weight:800; color:var(--warning); margin-bottom:4px;">Simulação de Promoção</h3>
             <p style="font-size:0.8rem; color:var(--text-muted); margin-bottom:8px;">Salto de até 2 grades (Novo salário: 80% da nova faixa, respeitado o piso atual).</p>
 
@@ -884,7 +967,7 @@
               <select id="promoMes" class="form-control"></select>
             </div>
 
-            <div class="grade-preview-box" style="background:rgba(251, 191, 36, 0.08); border-color:rgba(251, 191, 36, 0.25);">
+            <div class="grade-preview-box" style="background:rgba(255, 214, 10, 0.08); border-color:rgba(255, 214, 10, 0.25);">
               <span>Novo Salário (80% Nova Faixa):</span>
               <strong id="promoPrevNovoSalario" style="color:var(--warning); font-size:1.05rem;">R$ 0,00</strong>
             </div>
@@ -897,7 +980,7 @@
         </div>
 
         <!-- QUADRANTE DE SIMULAÇÕES CONSOLIDADAS -->
-        <div class="simulated-positions-card" style="border-color: var(--primary);">
+        <div class="simulated-positions-card" style="border-color: var(--accent);">
           <div class="info-card-header" style="margin-bottom:16px;">
             <h3>Quadro Consolidado de Simulações do Usuário (Novas Vagas, Rescisões & Promoções)</h3>
             <span id="badgeContagemGeral" style="font-size:0.75rem; background:var(--bg); border:1px solid var(--border); padding:3px 10px; border-radius:9999px; font-weight:700;">0 itens</span>
@@ -928,8 +1011,8 @@
           <div class="info-card-header">
             <h3>Evolução Mensal (Jan/26 a Dez/26): Folha de Pagamento (Barras) & Headcount (Linha)</h3>
             <div class="chart-legend-box">
-              <span><span style="display:inline-block;width:12px;height:12px;background:var(--primary);border-radius:2px;margin-right:4px;"></span> Folha de Pagamento (R$ k)</span>
-              <span><span style="display:inline-block;width:12px;height:12px;background:#a78bfa;border-radius:50%;margin-right:4px;"></span> Headcount (Colaboradores)</span>
+              <span><span style="display:inline-block;width:12px;height:12px;background:var(--accent);border-radius:2px;margin-right:4px;"></span> Folha de Pagamento (R$ k)</span>
+              <span><span style="display:inline-block;width:12px;height:12px;background:var(--violet);border-radius:50%;margin-right:4px;"></span> Headcount (Colaboradores)</span>
             </div>
           </div>
           <div class="combo-svg-wrapper">
@@ -955,8 +1038,12 @@
       const current = html.getAttribute("data-theme") || "dark";
       const novo = current === "dark" ? "light" : "dark";
       html.setAttribute("data-theme", novo);
-      document.getElementById("themeBtnIcon").textContent = novo === "light" ? "🌙" : "☀️";
-      document.getElementById("themeBtnText").textContent = novo === "light" ? "Navy Escuro" : "Off-White";
+      const isLight = novo === "light";
+      document.getElementById("themeBtnIcon").textContent = isLight ? "🌙" : "☀️";
+      document.getElementById("themeBtnText").textContent = isLight ? "Tema Escuro" : "Tema Claro";
+      if (document.getElementById("themeDashIcon")) {
+        document.getElementById("themeDashIcon").textContent = isLight ? "🌙" : "☀️";
+      }
     }
 
     function irParaDashboard(pageId) {
@@ -975,14 +1062,14 @@
 
     function trocarPagina(pageId) {
       document.querySelectorAll(".page-section").forEach(sec => sec.classList.remove("active"));
-      document.querySelectorAll(".nav-rail .nav-btn").forEach(btn => btn.classList.remove("active"));
+      document.querySelectorAll(".dash-tab-btn").forEach(btn => btn.classList.remove("active"));
       document.getElementById(pageId)?.classList.add("active");
 
-      if (pageId === "page-geral") document.getElementById("btnNavGeral")?.classList.add("active");
-      if (pageId === "page-diversidade") document.getElementById("btnNavDiv")?.classList.add("active");
-      if (pageId === "page-remuneracao") document.getElementById("btnNavRem")?.classList.add("active");
-      if (pageId === "page-turnover") document.getElementById("btnNavTurn")?.classList.add("active");
-      if (pageId === "page-custos") document.getElementById("btnNavCustos")?.classList.add("active");
+      if (pageId === "page-geral") document.getElementById("tabGeral")?.classList.add("active");
+      if (pageId === "page-diversidade") document.getElementById("tabDiv")?.classList.add("active");
+      if (pageId === "page-remuneracao") document.getElementById("tabRem")?.classList.add("active");
+      if (pageId === "page-turnover") document.getElementById("tabTurn")?.classList.add("active");
+      if (pageId === "page-custos") document.getElementById("tabCustos")?.classList.add("active");
 
       const title = document.getElementById("pageTitle");
       const subtitle = document.getElementById("pageSubtitle");
@@ -991,7 +1078,7 @@
 
       if (pageId === "page-custos") {
         title.textContent = "Simulador Tríplice (Vagas, Rescisões & Promoções)";
-        subtitle.textContent = "Planejamento orçamentário completo com teto de 2 grades de salto";
+        subtitle.textContent = "Planejamento orçamentário completo com bloqueio lógico para colaboradores inativos";
         if (statusHeader) statusHeader.style.display = "none";
         if (mainKpis) mainKpis.style.display = "none";
       } else {
@@ -1113,7 +1200,7 @@
           <td><span class="badge-grade">${c.grade || "G3"}</span></td>
           <td>${(Number(c.faixa_100) || 5000).toLocaleString("pt-BR", { style: "currency", currency: "BRL" })}</td>
           <td><span class="badge-posic">${c.posic_faixa || "100%"}</span></td>
-          <td style="font-weight: 700; color: var(--primary);">${(Number(c.salario) || 0).toLocaleString("pt-BR", { style: "currency", currency: "BRL" })}</td>
+          <td style="font-weight: 700; color: var(--accent);">${(Number(c.salario) || 0).toLocaleString("pt-BR", { style: "currency", currency: "BRL" })}</td>
           <td>${c.genero}</td>
           <td>${c.raca_cor}</td>
           <td>${c.data_admissao}</td>
@@ -1218,7 +1305,6 @@
       renderizarDonutMotivos(dados);
     }
 
-    // GRÁFICO CORRIGIDO DE TURNOVER VOLUNTÁRIO VS INVOLUNTÁRIO
     function renderizarSvgLinhasTurnover(dados) {
       const svg = document.getElementById("svgTurnoverLines");
       if (!svg) return;
@@ -1271,7 +1357,7 @@
 
       let dotsHtml = "";
       ptsVol.forEach(p => { dotsHtml += `<circle cx="${p.x}" cy="${p.y}" r="4" fill="var(--warning)" stroke="var(--bg)" stroke-width="2" class="line-dot" data-tip="Voluntário em ${p.mes}: <strong>${p.val} saídas</strong>" />`; });
-      ptsInvol.forEach(p => { dotsHtml += `<circle cx="${p.x}" cy="${p.y}" r="4" fill="var(--primary)" stroke="var(--bg)" stroke-width="2" class="line-dot" data-tip="Involuntário em ${p.mes}: <strong>${p.val} saídas</strong>" />`; });
+      ptsInvol.forEach(p => { dotsHtml += `<circle cx="${p.x}" cy="${p.y}" r="4" fill="var(--accent)" stroke="var(--bg)" stroke-width="2" class="line-dot" data-tip="Involuntário em ${p.mes}: <strong>${p.val} saídas</strong>" />`; });
 
       svg.innerHTML = `${gridHtml}<path d="${dVol}" class="line-path-vol" /><path d="${dInvol}" class="line-path-invol" />${dotsHtml}${labelsHtml}`;
 
@@ -1291,7 +1377,7 @@
       const totalDesl = desligados.length;
       const motivos = {
         "Pedido de Demissão": { cor: "var(--warning)", qtd: 0 },
-        "Demissão sem Justa Causa": { cor: "var(--primary)", qtd: 0 },
+        "Demissão sem Justa Causa": { cor: "var(--accent)", qtd: 0 },
         "Término de Contrato": { cor: "var(--violet)", qtd: 0 },
         "Demissão com Justa Causa": { cor: "var(--danger)", qtd: 0 }
       };
@@ -1321,7 +1407,7 @@
         accumulatedPct += pct;
 
         slicesHtml += `<circle cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="${obj.cor}" stroke-width="5.5" stroke-dasharray="${dashArray}" stroke-dashoffset="${dashOffset}" class="donut-segment" data-tip="${motivo}: <strong>${obj.qtd} pessoas</strong> (${pct}%)"></circle>`;
-        legendHtml += `<div class="donut-legend-item"><span class="legend-color" style="background:${obj.cor};"></span><span style="font-size:0.82rem;">${motivo}</span><span class="donut-legend-pct" style="color:${obj.cor};">${pct}%</span></div>`;
+        legendHtml += `<div class="donut-legend-item"><span class="legend-color" style="background:${obj.cor};"></span><span style="font-size:0.85rem;">${motivo}</span><span class="donut-legend-pct" style="color:${obj.cor};">${pct}%</span></div>`;
       });
 
       slicesGroup.innerHTML = slicesHtml;
@@ -1338,7 +1424,6 @@
       });
     }
 
-    // GRÁFICO COMPOSTO DINÂMICO DO SIMULADOR TRÍPLICE
     function atualizarGraficoCombo() {
       const svg = document.getElementById("svgComboChart");
       if (!svg) return;
@@ -1423,14 +1508,11 @@
       svg.innerHTML = `${barsHtml}<path d="${dLine}" class="line-path-headcount" />${dotsHtml}${labelsDCHtml}${labelsXHtml}`;
     }
 
-    // INICIALIZAÇÃO DO SIMULADOR TRÍPLICE
     function inicializarSimuladores() {
       const selectCargo = document.getElementById("calcCargo");
       const selectPosic = document.getElementById("calcPosic");
       const selectMes = document.getElementById("calcMes");
-      const selectResColab = document.getElementById("rescisaoColab");
       const selectResMes = document.getElementById("rescisaoMesComp");
-      const selectPromoColab = document.getElementById("promoColab");
       const selectPromoMes = document.getElementById("promoMes");
 
       if (selectCargo) {
@@ -1457,16 +1539,30 @@
       if (selectResMes) selectResMes.innerHTML = optionsMesesCompetencia;
       if (selectPromoMes) selectPromoMes.innerHTML = optionsMesesCompetencia;
 
-      const ativosLista = colaboradores.filter(c => c.status === "Ativo");
-      if (selectResColab) {
-        selectResColab.innerHTML = '<option value="">Selecione o colaborador</option>' + ativosLista.map(c => `<option value="${c.id}">${c.id} - ${c.nome} (${c.cargo})</option>`).join("");
-      }
-      if (selectPromoColab) {
-        selectPromoColab.innerHTML = '<option value="">Selecione o colaborador</option>' + ativosLista.map(c => `<option value="${c.id}">${c.id} - ${c.nome} (${c.cargo} - ${c.grade})</option>`).join("");
-      }
-
+      atualizarListasColaboradoresSimulacao();
       atualizarPreviewCargo();
       atualizarPreviewRescisao();
+    }
+
+    function atualizarListasColaboradoresSimulacao() {
+      const selectResColab = document.getElementById("rescisaoColab");
+      const selectPromoColab = document.getElementById("promoColab");
+      if (!selectResColab || !selectPromoColab) return;
+
+      const nomesRescindidosSimulacao = listaSimulacoesGeral
+        .filter(item => item.tipoItem === 'rescisao')
+        .map(item => item.cargoOuNome);
+
+      const ativosLista = colaboradores.filter(c => c.status === "Ativo");
+
+      selectResColab.innerHTML = '<option value="">Selecione o colaborador</option>' + ativosLista
+        .filter(c => !nomesRescindidosSimulacao.includes(c.nome))
+        .map(c => `<option value="${c.id}">${c.id} - ${c.nome} (${c.cargo})</option>`).join("");
+
+      selectPromoColab.innerHTML = '<option value="">Selecione o colaborador</option>' + ativosLista
+        .filter(c => !nomesRescindidosSimulacao.includes(c.nome))
+        .map(c => `<option value="${c.id}">${c.id} - ${c.nome} (${c.cargo} - ${c.grade})</option>`).join("");
+
       atualizarOpcoesCargoPromocao();
     }
 
@@ -1563,11 +1659,13 @@
         detalhes: tipoTxt, qtd: 1, inicioOuAviso: `${mesComp} (${aviso})`, mesComp: mesComp, anoResc: anoResc,
         salario: colab.salario, custo2026: anoResc === '2026' ? totalResc : 0, custo2027: anoResc === '2027' ? totalResc : 0, impactoOuTotal: totalResc
       });
+      atualizarListasColaboradoresSimulacao();
       atualizarTabelaConsolidada();
     }
 
     function limparTodaRescisao() {
       listaSimulacoesGeral = listaSimulacoesGeral.filter(item => item.tipoItem !== 'rescisao');
+      atualizarListasColaboradoresSimulacao();
       atualizarTabelaConsolidada();
     }
 
@@ -1663,6 +1761,7 @@
 
     function removerItemSimulacao(id) {
       listaSimulacoesGeral = listaSimulacoesGeral.filter(item => item.id !== id);
+      atualizarListasColaboradoresSimulacao();
       atualizarTabelaConsolidada();
     }
 
@@ -1714,7 +1813,7 @@
             <td><span class="badge-grade">${item.gradeOuDepto}</span></td>
             <td style="font-size:0.8rem; line-height:1.3;">${salarioColunaTxt}</td>
             <td>${item.inicioOuAviso}</td>
-            <td style="font-weight:700; color:${item.tipoItem==='rescisao'?'var(--danger)':'var(--primary)'};">${cor2026Txt}</td>
+            <td style="font-weight:700; color:${item.tipoItem==='rescisao'?'var(--danger)':'var(--accent)'};">${cor2026Txt}</td>
             <td style="font-weight:700; color:${item.tipoItem==='rescisao'?'var(--danger)':'var(--violet)'};">${cor2027Txt}</td>
             <td><button onclick="removerItemSimulacao(${item.id})" style="background:transparent; border:none; color:var(--danger); cursor:pointer; font-size:1.1rem;" title="Remover item">✕</button></td>
           </tr>
