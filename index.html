@@ -43,200 +43,37 @@
       --shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-    }
-
-    body {
-      background-color: var(--bg);
-      color: var(--text);
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      overflow-x: hidden;
-      transition: background-color 0.4s ease, color 0.4s ease;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif; }
+    body { background-color: var(--bg); color: var(--text); min-height: 100vh; display: flex; flex-direction: column; overflow-x: hidden; transition: background-color 0.4s ease, color 0.4s ease; }
 
     /* CAPA PRINCIPAL ESTILO APPLE */
-    #view-cover {
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-      width: 100%;
-      padding: 48px 32px 64px 32px;
-      max-width: 1400px;
-      margin: 0 auto;
-    }
-
-    .apple-nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      width: 100%;
-      margin-bottom: 50px;
-    }
-
-    .apple-brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-weight: 700;
-      font-size: 1.1rem;
-      letter-spacing: -0.01em;
-    }
-
-    .apple-brand-icon {
-      width: 36px; height: 36px;
-      background: linear-gradient(135deg, var(--accent), var(--violet));
-      border-radius: 10px;
-      display: flex; align-items: center; justify-content: center;
-      color: #fff; font-weight: 800; font-size: 0.95rem;
-    }
-
-    .apple-toggle {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      color: var(--text);
-      padding: 8px 18px;
-      border-radius: 9999px;
-      font-size: 0.8rem;
-      font-weight: 600;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.04);
-    }
+    #view-cover { display: flex; flex-direction: column; min-height: 100vh; width: 100%; padding: 48px 32px 64px 32px; max-width: 1400px; margin: 0 auto; }
+    .apple-nav { display: flex; justify-content: space-between; align-items: center; width: 100%; margin-bottom: 50px; }
+    .apple-brand { display: flex; align-items: center; gap: 12px; font-weight: 700; font-size: 1.1rem; letter-spacing: -0.01em; }
+    .apple-brand-icon { width: 36px; height: 36px; background: linear-gradient(135deg, var(--accent), var(--violet)); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 800; font-size: 0.95rem; }
+    .apple-toggle { background: var(--surface); border: 1px solid var(--border); color: var(--text); padding: 8px 18px; border-radius: 9999px; font-size: 0.8rem; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.04); }
     .apple-toggle:hover { border-color: var(--accent); }
 
-    .apple-hero {
-      text-align: center;
-      max-width: 800px;
-      margin: 0 auto 48px auto;
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-    }
+    .apple-hero { text-align: center; max-width: 800px; margin: 0 auto 48px auto; display: flex; flex-direction: column; gap: 14px; }
+    .apple-hero-tag { font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent); }
+    .apple-hero h1 { font-size: 3.2rem; font-weight: 800; letter-spacing: -0.03em; line-height: 1.1; }
+    .apple-hero p { font-size: 1.1rem; color: var(--text-muted); line-height: 1.5; }
 
-    .apple-hero-tag {
-      font-size: 0.75rem;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: var(--accent);
-    }
+    .apple-bento-grid { display: grid; grid-template-columns: repeat(3, minmax(320px, 1fr)); gap: 28px; width: 100%; }
+    @media (max-width: 1024px) { .apple-bento-grid { grid-template-columns: 1fr; } }
 
-    .apple-hero h1 {
-      font-size: 3.2rem;
-      font-weight: 800;
-      letter-spacing: -0.03em;
-      line-height: 1.1;
-    }
-
-    .apple-hero p {
-      font-size: 1.1rem;
-      color: var(--text-muted);
-      line-height: 1.5;
-    }
-
-    .apple-bento-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(320px, 1fr));
-      gap: 28px;
-      width: 100%;
-    }
-    @media (max-width: 1024px) {
-      .apple-bento-grid { grid-template-columns: 1fr; }
-    }
-
-    .apple-card {
-      background-color: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 28px;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      box-shadow: var(--shadow);
-      transition: var(--transition);
-      cursor: pointer;
-      position: relative;
-      min-height: 420px;
-    }
-    .apple-card:hover {
-      transform: translateY(-8px) scale(1.01);
-      border-color: var(--accent);
-      box-shadow: 0 30px 60px rgba(0,0,0,0.25);
-    }
-
-    .apple-card-media {
-      width: 100%;
-      height: 200px;
-      overflow: hidden;
-      position: relative;
-      background: #000;
-    }
-
-    .apple-card-media img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      opacity: 0.85;
-      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    .apple-card:hover .apple-card-media img {
-      transform: scale(1.06);
-      opacity: 1;
-    }
-
-    .apple-card-content {
-      padding: 28px;
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-      flex-grow: 1;
-      justify-content: space-between;
-    }
-
-    .apple-card-badge {
-      font-size: 0.7rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--success);
-      background: rgba(48, 209, 88, 0.12);
-      padding: 4px 12px;
-      border-radius: 999px;
-      width: fit-content;
-    }
+    .apple-card { background-color: var(--card-bg); border: 1px solid var(--border); border-radius: 28px; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; box-shadow: var(--shadow); transition: var(--transition); cursor: pointer; position: relative; min-height: 420px; }
+    .apple-card:hover { transform: translateY(-8px) scale(1.01); border-color: var(--accent); box-shadow: 0 30px 60px rgba(0,0,0,0.25); }
+    .apple-card-media { width: 100%; height: 200px; overflow: hidden; position: relative; background: #000; }
+    .apple-card-media img { width: 100%; height: 100%; object-fit: cover; opacity: 0.85; transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1); }
+    .apple-card:hover .apple-card-media img { transform: scale(1.06); opacity: 1; }
+    .apple-card-content { padding: 28px; display: flex; flex-direction: column; gap: 14px; flex-grow: 1; justify-content: space-between; }
+    .apple-card-badge { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--success); background: rgba(48, 209, 88, 0.12); padding: 4px 12px; border-radius: 999px; width: fit-content; }
     .apple-card-badge.violet { color: var(--violet); background: rgba(191, 90, 242, 0.12); }
     .apple-card-badge.amber { color: var(--warning); background: rgba(255, 214, 10, 0.12); }
-
-    .apple-card-title {
-      font-size: 1.6rem;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      line-height: 1.2;
-    }
-
-    .apple-card-desc {
-      font-size: 0.92rem;
-      color: var(--text-muted);
-      line-height: 1.5;
-    }
-
-    .apple-card-action {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 0.92rem;
-      font-weight: 600;
-      color: var(--accent);
-      margin-top: 6px;
-    }
+    .apple-card-title { font-size: 1.6rem; font-weight: 700; letter-spacing: -0.02em; line-height: 1.2; }
+    .apple-card-desc { font-size: 0.92rem; color: var(--text-muted); line-height: 1.5; }
+    .apple-card-action { display: inline-flex; align-items: center; gap: 8px; font-size: 0.92rem; font-weight: 600; color: var(--accent); margin-top: 6px; }
     .apple-card-action svg { width: 16px; height: 16px; transition: transform 0.2s ease; }
     .apple-card:hover .apple-card-action svg { transform: translateX(5px); }
 
@@ -246,83 +83,22 @@
     .view-container { display: none; width: 100%; min-height: 100vh; flex-direction: column; }
     .view-container.active { display: flex; }
 
-    .dash-top-bar {
-      background: var(--surface);
-      border-bottom: 1px solid var(--border);
-      padding: 16px 36px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      backdrop-filter: blur(20px);
-    }
-
-    .btn-back-home {
-      background: transparent;
-      border: 1px solid var(--border);
-      color: var(--text);
-      padding: 8px 16px;
-      border-radius: 10px;
-      font-size: 0.82rem;
-      font-weight: 600;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
+    .dash-top-bar { background: var(--surface); border-bottom: 1px solid var(--border); padding: 16px 36px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; backdrop-filter: blur(20px); }
+    .btn-back-home { background: transparent; border: 1px solid var(--border); color: var(--text); padding: 8px 16px; border-radius: 10px; font-size: 0.82rem; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 8px; }
     .btn-back-home:hover { border-color: var(--accent); background: var(--surface-hover); }
 
-    .dash-tabs-nav {
-      display: flex;
-      gap: 8px;
-      background: var(--bg);
-      padding: 4px;
-      border-radius: 12px;
-      border: 1px solid var(--border);
-    }
-
-    .dash-tab-btn {
-      background: transparent;
-      border: none;
-      color: var(--text-muted);
-      padding: 8px 16px;
-      border-radius: 8px;
-      font-size: 0.82rem;
-      font-weight: 600;
-      cursor: pointer;
-    }
+    .dash-tabs-nav { display: flex; gap: 8px; background: var(--bg); padding: 4px; border-radius: 12px; border: 1px solid var(--border); }
+    .dash-tab-btn { background: transparent; border: none; color: var(--text-muted); padding: 8px 16px; border-radius: 8px; font-size: 0.82rem; font-weight: 600; cursor: pointer; }
     .dash-tab-btn:hover { color: var(--text); }
     .dash-tab-btn.active { background: var(--surface); color: var(--text); box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
 
-    .main-wrapper {
-      flex: 1;
-      max-width: 1400px;
-      margin: 0 auto;
-      width: 100%;
-      padding: 36px;
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
-    }
+    .main-wrapper { flex: 1; max-width: 1400px; margin: 0 auto; width: 100%; padding: 36px; display: flex; flex-direction: column; gap: 24px; }
 
-    .header {
-      background-color: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 24px 32px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      box-shadow: var(--shadow);
-    }
+    .header { background-color: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 24px 32px; display: flex; justify-content: space-between; align-items: center; box-shadow: var(--shadow); }
     .brand-title h1 { font-size: 1.5rem; font-weight: 700; letter-spacing: -0.02em; }
     .brand-title p { color: var(--text-muted); font-size: 0.88rem; margin-top: 4px; }
 
-    .status-validators-header {
-      display: flex; align-items: center; gap: 6px; background: var(--bg); padding: 5px 8px; border-radius: 9999px; border: 1px solid var(--border);
-    }
+    .status-validators-header { display: flex; align-items: center; gap: 6px; background: var(--bg); padding: 5px 8px; border-radius: 9999px; border: 1px solid var(--border); }
     .status-validators-label { font-size: 0.75rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; padding-left: 8px; padding-right: 6px; }
     .btn-validator { background: transparent; border: 1px solid transparent; color: var(--text-muted); padding: 6px 14px; border-radius: 9999px; font-size: 0.8rem; font-weight: 700; cursor: pointer; }
     .btn-validator:hover { color: var(--text); }
@@ -331,10 +107,7 @@
     .btn-validator.active-desligado { background: rgba(255, 69, 58, 0.18); color: var(--danger); border-color: rgba(255, 69, 58, 0.35); }
 
     .metrics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
-    .metric-card {
-      background-color: var(--surface); border: 1px solid var(--border); border-radius: 20px;
-      padding: 24px 28px; display: flex; flex-direction: column; gap: 8px; box-shadow: var(--shadow);
-    }
+    .metric-card { background-color: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 24px 28px; display: flex; flex-direction: column; gap: 8px; box-shadow: var(--shadow); }
     .metric-label { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted); }
     .metric-val { font-size: 2.1rem; font-weight: 800; letter-spacing: -0.02em; color: var(--text); }
     .metric-val.total { color: var(--text); }
@@ -346,29 +119,15 @@
     .page-section { display: none; flex-direction: column; gap: 24px; }
     .page-section.active { display: flex; }
 
-    .filter-panel {
-      background-color: var(--surface); border: 1px solid var(--border); border-radius: 20px;
-      padding: 22px 28px; display: flex; flex-direction: column; gap: 16px; box-shadow: var(--shadow);
-    }
-    .search-box input {
-      width: 100%; background: var(--bg); border: 1px solid var(--border); color: var(--text);
-      padding: 14px 18px; border-radius: 12px; font-size: 0.95rem; outline: none;
-    }
+    .filter-panel { background-color: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 22px 28px; display: flex; flex-direction: column; gap: 16px; box-shadow: var(--shadow); }
+    .search-box input { width: 100%; background: var(--bg); border: 1px solid var(--border); color: var(--text); padding: 14px 18px; border-radius: 12px; font-size: 0.95rem; outline: none; }
     .search-box input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(41, 151, 255, 0.15); }
     .selects-row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
-    .selects-row select {
-      flex: 1; min-width: 180px; background: var(--bg); border: 1px solid var(--border); color: var(--text);
-      padding: 12px 16px; border-radius: 12px; font-size: 0.9rem; outline: none; cursor: pointer;
-    }
-    .btn-reset {
-      background: transparent; border: 1px solid var(--border); color: var(--text-muted);
-      padding: 12px 20px; border-radius: 12px; cursor: pointer; font-weight: 600; font-size: 0.9rem;
-    }
+    .selects-row select { flex: 1; min-width: 180px; background: var(--bg); border: 1px solid var(--border); color: var(--text); padding: 12px 16px; border-radius: 12px; font-size: 0.9rem; outline: none; cursor: pointer; }
+    .btn-reset { background: transparent; border: 1px solid var(--border); color: var(--text-muted); padding: 12px 20px; border-radius: 12px; cursor: pointer; font-weight: 600; font-size: 0.9rem; }
     .btn-reset:hover { color: var(--text); background: var(--surface-hover); }
 
-    .table-container {
-      background-color: var(--surface); border: 1px solid var(--border); border-radius: 20px; overflow-x: auto; box-shadow: var(--shadow);
-    }
+    .table-container { background-color: var(--surface); border: 1px solid var(--border); border-radius: 20px; overflow-x: auto; box-shadow: var(--shadow); }
     table { width: 100%; border-collapse: collapse; text-align: left; font-size: 0.88rem; }
     th { background-color: var(--bg); color: var(--text-muted); font-weight: 700; padding: 16px 20px; border-bottom: 1px solid var(--border); white-space: nowrap; }
     td { padding: 16px 20px; border-bottom: 1px solid var(--border); color: var(--text); white-space: nowrap; }
@@ -380,10 +139,7 @@
     .badge-grade { background: rgba(41, 151, 255, 0.12); color: var(--accent); border: 1px solid rgba(41, 151, 255, 0.25); padding: 3px 8px; border-radius: 8px; font-weight: 800; font-size: 0.74rem; }
     .badge-posic { background: rgba(191, 90, 242, 0.12); color: var(--violet); border: 1px solid rgba(191, 90, 242, 0.25); padding: 3px 8px; border-radius: 8px; font-weight: 800; font-size: 0.74rem; }
 
-    .crossfilter-bar {
-      display: none; align-items: center; justify-content: space-between; background: rgba(41, 151, 255, 0.1);
-      border: 1px solid rgba(41, 151, 255, 0.25); padding: 14px 20px; border-radius: 14px; font-size: 0.88rem; color: var(--text);
-    }
+    .crossfilter-bar { display: none; align-items: center; justify-content: space-between; background: rgba(41, 151, 255, 0.1); border: 1px solid rgba(41, 151, 255, 0.25); padding: 14px 20px; border-radius: 14px; font-size: 0.88rem; color: var(--text); }
     .crossfilter-bar.visible { display: flex; }
     .btn-clear-cross { background: var(--accent); color: #fff; border: none; padding: 6px 14px; border-radius: 8px; font-size: 0.8rem; font-weight: 700; cursor: pointer; }
 
@@ -481,76 +237,36 @@
     .info-row strong { color: var(--accent); }
 
     /* SIMULADORES TRÍPLICE & GRÁFICO COMPOSTO */
-    .calc-triple-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(340px, 1fr));
-      gap: 24px;
-      align-items: start;
-    }
-    @media (max-width: 1200px) {
-      .calc-triple-grid { grid-template-columns: 1fr; }
-    }
+    .calc-triple-grid { display: grid; grid-template-columns: repeat(3, minmax(340px, 1fr)); gap: 24px; align-items: start; }
+    @media (max-width: 1200px) { .calc-triple-grid { grid-template-columns: 1fr; } }
 
-    .form-calc-container {
-      background: var(--surface); border: 1px solid var(--border); border-radius: 20px;
-      padding: 28px; display: flex; flex-direction: column; gap: 18px; box-shadow: var(--shadow); min-width: 0;
-    }
+    .form-calc-container { background: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 28px; display: flex; flex-direction: column; gap: 18px; box-shadow: var(--shadow); min-width: 0; }
     .form-group { display: flex; flex-direction: column; gap: 8px; }
     .form-label { font-size: 0.78rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.04em; }
-    .form-control {
-      background: var(--bg); border: 1px solid var(--border); color: var(--text);
-      padding: 13px 16px; border-radius: 12px; font-size: 0.92rem; outline: none; cursor: pointer;
-    }
+    .form-control { background: var(--bg); border: 1px solid var(--border); color: var(--text); padding: 13px 16px; border-radius: 12px; font-size: 0.92rem; outline: none; cursor: pointer; }
     .form-control:focus { border-color: var(--violet); box-shadow: 0 0 0 3px rgba(191, 90, 242, 0.15); }
 
-    .grade-preview-box {
-      background: var(--bg); border: 1px solid var(--border); border-radius: 12px;
-      padding: 14px 16px; display: flex; justify-content: space-between; align-items: center; font-size: 0.88rem;
-    }
+    .grade-preview-box { background: var(--bg); border: 1px solid var(--border); border-radius: 12px; padding: 14px 16px; display: flex; justify-content: space-between; align-items: center; font-size: 0.88rem; }
     .grade-preview-box span { color: var(--text-muted); font-weight: 600; }
     .grade-preview-box strong { color: var(--accent); }
 
     .calc-btn-group { display: flex; gap: 12px; margin-top: 10px; }
-    .btn-add-simul {
-      flex: 1; background: linear-gradient(135deg, #7c3aed 0%, #bf5af2 100%); color: #fff;
-      font-weight: 700; font-size: 0.92rem; padding: 15px; border-radius: 14px; border: none;
-      cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px;
-      box-shadow: 0 8px 20px rgba(124, 58, 237, 0.35);
-    }
-    .btn-add-simul.btn-danger-simul {
-      background: linear-gradient(135deg, #ff453a 0%, #ff6961 100%);
-      box-shadow: 0 8px 20px rgba(255, 69, 58, 0.35);
-    }
-    .btn-add-simul.btn-warning-simul {
-      background: linear-gradient(135deg, #b25000 0%, #ffd60a 100%); color: #000;
-      box-shadow: 0 8px 20px rgba(255, 214, 10, 0.35);
-    }
+    .btn-add-simul { flex: 1; background: linear-gradient(135deg, #7c3aed 0%, #bf5af2 100%); color: #fff; font-weight: 700; font-size: 0.92rem; padding: 15px; border-radius: 14px; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; box-shadow: 0 8px 20px rgba(124, 58, 237, 0.35); }
+    .btn-add-simul.btn-danger-simul { background: linear-gradient(135deg, #ff453a 0%, #ff6961 100%); box-shadow: 0 8px 20px rgba(255, 69, 58, 0.35); }
+    .btn-add-simul.btn-warning-simul { background: linear-gradient(135deg, #b25000 0%, #ffd60a 100%); color: #000; box-shadow: 0 8px 20px rgba(255, 214, 10, 0.35); }
     .btn-add-simul:hover { transform: translateY(-2px); filter: brightness(1.08); }
 
-    .btn-clear-simul {
-      background: transparent; border: 1px solid var(--border); color: var(--text-muted);
-      padding: 15px 20px; border-radius: 14px; font-weight: 600; font-size: 0.9rem; cursor: pointer;
-    }
+    .btn-clear-simul { background: transparent; border: 1px solid var(--border); color: var(--text-muted); padding: 15px 20px; border-radius: 14px; font-weight: 600; font-size: 0.9rem; cursor: pointer; }
     .btn-clear-simul:hover { color: var(--danger); border-color: var(--danger); background: var(--surface-hover); }
 
-    .kpi-custos-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; margin-bottom: 22px;
-    }
-    .kpi-custo-card {
-      background: var(--surface); border: 1px solid var(--border); border-radius: 20px;
-      padding: 22px 26px; display: flex; flex-direction: column; gap: 8px; box-shadow: var(--shadow);
-    }
+    .kpi-custos-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; margin-bottom: 22px; }
+    .kpi-custo-card { background: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 22px 26px; display: flex; flex-direction: column; gap: 8px; box-shadow: var(--shadow); }
     .kpi-custo-card.highlight-2026 { border-left: 5px solid var(--accent); }
     .kpi-custo-card.highlight-2027 { border-left: 5px solid var(--violet); }
     .kpi-custo-card.highlight-total { border-left: 5px solid var(--success); }
 
-    .simulated-positions-card {
-      background-color: var(--surface); border: 1px solid var(--border); border-radius: 20px;
-      padding: 28px; box-shadow: var(--shadow); display: flex; flex-direction: column; width: 100%; min-width: 0; margin-top: 24px;
-    }
-    .simulated-table-scroll {
-      width: 100%; overflow-x: auto; max-height: 400px; overflow-y: auto; border-radius: 12px; border: 1px solid var(--border); background: var(--bg);
-    }
+    .simulated-positions-card { background-color: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 28px; box-shadow: var(--shadow); display: flex; flex-direction: column; width: 100%; min-width: 0; margin-top: 24px; }
+    .simulated-table-scroll { width: 100%; overflow-x: auto; max-height: 400px; overflow-y: auto; border-radius: 12px; border: 1px solid var(--border); background: var(--bg); }
     .simulated-table-scroll table { width: 100%; min-width: 950px; }
 
     /* GRÁFICO COMPOSTO */
@@ -569,176 +285,38 @@
     .chart-tooltip.active { opacity: 1; visibility: visible; }
 
     /* ESTILOS EDITORIAIS DO BLOG COM A FOTO REAL E TEXTO JUSTIFICADO */
-    .blog-page-wrapper {
-      background-color: var(--blog-bg, #f5f2eb);
-      color: var(--blog-text, #2c2925);
-      min-height: 100vh;
-      padding: 40px 24px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      transition: background-color 0.4s ease, color 0.4s ease;
-    }
-    [data-theme="dark"] .blog-page-wrapper {
-      --blog-bg: #121212;
-      --blog-card: #1c1c1e;
-      --blog-text: #f5f5f7;
-      --blog-muted: #86868b;
-      --blog-border: #38383a;
-    }
-    .blog-inner-container {
-      width: 100%;
-      max-width: 1100px;
-      display: flex;
-      flex-direction: column;
-      gap: 40px;
-    }
-    .blog-nav-bar {
-      display: flex;
-      justify-content: center;
-      gap: 32px;
-      font-size: 0.85rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      border-bottom: 1px solid var(--blog-border, #e0d8cc);
-      padding-bottom: 20px;
-    }
-    .blog-nav-bar a {
-      color: var(--blog-text, #2c2925);
-      text-decoration: none;
-      cursor: pointer;
-      padding: 4px 12px;
-      border-radius: 6px;
-      transition: background 0.2s;
-    }
+    .blog-page-wrapper { background-color: var(--blog-bg, #f5f2eb); color: var(--blog-text, #2c2925); min-height: 100vh; padding: 40px 24px; display: flex; flex-direction: column; align-items: center; transition: background-color 0.4s ease, color 0.4s ease; }
+    [data-theme="dark"] .blog-page-wrapper { --blog-bg: #121212; --blog-card: #1c1c1e; --blog-text: #f5f5f7; --blog-muted: #86868b; --blog-border: #38383a; }
+    .blog-inner-container { width: 100%; max-width: 1100px; display: flex; flex-direction: column; gap: 40px; }
+    .blog-nav-bar { display: flex; justify-content: center; gap: 32px; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; border-bottom: 1px solid var(--blog-border, #e0d8cc); padding-bottom: 20px; }
+    .blog-nav-bar a { color: var(--blog-text, #2c2925); text-decoration: none; cursor: pointer; padding: 4px 12px; border-radius: 6px; transition: background 0.2s; }
     .blog-nav-bar a:hover { background: rgba(0,0,0,0.05); }
     [data-theme="dark"] .blog-nav-bar a:hover { background: rgba(255,255,255,0.08); }
     
-    .profile-card-editorial {
-      background: var(--blog-card, #FAF8F5);
-      border: 1px solid var(--blog-border, #e0d8cc);
-      border-radius: 20px;
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      align-items: center;
-      overflow: hidden;
-      box-shadow: 0 15px 35px rgba(0,0,0,0.06);
-    }
-    @media(max-width: 850px) {
-      .profile-card-editorial { grid-template-columns: 1fr; }
-    }
-    .profile-info {
-      padding: 50px;
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-    .profile-info h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.8rem;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-    }
-    .profile-info p {
-      font-size: 1.02rem;
-      line-height: 1.65;
-      color: var(--blog-muted, #756e63);
-      text-align: justify;
-    }
-    .profile-socials {
-      display: flex;
-      gap: 16px;
-      margin-top: 10px;
-      align-items: center;
-      font-size: 0.85rem;
-      font-weight: 700;
-      color: var(--blog-text);
-    }
-    .profile-image-box {
-      width: 100%;
-      height: 100%;
-      min-height: 420px;
-      background: #e0d8cc;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-    }
-    .profile-image-box img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
+    .profile-card-editorial { background: var(--blog-card, #FAF8F5); border: 1px solid var(--blog-border, #e0d8cc); border-radius: 20px; display: grid; grid-template-columns: 1.1fr 0.9fr; align-items: center; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.06); }
+    @media(max-width: 850px) { .profile-card-editorial { grid-template-columns: 1fr; } }
+    .profile-info { padding: 50px; display: flex; flex-direction: column; gap: 20px; }
+    .profile-info h2 { font-family: 'Playfair Display', serif; font-size: 2.8rem; font-weight: 700; letter-spacing: -0.02em; }
+    .profile-info p { font-size: 1.02rem; line-height: 1.65; color: var(--blog-muted, #756e63); text-align: justify; }
+    .profile-socials { display: flex; gap: 16px; margin-top: 10px; align-items: center; font-size: 0.85rem; font-weight: 700; color: var(--blog-text); }
+    .profile-image-box { width: 100%; height: 100%; min-height: 420px; background: #e0d8cc; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+    .profile-image-box img { width: 100%; height: 100%; object-fit: cover; }
 
-    .blog-articles-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 24px;
-    }
-    .blog-article-box {
-      background: var(--blog-card, #FAF8F5);
-      border: 1px solid var(--blog-border, #e0d8cc);
-      border-radius: 16px;
-      padding: 30px;
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.02);
-      cursor: pointer;
-      transition: transform 0.2s ease, border-color 0.2s ease;
-    }
-    .blog-article-box:hover {
-      transform: translateY(-4px);
-      border-color: var(--accent);
-    }
+    .blog-articles-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; }
+    .blog-article-box { background: var(--blog-card, #FAF8F5); border: 1px solid var(--blog-border, #e0d8cc); border-radius: 16px; padding: 30px; display: flex; flex-direction: column; gap: 14px; box-shadow: 0 4px 15px rgba(0,0,0,0.02); cursor: pointer; transition: transform 0.2s ease, border-color 0.2s ease; }
+    .blog-article-box:hover { transform: translateY(-4px); border-color: var(--accent); }
     .blog-article-box span { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: var(--accent); letter-spacing: 0.05em; }
     .blog-article-box h4 { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700; line-height: 1.3; color: var(--blog-text); }
     .blog-article-box p { font-size: 0.92rem; color: var(--blog-muted, #756e63); line-height: 1.6; text-align: justify; }
 
     /* LEITURA DOS ARTIGOS (COM TEXTO JUSTIFICADO) */
-    .blog-reader-view {
-      display: none;
-      flex-direction: column;
-      gap: 32px;
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 20px 0 80px 0;
-    }
+    .blog-reader-view { display: none; flex-direction: column; gap: 32px; max-width: 800px; margin: 0 auto; padding: 20px 0 80px 0; }
     .blog-reader-view.active { display: flex; }
-    .blog-reader-back {
-      background: transparent;
-      border: 1px solid var(--blog-border);
-      color: var(--blog-text);
-      padding: 8px 16px;
-      border-radius: 8px;
-      font-size: 0.85rem;
-      font-weight: 700;
-      cursor: pointer;
-      width: fit-content;
-    }
+    .blog-reader-back { background: transparent; border: 1px solid var(--blog-border); color: var(--blog-text); padding: 8px 16px; border-radius: 8px; font-size: 0.85rem; font-weight: 700; cursor: pointer; width: fit-content; }
     .blog-reader-back:hover { opacity: 0.7; }
-    .blog-reader-content h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.5rem;
-      font-weight: 700;
-      line-height: 1.25;
-      margin-bottom: 16px;
-    }
-    .blog-reader-content .meta {
-      font-size: 0.85rem;
-      color: var(--blog-muted);
-      margin-bottom: 30px;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-    .blog-reader-content p {
-      font-size: 1.08rem;
-      line-height: 1.85;
-      color: var(--blog-text);
-      margin-bottom: 20px;
-      text-align: justify;
-    }
+    .blog-reader-content h1 { font-family: 'Playfair Display', serif; font-size: 2.5rem; font-weight: 700; line-height: 1.25; margin-bottom: 16px; }
+    .blog-reader-content .meta { font-size: 0.85rem; color: var(--blog-muted); margin-bottom: 30px; text-transform: uppercase; letter-spacing: 0.05em; }
+    .blog-reader-content p { font-size: 1.08rem; line-height: 1.85; color: var(--blog-text); margin-bottom: 20px; text-align: justify; }
   </style>
 </head>
 <body data-theme="light">
@@ -1026,7 +604,7 @@
     </main>
   </div>
 
-  <!-- 3. VIEW BLOG "RH POR FELIPE VIEGAS" (ORDEM INVERSA E TEXTO JUSTIFICADO) -->
+  <!-- 3. VIEW BLOG "RH POR FELIPE VIEGAS" (ORDEM INVERSA COM O NOVO TEXTO DA AXIA) -->
   <div id="view-blog" class="view-container">
     <div class="dash-top-bar">
       <button class="btn-back-home" onclick="voltarParaCapa()">
@@ -1066,10 +644,17 @@
           </div>
         </div>
 
-        <!-- CARDS DE INTRODUÇÃO DOS ARTIGOS (ORDEM INVERSA) -->
+        <!-- CARDS DE INTRODUÇÃO DOS ARTIGOS (ORDEM INVERSA COM O NOVO TEXTO NO TOPO) -->
         <div class="blog-articles-grid" id="blogCardsGrid">
           
-          <!-- POST 4 (MAIS RECENTE) -->
+          <!-- POST 5 (NOVO: DESAFIO INICIAL NA AXIA) -->
+          <article class="blog-article-box" onclick="abrirArtigoDesafioAxia()">
+            <span>Case • People Analytics & Orçamento</span>
+            <h4>O meu desafio inicial na Axia: Construindo o orçamento de Pessoal do zero</h4>
+            <p>Como assumimos a responsabilidade pelo orçamento de Pessoal (P) em tempo recorde, evoluindo de premissas macro para uma visão analítica, automatizada e robusta baseada em SQL, Python e Power BI.</p>
+          </article>
+
+          <!-- POST 4 -->
           <article class="blog-article-box" onclick="abrirArtigoFuturoRH()">
             <span>Tendências • Presente & Futuro</span>
             <h4>People Analytics, BPs, o presente e o futuro do RH</h4>
@@ -1090,13 +675,33 @@
             <p>De requisições de pessoal em 2007 aos dashboards preditivos no Power BI e Fabric: como transformar a cultura do "feeling" em uma gestão orientada por dados reais.</p>
           </article>
 
-          <!-- POST 1 (PRIMEIRO MANIFESTO) -->
+          <!-- POST 1 -->
           <article class="blog-article-box" onclick="abrirArtigoManifesto()">
             <span>Manifesto • Visão Geral</span>
             <h4>O RH, minhas ideias e os contrapontos da vida de um profissional</h4>
             <p>Uma reflexão profunda sobre como o RH evoluiu perante as novas gerações, os dilemas diários de atração, retenção e o papel transformador da escuta e dos dados.</p>
           </article>
 
+        </div>
+
+        <!-- LEITOR: ARTIGO 5 (NOVO: DESAFIO NA AXIA) -->
+        <div id="blog-reader-axia" class="blog-reader-view">
+          <button class="blog-reader-back" onclick="fecharLeitorArtigo()">← Voltar para os Artigos</button>
+          <div class="blog-reader-content">
+            <div class="meta">Case • Publicado por Felipe Viegas</div>
+            <h1>O meu desafio inicial na Axia: Construindo o orçamento de Pessoal do zero</h1>
+            <p>Quando assumi o desafio de montar a área de People Analytics e Orçamento na Axia, em agosto de 2025, eu sabia exatamente o tamanho dele. No processo seletivo, ficou bem claro o que eu precisaria construir para alcançar o objetivo da Torre de Gente da empresa.</p>
+            <p>Precisávamos construir o orçamento de P (Pessoal) da empresa. Esse era o grande desejo da Diretoria de Remuneração e Planejamento, após alguns ciclos com o processo sendo conduzido pelo time da Controladoria. Por si só, não chega a ser um problema, mas, pensando em um orçamento de grandeza significativa, em governança, em controle detalhado — uma vez que muitas informações não podiam circular livremente — e no refino à altura que o tema pedia, trazer para o RH esse processo era fundamental para as pretensões futuras do <em>workforce planning</em>.</p>
+            <p>Encontrei uma equipe com muita vontade e conhecimento técnico, mas que necessitava de orientação e estratégia para construir, primeiro, a base de dados necessária para sustentar a orçamentação dos custos. Boa parte do que precisávamos o time já havia construído, o que possibilitou, inicialmente, fornecer aos nossos times de BPs e de Remuneração dashboards com as informações das nossas pessoas.</p>
+            <p>Enquanto liberávamos as informações mais estruturadas para conhecimento e crítica dos times, aprofundamo-nos nos cálculos de folha de pagamento e nas particularidades do negócio. Inundado de dados e com diversos <em>inputs</em> de áreas distintas sedentas pelo processo, fomos estruturando os cálculos inicialmente usando Power Query e Power BI. Minha intenção era deixar o orçamento o mais automatizado possível, imaginando que teríamos que fazer inúmeras versões ao longo do ciclo.</p>
+            <p>O time de BPs foi fundamental. Foi a partir dele que consegui entender as estruturas, as hierarquias e as particularidades de cada Vice-Presidência da empresa. Já o time de Remuneração contribuiu efetivamente nas regras de remuneração fixa e variável, faixas salariais, grades e demais itens remuneratórios que precisávamos transpor para o modelo orçamentário.</p>
+            <p>Com a chegada de mais um integrante ao time — um especialista em orçamento —, demos o salto de qualidade necessário para concluirmos nosso objetivo: transpusemos nossa base para o SQL, com cálculos rodando em Python e garantindo que tivéssemos, de maneira estruturada, cada conta contábil e seus reajustes mapeados.</p>
+            <p>Concluímos o nosso primeiro orçamento com louvor em pouco mais de 60 dias da minha admissão. Saímos de um orçamento anterior que, com toda a dificuldade de base e de informação, fora construído por meio de custos médios por Vice-Presidência (com parâmetros genéricos de reajuste coletivo, rescisão e ciclo de mérito), para uma visão analítica, por posição, com todos os cálculos e impactos feitos de maneira automática, em um ambiente seguro, rastreável e escalável para os líderes responsáveis por mantê-lo ao longo do ano.</p>
+            <p>Disponibilizamos um painel no Power BI com o resultado do processo orçamentário aos nossos BPs. A fim de universalizar o conhecimento, conversamos com o time de Parceiros de Negócios, passamos por todos os tópicos do orçamento para instruí-los e formá-los como nossos multiplicadores junto aos gestores. O foco desse primeiro dashboard era trazer as premissas, os valores, o detalhamento de posições e as características gerais do número.</p>
+            <p>Após esse período e já no fim do primeiro mês, construímos um novo dashboard. Este, além de ser composto pelo orçamento, passou a trazer também o Fator K, a massa salarial, o detalhamento individualizado do realizado por conta e a evolução do <em>headcount</em>, da massa salarial e do custo de Pessoal.</p>
+            <p>Atualmente, mantemos este painel atualizado mensalmente, trazendo basicamente as mesmas informações, enriquecido com análises de custos por segundo nível de gestão e uma calculadora de <em>forecast</em> (similar à que publiquei neste mesmo repositório, na página inicial).</p>
+            <p>Pensando no futuro, já estamos idealizando um novo modelo, mais robusto, com mais análises e indicadores, hospedado no ambiente moderno disponibilizado recentemente pelo Fabric: o Fabric App. Em breve, atualizo as novidades por aqui.</p>
+          </div>
         </div>
 
         <!-- LEITOR: ARTIGO 1 (MANIFESTO) -->
@@ -1154,7 +759,7 @@
             <p>Cansei de me deparar com o mesmo problema: o limite orçamentário da empresa. Claramente muito importante, mas a decisão deixou de ser baseada em remédios tradicionais de prateleira (pelo menos na minha visão e gestão). Era simples, mas pouco produtivo, postergar vagas, reduzir postos de trabalho, apertar premissas ou interferir em trocas de pessoas. Como diz o jargão, o Excel (ou o sistema orçamentário) “aceita” qualquer proposição, mas será que ela é sustentável? Possível? E os reflexos dela no clima da organização? Como ficam essas questões?</p>
             <p>É inocência e irresponsabilidade dizer que esses remédios não existem mais. Não é essa a reflexão. O que quero promover é a discussão de como podemos ajudar a empresa nessas decisões. Temos a possibilidade de contribuir de maneira mais eficaz nesse processo.</p>
             <p>Programas de cultura, marca empregadora, CAPEX e oportunidades reais de redução de custo são ferramentas mais inteligentes e criativas de alcançar a meta orçamentária. Note que, nessa fase do processo, não citei apertar premissas ou postergar posições vazias.</p>
-            <p>Já vi empresas que tomam decisão olhando estritamente para custo. Reduzir senioridade nem sempre é o melhor caminho, por exemplo. Ao invés disso, é mais produtivo e saudável planejar seu <em>headcount</em>. Desenhar seu <em>shape</em> esperado de acordo com the características das carreiras me parece uma decisão mais madura e sustentável ao negócio. Se eu sei como quero que minha empresa funcione, o quantitativo de pessoas passa a ser apenas uma adequação à minha realidade financeira. Repito: assim eu sei como quero que a empresa funcione!</p>
+            <p>Já vi empresas que tomam decisão olhando estritamente para custo. Reduzir senioridade nem sempre é o melhor caminho, por exemplo. Ao invés disso, é mais produtivo e saudável planejar seu <em>headcount</em>. Desenhar seu <em>shape</em> esperado de acordo com as características das carreiras me parece uma decisão mais madura e sustentável ao negócio. Se eu sei como quero que minha empresa funcione, o quantitativo de pessoas passa a ser apenas uma adequação à minha realidade financeira. Repito: assim eu sei como quero que a empresa funcione!</p>
             <p>Finalizando este artigo, ao realizar um orçamento, penso que o melhor caminho seja, primeiro, entender suas características e saber como a empresa funciona. Depois, conhecer as regras de folha de pagamento, a estrutura remuneratória, as possibilidades de CAPEX, férias coletivas, oportunidades de melhoria na performance das equipes e onde seu <em>headcount</em> permite uma atuação dirigida aos interesses do negócio.</p>
           </div>
         </div>
@@ -1571,6 +1176,7 @@
       document.getElementById("blog-reader-dados").classList.remove("active");
       document.getElementById("blog-reader-custo").classList.remove("active");
       document.getElementById("blog-reader-futuro").classList.remove("active");
+      document.getElementById("blog-reader-axia").classList.remove("active");
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
 
@@ -1581,6 +1187,7 @@
       document.getElementById("blog-reader-manifesto").classList.remove("active");
       document.getElementById("blog-reader-custo").classList.remove("active");
       document.getElementById("blog-reader-futuro").classList.remove("active");
+      document.getElementById("blog-reader-axia").classList.remove("active");
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
 
@@ -1591,6 +1198,7 @@
       document.getElementById("blog-reader-manifesto").classList.remove("active");
       document.getElementById("blog-reader-dados").classList.remove("active");
       document.getElementById("blog-reader-futuro").classList.remove("active");
+      document.getElementById("blog-reader-axia").classList.remove("active");
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
 
@@ -1601,6 +1209,18 @@
       document.getElementById("blog-reader-manifesto").classList.remove("active");
       document.getElementById("blog-reader-dados").classList.remove("active");
       document.getElementById("blog-reader-custo").classList.remove("active");
+      document.getElementById("blog-reader-axia").classList.remove("active");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    function abrirArtigoDesafioAxia() {
+      document.getElementById("blogMainListSection").style.display = "none";
+      document.getElementById("blogCardsGrid").style.display = "none";
+      document.getElementById("blog-reader-axia").classList.add("active");
+      document.getElementById("blog-reader-manifesto").classList.remove("active");
+      document.getElementById("blog-reader-dados").classList.remove("active");
+      document.getElementById("blog-reader-custo").classList.remove("active");
+      document.getElementById("blog-reader-futuro").classList.remove("active");
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
 
@@ -1609,6 +1229,7 @@
       document.getElementById("blog-reader-dados").classList.remove("active");
       document.getElementById("blog-reader-custo").classList.remove("active");
       document.getElementById("blog-reader-futuro").classList.remove("active");
+      document.getElementById("blog-reader-axia").classList.remove("active");
       document.getElementById("blogMainListSection").style.display = "grid";
       document.getElementById("blogCardsGrid").style.display = "grid";
       window.scrollTo({ top: 0, behavior: "smooth" });
