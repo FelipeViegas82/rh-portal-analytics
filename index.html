@@ -317,7 +317,85 @@
     .blog-reader-content h1 { font-family: 'Playfair Display', serif; font-size: 2.5rem; font-weight: 700; line-height: 1.25; margin-bottom: 16px; }
     .blog-reader-content .meta { font-size: 0.85rem; color: var(--blog-muted); margin-bottom: 30px; text-transform: uppercase; letter-spacing: 0.05em; }
     .blog-reader-content p { font-size: 1.08rem; line-height: 1.85; color: var(--blog-text); margin-bottom: 20px; text-align: justify; }
-  </style>
+
+    /* PEOPLE COCKPIT */
+    .cockpit-shell { display:grid; grid-template-columns: 1fr; gap:24px; }
+    .cockpit-hero { background:linear-gradient(135deg,#071425 0%,#0b2845 55%,#17345d 100%); color:#fff; border-radius:28px; padding:32px; position:relative; overflow:hidden; box-shadow:var(--shadow); }
+    .cockpit-hero::after { content:""; position:absolute; width:340px; height:340px; right:-120px; top:-150px; border-radius:50%; background:radial-gradient(circle,rgba(41,151,255,.38),transparent 68%); }
+    .cockpit-hero-top { display:flex; justify-content:space-between; align-items:flex-start; gap:20px; position:relative; z-index:1; }
+    .cockpit-kicker { color:#75bfff; font-size:.72rem; font-weight:800; letter-spacing:.12em; text-transform:uppercase; }
+    .cockpit-hero h1 { font-size:2rem; margin-top:7px; letter-spacing:-.03em; }
+    .cockpit-hero p { color:#c5d9ee; max-width:720px; margin-top:8px; line-height:1.55; }
+    .cockpit-actions { display:flex; gap:10px; flex-wrap:wrap; }
+    .cockpit-btn { border:1px solid rgba(255,255,255,.22); background:rgba(255,255,255,.1); color:#fff; padding:11px 16px; border-radius:12px; font-weight:700; cursor:pointer; backdrop-filter:blur(10px); }
+    .cockpit-btn.primary { background:#2997ff; border-color:#2997ff; }
+    .cockpit-btn:hover { transform:translateY(-1px); filter:brightness(1.08); }
+    .cockpit-summary { display:grid; grid-template-columns:repeat(7,minmax(110px,1fr)); gap:12px; margin-top:28px; position:relative; z-index:1; }
+    .cockpit-summary-card { background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.13); border-radius:16px; padding:15px; }
+    .cockpit-summary-card span { color:#aac5df; font-size:.68rem; text-transform:uppercase; font-weight:800; letter-spacing:.04em; }
+    .cockpit-summary-card strong { display:block; font-size:1.5rem; margin-top:5px; }
+    .cockpit-grid { display:grid; grid-template-columns:minmax(0,1.65fr) minmax(310px,.75fr); gap:24px; }
+    .cockpit-card { background:var(--surface); border:1px solid var(--border); border-radius:22px; padding:24px; box-shadow:var(--shadow); }
+    .cockpit-card-head { display:flex; justify-content:space-between; align-items:flex-start; gap:15px; margin-bottom:18px; }
+    .cockpit-card-head h3 { font-size:1.08rem; }
+    .cockpit-card-head p { color:var(--text-muted); font-size:.8rem; margin-top:4px; }
+    .cockpit-filters { display:flex; gap:9px; flex-wrap:wrap; }
+    .cockpit-filters select,.cockpit-filters input { background:var(--bg); color:var(--text); border:1px solid var(--border); border-radius:10px; padding:9px 11px; font-size:.8rem; outline:none; }
+    .position-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(245px,1fr)); gap:13px; max-height:650px; overflow:auto; padding-right:4px; }
+    .position-tile { border:1px solid var(--border); border-left:5px solid var(--success); background:var(--bg); border-radius:16px; padding:15px; cursor:pointer; transition:.2s ease; position:relative; }
+    .position-tile:hover { transform:translateY(-2px); border-color:var(--accent); box-shadow:0 10px 25px rgba(0,0,0,.08); }
+    .position-tile.vaga { border-left-color:var(--warning); }
+    .position-tile.atracao { border-left-color:var(--accent); }
+    .position-tile.congelada { border-left-color:var(--text-muted); opacity:.78; } .position-tile.estudo{border-left-color:#bf5af2;background:linear-gradient(135deg,var(--bg),rgba(191,90,242,.08));box-shadow:inset 0 0 0 1px rgba(191,90,242,.12)}
+    .position-id { color:var(--text-muted); font-size:.65rem; font-weight:800; letter-spacing:.06em; }
+    .position-title { font-size:.9rem; font-weight:800; margin:7px 0 3px; }
+    .position-area { color:var(--text-muted); font-size:.75rem; }
+    .position-person { margin-top:13px; padding-top:11px; border-top:1px solid var(--border); font-size:.78rem; display:flex; justify-content:space-between; gap:8px; }
+    .position-tags { display:flex; gap:5px; flex-wrap:wrap; margin-top:10px; }
+    .mini-tag { border-radius:999px; padding:4px 8px; font-size:.64rem; font-weight:800; background:var(--surface); border:1px solid var(--border); }
+    .mini-tag.blue { color:var(--accent); background:rgba(41,151,255,.10); }
+    .mini-tag.amber { color:var(--warning); background:rgba(255,214,10,.10); }
+    .mini-tag.red { color:var(--danger); background:rgba(255,69,58,.10); } .mini-tag.purple{color:#bf5af2;background:rgba(191,90,242,.10)} .mini-tag.green{color:#30d158;background:rgba(48,209,88,.10)}
+    .alert-list { display:flex; flex-direction:column; gap:10px; }
+    .alert-item { background:var(--bg); border:1px solid var(--border); border-radius:14px; padding:13px 14px; display:grid; grid-template-columns:10px 1fr; gap:10px; align-items:start; cursor:pointer; }
+    .alert-dot { width:9px; height:9px; border-radius:50%; background:var(--warning); margin-top:5px; box-shadow:0 0 8px currentColor; }
+    .alert-item.severe .alert-dot { background:var(--danger); }
+    .alert-item.info .alert-dot { background:var(--accent); }
+    .alert-item strong { font-size:.8rem; display:block; }
+    .alert-item span { color:var(--text-muted); font-size:.72rem; line-height:1.4; display:block; margin-top:2px; }
+    .pipeline { display:grid; grid-template-columns:repeat(7,1fr); gap:8px; }
+    .pipeline-step { background:var(--bg); border:1px solid var(--border); border-radius:14px; padding:14px 9px; text-align:center; position:relative; }
+    .pipeline-step strong { display:block; font-size:1.35rem; color:var(--accent); }
+    .pipeline-step span { font-size:.66rem; color:var(--text-muted); line-height:1.3; display:block; margin-top:4px; }
+    .deadtime-list { display:flex; flex-direction:column; gap:11px; }
+    .deadtime-row { display:grid; grid-template-columns:minmax(130px,1.4fr) 1fr 58px; gap:12px; align-items:center; }
+    .deadtime-name { font-size:.76rem; font-weight:700; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+    .deadtime-track { background:var(--bg); border:1px solid var(--border); height:10px; border-radius:999px; overflow:hidden; }
+    .deadtime-fill { height:100%; background:linear-gradient(90deg,var(--warning),var(--danger)); border-radius:999px; }
+    .deadtime-days { font-size:.74rem; font-weight:800; text-align:right; }
+    .position-drawer-backdrop { display:none; position:fixed; inset:0; background:rgba(0,0,0,.4); z-index:490; }
+    .position-drawer-backdrop.open { display:block; }
+    .position-drawer { position:fixed; right:-520px; top:0; height:100vh; width:min(500px,94vw); background:var(--surface); z-index:500; border-left:1px solid var(--border); transition:right .35s cubic-bezier(.16,1,.3,1); box-shadow:-20px 0 60px rgba(0,0,0,.25); overflow:auto; padding:28px; }
+    .position-drawer.open { right:0; }
+    .drawer-close { border:1px solid var(--border); background:var(--bg); color:var(--text); border-radius:10px; padding:8px 11px; cursor:pointer; float:right; }
+    .drawer-block { background:var(--bg); border:1px solid var(--border); border-radius:14px; padding:15px; margin-top:12px; }
+    .drawer-block h4 { font-size:.76rem; color:var(--text-muted); text-transform:uppercase; letter-spacing:.05em; margin-bottom:10px; }
+    .drawer-line { display:flex; justify-content:space-between; gap:15px; font-size:.8rem; padding:6px 0; border-bottom:1px dashed var(--border); }
+    .drawer-line:last-child { border-bottom:none; }
+    .drawer-line span { color:var(--text-muted); }
+    @media(max-width:1100px){ .cockpit-grid{grid-template-columns:1fr}.cockpit-summary{grid-template-columns:repeat(3,1fr)} }
+    @media(max-width:720px){ .cockpit-summary{grid-template-columns:repeat(2,1fr)} .cockpit-hero-top{flex-direction:column}.pipeline{grid-template-columns:repeat(2,1fr)} .cockpit-card-head{flex-direction:column}.cockpit-filters>*{width:100%} }
+
+
+    .scenario-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px;position:relative;z-index:1}.scenario-state{border-radius:16px;padding:16px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.07)}.scenario-state.sim{background:rgba(41,151,255,.16);border-color:rgba(41,151,255,.4)}.scenario-state .state-title{font-size:.7rem;font-weight:900;letter-spacing:.08em;text-transform:uppercase;color:#9fc7e8}.scenario-state .state-kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:10px}.scenario-state .state-kpis b{display:block;font-size:1.1rem}.scenario-state .state-kpis small{display:block;color:#aac5df;font-size:.62rem;margin-top:2px}.forecast-card{background:var(--surface);border:1px solid var(--border);border-radius:22px;padding:24px;box-shadow:var(--shadow)}.forecast-legend{display:flex;gap:16px;flex-wrap:wrap;font-size:.7rem;color:var(--text-muted)}.forecast-dot{width:9px;height:9px;border-radius:50%;display:inline-block;margin-right:5px}.forecast-svg{width:100%;height:260px;overflow:visible}.forecast-svg text{fill:var(--text-muted);font-size:10px}.forecast-grid{stroke:var(--border);stroke-width:1}.forecast-line{fill:none;stroke-width:3;stroke-linejoin:round;stroke-linecap:round}.forecast-line.today{stroke:#7b8794}.forecast-line.committed{stroke:#2997ff}.forecast-line.scenario{stroke:#bf5af2;stroke-dasharray:7 5}.forecast-line.budget{stroke:#ff9f0a;stroke-width:2.5;stroke-dasharray:5 4}.forecast-cost{display:grid;grid-template-columns:1fr 1fr;gap:24px}@media(max-width:900px){.scenario-strip,.forecast-cost{grid-template-columns:1fr}.scenario-state .state-kpis{grid-template-columns:repeat(3,1fr)}}
+
+    .whatsapp-float{position:fixed;right:20px;bottom:20px;z-index:1000;display:flex;align-items:center;gap:8px;background:#25D366;color:#fff;text-decoration:none;padding:11px 15px;border-radius:999px;font-size:.76rem;font-weight:800;box-shadow:0 10px 30px rgba(0,0,0,.24);transition:.2s ease}.whatsapp-float:hover{transform:translateY(-2px);filter:brightness(.96)}.whatsapp-float svg{width:18px;height:18px;fill:currentColor}@media(max-width:620px){.whatsapp-float span{display:none}.whatsapp-float{width:46px;height:46px;padding:0;justify-content:center}}
+
+    .approval-report{display:none;background:#fff;color:#122033;font-family:Arial,Helvetica,sans-serif}.approval-report *{box-sizing:border-box}.approval-report .apr-page{width:100%;padding:12mm 14mm;max-width:1120px;margin:0 auto}.apr-header{background:linear-gradient(135deg,#071425,#123a67);color:#fff;border-radius:18px;padding:24px 26px}.apr-kicker{font-size:10px;text-transform:uppercase;letter-spacing:1.5px;color:#8ecbff;font-weight:800}.apr-header h1{font-size:25px;margin:6px 0}.apr-header p{font-size:11px;color:#d5e6f5;margin:0}.apr-meta{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin-top:18px}.apr-meta div{background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.15);padding:10px;border-radius:10px}.apr-meta span{display:block;color:#b9d4eb;font-size:8px;text-transform:uppercase;font-weight:700}.apr-meta strong{font-size:11px;display:block;margin-top:4px}.apr-section{margin-top:20px;page-break-inside:avoid}.apr-section h2{font-size:15px;margin:0 0 10px;border-left:4px solid #2997ff;padding-left:9px}.apr-kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.apr-kpi{border:1px solid #dce4ed;border-radius:12px;padding:12px;background:#f7f9fc}.apr-kpi span{font-size:8px;text-transform:uppercase;color:#637286;font-weight:800}.apr-kpi strong{display:block;font-size:18px;margin-top:5px}.apr-kpi small{display:block;font-size:9px;color:#637286;margin-top:3px}.apr-charts{display:grid;grid-template-columns:1fr;gap:12px;align-items:start}.apr-chart{border:1px solid #dce4ed;border-radius:14px;padding:12px;page-break-inside:avoid}.apr-chart h3{font-size:12px;margin:0 0 4px}.apr-chart p{font-size:8px;color:#637286;margin:0 0 6px}.apr-chart svg{display:block;width:100%;height:205px;max-width:100%;overflow:visible}.apr-table{width:100%;border-collapse:collapse;font-size:9px}.apr-table th{background:#eaf3fb;text-align:left;padding:8px;border-bottom:1px solid #cbd8e5}.apr-table td{padding:8px;border-bottom:1px solid #e5ebf1;vertical-align:top}.apr-badge{display:inline-block;padding:3px 7px;border-radius:999px;background:#e8f3ff;color:#1673c9;font-weight:700}.apr-badge.purple{background:#f3e9fb;color:#8e44ad}.apr-badge.red{background:#ffeceb;color:#c33}.apr-opinion{background:#edf6ff;border:1px solid #c7e2fb;border-radius:14px;padding:14px;font-size:10px;line-height:1.55}.apr-approval{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:24px}.apr-sign{padding-top:25px;border-top:1px solid #8391a2;font-size:9px;text-align:center}.apr-foot{font-size:8px;color:#66778a;margin-top:16px;border-top:1px solid #dce4ed;padding-top:8px}.apr-printbar{position:fixed;top:12px;right:15px;z-index:5000;display:flex;gap:8px}.apr-printbar button{border:0;border-radius:9px;padding:10px 14px;font-weight:700;cursor:pointer}.apr-printbar .save{background:#2997ff;color:#fff}.apr-printbar .close{background:#e8edf3;color:#1c2b3a}
+    body.report-preview>*:not(#approvalReport){display:none!important}body.report-preview #approvalReport{display:block!important}
+    @media print{@page{size:A4 landscape;margin:8mm}body{background:#fff!important}body>*:not(#approvalReport){display:none!important}#approvalReport{display:block!important}.apr-printbar{display:none!important}.approval-report .apr-page{padding:4mm}.apr-header{-webkit-print-color-adjust:exact;print-color-adjust:exact}.apr-table th,.apr-kpi,.apr-opinion{-webkit-print-color-adjust:exact;print-color-adjust:exact}.whatsapp-float{display:none!important}}
+  @media(max-width:760px){#view-calculadora .simulated-positions-card>div[style*="grid-template-columns:repeat(4"]{grid-template-columns:1fr 1fr!important}}
+</style>
 </head>
 <body data-theme="light">
 
@@ -374,6 +452,22 @@
             <span>Acessar Simulador</span>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </div>
+        </div>
+      </div>
+
+
+      <!-- CARD NOVO: PEOPLE COCKPIT -->
+      <div class="apple-card" onclick="irParaDashboard('page-cockpit')">
+        <div class="apple-card-media">
+          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="People Cockpit">
+        </div>
+        <div class="apple-card-content">
+          <div class="apple-card-header">
+            <span class="apple-card-badge" style="color:#2997ff;background:rgba(41,151,255,.12);">Novo • Workforce Intelligence</span>
+            <h3 class="apple-card-title">People Cockpit</h3>
+            <p class="apple-card-desc">Mapa vivo de posições, vacâncias, atração, tempo sem ação e visão integrada para decisões de estrutura.</p>
+          </div>
+          <div class="apple-card-action"><span>Abrir Cockpit</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
         </div>
       </div>
 
@@ -791,9 +885,9 @@
   <!-- 4. VIEW SIMULADOR E PROJEÇÃO DE CUSTOS DE PESSOAL (ISOLADO) -->
   <div id="view-calculadora" class="view-container">
     <div class="dash-top-bar">
-      <button class="btn-back-home" onclick="voltarParaCapa()">
+      <button class="btn-back-home" onclick="irParaDashboard('page-cockpit')">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:16px;height:16px;"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-        <span>Voltar à Capa Principal</span>
+        <span>Voltar ao Cockpit</span>
       </button>
 
       <span style="font-weight: 700; font-size: 0.95rem; color: var(--violet);">Simulador e projeção de custos de Pessoal</span>
@@ -837,9 +931,21 @@
             <p style="font-size:0.8rem; color:var(--text-muted); margin-bottom:8px;">Planejamento de novas posições.</p>
 
             <div class="form-group">
-              <label class="form-label">Cargo da Base</label>
-              <select id="calcCargo" class="form-control" onchange="atualizarPreviewCargo()"><option value="">Escolha o cargo</option></select>
+              <label class="form-label">Tipo de admissão</label>
+              <select id="calcTipoAdmissao" class="form-control" onchange="alternarTipoAdmissao()">
+                <option value="posicao_existente">Usar posição aprovada existente</option>
+                <option value="aumento_quadro">Aumento de quadro extra orçamento</option>
+              </select>
             </div>
+            <div class="form-group" id="grupoPosicaoAprovada">
+              <label class="form-label">Posição aprovada</label>
+              <select id="calcPosicaoAprovada" class="form-control" onchange="selecionarPosicaoAprovada()"><option value="">Escolha a posição aprovada</option></select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" id="labelCalcCargo">Cargo da posição</label>
+              <select id="calcCargo" class="form-control" onchange="atualizarPreviewCargo()"><option value="">Cargo da posição</option></select>
+            </div>
+            <div id="avisoExtraOrcamento" style="display:none;background:rgba(255,69,58,.08);border:1px solid rgba(255,69,58,.25);color:var(--text);padding:10px 12px;border-radius:10px;font-size:.73rem;line-height:1.45;margin-bottom:10px;"><strong style="color:var(--danger)">Extra orçamento:</strong> a admissão aumentará o limite de HC do cenário e será comparada com as economias acumuladas.</div>
 
             <div class="grade-preview-box">
               <div><span>Grade: </span><strong id="previewGrade">-</strong></div>
@@ -957,6 +1063,17 @@
           </div>
         </div>
 
+        <div class="simulated-positions-card" style="border-color:rgba(41,151,255,.35);margin-top:24px;">
+          <div class="info-card-header" style="margin-bottom:14px;"><h3>Governança anual do cenário</h3><span id="annualBudgetStatus" style="font-size:.72rem;padding:4px 10px;border-radius:999px;font-weight:800;background:rgba(41,151,255,.10);color:var(--accent)">Calculando...</span></div>
+          <div style="display:grid;grid-template-columns:repeat(4,minmax(150px,1fr));gap:12px;">
+            <div class="grade-preview-box" style="margin:0"><span>Orçamento 2027</span><strong id="annualBudgetValue" style="font-size:1.15rem">R$ 0</strong></div>
+            <div class="grade-preview-box" style="margin:0"><span>Projetado 2027</span><strong id="annualProjectedValue" style="font-size:1.15rem;color:var(--accent)">R$ 0</strong></div>
+            <div class="grade-preview-box" style="margin:0"><span>Saldo anual</span><strong id="annualBalanceValue" style="font-size:1.15rem">R$ 0</strong></div>
+            <div class="grade-preview-box" style="margin:0"><span>Consumo do orçamento</span><strong id="annualUsageValue" style="font-size:1.15rem">0%</strong></div>
+          </div>
+          <div id="annualBudgetNarrative" style="margin-top:12px;font-size:.76rem;line-height:1.5;color:var(--text-muted)"></div>
+        </div>
+
         <!-- QUADRANTE DE SIMULAÇÕES CONSOLIDADAS -->
         <div class="simulated-positions-card" style="border-color: var(--accent);">
           <div class="info-card-header" style="margin-bottom:16px;">
@@ -1000,6 +1117,58 @@
       </section>
     </main>
   </div>
+
+
+  <!-- 5. PEOPLE COCKPIT -->
+  <div id="view-cockpit" class="view-container">
+    <div class="dash-top-bar">
+      <button class="btn-back-home" onclick="voltarParaCapa()"><span>←</span><span>Voltar à Capa Principal</span></button>
+      <span style="font-weight:800;font-size:.95rem;color:var(--accent);">People Cockpit</span>
+      <button class="apple-toggle" onclick="toggleTheme()" title="Alternar Tema" style="padding:6px 14px;font-size:.75rem;"><span>◐</span></button>
+    </div>
+    <main class="main-wrapper cockpit-shell">
+      <section class="cockpit-hero">
+        <div class="cockpit-hero-top">
+          <div><span class="cockpit-kicker">Workforce Intelligence</span><h1>Bom dia. Sua organização está em movimento.</h1><p>Veja a estrutura aprovada, as posições ocupadas e vazias, o pipeline de atração e os pontos que exigem decisão.</p></div>
+          <div class="cockpit-actions"><button class="cockpit-btn" onclick="atualizarVisaoCockpit(this)">Atualizar visão</button><button class="cockpit-btn" onclick="gerarResumoAprovacao()">Gerar resumo para aprovação</button><button class="cockpit-btn primary" onclick="irParaDashboard('page-custos')">Abrir Scenario Studio</button></div>
+        </div>
+        <div class="cockpit-summary">
+          <div class="cockpit-summary-card"><span>Posições aprovadas</span><strong id="cpTotalPos">0</strong></div>
+          <div class="cockpit-summary-card"><span>Ocupadas</span><strong id="cpOcupadas">0</strong></div>
+          <div class="cockpit-summary-card"><span>Vagas</span><strong id="cpVagas">0</strong></div>
+          <div class="cockpit-summary-card"><span>Em atração</span><strong id="cpAtracao">0</strong></div>
+          <div class="cockpit-summary-card"><span>Sem ação / congeladas</span><strong id="cpSemAcao">0</strong></div>
+          <div class="cockpit-summary-card"><span>Custo mensal comprometido</span><strong id="cpCusto" style="font-size:1.05rem;">R$ 0</strong></div><div class="cockpit-summary-card" style="border-color:rgba(191,90,242,.45);background:rgba(191,90,242,.10)"><span>Posições em estudo</span><strong id="cpEmEstudo" style="color:#d99cff">0</strong></div>
+        </div>
+        <div class="scenario-strip">
+          <div class="scenario-state"><div class="state-title">Atual*</div><div class="state-kpis"><div><b id="stHojeHC">0</b><small>HC atual</small></div><div><b id="stHojeVagas">0</b><small>vagas</small></div><div><b id="stHojeCusto">R$ 0</b><small>custo/mês</small></div></div></div>
+          <div class="scenario-state"><div class="state-title">Previsto*</div><div class="state-kpis"><div><b id="stCompHC">0</b><small>HC projetado</small></div><div><b id="stCompMov">0</b><small>movimentos</small></div><div><b id="stCompCusto">R$ 0</b><small>custo/mês</small></div></div></div>
+          <div class="scenario-state sim"><div class="state-title">Cenário*</div><div class="state-kpis"><div><b id="stCenHC">0</b><small>HC projetado</small></div><div><b id="stCenMov">0</b><small>simulações</small></div><div><b id="stCenCusto">R$ 0</b><small>custo/mês</small></div></div></div>
+        </div>
+      </section>
+      <div id="cpForecastNarrative" style="background:var(--surface);border:1px solid var(--border);border-radius:15px;padding:13px 17px;font-size:.8rem;color:var(--text-muted);"></div>
+      <section class="forecast-cost">
+        <div class="forecast-card"><div class="cockpit-card-head"><div><h3>Projeção de Headcount</h3><p>HC projetado pelo cenário versus limite de posições aprovadas.</p></div><div class="forecast-legend"><span><i class="forecast-dot" style="background:#2997ff"></i>HC projetado</span><span><i class="forecast-dot" style="background:#ff9f0a"></i>Orçamento de posições</span></div></div><svg id="cpForecastHC" class="forecast-svg" viewBox="0 0 620 250" preserveAspectRatio="none"></svg></div>
+        <div class="forecast-card"><div class="cockpit-card-head"><div><h3>Projeção de Custo Mensal</h3><p>Custo projetado pelo cenário versus orçamento mensal das posições.</p></div><div class="forecast-legend"><span><i class="forecast-dot" style="background:#2997ff"></i>Custo projetado</span><span><i class="forecast-dot" style="background:#ff9f0a"></i>Orçamento mensal</span></div></div><svg id="cpForecastCusto" class="forecast-svg" viewBox="0 0 620 250" preserveAspectRatio="none"></svg></div>
+      </section>
+      <div style="margin:-10px 4px 2px;color:var(--text-muted);font-size:.72rem;line-height:1.55;">
+        <strong>* HC projetado:</strong> parte do HC atual, incorpora admissões em Proposta/Admissão prevista e todos os eventos simulados pelo gestor. &nbsp; <strong>* Orçamento de posições:</strong> total de posições aprovadas, ocupadas ou vazias. Posições em estudo extra orçamento ficam destacadas em roxo, alteram HC e custo projetados, mas não alteram Posições aprovadas nem a linha de orçamento.
+      </div>
+      <section class="cockpit-grid">
+        <div class="cockpit-card">
+          <div class="cockpit-card-head"><div><h3>Mapa de posições</h3><p>A posição é o objeto central. Clique em qualquer card para abrir o detalhe.</p></div><div class="cockpit-filters"><input id="cpBusca" type="search" placeholder="Buscar posição, cargo ou ocupante"><select id="cpArea"><option value="">Todas as áreas</option></select><select id="cpStatus"><option value="">Todos os status</option><option value="Ocupada">Ocupadas</option><option value="Vaga">Vagas</option><option value="Em atração">Em atração</option><option value="Congelada">Congeladas</option><option value="Admissão simulada">Admissões previstas / simuladas</option><option value="Desligamento previsto">Desligamentos previstos</option><option value="Promoção prevista">Promoções previstas</option><option value="Extra orçamento">Posições em estudo · Extra orçamento</option></select></div></div>
+          <div id="cpPositionGrid" class="position-grid"></div>
+        </div>
+        <aside style="display:flex;flex-direction:column;gap:24px;">
+          <div class="cockpit-card"><div class="cockpit-card-head"><div><h3>Atenção agora</h3><p>Exceções prioritárias da estrutura.</p></div></div><div id="cpAlerts" class="alert-list"></div></div>
+          <div class="cockpit-card"><div class="cockpit-card-head"><div><h3>Tempo morto</h3><p>Posições vazias com maior inércia.</p></div></div><div id="cpDeadtime" class="deadtime-list"></div></div>
+        </aside>
+      </section>
+      <section class="cockpit-card"><div class="cockpit-card-head"><div><h3>Pipeline de atração</h3><p>Quantidade de posições por etapa atual do processo.</p></div></div><div id="cpPipeline" class="pipeline"></div></section>
+    </main>
+  </div>
+  <div id="positionDrawerBackdrop" class="position-drawer-backdrop" onclick="fecharDetalhePosicao()"></div>
+  <aside id="positionDrawer" class="position-drawer" aria-live="polite"></aside>
 
   <div id="donutTooltip" class="chart-tooltip"></div>
 
@@ -1139,6 +1308,8 @@
         irParaDashboard('page-custos');
       } else if (hash === '#blog') {
         irParaDashboard('page-blog');
+      } else if (hash === '#cockpit') {
+        irParaDashboard('page-cockpit');
       }
     }
 
@@ -1146,7 +1317,11 @@
       document.getElementById("view-cover").style.display = "none";
       document.querySelectorAll(".view-container").forEach(el => el.classList.remove("active"));
 
-      if (pageId === 'page-custos') {
+      if (pageId === 'page-cockpit') {
+        document.getElementById('view-cockpit').classList.add('active');
+        window.location.hash = 'cockpit';
+        renderizarCockpit();
+      } else if (pageId === 'page-custos') {
         document.getElementById("view-calculadora").classList.add("active");
         window.location.hash = 'simulador';
         inicializarSimuladores();
@@ -1624,7 +1799,7 @@
         listaSimulacoesGeral.forEach(item => {
           if (item.tipoItem === 'vaga') {
             const targetIdx = mesIdMap[item.inicioOuAviso] !== undefined ? mesIdMap[item.inicioOuAviso] : 9;
-            if (idx >= targetIdx) custo += (item.salario * 2.3);
+            if (idx >= targetIdx) custo += (item.salario * 2.3 * (item.qtd || 1));
           } else if (item.tipoItem === 'rescisao') {
             const targetIdx = mesIdMap[item.mesComp] !== undefined ? mesIdMap[item.mesComp] : 9;
             if (idx >= targetIdx) {
@@ -1633,7 +1808,7 @@
             }
           } else if (item.tipoItem === 'promocao') {
             const targetIdx = mesIdMap[item.mesComp] !== undefined ? mesIdMap[item.mesComp] : 9;
-            if (idx >= targetIdx) custo += (item.deltaSalario * 2.3);
+            if (idx >= targetIdx) custo += item.deltaSalario;
           }
         });
         return custo / 1000;
@@ -1700,8 +1875,9 @@
       const selectPromoMes = document.getElementById("promoMes");
 
       if (selectCargo) {
-        selectCargo.innerHTML = '<option value="">Escolha o cargo</option>' + Object.keys(gradeConfig).map(c => `<option value="${c}">${c}</option>`).join("");
+        selectCargo.innerHTML = '<option value="">Cargo da posição</option>' + Object.keys(gradeConfig).map(c => `<option value="${c}">${c}</option>`).join("");
       }
+      popularPosicoesAprovadasSimulador();
       if (selectPosic) {
         let htmlP = '';
         for (let p = 80; p <= 120; p++) {
@@ -1717,6 +1893,12 @@
         <option value="2026-07">Julho / 2026</option><option value="2026-08">Agosto / 2026</option>
         <option value="2026-09">Setembro / 2026</option><option value="2026-10" selected>Outubro / 2026</option>
         <option value="2026-11">Novembro / 2026</option><option value="2026-12">Dezembro / 2026</option>
+        <option value="2027-01">Janeiro / 2027</option><option value="2027-02">Fevereiro / 2027</option>
+        <option value="2027-03">Março / 2027</option><option value="2027-04">Abril / 2027</option>
+        <option value="2027-05">Maio / 2027</option><option value="2027-06">Junho / 2027</option>
+        <option value="2027-07">Julho / 2027</option><option value="2027-08">Agosto / 2027</option>
+        <option value="2027-09">Setembro / 2027</option><option value="2027-10">Outubro / 2027</option>
+        <option value="2027-11">Novembro / 2027</option><option value="2027-12">Dezembro / 2027</option>
       `;
 
       if (selectMes) selectMes.innerHTML = optionsMesesCompetencia;
@@ -1724,6 +1906,7 @@
       if (selectPromoMes) selectPromoMes.innerHTML = optionsMesesCompetencia;
 
       atualizarListasColaboradoresSimulacao();
+      setTimeout(atualizarGovernancaAnual,0);
       atualizarPreviewCargo();
       atualizarPreviewRescisao();
     }
@@ -1767,10 +1950,14 @@
     }
 
     function adicionarCargoSimulacao() {
+      const tipoAdmissao = document.getElementById("calcTipoAdmissao")?.value || "posicao_existente";
+      const idPosicao = document.getElementById("calcPosicaoAprovada")?.value;
       const cargo = document.getElementById("calcCargo").value;
-      if (!cargo) { alert("Selecione um cargo."); return; }
+      if (tipoAdmissao === "posicao_existente" && !idPosicao) { alert("Selecione uma posição aprovada para simular o preenchimento."); return; }
+      if (!cargo) { alert("Selecione o cargo da admissão."); return; }
       const posicPct = parseFloat(document.getElementById("calcPosic").value) || 1.0;
       const mesStr = document.getElementById("calcMes").value;
+      const qtdVagas = Math.max(1, Math.min(20, Number(document.getElementById('calcQtd').value) || 1));
       const conf = gradeConfig[cargo] || ["G3", 5000.0];
       const salarioBase = conf[1] * posicPct;
       const custoMensalTotal = salarioBase * 2.3;
@@ -1780,12 +1967,12 @@
       if (anoInic === 2026) { meses2026 = 12 - mesInic + 1; meses2027 = 12; }
       else if (anoInic === 2027) { meses2026 = 0; meses2027 = 12 - mesInic + 1; }
 
-      const custo2026 = custoMensalTotal * meses2026;
-      const custo2027 = custoMensalTotal * meses2027;
+      const custo2026 = custoMensalTotal * meses2026 * qtdVagas;
+      const custo2027 = custoMensalTotal * meses2027 * qtdVagas;
 
       listaSimulacoesGeral.push({
-        id: Date.now(), tipoItem: 'vaga', cargoOuNome: cargo, gradeOuDepto: conf[0],
-        detalhes: `${Math.round(posicPct*100)}% da Faixa`, qtd: 1, inicioOuAviso: mesStr,
+        id: Date.now(), tipoItem: 'vaga', tipoAdmissao: tipoAdmissao, idPosicao: idPosicao || null, cargoOuNome: cargo, gradeOuDepto: conf[0],
+        detalhes: `${Math.round(posicPct*100)}% da Faixa • ${tipoAdmissao === 'aumento_quadro' ? 'Extra orçamento' : 'Posição aprovada'}`, qtd: qtdVagas, inicioOuAviso: mesStr,
         salario: salarioBase, custo2026, custo2027, impactoOuTotal: custo2026 + custo2027
       });
       atualizarTabelaConsolidada();
@@ -1949,6 +2136,30 @@
       atualizarTabelaConsolidada();
     }
 
+    function calcularGovernancaAnual(){
+      const budgetMensal=posicoesBase.reduce((a,p)=>a+p.custoOrcado,0)+posicoesVazias.reduce((a,p)=>a+p.custoOrcado,0);
+      const budgetAnual=budgetMensal*12;
+      const baseMensal=posicoesBase.reduce((a,p)=>a+p.custoOrcado,0);
+      const meses2027=Array.from({length:12},(_,i)=>i);
+      const projetado=meses2027.reduce((total,m)=>{
+        let custo=baseMensal;
+        posicoesVazias.filter(p=>p.statusPosicao==='Em atração'&&p.previsao&&['Proposta','Admissão prevista'].includes(p.etapa)).forEach(p=>{const mt=String(p.previsao).match(/(2027)-(\d{2})/);if(mt&&Number(mt[2])-1<=m)custo+=p.custoOrcado;});
+        listaSimulacoesGeral.forEach(i=>{const data=String(i.mesComp||i.inicioOuAviso||'');const mt=data.match(/(2026|2027)-(\d{2})/);if(!mt)return;const ano=Number(mt[1]),mes=Number(mt[2])-1,ativo=ano<2027||(ano===2027&&mes<=m);if(!ativo)return;if(i.tipoItem==='vaga')custo+=(i.salario||0)*2.3*(i.qtd||1);if(i.tipoItem==='rescisao')custo-=(i.salario||0)*2.3;if(String(i.tipoItem||'').toLowerCase().includes('promo'))custo+=(i.deltaSalario||0);});
+        return total+custo;
+      },0);
+      const saldo=budgetAnual-projetado,consumo=budgetAnual?projetado/budgetAnual:0;
+      return {budgetMensal,budgetAnual,projetado,saldo,consumo};
+    }
+    function atualizarGovernancaAnual(){
+      const ids=['annualBudgetValue','annualProjectedValue','annualBalanceValue','annualUsageValue'];if(!ids.every(id=>document.getElementById(id)))return;
+      const g=calcularGovernancaAnual();
+      document.getElementById('annualBudgetValue').textContent=moeda(g.budgetAnual);document.getElementById('annualProjectedValue').textContent=moeda(g.projetado);
+      const bal=document.getElementById('annualBalanceValue');bal.textContent=moeda(g.saldo);bal.style.color=g.saldo>=0?'var(--success)':'var(--danger)';
+      const usage=document.getElementById('annualUsageValue');usage.textContent=(g.consumo*100).toLocaleString('pt-BR',{maximumFractionDigits:1})+'%';usage.style.color=g.consumo<=1?'var(--success)':'var(--danger)';
+      const st=document.getElementById('annualBudgetStatus');st.textContent=g.saldo>=0?'CABE NO ORÇAMENTO ANUAL':'EXCEDE O ORÇAMENTO ANUAL';st.style.background=g.saldo>=0?'rgba(48,209,88,.12)':'rgba(255,69,58,.12)';st.style.color=g.saldo>=0?'var(--success)':'var(--danger)';
+      document.getElementById('annualBudgetNarrative').dataset.updatedAt=new Date().toISOString();document.getElementById('annualBudgetNarrative').innerHTML=g.saldo>=0?`O cenário projetado para 2027 consome <strong>${(g.consumo*100).toFixed(1)}%</strong> do orçamento anual e mantém uma folga estimada de <strong style="color:var(--success)">${moeda(g.saldo)}</strong>.`:`O cenário projetado para 2027 consome <strong>${(g.consumo*100).toFixed(1)}%</strong> do orçamento anual e excede o envelope em <strong style="color:var(--danger)">${moeda(Math.abs(g.saldo))}</strong>.`;
+    }
+
     function atualizarTabelaConsolidada() {
       const tbody = document.getElementById("tabelaConsolidadaCorpo");
       document.getElementById("badgeContagemGeral").textContent = `${listaSimulacoesGeral.length} itens`;
@@ -2010,7 +2221,229 @@
       document.getElementById("kpiHeadcountRescisao").textContent = `${qtdRescs} ${qtdRescs === 1 ? 'rescisão simulada' : 'rescisões simuladas'}`;
       
       atualizarGraficoCombo();
+      atualizarGovernancaAnual();
     }
+
+
+    // MODELO DE POSICOES E ATRACAO DO PEOPLE COCKPIT
+    const hojeCockpit = new Date('2026-11-10T12:00:00');
+    const posicoesVazias = [
+      {idPosicao:'POS-101',cargo:'Cientista de Dados',grade:'G8',departamento:'Tecnologia',statusPosicao:'Em atração',dataVacancia:'2026-07-12',criticidade:'Crítica',etapa:'Entrevista com gestor',dataAbertura:'2026-08-03',previsao:'2026-12-01',custoOrcado:18400},
+      {idPosicao:'POS-102',cargo:'Analista de RH Pleno',grade:'G5',departamento:'Recursos Humanos',statusPosicao:'Vaga',dataVacancia:'2026-08-18',criticidade:'Alta',etapa:'Sem processo',dataAbertura:null,previsao:null,custoOrcado:10350},
+      {idPosicao:'POS-103',cargo:'Desenvolvedor(a) Sênior',grade:'G8',departamento:'Tecnologia',statusPosicao:'Em atração',dataVacancia:'2026-06-01',criticidade:'Crítica',etapa:'Proposta',dataAbertura:'2026-06-20',previsao:'2026-11-24',custoOrcado:18400},
+      {idPosicao:'POS-104',cargo:'Executivo(a) de Contas',grade:'G6',departamento:'Comercial',statusPosicao:'Em atração',dataVacancia:'2026-09-04',criticidade:'Alta',etapa:'Triagem',dataAbertura:'2026-09-15',previsao:'2027-01-05',custoOrcado:12650},
+      {idPosicao:'POS-105',cargo:'Analista de Operações',grade:'G6',departamento:'Operações',statusPosicao:'Vaga',dataVacancia:'2026-10-01',criticidade:'Média',etapa:'Aguardando abertura',dataAbertura:null,previsao:null,custoOrcado:12650},
+      {idPosicao:'POS-106',cargo:'Especialista Fiscal',grade:'G8',departamento:'Financeiro',statusPosicao:'Congelada',dataVacancia:'2026-05-20',criticidade:'Baixa',etapa:'Congelada',dataAbertura:null,previsao:null,custoOrcado:18400},
+      {idPosicao:'POS-107',cargo:'Especialista em D&I',grade:'G8',departamento:'Recursos Humanos',statusPosicao:'Em atração',dataVacancia:'2026-08-29',criticidade:'Alta',etapa:'Entrevista RH',dataAbertura:'2026-09-02',previsao:'2026-12-15',custoOrcado:18400},
+      {idPosicao:'POS-108',cargo:'Assistente Financeiro',grade:'G4',departamento:'Financeiro',statusPosicao:'Em atração',dataVacancia:'2026-10-12',criticidade:'Média',etapa:'Admissão prevista',dataAbertura:'2026-10-14',previsao:'2026-11-18',custoOrcado:6900},
+      {idPosicao:'POS-109',cargo:'Designer UI/UX',grade:'G6',departamento:'Tecnologia',statusPosicao:'Vaga',dataVacancia:'2026-07-25',criticidade:'Alta',etapa:'Sem processo',dataAbertura:null,previsao:null,custoOrcado:12650},
+      {idPosicao:'POS-110',cargo:'Analista Financeiro Pleno',grade:'G5',departamento:'Financeiro',statusPosicao:'Em atração',dataVacancia:'2026-09-22',criticidade:'Média',etapa:'Divulgação',dataAbertura:'2026-10-01',previsao:'2027-01-12',custoOrcado:10350},
+      {idPosicao:'POS-111',cargo:'Analista de Growth/Marketing',grade:'G6',departamento:'Marketing',statusPosicao:'Vaga',dataVacancia:'2026-06-30',criticidade:'Alta',etapa:'Aguardando abertura',dataAbertura:null,previsao:null,custoOrcado:12650},
+      {idPosicao:'POS-112',cargo:'Coordenador(a) de Suporte',grade:'G9',departamento:'Operações',statusPosicao:'Em atração',dataVacancia:'2026-08-08',criticidade:'Crítica',etapa:'Entrevista com gestor',dataAbertura:'2026-08-10',previsao:'2026-12-08',custoOrcado:20700}
+    ];
+    const posicoesBase = colaboradores.filter(c=>c.status==='Ativo').map((c,i)=>({idPosicao:`POS-${String(i+1).padStart(3,'0')}`,cargo:c.cargo,grade:String(c.grade).startsWith('G')?c.grade:`G${c.grade}`,departamento:c.departamento,statusPosicao:'Ocupada',idOcupante:c.id,ocupante:c.nome,dataVacancia:null,criticidade:'Normal',etapa:'Não aplicável',custoOrcado:(c.salario||0)*2.3}));
+    let posicoes = [...posicoesBase,...posicoesVazias];
+    const diasEntre=(ini,fim=hojeCockpit)=>ini?Math.max(0,Math.floor((fim-new Date(ini+'T12:00:00'))/86400000)):0;
+    const moeda=v=>(Number(v)||0).toLocaleString('pt-BR',{style:'currency',currency:'BRL',maximumFractionDigits:0});
+    function irParaCockpit(){ irParaDashboard('page-cockpit'); }
+    function sincronizarCockpitComSimulacao(){
+      // Reconstrói o cenário sempre a partir da estrutura oficial para evitar duplicações.
+      posicoes = [...posicoesBase.map(p=>({...p})), ...posicoesVazias.map(p=>({...p}))];
+      const rescisoes = listaSimulacoesGeral.filter(i=>i.tipoItem==='rescisao');
+      rescisoes.forEach(item=>{
+        const colab = colaboradores.find(c=>c.nome===item.cargoOuNome);
+        if (!colab) return;
+        const p = posicoes.find(x=>x.idOcupante===colab.id);
+        if (p) {
+          p.movimentacao='Desligamento previsto'; p.movimentacaoDetalhe=item.detalhes||'Saída prevista no cenário'; p.movimentacaoMes=item.mesComp||null; p.criticidade='Simulada';
+        }
+      });
+      const promocoes = listaSimulacoesGeral.filter(i=>i.tipoItem==='promocao');
+      promocoes.forEach(item=>{
+        const textoPromo=String(item.cargoOuNome||'');
+        const colab=colaboradores.find(c=>textoPromo.includes(c.nome));
+        if(!colab)return;
+        const p=posicoes.find(x=>x.idOcupante===colab.id);
+        if(p){p.movimentacao='Promoção prevista';p.movimentacaoDetalhe=item.detalhes||'Alteração salarial prevista no cenário';p.movimentacaoMes=item.mesComp||null;p.custoOrcado+=(item.deltaSalario||0);}
+      });
+      const inclusoes = listaSimulacoesGeral.filter(i=>i.tipoItem==='vaga');
+      let seq=900;
+      inclusoes.forEach(item=>{
+        for(let n=1;n<=(item.qtd||1);n++){
+          const aprovada = posicoesVazias.find(p=>p.idPosicao===item.idPosicao);
+          if(aprovada){
+            const p=posicoes.find(x=>x.idPosicao===aprovada.idPosicao);
+            if(p){p.statusPosicao='Admissão simulada';p.etapa='Admissão prevista (cenário)';p.custoOrcado=(item.salario||0)*2.3;p.previsao=item.inicioOuAviso||null;}
+          } else {
+            const extra=item.tipoAdmissao==='aumento_quadro';
+            posicoes.push({idPosicao:`SIM-${++seq}`,cargo:item.cargoOuNome,grade:item.gradeOuDepto||'',departamento:'Cenário simulado',statusPosicao:extra?'Extra orçamento':'Admissão simulada',ocupante:null,dataVacancia:null,criticidade:extra?'Extra orçamento':'Simulada',etapa:extra?'Aumento de quadro':'Admissão prevista (cenário)',previsao:item.inicioOuAviso||null,custoOrcado:(item.salario||0)*2.3});
+          }
+        }
+      });
+    }
+    function atualizarVisaoCockpit(btn){
+      renderizarCockpit();
+      if(btn){const original=btn.textContent;btn.textContent='Visão atualizada';btn.disabled=true;setTimeout(()=>{btn.textContent=original;btn.disabled=false;},900);}
+    }
+    function popularPosicoesAprovadasSimulador(){
+      const sel=document.getElementById('calcPosicaoAprovada'); if(!sel)return;
+      const disponiveis=posicoesVazias.filter(p=>p.statusPosicao!=='Congelada');
+      sel.innerHTML='<option value="">Escolha a posição aprovada</option>'+disponiveis.map(p=>`<option value="${p.idPosicao}">${p.idPosicao} • ${p.cargo} • ${p.departamento} • ${p.statusPosicao}</option>`).join('');
+    }
+    function alternarTipoAdmissao(){
+      const tipo=document.getElementById('calcTipoAdmissao')?.value||'posicao_existente';
+      const grupo=document.getElementById('grupoPosicaoAprovada');
+      const aviso=document.getElementById('avisoExtraOrcamento');
+      const label=document.getElementById('labelCalcCargo');
+      const cargo=document.getElementById('calcCargo');
+      if(tipo==='aumento_quadro'){
+        if(grupo)grupo.style.display='none'; if(aviso)aviso.style.display='block'; if(label)label.textContent='Cargo da nova posição';
+        if(document.getElementById('calcPosicaoAprovada'))document.getElementById('calcPosicaoAprovada').value='';
+        if(cargo)cargo.disabled=false;
+      }else{
+        if(grupo)grupo.style.display='block'; if(aviso)aviso.style.display='none'; if(label)label.textContent='Cargo da posição';
+      }
+      atualizarPreviewCargo();
+    }
+    function selecionarPosicaoAprovada(){
+      const id=document.getElementById('calcPosicaoAprovada')?.value;
+      const p=posicoesVazias.find(x=>x.idPosicao===id); if(!p)return;
+      const cargo=document.getElementById('calcCargo');
+      if(cargo){cargo.value=p.cargo; if(!cargo.value){cargo.insertAdjacentHTML('beforeend',`<option value="${p.cargo}">${p.cargo}</option>`);cargo.value=p.cargo;}}
+      atualizarPreviewCargo();
+    }
+    function mesIndiceCockpit(str){if(!str)return 99; const m=String(str).match(/(2026|2027)-(\d{2})/); if(!m)return 99; return (Number(m[1])-2026)*12+Number(m[2])-1;}
+    function construirSeriesCockpit(){
+      const baseHC=posicoesBase.length;
+      const custoBase=posicoesBase.reduce((a,p)=>a+p.custoOrcado,0);
+      const orcamentoHC=posicoesBase.length+posicoesVazias.length;
+      const orcamentoCusto=posicoesBase.reduce((a,p)=>a+p.custoOrcado,0)+posicoesVazias.reduce((a,p)=>a+p.custoOrcado,0);
+      const meses=['Nov/26','Dez/26','Jan/27','Fev/27','Mar/27','Abr/27','Mai/27','Jun/27','Jul/27','Ago/27','Set/27','Out/27'];
+      const offset=10;
+      const eventos=[];
+      const simuladasPorPosicao=new Set(listaSimulacoesGeral.filter(i=>i.tipoItem==='vaga'&&i.idPosicao).map(i=>i.idPosicao));
+      posicoesVazias.filter(p=>p.statusPosicao==='Em atração'&&p.previsao&&['Proposta','Admissão prevista'].includes(p.etapa)&&!simuladasPorPosicao.has(p.idPosicao)).forEach(p=>eventos.push({idx:Math.max(0,mesIndiceCockpit(p.previsao)-offset),dh:1,dc:p.custoOrcado,tipo:'previsto'}));
+      listaSimulacoesGeral.forEach(i=>{
+        let idx=mesIndiceCockpit(i.mesComp||i.inicioOuAviso)-offset;if(idx<0)idx=0;if(idx>11)return;
+        if(i.tipoItem==='vaga')eventos.push({idx,dh:i.qtd||1,dc:(i.salario||0)*2.3*(i.qtd||1),tipo:i.tipoAdmissao==='aumento_quadro'?'extra':'admissao'});
+        if(i.tipoItem==='rescisao')eventos.push({idx,dh:-1,dc:-(i.salario||0)*2.3,tipo:'desligamento'});
+        if(String(i.tipoItem||'').toLowerCase().includes('promo'))eventos.push({idx,dh:0,dc:i.deltaSalario||0,tipo:'promocao'});
+      });
+      const serie=(metric,base)=>meses.map((_,i)=>base+eventos.filter(e=>e.idx<=i).reduce((a,e)=>a+e[metric],0));
+      return {meses,hcProjetado:serie('dh',baseHC),custoProjetado:serie('dc',custoBase),hcOrcado:Array(12).fill(orcamentoHC),custoOrcado:Array(12).fill(orcamentoCusto),eventos,orcamentoHC,orcamentoCusto};
+    }
+    function desenharForecast(id,series,meses,formatter){
+      const svg=document.getElementById(id);if(!svg)return;
+      const W=620,H=250,pad={l:52,r:16,t:26,b:34};
+      const vals=series.flatMap(s=>s.vals),min=Math.min(...vals),max=Math.max(...vals),range=Math.max(max-min,1);
+      const extra=range*.10;
+      const low=Math.max(0,min-extra),high=max+extra,span=Math.max(high-low,1);
+      const y=v=>pad.t+(high-v)/span*(H-pad.t-pad.b),x=i=>pad.l+i*(W-pad.l-pad.r)/(meses.length-1);
+      const colors={committed:'#2997ff',budget:'#ff9f0a',today:'#7b8794',scenario:'#bf5af2'};
+      let out='';
+      for(let g=0;g<4;g++){const yy=pad.t+g*(H-pad.t-pad.b)/3,val=high-g*span/3;out+=`<line class="forecast-grid" x1="${pad.l}" y1="${yy}" x2="${W-pad.r}" y2="${yy}"/><text x="3" y="${yy+4}">${formatter(val)}</text>`;}
+      meses.forEach((m,i)=>{if(i%2===0||meses.length<=8)out+=`<text x="${x(i)}" y="${H-10}" text-anchor="middle">${m}</text>`;});
+      series.forEach((ss,si)=>{const pts=ss.vals.map((v,i)=>`${x(i)},${y(v)}`).join(' ');out+=`<polyline class="forecast-line ${ss.cls}" points="${pts}"/>`;ss.vals.forEach((v,i)=>{const cy=y(v),color=colors[ss.cls]||'#2997ff',labelY=si===0?cy-8:cy+15;out+=`<circle cx="${x(i)}" cy="${cy}" r="3.5" fill="${color}"/><text x="${x(i)}" y="${labelY}" text-anchor="middle" style="font-size:8.5px;font-weight:700">${formatter(v)}</text>`;});});
+      svg.innerHTML=out;
+    }
+    function renderizarEstadosEForecast(){
+      const d=construirSeriesCockpit(),last=d.meses.length-1;
+      const adms=listaSimulacoesGeral.filter(i=>i.tipoItem==='vaga').reduce((a,i)=>a+(i.qtd||1),0);
+      const extras=listaSimulacoesGeral.filter(i=>i.tipoItem==='vaga'&&i.tipoAdmissao==='aumento_quadro').reduce((a,i)=>a+(i.qtd||1),0);
+      const deslig=listaSimulacoesGeral.filter(i=>i.tipoItem==='rescisao').length;
+      const promos=listaSimulacoesGeral.filter(i=>String(i.tipoItem||'').toLowerCase().includes('promo')).length;
+      const gapHC=d.hcOrcado[last]-d.hcProjetado[last];
+      const saldo=d.custoOrcado[last]-d.custoProjetado[last];
+      document.getElementById('stHojeHC').textContent=posicoesBase.length;document.getElementById('stHojeVagas').textContent=posicoesVazias.length;document.getElementById('stHojeCusto').textContent=moeda(posicoesBase.reduce((a,p)=>a+p.custoOrcado,0));
+      document.getElementById('stCompHC').textContent=d.hcOrcado[last];document.getElementById('stCompMov').textContent=gapHC>=0?gapHC+' abaixo':Math.abs(gapHC)+' acima';document.getElementById('stCompCusto').textContent=moeda(d.custoOrcado[last]);
+      document.getElementById('stCenHC').textContent=d.hcProjetado[last];document.getElementById('stCenMov').textContent=listaSimulacoesGeral.length;document.getElementById('stCenCusto').textContent=moeda(d.custoProjetado[last]);
+      const narrative=document.getElementById('cpForecastNarrative');if(narrative)narrative.innerHTML=`<strong style="color:var(--text)">Leitura da projeção:</strong> HC projetado em ${d.hcProjetado[last]} versus ${d.hcOrcado[last]} posições aprovadas (${gapHC>=0?gapHC+' abaixo':Math.abs(gapHC)+' acima'}). ${extras?`<strong style="color:#bf5af2">${extras} posição(ões) em estudo extra orçamento.</strong> `:''}Cenário com ${adms} admissão(ões), ${deslig} desligamento(s) e ${promos} promoção(ões). Saldo mensal estimado: <strong style="color:${saldo>=0?'var(--success)':'var(--danger)'}">${moeda(saldo)}</strong>. ${extras&&saldo>=0?'<strong>Financeiramente cabe no cenário, mas exige aprovação de aumento de quadro.</strong>':''}`;
+      desenharForecast('cpForecastHC',[{cls:'committed',vals:d.hcProjetado},{cls:'budget',vals:d.hcOrcado}],d.meses,v=>Math.round(v));
+      desenharForecast('cpForecastCusto',[{cls:'committed',vals:d.custoProjetado},{cls:'budget',vals:d.custoOrcado}],d.meses,v=>'R$ '+Math.round(v/1000)+'k');
+    }
+    function renderizarCockpit(){
+      sincronizarCockpitComSimulacao();
+      const oficiais=posicoes.filter(p=>p.statusPosicao!=='Extra orçamento');
+      const total=posicoesBase.length+posicoesVazias.length;
+      const ocup=oficiais.filter(p=>p.statusPosicao==='Ocupada').length;
+      const vagas=oficiais.filter(p=>p.statusPosicao!=='Ocupada').length;
+      const atracao=oficiais.filter(p=>p.statusPosicao==='Em atração').length, sem=oficiais.filter(p=>p.statusPosicao==='Vaga'||p.statusPosicao==='Congelada').length;
+      const emEstudo=posicoes.filter(p=>p.statusPosicao==='Extra orçamento').length;
+      const comprometido=oficiais.filter(p=>p.statusPosicao==='Ocupada'||p.statusPosicao==='Em atração'||p.statusPosicao==='Admissão simulada').reduce((a,p)=>a+p.custoOrcado,0);
+      document.getElementById('cpTotalPos').textContent=total; document.getElementById('cpOcupadas').textContent=ocup; document.getElementById('cpVagas').textContent=vagas; document.getElementById('cpAtracao').textContent=atracao; document.getElementById('cpSemAcao').textContent=sem; document.getElementById('cpCusto').textContent=moeda(comprometido); document.getElementById('cpEmEstudo').textContent=emEstudo?`+${emEstudo}`:'0';
+      const area=document.getElementById('cpArea'); if(area&&area.options.length===1){[...new Set(posicoes.map(p=>p.departamento))].sort().forEach(a=>area.insertAdjacentHTML('beforeend',`<option value="${a}">${a}</option>`));}
+      renderizarMapaPosicoes(); renderizarAlertasCockpit(); renderizarPipelineCockpit(); renderizarTempoMorto(); renderizarEstadosEForecast();
+    }
+    function renderizarMapaPosicoes(){
+      const busca=(document.getElementById('cpBusca')?.value||'').toLowerCase(), area=document.getElementById('cpArea')?.value||'', status=document.getElementById('cpStatus')?.value||'';
+      const dados=posicoes.filter(p=>(!busca||[p.idPosicao,p.cargo,p.ocupante,p.departamento].filter(Boolean).join(' ').toLowerCase().includes(busca))&&(!area||p.departamento===area)&&(!status||p.statusPosicao===status||p.movimentacao===status));
+      const grid=document.getElementById('cpPositionGrid'); if(!grid)return;
+      grid.innerHTML=dados.map(p=>{const dias=diasEntre(p.dataVacancia); const cls=p.statusPosicao==='Extra orçamento'?'estudo':(p.statusPosicao==='Em atração'||p.statusPosicao==='Admissão simulada')?'atracao':p.statusPosicao==='Vaga'?'vaga':p.statusPosicao==='Congelada'?'congelada':'';return `<article class="position-tile ${cls}" onclick="abrirDetalhePosicao('${p.idPosicao}')"><span class="position-id">${p.idPosicao}</span><div class="position-title">${p.cargo}</div><div class="position-area">${p.departamento} • ${p.grade}</div><div class="position-tags"><span class="mini-tag ${(p.statusPosicao==='Em atração'||p.statusPosicao==='Admissão simulada')?'blue':p.statusPosicao==='Vaga'?'amber':''}">${p.statusPosicao==='Extra orçamento'?'Posição em estudo':p.statusPosicao}</span>${p.statusPosicao==='Extra orçamento'?'<span class="mini-tag purple">Extra orçamento</span>':''}${dias?`<span class="mini-tag ${dias>90?'red':'amber'}">${dias} dias vaga</span>`:''}${p.movimentacao?`<span class="mini-tag ${p.movimentacao.includes('Desligamento')?'red':'purple'}">${p.movimentacao}</span>`:''}</div><div class="position-person"><span>${p.ocupante||p.etapa}</span><strong>${moeda(p.custoOrcado)}/mês</strong></div></article>`}).join('')||'<p style="color:var(--text-muted);padding:20px;">Nenhuma posição encontrada.</p>';
+    }
+    function renderizarAlertasCockpit(){
+      const vazias=posicoes.filter(p=>p.statusPosicao!=='Ocupada'&&p.statusPosicao!=='Congelada');
+      const severas=vazias.filter(p=>diasEntre(p.dataVacancia)>90).length, inertes=vazias.filter(p=>p.statusPosicao==='Vaga'&&diasEntre(p.dataVacancia)>30).length, gestor=vazias.filter(p=>p.etapa==='Entrevista com gestor').length, adm=vazias.filter(p=>p.etapa==='Admissão prevista').length;
+      const itens=[['severe',`${severas} posições acima de 90 dias`,'Vacâncias severas que podem comprometer capacidade e entrega.'],['',`${inertes} posições sem ação há mais de 30 dias`,'Aprovadas, vazias e ainda sem processo seletivo ativo.'],['info',`${gestor} processos aguardam decisão do gestor`,'Etapa de entrevista com gestor é o gargalo atual.'],['info',`${adm} admissão prevista nos próximos dias`,'Impacto já considerado no custo comprometido.']];
+      document.getElementById('cpAlerts').innerHTML=itens.map(i=>`<div class="alert-item ${i[0]}"><span class="alert-dot"></span><div><strong>${i[1]}</strong><span>${i[2]}</span></div></div>`).join('');
+    }
+    function renderizarPipelineCockpit(){
+      const etapas=['Aguardando abertura','Divulgação','Triagem','Entrevista RH','Entrevista com gestor','Proposta','Admissão prevista'];
+      document.getElementById('cpPipeline').innerHTML=etapas.map(e=>`<div class="pipeline-step"><strong>${posicoes.filter(p=>p.etapa===e).length}</strong><span>${e}</span></div>`).join('');
+    }
+    function renderizarTempoMorto(){
+      const dados=posicoes.filter(p=>p.statusPosicao!=='Ocupada'&&p.statusPosicao!=='Congelada').sort((a,b)=>diasEntre(b.dataVacancia)-diasEntre(a.dataVacancia)).slice(0,6), max=Math.max(...dados.map(p=>diasEntre(p.dataVacancia)),1);
+      document.getElementById('cpDeadtime').innerHTML=dados.map(p=>{const d=diasEntre(p.dataVacancia);return `<div class="deadtime-row" onclick="abrirDetalhePosicao('${p.idPosicao}')" style="cursor:pointer"><span class="deadtime-name">${p.idPosicao} • ${p.cargo}</span><div class="deadtime-track"><div class="deadtime-fill" style="width:${Math.round(d/max*100)}%"></div></div><span class="deadtime-days">${d} dias</span></div>`}).join('');
+    }
+    function abrirDetalhePosicao(id){
+      const p=posicoes.find(x=>x.idPosicao===id); if(!p)return; const dias=diasEntre(p.dataVacancia), inercia=p.dataAbertura?diasEntre(p.dataVacancia,new Date(p.dataAbertura+'T12:00:00')):dias;
+      const drawer=document.getElementById('positionDrawer'); drawer.innerHTML=`<button class="drawer-close" onclick="fecharDetalhePosicao()">✕</button><span class="cockpit-kicker">${p.idPosicao}</span><h2 style="margin-top:8px">${p.cargo}</h2><p style="color:var(--text-muted);margin-top:5px">${p.departamento} • ${p.grade}</p><div class="position-tags" style="margin:18px 0"><span class="mini-tag ${p.statusPosicao==='Extra orçamento'?'purple':'blue'}">${p.statusPosicao==='Extra orçamento'?'Posição em estudo':p.statusPosicao}</span>${p.statusPosicao==='Extra orçamento'?'<span class="mini-tag purple">Extra orçamento</span>':''}<span class="mini-tag">${p.criticidade}</span></div>${p.statusPosicao==='Extra orçamento'?`<div class="drawer-block" style="border-color:rgba(191,90,242,.35)"><h4>Governança do cenário</h4><div class="drawer-line"><span>Situação</span><strong style="color:#bf5af2">Em estudo</strong></div><div class="drawer-line"><span>Quadro aprovado</span><strong>Não incluída</strong></div><div class="drawer-line"><span>Impacto</span><strong>HC e custo projetados</strong></div></div>`:''}<div class="drawer-block"><h4>Posição e orçamento</h4><div class="drawer-line"><span>Ocupante</span><strong>${p.ocupante||'Posição vazia'}</strong></div><div class="drawer-line"><span>Custo mensal aprovado</span><strong>${moeda(p.custoOrcado)}</strong></div><div class="drawer-line"><span>Situação orçamentária</span><strong>Aprovada</strong></div></div>${p.movimentacao?`<div class="drawer-block"><h4>Movimentação prevista</h4><div class="drawer-line"><span>Tipo</span><strong>${p.movimentacao}</strong></div><div class="drawer-line"><span>Competência</span><strong>${p.movimentacaoMes||'Não definida'}</strong></div><div class="drawer-line"><span>Detalhe</span><strong>${p.movimentacaoDetalhe||'-'}</strong></div></div>`:''}<div class="drawer-block"><h4>Vacância e atração</h4><div class="drawer-line"><span>Dias de vacância</span><strong>${dias||0}</strong></div><div class="drawer-line"><span>Dias sem ação</span><strong>${inercia||0}</strong></div><div class="drawer-line"><span>Etapa atual</span><strong>${p.etapa}</strong></div><div class="drawer-line"><span>Previsão de entrada</span><strong>${p.previsao||'Não definida'}</strong></div></div>${p.statusPosicao!=='Ocupada'?`<button class="btn-add-simul" style="width:100%;margin-top:18px" onclick="fecharDetalhePosicao();irParaDashboard('page-custos')">Simular preenchimento desta posição</button>`:''}`;
+      drawer.classList.add('open'); document.getElementById('positionDrawerBackdrop').classList.add('open');
+    }
+    function fecharDetalhePosicao(){document.getElementById('positionDrawer')?.classList.remove('open');document.getElementById('positionDrawerBackdrop')?.classList.remove('open');}
+
+
+    function gerarResumoAprovacao(){
+      renderizarCockpit();
+      const d=construirSeriesCockpit(), last=d.meses.length-1;
+      const atual=posicoesBase.length, projetado=d.hcProjetado[last], orcado=d.hcOrcado[last];
+      const custoAtual=posicoesBase.reduce((a,p)=>a+p.custoOrcado,0), custoProj=d.custoProjetado[last], custoOrc=d.custoOrcado[last];
+      const extras=listaSimulacoesGeral.filter(i=>i.tipoItem==='vaga'&&i.tipoAdmissao==='aumento_quadro').reduce((a,i)=>a+(i.qtd||1),0);
+      const agora=new Date();
+      document.getElementById('aprData').textContent=agora.toLocaleString('pt-BR');
+      document.getElementById('aprKpis').innerHTML=[
+        ['HC atual',atual,'Fotografia atual'],['HC projetado',projetado,`${projetado-orcado>=0?'+':''}${projetado-orcado} vs. aprovado`],['Posições aprovadas',orcado,'Limite oficial'],['Posições em estudo',extras,'Extra orçamento'],
+        ['Custo mensal atual',moeda(custoAtual),'Run rate atual'],['Custo mensal projetado',moeda(custoProj),`${moeda(custoProj-custoOrc)} vs. orçamento`],['Orçamento mensal',moeda(custoOrc),'Posições aprovadas'],['Saldo mensal',moeda(custoOrc-custoProj),custoOrc>=custoProj?'Favorável':'Acima do orçamento']
+      ].map(k=>`<div class="apr-kpi"><span>${k[0]}</span><strong>${k[1]}</strong><small>${k[2]}</small></div>`).join('');
+      // Renderiza novamente nos SVGs do PDF com viewBox fixo, evitando distorção na impressão.
+      ['aprChartHC','aprChartCusto'].forEach(id=>{const el=document.getElementById(id);el.setAttribute('viewBox','0 0 620 250');el.setAttribute('preserveAspectRatio','xMidYMid meet');el.style.width='100%';el.style.height='205px';});
+      desenharForecast('aprChartHC',[{cls:'committed',vals:d.hcProjetado},{cls:'budget',vals:d.hcOrcado}],d.meses,v=>Math.round(v));
+      desenharForecast('aprChartCusto',[{cls:'committed',vals:d.custoProjetado},{cls:'budget',vals:d.custoOrcado}],d.meses,v=>'R$ '+Math.round(v/1000)+'k');
+      const anual=calcularGovernancaAnual();
+      document.getElementById('aprAnnualKpis').innerHTML=[
+        ['Orçamento 2027',moeda(anual.budgetAnual),'Envelope anual'],['Projetado 2027',moeda(anual.projetado),'Cenário completo'],['Saldo anual',moeda(anual.saldo),anual.saldo>=0?'Folga orçamentária':'Excesso orçamentário'],['Consumo',`${(anual.consumo*100).toLocaleString('pt-BR',{maximumFractionDigits:1})}%`,anual.saldo>=0?'Dentro do orçamento':'Acima do orçamento']
+      ].map(k=>`<div class="apr-kpi"><span>${k[0]}</span><strong>${k[1]}</strong><small>${k[2]}</small></div>`).join('');
+      document.getElementById('aprAnnualDecision').innerHTML=anual.saldo>=0?`<strong style="color:#138a45">CABE NO ORÇAMENTO ANUAL.</strong> O cenário consome ${(anual.consumo*100).toFixed(1)}% do orçamento de 2027 e preserva ${moeda(anual.saldo)} de folga.`:`<strong style="color:#c33">EXCEDE O ORÇAMENTO ANUAL.</strong> O cenário consome ${(anual.consumo*100).toFixed(1)}% do orçamento de 2027 e excede o envelope em ${moeda(Math.abs(anual.saldo))}.`;
+      const rows=listaSimulacoesGeral.map(i=>{
+        const tipo=i.tipoItem==='vaga'?(i.tipoAdmissao==='aumento_quadro'?'Posição em estudo':'Admissão'):i.tipoItem==='rescisao'?'Desligamento':'Promoção';
+        const cls=tipo==='Posição em estudo'?'purple':tipo==='Desligamento'?'red':'';
+        const impacto=i.tipoItem==='rescisao'?-(i.salario||0)*2.3:String(i.tipoItem||'').toLowerCase().includes('promo')?(i.deltaSalario||0):(i.salario||0)*2.3*(i.qtd||1);
+        const comp=String(i.mesComp||i.inicioOuAviso||''); const mt=comp.match(/(2026|2027)-(\d{2})/); let mesesImpacto=0;
+        if(mt){const ano=Number(mt[1]),mes=Number(mt[2]);mesesImpacto=ano<2027?12:ano===2027?Math.max(0,13-mes):0;}
+        const impactoAnual=impacto*mesesImpacto;
+        return `<tr><td><span class="apr-badge ${cls}">${tipo}</span></td><td>${i.idPosicao?i.idPosicao+' | ':''}${i.cargoOuNome||'-'}</td><td>${i.detalhes||i.gradeOuDepto||'-'}${i.qtd>1?' | '+i.qtd+' posições':''}</td><td>${i.mesComp||i.inicioOuAviso||'-'}</td><td>${moeda(impacto)}</td><td><strong>${moeda(impactoAnual)}</strong><br><small style="color:#637286">${mesesImpacto} mês(es) em 2027</small></td></tr>`;
+      }).join('');
+      document.getElementById('aprMovimentos').innerHTML=rows||'<tr><td colspan="6">Nenhuma simulação registrada.</td></tr>';
+      const gapHC=projetado-orcado, saldo=custoOrc-custoProj;
+      let parecer=`O cenário projeta <strong>${projetado} empregados</strong> para <strong>${orcado} posições aprovadas</strong>. `;
+      parecer+=gapHC>0?`A estrutura ficará <strong>${gapHC} posição(ões) acima</strong> do quadro aprovado. `:gapHC<0?`A estrutura ficará <strong>${Math.abs(gapHC)} posição(ões) abaixo</strong> do quadro aprovado. `:'A estrutura ficará alinhada ao quadro aprovado. ';
+      parecer+=extras?`Foram incluídas <strong>${extras} posição(ões) em estudo extra orçamento</strong>. `:'';
+      parecer+=saldo>=0?`Mesmo com as movimentações simuladas, o custo mensal permanece <strong>${moeda(saldo)} abaixo do orçamento</strong>. `:`O custo mensal supera o orçamento em <strong>${moeda(Math.abs(saldo))}</strong>. `;
+      if(extras&&saldo>=0)parecer+='O cenário cabe financeiramente, mas requer aprovação formal de aumento de quadro.';
+      document.getElementById('aprParecer').innerHTML=parecer;
+      document.getElementById('aprSnapshot').textContent=`Snapshot gerado em ${agora.toLocaleString('pt-BR')}. Alterações posteriores no Cockpit não modificam este documento.`;
+      document.body.classList.add('report-preview');window.scrollTo(0,0);
+    }
+    function fecharResumoAprovacao(){document.body.classList.remove('report-preview');window.scrollTo(0,0);}
 
     document.getElementById("buscaGeral")?.addEventListener("input", aplicarFiltros);
     document.getElementById("filtroDepto")?.addEventListener("change", aplicarFiltros);
@@ -2024,9 +2457,27 @@
       limparFiltroCruzado();
     });
 
+    document.getElementById("cpBusca")?.addEventListener("input", renderizarMapaPosicoes);
+    document.getElementById("cpArea")?.addEventListener("change", renderizarMapaPosicoes);
+    document.getElementById("cpStatus")?.addEventListener("change", renderizarMapaPosicoes);
     popularFiltros(colaboradores);
     aplicarFiltros();
     window.addEventListener('load', verificarHashInicial);
   </script>
+
+  <a class="whatsapp-float" href="https://wa.me/5521992140410" target="_blank" rel="noopener noreferrer" aria-label="Falar com Felipe Viegas pelo WhatsApp" title="Falar comigo no WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2a9.84 9.84 0 0 0-8.42 14.93L2 22l5.2-1.57A9.86 9.86 0 1 0 12.04 2Zm0 17.86a8 8 0 0 1-4.08-1.11l-.29-.17-3.08.93.97-3-.19-.3A8.02 8.02 0 1 1 12.04 19.86Zm4.4-5.99c-.24-.12-1.43-.7-1.65-.79-.22-.08-.38-.12-.54.12-.16.24-.62.79-.76.95-.14.16-.28.18-.52.06-.24-.12-1.01-.37-1.93-1.19-.71-.64-1.2-1.42-1.34-1.66-.14-.24-.01-.37.11-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.2-.47-.4-.4-.54-.41h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.69 2.58 4.1 3.62.57.25 1.02.4 1.37.51.58.18 1.1.16 1.51.1.46-.07 1.43-.58 1.63-1.15.2-.56.2-1.05.14-1.15-.06-.1-.22-.16-.46-.28Z"/></svg><span>Falar comigo</span></a>
+
+  <section id="approvalReport" class="approval-report">
+    <div class="apr-printbar"><button class="close" onclick="fecharResumoAprovacao()">Voltar ao Cockpit</button><button class="save" onclick="window.print()">Salvar como PDF</button></div>
+    <div class="apr-page">
+      <header class="apr-header"><div class="apr-kicker">People Cockpit | Workforce Decision</div><h1>Resumo de cenário para aprovação</h1><p>Snapshot executivo da estrutura, orçamento e movimentações simuladas.</p><div class="apr-meta"><div><span>Responsável</span><strong>Felipe Gustavo Moreno Viegas</strong></div><div><span>Data de geração</span><strong id="aprData">-</strong></div><div><span>Período</span><strong>Nov/26 a Out/27</strong></div><div><span>Situação</span><strong>Em estudo</strong></div></div></header>
+      <section class="apr-section"><h2>Síntese executiva</h2><div id="aprKpis" class="apr-kpis"></div></section>
+      <section class="apr-section"><h2>Governança anual 2027</h2><div id="aprAnnualKpis" class="apr-kpis"></div><div id="aprAnnualDecision" class="apr-opinion" style="margin-top:10px"></div></section>
+      <section class="apr-section"><h2>Projeções</h2><div class="apr-charts"><div class="apr-chart"><h3>Headcount projetado x posições aprovadas</h3><p>Linha mensal: projetado versus limite aprovado.</p><svg id="aprChartHC" viewBox="0 0 620 250" preserveAspectRatio="none"></svg></div><div class="apr-chart"><h3>Custo projetado x orçamento mensal</h3><p>Linha mensal: custo projetado versus orçamento.</p><svg id="aprChartCusto" viewBox="0 0 620 250" preserveAspectRatio="none"></svg></div></div></section>
+      <section class="apr-section"><h2>Movimentações consideradas</h2><table class="apr-table"><thead><tr><th>Tipo</th><th>Posição / pessoa</th><th>Detalhe</th><th>Competência</th><th>Impacto mensal</th><th>Impacto anual</th></tr></thead><tbody id="aprMovimentos"></tbody></table></section>
+      <section class="apr-section"><h2>Parecer automático</h2><div id="aprParecer" class="apr-opinion"></div></section>
+      <div id="aprSnapshot" class="apr-foot"></div>
+    </div>
+  </section>
 </body>
 </html>
